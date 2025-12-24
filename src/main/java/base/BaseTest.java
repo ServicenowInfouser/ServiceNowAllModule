@@ -56,7 +56,7 @@ public class BaseTest {
 		
 		if(result.getStatus() == ITestResult.FAILURE) {
 			
-			String screenshotPath = ExtentReportManager.captureScreenshot(driver, "LoginFailure");
+			String screenshotPath = ExtentReportManager.captureScreenshot(driver, "fail");
 			test.fail("Test Failed.. Check Screenshot", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 		}
 		

@@ -5,23 +5,45 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+import org.testng.annotations.BeforeClass;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 
 import base.BaseTest;
 import base.DriverManager;
+import base.Impersonation;
 import utils.ExtentReportManager;
 
 public class ESCTest extends BaseTest{
 	private WebDriver driver = DriverManager.getDriver(); 
 	String requestno;
 
-    @Test(description = "Verification of ESC Portal Quick links" )
+	@BeforeClass
+    public void startImp() throws InterruptedException {
+    	JavascriptExecutor jse = (JavascriptExecutor) driver;
+    	test = ExtentReportManager.createTest("Verification of Impersonation and End Impersonation");
+    	test.info("Impersonation");
+    	Impersonation.startImpersonation("Abraham Lincoln", driver, jse);
+    	test.pass("success");
+    }
+	
+	@BeforeClass
+    public void endImp() throws InterruptedException {
+    	JavascriptExecutor jse = (JavascriptExecutor) driver;
+    	test = ExtentReportManager.createTest("Verification of End Impersonation");
+    	test.info("End Impersonation");
+    	Impersonation.endImpersonation(driver, jse);
+    	test.pass("success");
+    }
+	
+	
+	@Test(description = "Verification of ESC Portal Quick links" )
     public void submitForm() throws InterruptedException {
         
     	//Log.info("Starting login test...");

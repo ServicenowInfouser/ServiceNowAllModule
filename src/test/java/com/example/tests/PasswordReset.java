@@ -23,9 +23,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import com.example.base.Navigator;
-
 import base.DriverManager;
+import base.Navigator;
 import pages.LoginPage;
 
 public class PasswordReset {

@@ -1,4 +1,4 @@
-package com.example.base;
+package base;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
