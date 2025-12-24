@@ -7,8 +7,10 @@
         <methods>
           <include name="teardownReport"/>
           <include name="tearDown"/>
+          <include name="startImp"/>
           <include name="setupReport"/>
           <include name="submitForm"/>
+          <include name="endImp"/>
         </methods>
       </class> <!-- com.example.tests.ESCTest -->
     </classes>

@@ -12,12 +12,14 @@ import org.openqa.selenium.WebElement;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.AfterClass;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 
 import base.BaseTest;
 import base.DriverManager;
 import base.Impersonation;
+import utils.DataImport;
 import utils.ExtentReportManager;
 
 public class ESCTest extends BaseTest{
@@ -26,14 +28,23 @@ public class ESCTest extends BaseTest{
 
 	@BeforeClass
     public void startImp() throws InterruptedException {
-    	JavascriptExecutor jse = (JavascriptExecutor) driver;
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
     	test = ExtentReportManager.createTest("Verification of Impersonation and End Impersonation");
-    	test.info("Impersonation");
-    	Impersonation.startImpersonation("Abraham Lincoln", driver, jse);
-    	test.pass("success");
+    	
+		// Create a object of getData method
+        Object[][] users = DataImport.getData("C:\\Users\\Sandesh Velhal\\eclipse-workspace\\Servicenow-AllModule\\src\\test\\resources\\Incident.xlsx", "ImpersonateUser");
+
+        //
+        for (int i = 0; i < users.length; i++) {
+
+            String user = users[i][0].toString();
+	    	test.info("Impersonation");
+	    	Impersonation.startImpersonation(user, driver, jse);
+	    	test.pass("success");
+        }
     }
 	
-	@BeforeClass
+	@AfterClass
     public void endImp() throws InterruptedException {
     	JavascriptExecutor jse = (JavascriptExecutor) driver;
     	test = ExtentReportManager.createTest("Verification of End Impersonation");
