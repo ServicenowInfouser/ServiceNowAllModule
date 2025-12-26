@@ -1,83 +1,52 @@
 
 package com.example.tests;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
+import base.BaseTest;
 import base.DriverManager;
 import base.Navigator;
-import pages.LoginPage;
+import utils.ExtentReportManager;
 
-public class Incident {
-	private WebDriver driver; 
-	private LoginPage loginPage;
+public class Incident extends BaseTest {
+	
+	private WebDriver driver = DriverManager.getDriver(); 
 	String incNo;
-	String baseUrl = "https://dev311431.service-now.com";
 	private JavascriptExecutor jse = (JavascriptExecutor) driver;
 	
-	@BeforeClass 
-	public void setUpBrowser() throws InterruptedException { 
-		driver = DriverManager.getDriver(); 
-		loginPage = new LoginPage(driver); 
-		
-		loginPage.login("admin", "w^M8e%GurWP0");
-	} 
+	private Navigator navigator;
 	
-	@AfterClass 
-	public void tearDownBrowser() { 
-		DriverManager.quitDriver(); 
-	}
-
-    @AfterMethod(alwaysRun = true)
-    public void onFailure(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            try {
-                byte[] png = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-                String stamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-                Path out = Path.of("target", "screenshots", result.getName() + "_" + stamp + ".png");
-                Files.createDirectories(out.getParent());
-                Files.write(out, png);
-                System.out.println("Saved screenshot: " + out.toAbsolutePath());
-            } catch (Exception e) {
-                System.err.println("Failed to capture screenshot: " + e.getMessage());
-            }
-        }
-    }
     
     @Test(description = "Verification of Navigate to Incident list")
-    public void navigateToIncidentList() throws InterruptedException {
-    	//driver.get(baseUrl + "/change_request_list");
-    	
-    	jse = (JavascriptExecutor) driver;    	
+    public void navigateToIncidentList() throws InterruptedException {  	
+    	jse = (JavascriptExecutor) driver;
+    	test = ExtentReportManager.createTest("Verification of Navigate to Incident list");
     	
     	//Navigation through all menu and opening list
-    	Navigator.allNavigation("incident.list", driver, jse);
+    	test.info("Open Incident list from All menu");
+    	navigator = new Navigator(driver);
+    	navigator.allNavigation("incident.list", jse);
+    	
+    	test.pass("Navigated to the Incident list");
     }
     
     @Test(description = "Verification of Create Incident", dependsOnMethods = "navigateToIncidentList")
     public void createIncident() throws InterruptedException {
         
-    	jse = (JavascriptExecutor) driver;
+    	JavascriptExecutor jse = (JavascriptExecutor) driver;
     	
+    	test = ExtentReportManager.createTest("Verification of Creation of Incident");
+    	test.info("Clicking on the New UI action");
     	//Click on the New UI action
-    	Navigator.newUIAction(driver, jse);
+    	navigator.newUIAction(jse);
     
         Thread.sleep(2000);
         // Copy Incident record number
@@ -98,6 +67,7 @@ public class Incident {
         
         // Attach custom test data to report
         Reporter.getCurrentTestResult().setAttribute("TestData", incNo);
+        test.pass(incNo + " Incident record created");
     } 
     
 	@Test(description = "Verification of Incident", dependsOnMethods = "createIncident")

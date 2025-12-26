@@ -1,69 +1,28 @@
 
 package com.example.tests;
 
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.ITestResult;
 import org.testng.Reporter;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-import base.DriverManager;
 import base.Navigator;
-import pages.LoginPage;
 
-public class PasswordReset {
+public class PasswordResetQuicklinks {
 	
 	private WebDriver driver; 
-	private LoginPage loginPage;
 	String INCnumber;
 	String baseUrl = "https://dev311431.service-now.com";
 	private JavascriptExecutor jse = (JavascriptExecutor) driver;
 	
-	@BeforeClass 
-	public void setUpBrowser() throws InterruptedException { 
-		driver = DriverManager.getDriver(); 
-		loginPage = new LoginPage(driver); 
-		
-		loginPage.login("admin", "w^M8e%GurWP0");
-	} 
-	
-	@AfterClass 
-	public void tearDownBrowser() { 
-		DriverManager.quitDriver(); 
-		Reporter.log("Driver Closed After Testing");
-	}
-
-    @AfterMethod(alwaysRun = true)
-    public void onFailure(ITestResult result) {
-        if (ITestResult.FAILURE == result.getStatus()) {
-            try {
-                byte[] png = ((TakesScreenshot) driver).getScreenshotAs(OutputType.BYTES);
-                String stamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyyMMdd_HHmmss"));
-                Path out = Path.of("target", "screenshots", result.getName() + "_" + stamp + ".png");
-                Files.createDirectories(out.getParent());
-                Files.write(out, png);
-                System.out.println("Saved screenshot: " + out.toAbsolutePath());
-            } catch (Exception e) {
-                System.err.println("Failed to capture screenshot: " + e.getMessage());
-            }
-        }
-    }
+	private Navigator navigator;
     
     @Test(description = "Verification of Password Reset Quick links" )
     public void clickPasswordResetQuicklinks() {
@@ -140,7 +99,8 @@ public class PasswordReset {
     	jse = (JavascriptExecutor) driver;    
     	
     	//Navigation through all menu
-    	Navigator.allNavigation("incident.list", driver, jse);
+    	navigator = new Navigator(driver);
+    	navigator.allNavigation("incident.list", jse);
 
         // Search Incident
         WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));

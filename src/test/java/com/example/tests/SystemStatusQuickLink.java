@@ -25,7 +25,7 @@ import base.DriverManager;
 import pages.LoginPage;
 import utils.ExtentReportManager;
 
-public class ESCtest1 extends BaseTest{	
+public class SystemStatusQuickLink extends BaseTest{	
 	
 	private WebDriver driver = DriverManager.getDriver();; 
 	String requestno;

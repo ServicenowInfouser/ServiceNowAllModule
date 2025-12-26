@@ -6,9 +6,10 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class DataImport {
+	public static String filePath = "C:\\Users\\Sandesh Velhal\\eclipse-workspace\\Servicenow-AllModule\\src\\test\\resources\\Incident.xlsx";
 	
 	
-	public static Object[][] getData(String filePath, String sheetName) {
+	public static Object[][] getData(String sheetName) {
         Object[][] data = null;
 
         try {

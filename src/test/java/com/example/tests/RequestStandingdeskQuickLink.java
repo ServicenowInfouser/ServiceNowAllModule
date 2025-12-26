@@ -20,44 +20,20 @@ import base.BaseTest;
 import base.DriverManager;
 import base.Impersonation;
 import utils.DataImport;
+import utils.Log;
 import utils.ExtentReportManager;
 
-public class ESCTest extends BaseTest{
+public class RequestStandingdeskQuickLink extends BaseTest{
 	private WebDriver driver = DriverManager.getDriver(); 
 	String requestno;
-
-	@BeforeClass
-    public void startImp() throws InterruptedException {
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-    	test = ExtentReportManager.createTest("Verification of Impersonation and End Impersonation");
-    	
-		// Create a object of getData method
-        Object[][] users = DataImport.getData("C:\\Users\\Sandesh Velhal\\eclipse-workspace\\Servicenow-AllModule\\src\\test\\resources\\Incident.xlsx", "ImpersonateUser");
-
-        //
-        for (int i = 0; i < users.length; i++) {
-
-            String user = users[i][0].toString();
-	    	test.info("Impersonation");
-	    	Impersonation.startImpersonation(user, driver, jse);
-	    	test.pass("success");
-        }
-    }
+	Object[][] users = DataImport.getData("ImpersonateUser");
 	
-	@AfterClass
-    public void endImp() throws InterruptedException {
-    	JavascriptExecutor jse = (JavascriptExecutor) driver;
-    	test = ExtentReportManager.createTest("Verification of End Impersonation");
-    	test.info("End Impersonation");
-    	Impersonation.endImpersonation(driver, jse);
-    	test.pass("success");
-    }
 	
 	
 	@Test(description = "Verification of ESC Portal Quick links" )
     public void submitForm() throws InterruptedException {
         
-    	//Log.info("Starting login test...");
+    	Log.info("Starting login test...");
 		test = ExtentReportManager.createTest("Verification of Submitting Request Standing desk form");
 
     	driver.get(BaseTest.baseUrl + "/esc");
@@ -66,18 +42,20 @@ public class ESCTest extends BaseTest{
     	test.info("Navigating to ESC Portal", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
         System.out.println(driver.getTitle());
         
-        
         test.info("Clicking on the Request Standing desk Quick Link");
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.findElement(By.xpath("//*[@id=\"a98711ea53331210b8f2ddeeff7b12ba-item-2\"]")).click();
+        driver.findElement(By.xpath("//*[@id=\"a98711ea53331210b8f2ddeeff7b12ba-item-"+1+"\"]")).click();
+        //*[@id="a98711ea53331210b8f2ddeeff7b12ba-item-1"]/div[2]/div/span
+        //document.querySelector("#a98711ea53331210b8f2ddeeff7b12ba-item-1 > div.content-container > div > span")
+        //#a98711ea53331210b8f2ddeeff7b12ba-item-1 > div.content-container > div > span
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         System.out.println(driver.getTitle());
 
-		test.info("Provide Input values");
+		//test.info("Provide Input values");
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         driver.findElement(By.xpath("//*[@id=\"sp_formfield_ergonomic_office\"]")).sendKeys("test");
         String screenshotPath1 = ExtentReportManager.captureScreenshot(driver, "form");
-    	test.info("Navigating to ESC Portal", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
+    	test.info("Providing input values", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
         
         test.info("Click on the Order Now button");
         driver.findElement(By.xpath("//*[@id=\"submit-btn\"]")).click();
@@ -89,8 +67,9 @@ public class ESCTest extends BaseTest{
         
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
         requestno = driver.findElement(By.xpath("//*[@id=\"x6fb0f4029f8332002528d4b4232e70f6\"]/div[2]/div[2]/div/div[2]/b")).getText();
+        Thread.sleep(2000);
         String screenshotPath2 = ExtentReportManager.captureScreenshot(driver, "req");
-    	test.info("Navigating to ESC Portal", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+    	test.info("", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
         System.out.println(requestno); 
         
         test.info("Request no: " + requestno);

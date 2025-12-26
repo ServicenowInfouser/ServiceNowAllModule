@@ -23,22 +23,30 @@ public class NormalChange extends BaseTest {
 	private WebDriver driver = DriverManager.getDriver(); 
 	String changeNo;
 	private JavascriptExecutor jse;
+	
+	private Navigator navigator;
+	private Impersonation impersonation;
     
     @Test(description = "Verification of Navigate to Change list")
     public void navigateToChangeList() throws InterruptedException {
-    	//driver.get(baseUrl + "/change_request_list");
+    	jse = (JavascriptExecutor) driver;
+    	test = ExtentReportManager.createTest("Verification of Navigate to Incident list");
     	
     	jse = (JavascriptExecutor) driver;    
     	//Navigation through all menu
-    	Navigator.allNavigation("change_request.list", driver, jse);
+    	test.info("Open Change list from All menu");
+    	navigator = new Navigator(driver);
+    	navigator.allNavigation("change_request.list", jse);
     }
     
     @Test(description = "Verification of Normal Change widget", dependsOnMethods = "navigateToChangeList")
     public void clickNormalChangeWidget() throws InterruptedException {
-    	jse = (JavascriptExecutor) driver;
+    	JavascriptExecutor jse = (JavascriptExecutor) driver;
     	
-    	//Clicking on New UI action
-    	Navigator.newUIAction(driver, jse);
+    	test = ExtentReportManager.createTest("Verification of Creation of Change");
+    	test.info("Clicking on the New UI action");
+    	//Click on the New UI action
+    	navigator.newUIAction(jse);
         
         Thread.sleep(2000);
         //Click on Models tab
