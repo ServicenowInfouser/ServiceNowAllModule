@@ -20,50 +20,45 @@ import base.Config;
 import base.DriverManager;
 import base.Impersonation;
 import base.Navigator;
-import utils.DataImport;
 import utils.ExtentReportManager;
 
 
-public class NormalChange extends BaseTest {
+public class NormalChange1 extends BaseTest {
 	private WebDriver driver = DriverManager.getDriver(); 
 	String changeNo;
 	private JavascriptExecutor jse;
-		
-	//Object[][] changedata = DataImport.getData("Change");
-	
-	private Navigator navigator = new Navigator(driver);
-	private Impersonation impersonation = new Impersonation(driver);;
     
     @Test(description = "Verification of Navigate to Change list")
     public void navigateToChangeList() throws InterruptedException {
-    	jse = (JavascriptExecutor) driver;
-    	test = ExtentReportManager.createTest("Verification of Navigate to Incident list");
+    	//driver.get(baseUrl + "/change_request_list");
     	
     	jse = (JavascriptExecutor) driver;    
     	//Navigation through all menu
-    	test.info("Open Change list from All menu");
-    	//navigator = new Navigator(driver);
-    	navigator.allNavigation("change_request.list", jse);
-
-    	test.info("Clicking on the New UI action");
-    	//Click on the New UI action
-    	navigator.newUIAction(jse);
+    	test = ExtentReportManager.createTest("Verification of Navigating to Change list view");
+    	Navigator.allNavigation("change_request.list", driver, jse);
+    }
+    
+    @Test(description = "Verification of Normal Change widget", dependsOnMethods = "navigateToChangeList")
+    public void clickNormalChangeWidget() throws InterruptedException {
+    	jse = (JavascriptExecutor) driver;
+    	
+    	//Clicking on New UI action
+    	Navigator.newUIAction(driver, jse);
         
-        Thread.sleep(4000);
+        Thread.sleep(2000);
         //Click on Models tab
         WebElement models=driver.findElement(By.xpath("//*[@id=\"change_models\"]"));
         models.click();
         
-        test.info("Clicking on the Normal change widget");
         Thread.sleep(5000);
         //Click on Normal widget
         WebElement NormalChange=driver.findElement(By.xpath("//*[@id=\"007c4001c343101035ae3f52c1d3aeb2\"]/div[1]/div[1]/span"));
         NormalChange.click();
-        test.pass("Navigated to the New change page");
     }
     
-    @Test(description = "Verification of Creation of change", dependsOnMethods = "navigateToChangeList")
+    @Test(description = "Verification of Creation of change", dependsOnMethods = "clickNormalChangeWidget")
     public void createChange() throws InterruptedException {
+    	
     	test = ExtentReportManager.createTest("Verification of Navigating to Change list view");
     	// Copy Change record number
         WebElement inputElement = driver.findElement(By.xpath("//input[@id='change_request.number']"));
@@ -88,74 +83,86 @@ public class NormalChange extends BaseTest {
         // Click on submit
         driver.findElement(By.xpath("//*[@id=\"sysverb_insert\"]")).click();
         
-        test.pass("Change record created : "+changeNo);
+        test.pass("Change record created :"+changeNo);
         Reporter.getCurrentTestResult().setAttribute("TestData", changeNo);
     }
     
     @Test(description = "Verification of opening Created change record from list", dependsOnMethods = "createChange")
-    public void openChange() throws InterruptedException {
-    	test = ExtentReportManager.createTest("Opening Change record after Submition"); 
-    	driver.get(Config.baseUrl() + "/change_request_list");
-        Thread.sleep(2000);
-        // Search Change record on table
-        WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
-        globalSearchBox.sendKeys(changeNo);
-        Thread.sleep(1000);
-        globalSearchBox.sendKeys(Keys.ENTER);
-        Thread.sleep(2000);
+    public void openChange() throws InterruptedException
+    {
+    	 test = ExtentReportManager.createTest("Opening Change record after Submition");
+    	 driver.get(Config.baseUrl() + "/change_request_list");
+         Thread.sleep(2000);
+         // Search Change record on table
+         WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
+         globalSearchBox.sendKeys(changeNo);
+         Thread.sleep(1000);
+         globalSearchBox.sendKeys(Keys.ENTER);
+         Thread.sleep(2000);
 
-        // Open Change
-        List<WebElement> openCHN = driver.findElements(By.xpath("//table[@id='change_request_table']/tbody/tr/td[3]/a"));
-        for (WebElement ele2 : openCHN) {
+         // Open Change record
+         List<WebElement> openCHN = driver.findElements(By.xpath("//table[@id='change_request_table']/tbody/tr/td[3]"));
+         for (WebElement ele2 : openCHN) {
              String currentINC = ele2.getText();
              if (currentINC.contains(changeNo)) 
              {
                  ele2.click();
                  break;
              }
-        }
-        test.pass("Change record opened from the list view");
-        Reporter.getCurrentTestResult().setAttribute("TestData", changeNo);
+         }
+         Reporter.getCurrentTestResult().setAttribute("TestData", changeNo);
     }
     
-    @Test(description = "Verification of Approval Generation", dependsOnMethods = "openChange")
-    public void requestingApproval() throws InterruptedException {
-    	Thread.sleep(10000);
-    	
+    @Test(description = "Verification of Generated Approvals", dependsOnMethods = "openChange")
+    public void uiActionRequestApproval() throws InterruptedException 
+    {
     	test = ExtentReportManager.createTest("Verification of Request Approval UI action");
     	//Click on RequestApproval UI action 
-    	test.info("Click on the Request Approval UI action");
-        WebElement RequestApproval=driver.findElement(By.xpath("//*[@id='state_model_request_assess_approval']"));
+        WebElement RequestApproval=driver.findElement(By.xpath("//*[@id=\"state_model_request_assess_approval\"]"));
         RequestApproval.click();
-
-        //Click on the Approvers tab
-        test.info("Go to the Approval Related list");
+        
+        //String newbutton1="return document.querySelector(\"#state_model_request_assess_approval\")";
+		//WebElement clicknnewui1 =(WebElement) jse.executeScript(newbutton1);
+		//clicknnewui1.click();
+        
+       // WebElement error=driver.findElement(By.xpath("//*[@id=\"output_messages\"]/div/div[1]/div"));
+       // System.out.println("Error massage is :"+error.getText());
+        
+     
+    }
+    
+    @Test(description = "Verification of Approvals", dependsOnMethods = "uiActionRequestApproval")
+    public void approvals() throws InterruptedException 
+    {
+    	test = ExtentReportManager.createTest("Verification of Approver Users under Approver Tab");
+    	//Click on the Approvers tab
     	WebElement ApproversTab=driver.findElement(By.xpath("//*[@id=\"tabs2_list\"]/span[3]/span/span[2]"));
         ApproversTab.click();
         
         //Approval user
         List<WebElement> Approvers=driver.findElements(By.xpath("//*[@id=\"change_request.sysapproval_approver.sysapproval_table\"]/tbody/tr/td[4]"));
         Thread.sleep(2000);
-        System.out.println(Approvers.size());
-        for (WebElement Users : Approvers) {
-        	test.info("Approver users list" + Users.getText());
-        	System.out.println(Users.getText());
+        System.out.println("Total Approver users count is :"+Approvers.size());
+        for (WebElement Users : Approvers) 
+        {
+        	
+        	test.info("Approver users list");
+        	System.out.println("Approver users is :"+Users.getText());
         	Reporter.getCurrentTestResult().setAttribute("TestData", Users.getText());
        }
-       test.pass("Approvals generated successfully");
     }
     
     
-    @Test(description = "Verification of User Impersonation", dependsOnMethods = "requestingApproval")
+    @Test(description = "Verification of User Impersonation", dependsOnMethods = "approvals")
     public void impersonateUser() throws InterruptedException {
     	
     	jse = (JavascriptExecutor) driver;
     	
-    	test = ExtentReportManager.createTest("Verification of Approving the approval by Impersonating user");
-    	test.info("Impersonation for first Approval");
-    	//impersonation = new Impersonation(driver);
-    	impersonation.startImpersonation("Manifah Masood", jse);
-
+    	test = ExtentReportManager.createTest("Verification of Impersonation and End Impersonation");
+    	test.info("Impersonation");
+    	Impersonation.startImpersonation("Manifah Masood", driver, jse);
+    	Thread.sleep(10000);
+    	
     	Thread.sleep(2000);
         driver.get(baseUrl + "/sysapproval_approver_list");
         Thread.sleep(2000);
@@ -174,38 +181,33 @@ public class NormalChange extends BaseTest {
         Thread.sleep(2000);
         globalSearchBox2.sendKeys(Keys.ENTER);
         
-        WebElement approversearch=driver.findElement(By.xpath("//*[@id=\"sysapproval_approver_table\"]/thead/tr[2]/td[4]/div/div/div/input"));
-        approversearch.sendKeys("Manifah Masood");
-        approversearch.sendKeys(Keys.ENTER);
+       WebElement approversearch=driver.findElement(By.xpath("//*[@id=\"sysapproval_approver_table\"]/thead/tr[2]/td[4]/div/div/div/input"));
+       approversearch.sendKeys("Manifah Masood");
+       approversearch.sendKeys(Keys.ENTER);
        
-        test.info("Opening Approval Change record");
-        WebElement requestedbutton=driver.findElement(By.xpath("//*[@class='linked formlink']"));
-        requestedbutton.click();
+       test.info(" Opening Approval Change record");
+       WebElement requestedbutton=driver.findElement(By.xpath("//*[@class='linked formlink']"));
+       requestedbutton.click();
     
-        test.info("Appriving the Approval");
-        driver.findElement(By.xpath("//*[@id=\"approve\"]")).click();
-        Thread.sleep(2000);
+       driver.findElement(By.xpath("//*[@id=\"approve\"]")).click();
+       Thread.sleep(2000);
     	
     	test.info("End Impersonation");
-    	impersonation.endImpersonation(jse);
-    	test.pass("Successfully approved the approval");
-    }
+    	Impersonation.endImpersonation(driver, jse);
+    	 Thread.sleep(2000);
+    	test.pass("success");
     
+    }
     @Test(description = "Opening CHN record after first Approval Approve", dependsOnMethods = "impersonateUser")
-    public void OPNCHNAFTAPPL() throws InterruptedException {
+    public void OPNCHNAFTAPPL() throws InterruptedException 
+    {
     	test = ExtentReportManager.createTest("Verification of Change record after 1st Approval Approved");
     	
-    	System.out.println("1St Approval flow completed");
+    	System.err.println("1St Approval flow completed");
         //Opening Change record After 1st Approval
-    	driver.get(Config.baseUrl() + "/change_request_list");
     	Thread.sleep(2000);
-    	// Search Change record on table
-        WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
-        globalSearchBox.sendKeys(changeNo);
-        Thread.sleep(1000);
-        globalSearchBox.sendKeys(Keys.ENTER);
-        Thread.sleep(2000);
-        List<WebElement> openChange = driver.findElements(By.xpath("//table[@id='change_request_table']/tbody/tr/td[3]/a"));
+        driver.get(baseUrl + "/change_request_list");
+        List<WebElement> openChange = driver.findElements(By.xpath("//table[@id='change_request_table']/tbody/tr/td[3]"));
         for (WebElement chan1 : openChange) {
             String currentChan = chan1.getText();
             if (currentChan.contains(changeNo)) 
@@ -214,12 +216,9 @@ public class NormalChange extends BaseTest {
                 break;
             }
         }
-        
-        System.out.println("Opening the Change record after 1St Approval");
-       
-        //Verification of 2nd Approval users
+        System.err.println("Opening the Change record after 1St Approval");
+       //Verification of 2nd Approval users
         test.info("2nd Approval users are");
-        Thread.sleep(2000);
         List<WebElement> Approvers2=driver.findElements(By.xpath("//*[@id=\"change_request.sysapproval_approver.sysapproval_table\"]/tbody/tr/td[4]"));
         Thread.sleep(2000);
         System.out.println("Count of Approvers users are:"+Approvers2.size());
@@ -228,13 +227,10 @@ public class NormalChange extends BaseTest {
             String ApproverUser2 = Users2.getText();
             System.out.println("List of Approver users are:"+Users2.getText());
         }
-        
         //Verification of State after 1st Approval Approve
         WebElement State1stApp=driver.findElement(By.xpath("//*[@id=\"change_request.state\"]"));
         String stateafield3=State1stApp.getAttribute("value");
         System.out.println(State1stApp.getTagName());
-        
-        test.pass("Second Approval is generated");
     }
     
     @Test(description = "Verification of 2nd Approval", dependsOnMethods = "OPNCHNAFTAPPL")
@@ -244,7 +240,7 @@ public class NormalChange extends BaseTest {
     	
     	test = ExtentReportManager.createTest("Verification of Impersonation and End Impersonation");
     	test.info("Impersonation for 2nd Approval");
-    	impersonation.startImpersonation("Ron Kettering", jse);
+    	Impersonation.startImpersonation("Ron Kettering", driver, jse);
     	Thread.sleep(10000);
     	
     	Thread.sleep(2000);
@@ -265,20 +261,20 @@ public class NormalChange extends BaseTest {
         Thread.sleep(2000);
         globalSearchBox2.sendKeys(Keys.ENTER);
         
-        WebElement approversearch=driver.findElement(By.xpath("//*[@id=\"sysapproval_approver_table\"]/thead/tr[2]/td[4]/div/div/div/input"));
-       	approversearch.sendKeys("Ron Kettering");
-       	approversearch.sendKeys(Keys.ENTER);
+       WebElement approversearch=driver.findElement(By.xpath("//*[@id=\"sysapproval_approver_table\"]/thead/tr[2]/td[4]/div/div/div/input"));
+       approversearch.sendKeys("Manifah Masood");
+       approversearch.sendKeys(Keys.ENTER);
        
-       	test.info(" Opening Approval Change record");
-       	WebElement requestedbutton=driver.findElement(By.xpath("//*[@class='linked formlink']"));
-       	requestedbutton.click();
+       test.info(" Opening Approval Change record");
+       WebElement requestedbutton=driver.findElement(By.xpath("//*[@class='linked formlink']"));
+       requestedbutton.click();
     
-       	driver.findElement(By.xpath("//*[@id=\"approve\"]")).click();
-       	Thread.sleep(2000);
+       driver.findElement(By.xpath("//*[@id=\"approve\"]")).click();
+       Thread.sleep(2000);
     	
     	test.info("End Impersonation");
-    	impersonation.endImpersonation(jse);
-    	test.pass("Successfully approved the approval");
+    	Impersonation.endImpersonation(driver, jse);
+    	test.pass("success");
     
     }
     @Test(description = "Verification of State and Impliment UI Action after 2nd Approval Approved", dependsOnMethods = "impersonateUserSec")
@@ -309,9 +305,9 @@ public class NormalChange extends BaseTest {
                 break;
             }
         }
-        System.err.println("Opening the Change record after 2nd Approval");
-        //Verification of State after 2nd Approval
-        WebElement verificationOfState=driver.findElement(By.xpath("//*[@id=\"change_request.state\"]"));
+       System.err.println("Opening the Change record after 2nd Approval");
+       //Verification of State after 2nd Approval
+      WebElement verificationOfState=driver.findElement(By.xpath("//*[@id=\"change_request.state\"]"));
         String stateafter2ndApprovalApprove=verificationOfState.getAttribute("value");
         System.out.println(stateafter2ndApprovalApprove);
 
@@ -321,12 +317,11 @@ public class NormalChange extends BaseTest {
         driver.findElement(By.xpath("//*[@id=\"state_model_move_to_implement\"]")).click();    
         
         test.info("State verification after Click on Impliment UI Action");
-        //Verification of State after Click on Impliment UI Action
+      //Verification of State after Click on Impliment UI Action
         WebElement StateAfterImplimentButton=driver.findElement(By.xpath("//*[@id=\"change_request.state\"]"));
         String stateafterclickonONImplimentUIAction=StateAfterImplimentButton.getAttribute("value");
         System.out.println(stateafterclickonONImplimentUIAction);
     }
-    
     @Test(description = "Verification of 1st Change Task", dependsOnMethods = "implimentUIAction")
     public void firstchangeTask() throws InterruptedException 
     {
@@ -408,7 +403,6 @@ public class NormalChange extends BaseTest {
        
        Thread.sleep(5000);
     }
-    
     
     @Test(description = "Verification of 2nd Change Task", dependsOnMethods = "implimentUIAction")
     public void secondchangeTask() throws InterruptedException 
@@ -495,7 +489,6 @@ public class NormalChange extends BaseTest {
               closeTAsk1.click();
     
     }
-    
     @Test(description = "Verification of 2nd Change Task", dependsOnMethods = "implimentUIAction")
     public void Closechangerecord() throws InterruptedException 
     {

@@ -3,16 +3,24 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.tests.ESCTest">
+      <class name="com.example.tests.NormalChange">
         <methods>
+          <include name="impersonateUserSec"/>
+          <include name="implimentUIAction"/>
+          <include name="setupReport"/>
+          <include name="openChange"/>
+          <include name="requestingApproval"/>
+          <include name="Closechangerecord"/>
+          <include name="impersonateUser"/>
           <include name="teardownReport"/>
           <include name="tearDown"/>
-          <include name="startImp"/>
-          <include name="setupReport"/>
-          <include name="submitForm"/>
-          <include name="endImp"/>
+          <include name="createChange"/>
+          <include name="OPNCHNAFTAPPL"/>
+          <include name="firstchangeTask"/>
+          <include name="navigateToChangeList"/>
+          <include name="secondchangeTask"/>
         </methods>
-      </class> <!-- com.example.tests.ESCTest -->
+      </class> <!-- com.example.tests.NormalChange -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

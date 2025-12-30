@@ -7,6 +7,8 @@ import org.openqa.selenium.WebElement;
 public class Impersonation extends BaseTest {
 	
 	private WebDriver driver;
+	
+	String profileIcon="return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\").shadowRoot.querySelector(\"nav > div > div.ending-header-zone > div.polaris-header-controls > div.utility-menu-container > div > div > now-avatar\").shadowRoot.querySelector(\"span > span\")";
 
     public Impersonation(WebDriver driver) {
         this.driver = driver;
@@ -15,7 +17,6 @@ public class Impersonation extends BaseTest {
 	public void startImpersonation(String user, JavascriptExecutor jse) throws InterruptedException {
 		//Profile Icon click        
         driver.get(Config.baseUrl());               
-        String profileIcon="return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\").shadowRoot.querySelector(\"nav > div > div.ending-header-zone > div.polaris-header-controls > div.utility-menu-container > div > div > now-avatar\").shadowRoot.querySelector(\"span > span > img\")";
         WebElement profile=(WebElement)jse.executeScript(profileIcon);
         profile.click();    
         
@@ -54,9 +55,8 @@ public class Impersonation extends BaseTest {
         //End Impersonation
         driver.get(Config.baseUrl()); 
         Thread.sleep(5000);
-        String profileIcon="return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\").shadowRoot.querySelector(\"nav > div > div.ending-header-zone > div.polaris-header-controls.can-animate > div.utility-menu-container > div > div > now-avatar\").shadowRoot.querySelector(\"span > span > span > span > span\")";
         WebElement profile=(WebElement)jse.executeScript(profileIcon);
-        profile.click();   
+        profile.click();    
         
         Thread.sleep(2000);
         String endimp="return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\").shadowRoot.querySelector(\"#userMenu > span > span:nth-child(2) > div > div.user-menu-controls > button.user-menu-button.unimpersonate.keyboard-navigatable.polaris-enabled > div\")";

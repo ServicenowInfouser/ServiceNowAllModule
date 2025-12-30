@@ -10,6 +10,10 @@ public class ApprovalHandling {
 	
 	private static WebDriver driver = DriverManager.getDriver();
 	
+	public ApprovalHandling(WebDriver driver) {
+        this.driver = driver;
+    }
+	
 	public static void approveApproval(String value) throws InterruptedException {
 	
 		driver.get(BaseTest.baseUrl + "sysapproval_approver_list");
