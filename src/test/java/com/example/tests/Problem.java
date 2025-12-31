@@ -2,6 +2,7 @@ package com.example.tests;
 
 
 import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 
 import org.apache.logging.log4j.LogManager;
@@ -19,7 +20,6 @@ import com.aventstack.extentreports.Status;
 
 import base.BaseTest;
 import base.DriverManager;
-import base.Navigator;
 import junit.framework.Assert;
 import utils.DataImport;
 import utils.ExtentReportManager;
@@ -32,61 +32,67 @@ public class Problem extends BaseTest {
 	private JavascriptExecutor jse;
 	private Logger logger = LogManager.getLogger("Problem");
 	Object[][] problemdata = DataImport.getData("Problem");
-	
-	private Navigator navigator;
 
-//		@Test
-//		public void impersonateUser() {
-//
-//			logger.info("Impersonating to User");
-//			test = ExtentReportManager.createTest("Impersonate to User");
-//
-//			String baseUrl = "https://dev231719.service-now.com";
-//
-//			// Click on profile logo
-//			test.log(Status.INFO, "Click on Profile Logo");
-//			WebElement clickProfile = (WebElement) jse.executeScript("return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\").shadowRoot.querySelector(\"nav > div > div.ending-header-zone > div.polaris-header-controls > div.utility-menu-container > div > div > now-avatar\").shadowRoot.querySelector(\"span > span > img\")");
-//			((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickProfile);
-//
-//			test.log(Status.INFO, "Click on Impersonate User");
-//			// Click on Impersonate
-//			WebElement impersonateUser = (WebElement) jse.executeScript("return document.querySelector('body > macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot.querySelector('div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout').shadowRoot.querySelector('div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header').shadowRoot.querySelector('#userMenu > span > span:nth-child(2) > div > div.user-menu-controls > button.user-menu-button.impersonateUser.keyboard-navigatable.polaris-enabled > div')");
-//			((JavascriptExecutor) driver).executeScript("arguments[0].click();", impersonateUser);
-//
-//			Thread.sleep(2000);
-//
-//			// Enter user name
-//			test.log(Status.INFO, "Enter User Name");
-//			WebElement searchUser = (WebElement) jse.executeScript("return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.content-area.can-animate > sn-impersonation\").shadowRoot.querySelector(\"now-modal > div > now-typeahead\").shadowRoot.querySelector(\"div > now-popover > div\")");
-//			Thread.sleep(2000);
-//			WebElement textBox = searchUser.findElement(By.cssSelector(".now-typeahead-native-input"));
-//			textBox.sendKeys("Fred Luddy");                                                                //  ---------------Data input 
-//			Thread.sleep(2000);
-//			textBox.sendKeys(Keys.ENTER);
-//
-//			// Click on Impersonate button
-//			test.log(Status.INFO, "Click on Impersonate button");
-//			WebElement impersonateBtn = (WebElement) jse.executeScript("return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.content-area.can-animate > sn-impersonation\").shadowRoot.querySelector(\"now-modal\").shadowRoot.querySelector(\"div > div > div > div.now-modal-footer > now-button:nth-child(2)\").shadowRoot.querySelector(\"button\")");
-//			((JavascriptExecutor) driver).executeScript("arguments[0].click();", impersonateBtn);
-//
-//			// Verify user is Impersonated or not
-//		}
+		@Test
+		public void impersonateUser() {
 
-		@Test(description = "Verification of Save record without filling mandatory fields")
+			
+			//test.log(Status.FAIL, " ");
+
+			//test.log(Status.INFO, " ");
+
+			//test.log(Status.PASS, " ");
+			
+			logger.info("Impersonating to User");
+			test = ExtentReportManager.createTest("Impersonate to User");
+
+			String baseUrl = "https://dev231719.service-now.com";
+
+			// Click on profile logo
+			test.log(Status.INFO, "Click on Profile Logo");
+			WebElement clickProfile = (WebElement) jse.executeScript(
+					"return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\").shadowRoot.querySelector(\"nav > div > div.ending-header-zone > div.polaris-header-controls > div.utility-menu-container > div > div > now-avatar\").shadowRoot.querySelector(\"span > span > img\")");
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", clickProfile);
+
+			test.log(Status.INFO, "Click on Impersonate User");
+			// Click on Impersonate
+			WebElement impersonateUser = (WebElement) jse.executeScript(
+					"return document.querySelector('body > macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot.querySelector('div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout').shadowRoot.querySelector('div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header').shadowRoot.querySelector('#userMenu > span > span:nth-child(2) > div > div.user-menu-controls > button.user-menu-button.impersonateUser.keyboard-navigatable.polaris-enabled > div')");
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", impersonateUser);
+
+			Thread.sleep(2000);
+
+			// Enter user name
+			test.log(Status.INFO, "Enter User Name");
+			WebElement searchUser = (WebElement) jse.executeScript(
+					"return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.content-area.can-animate > sn-impersonation\").shadowRoot.querySelector(\"now-modal > div > now-typeahead\").shadowRoot.querySelector(\"div > now-popover > div\")");
+			Thread.sleep(2000);
+			WebElement textBox = searchUser.findElement(By.cssSelector(".now-typeahead-native-input"));
+			textBox.sendKeys(problemdata[0][1]);                                                                  //---------------Data input 
+			Thread.sleep(2000);
+			textBox.sendKeys(Keys.ENTER);
+
+			// Click on Impersonate button
+			test.log(Status.INFO, "Click on Impersonate button");
+			WebElement impersonateBtn = (WebElement) jse.executeScript(
+					"return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.content-area.can-animate > sn-impersonation\").shadowRoot.querySelector(\"now-modal\").shadowRoot.querySelector(\"div > div > div > div.now-modal-footer > now-button:nth-child(2)\").shadowRoot.querySelector(\"button\")");
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", impersonateBtn);
+
+			// Verify user is Impersonated or not
+		}
+
+		@Test
 		public void submitProblemFormWODetail() {
 			logger.info("Open and Submitting Problem form without fill details in mandatory fields");
 			test = ExtentReportManager.createTest("Open and Submitting Problem form without fill details in mandatory fields");
-			
-			//Open problem table
-			navigator = new Navigator(driver);
-			
-	    	navigator.allNavigation("problem.list", jse);
-			
-	    	//Click on the New button
-	    	test.log(Status.INFO, "Open Problem table and click on New button to open Problem form");
-	    	navigator.newUIAction(jse);
-	    	
-	    	test.log(Status.INFO, "Save record without fill details in mandatory fields");
+			// Open Problem table
+			test.log(Status.INFO, "Open Problem table and click on New button to open Problem form");
+			driver.get(baseUrl + "/problem_list");
+			// Click on New button
+			WebElement newButton = (WebElement) jse.executeScript("return document.querySelector(\"#sysverb_new\")");// document.querySelector("#sysverb_new")
+			((JavascriptExecutor) driver).executeScript("arguments[0].click();", newButton);
+
+			test.log(Status.INFO, "Save record without fill details in mandatory fields");
 			logger.info("Save record without fill details in mandatory fields");
 			// Click on Submit button
 			driver.findElement(By.xpath("//*[@id='sysverb_insert']")).click();
@@ -110,8 +116,8 @@ public class Problem extends BaseTest {
 			//Verify Original task field
 			test.log(Status.INFO, "Verifying Original task field");
 			
-			String originalTaskField = driver.findElement(By.xpath("//*[@id=\"label.problem.first_reported_by_task\"]/label/span[2]")).getAttribute("value"); //---------------add xpath of field
-			if (originalTaskField.equals(problemdata[0][0])) {                                    //-----------------add excel field name path
+			String originalTaskField = driver.findElement(By.xpath("//*[@id='label.problem.first_reported_by_task']/label/span[2]")).getAttribute("value");
+			if (originalTaskField.equals(Excel[2][0])) {                                    //-----------------add excel field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Original task' field name as expected");
 				logger.info("'Original task' field name as expected");
@@ -149,7 +155,7 @@ public class Problem extends BaseTest {
 				System.out.println("Switched back to main window with title: " + driver.getTitle());
 				
 				//Print set value
-				String originalTaskValue = driver.findElement(By.xpath("")).getText(); //-----------------------Add entered value in Original task
+				String originalTaskValue = driver.findElement(By.xpath("//*[@id='sys_display.problem.first_reported_by_task']")).getText(); 
 				
 				test.log(Status.INFO, "Set Original task field value is - " +originalTaskValue );
 				logger.info("Set Original task field value is - " +originalTaskValue );
@@ -165,8 +171,8 @@ public class Problem extends BaseTest {
 			//Verify Category field
 	       test.log(Status.INFO, "Verifying Category field");
 			
-			String categoryField = driver.findElement(By.id("username")).getAttribute("value"); //---------------add xpath of field
-			if (categoryField.equals(problemdata[0][0])) {                                   // -----------------add excel field name path
+			String categoryField = driver.findElement(By.xpath("//*[@id='label.problem.category']/label/span[2]")).getAttribute("value"); 
+			if (categoryField.equals(Excel[3][0])) {                                    //-----------------add excel field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Category' field name as expected");
 				logger.info("'Category' field name as expected");
@@ -181,7 +187,7 @@ public class Problem extends BaseTest {
 				dropdown.selectByIndex(2); // Selects the second option (index starts from 0) // Select option by index
 				
 				//Print set value
-				String categoryValue = driver.findElement(By.xpath("")).getText(); //-----------------------Add entered value in Category
+				String categoryValue = driver.findElement(By.xpath("//*[@id='problem.category']")).getText(); //-----------------------entered value in Category
 				
 				test.log(Status.INFO, "Selected Category field value is - " + categoryValue);
 				logger.info("Selected Category field value is - " + categoryValue);
@@ -198,8 +204,8 @@ public class Problem extends BaseTest {
 			Thread.sleep(2000);
 	        test.log(Status.INFO, "Verifying Subcategory field");
 			
-			String subCategoryField = driver.findElement(By.id("username")).getAttribute("value"); //---------------add xpath of field
-			if (subCategoryField.equals(problemdata[0][0])) {                                    //-----------------add excel field name path
+			String subCategoryField = driver.findElement(By.xpath("//*[@id='label.problem.subcategory']/label/span[2]")).getAttribute("value"); 
+			if (subCategoryField.equals(Excel[4][0])) {                                    //---------------add excel field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Subcategory' field name as expected");
 				logger.info("'Subcategory' field name as expected");
@@ -212,7 +218,7 @@ public class Problem extends BaseTest {
 				Select subCategoryEle = new Select(dropdownElement); 
 				subCategoryEle.selectByIndex(2); // Selects the second option (index starts from 0) // Select option by index
 				//Print set value
-				String subCategoryValue = driver.findElement(By.xpath("")).getText();           //-----------------------Add entered value in Subcategory
+				String subCategoryValue = driver.findElement(By.xpath("//*[@id='problem.subcategory']")).getText(); //------------- entered value in Subcategory
 				
 				test.log(Status.INFO, "Selected Subcategory field value is - " + subCategoryValue);
 				logger.info("Selected Subcategory field value is - " + subCategoryValue);
@@ -229,8 +235,8 @@ public class Problem extends BaseTest {
 			Thread.sleep(2000);
 	        test.log(Status.INFO, "Verifying Impact field");
 			
-			String impactField = driver.findElement(By.id("username")).getAttribute("value"); //---------------add xpath of field
-			if (impactField.equals(problemdata[0][0])) {                                    //-----------------add excel field name path
+			String impactField = driver.findElement(By.xpath("//*[@id='label.problem.impact']/label/span[2]")).getAttribute("value"); 
+			if (impactField.equals(Excel[5][0])) {                                    //-----------------add excel field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Impact' field name as expected");
 				logger.info("'Impact' field name as expected");
@@ -243,7 +249,7 @@ public class Problem extends BaseTest {
 			Select dropdown1 = new Select(selectImpact); 
 			dropdown1.selectByIndex(0); 
 			//Print set value
-			String impactValue = driver.findElement(By.xpath("")).getText();           // -----------------------Add entered value in Subcategory
+			String impactValue = driver.findElement(By.xpath("//*[@id='problem.impact']")).getText(); //----------------------- entered value in Subcategory
 			
 			test.log(Status.INFO, "Selected Impact field value is - " + impactValue);
 			logger.info("Selected Impact field value is - " + impactValue);
@@ -258,8 +264,8 @@ public class Problem extends BaseTest {
 			Thread.sleep(2000);
 	        test.log(Status.INFO, "Verifying Urgency field");
 			
-			String urgencyField = driver.findElement(By.id("username")).getAttribute("value"); //---------------add xpath of field
-			if (urgencyField.equals(problemdata[0][0])) {                                    //-----------------add excel field name path
+			String urgencyField = driver.findElement(By.xpath("//*[@id='label.problem.urgency']/label/span[2]")).getAttribute("value"); 
+			if (urgencyField.equals(Excel[6][0])) {                                    //-----------------add excel field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Urgency' field name as expected");
 				logger.info("'Urgency' field name as expected");
@@ -272,7 +278,7 @@ public class Problem extends BaseTest {
 			Select dropdown2 = new Select(selectUrgency); 
 			dropdown2.selectByIndex(1); 
 			//Print set value
-			String urgencyValue = driver.findElement(By.xpath("")).getText();     //-----------------------Add entered value in Subcategory
+			String urgencyValue = driver.findElement(By.xpath("//*[@id='problem.urgency']")).getText(); //-----------------------entered value in urgency
 			
 			test.log(Status.INFO, "Selected Urgency field value is - " + urgencyValue);
 			logger.info("Selected Urgency field value is - " + urgencyValue);
@@ -288,7 +294,7 @@ public class Problem extends BaseTest {
 	        test.log(Status.INFO, "Verifying Priority field and value");
 	        
 			String priorityField = driver.findElement(By.xpath("//*[@id='label.problem.priority']/label/a/span[2]")).getAttribute("value"); 
-			if (priorityField.equals(problemdata[0][0])) {                                    //-----------------add excel field name path
+			if (priorityField.equals(Excel[7][0])) {                                    //-----------------add excel field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Priority' field is visible");
 				logger.info("'Priority' field visible");
@@ -300,9 +306,12 @@ public class Problem extends BaseTest {
 			}
 			//Verify Priority field value
 			String priorityValue = driver.findElement(By.xpath("//*[@id='problem.priority']")).getText();   
-			if (priorityValue.equals(problemdata[0][4])) {
+			if (priorityValue.equals(Excel[0][0])) {                                                             //------Add priority value
+				String urgencyValue = driver.findElement(By.xpath("//*[@id='problem.urgency']")).getText();
+				String impactValue = driver.findElement(By.xpath("//*[@id='problem.impact']")).getText();
+				
 				test.log(Status.INFO, "Priority is - "+priorityValue+ " as per selected Impact - " + impactValue+ " and Urgency - " + urgencyValue);
-				logger.info("Priority is - "+priorityValue +" as per selected Impact - " + impactValue+ " and Urgency - " + urgencyValue);
+				logger.info("Priority is - "+priorityValue+ " as per selected Impact - " + impactValue+ " and Urgency - " + urgencyValue);
 				AssertJUnit.assertTrue(true); //test pass
 			} else {
 				logger.info("Priority is not as per selected Impact and Urgency");
@@ -314,8 +323,8 @@ public class Problem extends BaseTest {
 			Thread.sleep(2000);
 	        test.log(Status.INFO, "Verifying Problem statement field");
 			
-			String problemStmntField = driver.findElement(By.id("username")).getAttribute("value"); //---------------add xpath of field
-			if (problemStmntField.equals(problemdata[0][0])) {                                    //-----------------add excel field name path
+			String problemStmntField = driver.findElement(By.xpath("//*[@id='label.problem.short_description']/label/span[2]")).getAttribute("value"); 
+			if (problemStmntField.equals(Excel[10][0])) {                                    //-----------------add excel field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Problem statement' field name as expected");
 				logger.info("'Problem statement' field name as expected");
@@ -324,10 +333,10 @@ public class Problem extends BaseTest {
 			test.log(Status.INFO, "Enter Problem statement field value");
 			logger.info("Enter Problem statement field value");
 			
-			driver.findElement(By.xpath("//*[@id='problem.short_description']")).sendKeys(problemdata[0][0]);   //-------add excel field value
+			driver.findElement(By.xpath("//*[@id='problem.short_description']")).sendKeys(Excel[10][1]);   //-------add excel field value
 			
 			//Print set value
-			String problemStmntValue = driver.findElement(By.xpath("")).getText(); //-----------------------Add entered value in Problem statement
+			String problemStmntValue = driver.findElement(By.xpath("//*[@id='problem.short_description']")).getText(); //------------------- entered value in Problem statement
 			
 			test.log(Status.INFO, "Entered Problem statement field value is - " + problemStmntValue);
 			logger.info("Entered Problem statement field value is - " + problemStmntValue);
@@ -341,10 +350,8 @@ public class Problem extends BaseTest {
 			//Verify Assignment group field	
 	        test.log(Status.INFO, "Verifying Assignment group field");
 			
-			String originalTaskField = driver.findElement(By.xpath("//*[@id='label.problem.assignment_group']/label/span[2]")).getAttribute("value");
-			
-			if (originalTaskField.equals(testData[0][0])) {                                    //-----------------add excel field name path
-				AssertJUnit.assertTrue(true); //test case pass
+			String assignmentGroupField = driver.findElement(By.xpath("//*[@id='label.problem.assignment_group']/label/span[2]")).getAttribute("value");
+			if (assignmentGroupField.equals(Excel[8][0])) {                                    //-----------------add excel field name path assignment Group				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Assignment group' field name as expected");
 				logger.info("'Assignment group' field name as expected");
 				
@@ -374,7 +381,7 @@ public class Problem extends BaseTest {
 						// Search assignment group
 						WebElement searchAssignmentGroup = driver
 								.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
-						searchAssignmentGroup.sendKeys(problemdata[0][0] + Keys.ENTER);                //------------------"Problem Analyzers" get value from excel
+						searchAssignmentGroup.sendKeys(Excel[8][1] + Keys.ENTER);        // ----------------Assignment group -"Problem Analyzers" get value from excel
 						Thread.sleep(3000);
 
 						// Select assignment group
@@ -386,7 +393,7 @@ public class Problem extends BaseTest {
 				System.out.println("Switched back to main window with title: " + driver.getTitle());
 				
 				//Print set value
-				String assignmentGroupValue = driver.findElement(By.xpath("")).getText();         //-----------------------Add entered value in Assignment group
+				String assignmentGroupValue = driver.findElement(By.xpath("//*[@id='sys_display.problem.assignment_group']")).getText();   //----- entered value in Assignment group
 				
 				test.log(Status.INFO, "Set Assignment group field value is - " +assignmentGroupValue );
 				logger.info("Set Assignment group field value is - " +assignmentGroupValue );
@@ -401,8 +408,8 @@ public class Problem extends BaseTest {
 			//Verify Assign to field 
 	        test.log(Status.INFO, "Verifying Assign to field");
 			
-			String originalTaskField = driver.findElement(By.xpath("//*[@id='label.problem.assigned_to']/label/span[2]")).getAttribute("value");
-			if (originalTaskField.equals(problemdata[0][0])) {                                    //-----------------add excel field name path
+			String assignToField = driver.findElement(By.xpath("//*[@id='label.problem.assigned_to']/label/span[2]")).getAttribute("value");
+			if (assignToField.equals(Excel[9][0])) {                                    //-----------------add excel field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Assign to' field name as expected");
 				logger.info("'Assign to' field name as expected");
@@ -431,9 +438,8 @@ public class Problem extends BaseTest {
 						driver.switchTo().window(childWindowHandle2);
 						System.out.println("Switched to child window with title: " + driver.getTitle());
 						// Search assign to
-						WebElement searchAssigTo = driver
-								.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
-						searchAssigTo.sendKeys(problemdata[0][0] + Keys.ENTER);                      //-------------------------'Problem Manager' get value from excel
+						WebElement searchAssigTo = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
+						searchAssigTo.sendKeys(Excel[8][1] + Keys.ENTER);          //------------------Assign to -'Problem Manager' get value from excel
 
 						Thread.sleep(2000);
 						// Select assign to
@@ -447,7 +453,7 @@ public class Problem extends BaseTest {
 				System.out.println("Switched back to main window with title: " + driver.getTitle());
 				
 				//Print set value
-				String assignToalue = driver.findElement(By.xpath("")).getText();       //-----------------------Add entered value in Original task
+				String assignToalue = driver.findElement(By.xpath("//*[@id='sys_display.problem.assigned_to']")).getText();   //-------entered value in Assign To
 				
 				test.log(Status.INFO, "Selected Assign to field value is - " +assignToalue);
 				logger.info("Selected Assign to field value is - " +assignToalue);
@@ -465,7 +471,7 @@ public class Problem extends BaseTest {
 	        test.log(Status.INFO, "Verifying State field and value");
 	        
 			String stateField = driver.findElement(By.xpath("//*[@id='label.problem.state']/label/span[2]")).getAttribute("value"); 
-			if (stateField.equals(problemdata[0][0])) {                                   // -----------------add excel field name path
+			if (stateField.equals(Excel[11][0])) {                                    //-----------------add excel field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'State' field is visible");
 				logger.info("'State' field visible");
@@ -479,7 +485,7 @@ public class Problem extends BaseTest {
 			Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
 			String stateValue = state.getFirstSelectedOption().getText();
 
-			if (stateValue.equals(problemdata[0][0])) {                                //-----------------------add excel field value "New"
+			if (stateValue.equals(Excel[13][0])) {                                //-----------------------add excel field value "New"
 				test.log(Status.INFO, "State is - "+stateValue);
 			logger.info("State is - "+stateValue);
 				AssertJUnit.assertTrue(true); //test pass
@@ -489,6 +495,7 @@ public class Problem extends BaseTest {
 			}
 		}
 
+		String value;
 		@Test
 		public void submitForm() {
 
@@ -502,14 +509,14 @@ public class Problem extends BaseTest {
 			test.log(Status.INFO, "Problem number is - " + value);
 			logger.info("Problem number is - " + value);
 
-			// Click on Save UI action
-			test.log(Status.INFO, "Click on Save UI action");
+			// Click on Submit UI action
+			test.log(Status.INFO, "Click on Submit UI action");
 			driver.findElement(By.xpath("//*[@id='sysverb_insert']")).click();
 
 		}
 
 		@Test
-		public void reOpenForm() {
+		public void reOpenForm() throws InterruptedException {
 
 			logger.info("Reopen submitted record from Problem table");
 			test = ExtentReportManager.createTest("Reopen submitted record from Problem table");
@@ -517,7 +524,8 @@ public class Problem extends BaseTest {
 			// Search Problem record on table
 			test.log(Status.INFO, "Search Problem number");
 			WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
-			globalSearchBox.sendKeys(value);
+			globalSearchBox.sendKeys(value);                                                             //------------------Get Problem number from above method
+
 			Thread.sleep(1000);
 			globalSearchBox.sendKeys(Keys.ENTER);
 			Thread.sleep(2000);
@@ -551,7 +559,7 @@ public class Problem extends BaseTest {
 			Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
 			String stateValue = state.getFirstSelectedOption().getText();
 
-			if (stateValue.equals(problemdata[0][0])) {                                -----------------------add excel field value "Assess"
+			if (stateValue.equals(Excel[14][0])) {                               // -----------------------add excel field value "Assess"
 				test.log(Status.INFO, "State is - "+stateValue);
 			logger.info("State is - "+stateValue);
 				AssertJUnit.assertTrue(true); //test pass
@@ -571,9 +579,8 @@ public class Problem extends BaseTest {
 			// Click on confirm UI action
 			WebElement confirmUI = driver.findElement(By.xpath("//*[@id=\"move_to_rca\"]"));
 			String uiAction = confirmUI.getText();
-			boolean uiAction = confirmUI.isDisplayed();
-			if (uiAction) {
-				
+			boolean uiAction1 = confirmUI.isDisplayed();
+			if (uiAction1) {
 				confirmUI.click();
 				test.log(Status.INFO, "Confirm UI action is visible");
 				logger.info("Confirm UI action is visible");
@@ -587,7 +594,7 @@ public class Problem extends BaseTest {
 			Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
 			String stateValue = state.getFirstSelectedOption().getText();
 
-			if (stateValue.equals(Excel[0][0])) {                                -----------------------add excel state value "RCA"
+			if (stateValue.equals(Excel[15][0])) {                                //-----------------------add excel state value "RCA"
 				test.log(Status.INFO, "State is - "+stateValue);
 			logger.info("State is - "+stateValue);
 				AssertJUnit.assertTrue(true); //test pass
@@ -612,21 +619,21 @@ public class Problem extends BaseTest {
 			fixUI.click();
 			
 			//Close open dialog box- Refresh the current page
-	        driver.navigate().refresh();
+	        driver.navigate().refresh();                                                                            //Check refresh page alternate to close opened dialogue
 			Thread.sleep(2000);
 			
 			// Click on close opened mandatory field window
 			WebElement element = driver.findElement(By.xpath("//*[@id='start_fix_dialog_form_view']/div/div/header/button"));
 			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;jsExecutor.executeScript("arguments[0].click();",element);
-			
-			
-			//Verify State once click on Confirm UI action
+		
+			//Verify State once click on Fix UI action
 			Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
 			String stateValue = state.getFirstSelectedOption().getText();
 
-			if (stateValue.equals(Excel[0][0])) {                                -----------------------add excel state value "Fix in Progress"
-				test.log(Status.INFO, "State is - "+stateValue ", Problem is not fixed");
-			logger.info("State is - "+stateValue);
+
+			if (stateValue.equals(Excel[16][0])) {                                //-----------------------add excel state value "Fix in Progress"
+				test.log(Status.INFO, "State is - "+stateValue+ ", Problem is not fixed without filled mandatory field");
+			    logger.info("State is - "+stateValue+ ", Problem is not fixed without filled mandatory field");
 				AssertJUnit.assertTrue(true); //test pass
 			} else {
 				logger.info("State is Fixed");
@@ -650,7 +657,7 @@ public class Problem extends BaseTest {
 					"//*[@id='problem.cause_notes_ifr']"));driver.switchTo().frame(frameElement);driver.findElement(By.xpath("//*[@id=\"tinymce\"]")).sendKeys("Test Cause Notes");
 
 			// Fill Fix Notes
-					logger.info("Fill Fix Notes");
+			logger.info("Fill Fix Notes");
 			driver.switchTo().parentFrame();driver.findElement(By.xpath("//*[@id=\"tabs2_section\"]/span[3]/span[1]")).click();Thread.sleep(2000);
 			WebElement frameElement1 = driver.findElement(By.xpath(
 					"//*[@id='problem.fix_notes_ifr']"));driver.switchTo().frame(frameElement1);driver.findElement(By.xpath("//*[@id=\"tinymce\"]")).sendKeys("Test Fix Notes"); // ----------Failed
@@ -676,7 +683,7 @@ public class Problem extends BaseTest {
 			Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
 			String stateValue = state.getFirstSelectedOption().getText();
 
-			if (stateValue.equals(problemdata[0][0])) {                               // -----------------------add excel state value "Fix in Progress"
+			if (stateValue.equals(Excel[16][0])) {                                //-----------------------add excel state value "Fix in Progress"
 				test.log(Status.INFO, "State is - "+stateValue);
 			logger.info("State is - "+stateValue);
 				AssertJUnit.assertTrue(true); //test pass
@@ -713,7 +720,7 @@ public class Problem extends BaseTest {
 			Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
 			String stateValue = state.getFirstSelectedOption().getText();
 
-			if (stateValue.equals(problemdata[0][0])) {                               // -----------------------add excel state value "Resolve"
+			if (stateValue.equals(Excel[17][0])) {                                //-----------------------add excel state value "Resolve"
 				test.log(Status.INFO, "State is - "+stateValue);
 			logger.info("State is - "+stateValue);
 				AssertJUnit.assertTrue(true); //test pass
@@ -726,7 +733,7 @@ public class Problem extends BaseTest {
 			Select resolutionCode = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.resolution_code']")));
 			String selectedCode = resolutionCode.getFirstSelectedOption().getText();
 
-			if (selectedCode.equals(problemdata[0][0])) {                                //-----------------------add excel state value "Fix Applied"
+			if (selectedCode.equals(Excel[19][1])) {                                //-----------------------add excel state value "Fix Applied"
 				test.log(Status.INFO, "Resolution code is - "+selectedCode);
 			logger.info("Resolution code is - "+selectedCode);
 				AssertJUnit.assertTrue(true); //test pass
@@ -763,8 +770,8 @@ public class Problem extends BaseTest {
 			Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
 			String stateValue = state.getFirstSelectedOption().getText();
 
-			Assert.assertEquals(stateValue, Excel[0][0], "State is - "+stateValue); -----------------------add excel state value "Root Case Analysis"
-			if (stateValue.equals(Excel[0][0])) {                                -----------------------add excel state value "Root Case Analysis"
+//			Assert.assertEquals(stateValue, Excel[0][0], "State is - "+stateValue); -----------------------add excel state value "Root Case Analysis"
+			if (stateValue.equals(Excel[15][0])) {                               // -----------------------add excel state value "Root Case Analysis"
 				test.log(Status.INFO, "State is - "+stateValue);
 			    logger.info("State is - "+stateValue);
 				AssertJUnit.assertTrue(true); //test pass
@@ -775,6 +782,10 @@ public class Problem extends BaseTest {
 			}
 			
 		}
+		
+ //add flow for Cancel without fill mandatory details
+		
+		
 		
 		@Test
 		public void cancelPRB() {
@@ -798,97 +809,227 @@ public class Problem extends BaseTest {
 			}
 			Thread.sleep(2000);
 			
-	//Remaining to add assertions		
-		
+			// Click on close opened mandatory field window
+			WebElement element = driver.findElement(By.xpath("//*[@id='tabs2_section']/span[4]/span[1]"));               //Check xpath
+			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;jsExecutor.executeScript("arguments[0].click();",element);
 			
+			//Close open dialog box- Refresh the current page
+	        driver.navigate().refresh();                                                                            //Check refresh page alternate to close opened dialogue
+			Thread.sleep(2000);
 			
-		// Click on close opened mandatory field window
-		WebElement element = driver.findElement(By.xpath("//*[@id='tabs2_section']/span[4]/span[1]"));               //Check xpath
-		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;jsExecutor.executeScript("arguments[0].click();",element);
+			// Verify State of problem if click on Cancel UI action -->Complete
+			Select stateCancel = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
+			String changedState = stateCancel.getFirstSelectedOption().getText();
+			
+			Assert.assertEquals("Root Case Analysis", changedState, "State is not changed, due to mandatory field 'Close notes' not filled");
 
-		Thread.sleep(2000);
+
 		// Fill mandatory fields for Cancel ----> Close notes
+		//Go to tab
 		driver.findElement(By.xpath("//*[@id='cancel_dialog_form_view']/div/div/header/button")).click();
 
+		//Fill Close notes
+		logger.info("Fill mandatory field- Close notes");
 		driver.findElement(By.xpath("//*[@id='problem.close_notes']")).sendKeys("Test Close Notes");
 
 		// Click on Cancel
+		logger.info("Click on Cancel UI action");
 		driver.findElement(By.xpath("//*[@id='cancel_problem']")).click();
+		
+		
 		// Verify State of problem if click on Cancel UI action -->Complete
-		Select stateCmplt = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
-		String changedState = stateCmplt.getFirstSelectedOption().getText();
-		if(changedState.equals("Closed"))
-		{
-			System.out.println("State is Closed");
-		}else
-		{
-			System.out.println("State is not Closed");
+		Thread.sleep(2000);
+		Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
+		String stateValue = state.getFirstSelectedOption().getText();
+
+//		Assert.assertEquals(stateValue, Excel[0][0], "State is - "+stateValue); -----------------------add excel state value "Closed"
+		if (stateValue.equals(Excel[18][0])) {                                //-----------------------add excel state value "Closed"
+			test.log(Status.INFO, "State is - "+stateValue);
+		    logger.info("State is - "+stateValue);
+			AssertJUnit.assertTrue(true); //test pass
+		} 
+		else{
+			logger.info("State is not Closed");
+			AssertJUnit.assertTrue(false);//test fail
 		}
+		
+		// Verify Resolution code --> Canceled
+		Select resolutionCode = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.resolution_code']")));
+		String selectedCode = resolutionCode.getFirstSelectedOption().getText();
 
-		// Verify Resolution code
-		Select resolutionCode1 = new Select(
-				driver.findElement(By.xpath("//*[@id='sys_readonly.problem.resolution_code']")));
-		String resolution = resolutionCode1.getFirstSelectedOption().getText();
-		if(resolution.equals("Canceled"))
-		{
-			System.out.println("Resolution code is Canceled");
-		}else
-		{
-			System.out.println("Resolution code is not Canceled");
+		if (selectedCode.equals(Excel[19][2])) {                                //-----------------------add excel state value "Canceled"
+			test.log(Status.INFO, "Resolution code is - "+selectedCode);
+		logger.info("Resolution code is - "+selectedCode);
+			AssertJUnit.assertTrue(true); //test pass
+		} 
+		else {
+			logger.info("Resolution code is not Canceled");
+			AssertJUnit.assertTrue(false);//test fail
 		}
-		// ---------------------------
-		// Click on Re-Analyze UI action
-		driver.findElement(By.xpath("//*[@id='re_analyze']")).click();
+	
+	}	
+		
+		
+		@Test
+		public void reAnalyzeOnceAgain() {
 
-		// Verify State of problem if click on Re-Analyze UI action -->Root Case
-		// Analysis
-		Select stateRCA2 = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
-		String stateText = stateRCA2.getFirstSelectedOption().getText();
-		if(stateText.equals("Root Cause Analysis"))
-		{
-			System.out.println("State is Root Cause Analysis");
-		}else
-		{
-			System.out.println("State is not Root Cause Analysis");
+			logger.info("Verification of State when Cancelled Problem is Re-Analyzed");
+			test = ExtentReportManager.createTest("Verification of State when Cancelled Problem is Re-Analyzed");
+
+			WebElement reAnalyzeUI = driver.findElement(By.xpath("//*[@id='re_analyze']"));
+			String uiAction = reAnalyzeUI.getText();
+			boolean uiActionDisply = reAnalyzeUI.isDisplayed();
+			if (uiActionDisply) {
+				reAnalyzeUI.click();
+				test.log(Status.INFO, "Re-Analyze UI action is visible");
+				logger.info("Re-Analyze UI action is visible");
+				AssertJUnit.assertTrue(true); //test pass
+			} 
+			else {
+				logger.info("Re-Analyze UI action is not visible");
+				AssertJUnit.assertTrue(false);//test fail
+			}
+
+		// Verify State of problem if click on Re-Analyze UI action -->Root Case Analysis
+			Thread.sleep(2000);
+			Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
+			String stateValue = state.getFirstSelectedOption().getText();
+
+//			Assert.assertEquals(stateValue, Excel[0][0], "State is - "+stateValue); -----------------------add excel state value "Root Case Analysis"
+			if (stateValue.equals(Excel[15][0])) {                                //-----------------------add excel state value "Root Case Analysis"
+				test.log(Status.INFO, "State is changed to - "+stateValue);
+			    logger.info("State is changed to - "+stateValue);
+				AssertJUnit.assertTrue(true); //test pass
+			} 
+			else{
+				logger.info("State is not changed to Root Case Analysis");
+				AssertJUnit.assertTrue(false);//test fail
+			}
+			
 		}
+		
+		
+		@Test
+		public void cloasedState() {
 
-		// -------------------
-		// **Closing Problem
-		// Click on Fix UI action
-		driver.findElement(By.xpath("//*[@id=\"move_to_fix_in_progress\"]")).click();
+			logger.info("Verify State once Problem is Closed");
+			test = ExtentReportManager.createTest("Verify State once Problem is Closed");
+			
+			// Click on Fix UI action
+			WebElement fixUI = driver.findElement(By.xpath("//*[@id='move_to_fix_in_progress']"));
+			String uiAction = fixUI.getText();
+			boolean uiActionDisply = fixUI.isDisplayed();
+			if (uiActionDisply) {
+				fixUI.click();
+				test.log(Status.INFO, "Fix UI action is visible");
+				logger.info("Fix UI action is visible");
+				AssertJUnit.assertTrue(true); //test pass
+			} else {
+				logger.info("Fix UI action is not visible");
+				AssertJUnit.assertTrue(false);//test fail
+			}
+			
+			//Verify State once click on Fix UI action
+			Thread.sleep(2000);
+			Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
+			String stateValue = state.getFirstSelectedOption().getText();
 
-		// Click on Resolve UI action
-		driver.findElement(By.xpath("//*[@id=\"move_to_resolved\"]")).click();
+			if (stateValue.equals(Excel[16][0])) {                                //-----------------------add excel state value "Fix in Progress"
+				test.log(Status.INFO, "State is - "+stateValue);
+			logger.info("State is - "+stateValue);
+				AssertJUnit.assertTrue(true); //test pass
+			} 
+			else {
+				logger.info("State is not Fix in Progress");
+				AssertJUnit.assertTrue(false);//test fail
+			}
+		
 
-		// Click on Complete UI action
-		driver.findElement(By.xpath("//*[@id=\"move_to_closed\"]")).click();
+			//Click on Resolved UI action
+			WebElement resolveUI = driver.findElement(By.xpath("//*[@id='move_to_resolved']"));
+//			String uiAction = resolveUI.getText();
+			boolean uiActionDisply1 = resolveUI.isDisplayed();
+			if (uiActionDisply1) {
+				resolveUI.click();
+				test.log(Status.INFO, "Resolve UI action is visible");
+				logger.info("Resolve UI action is visible");
+				AssertJUnit.assertTrue(true); //test pass
+			} 
+			else {
+				logger.info("Resolve UI action is not visible");
+				AssertJUnit.assertTrue(false);//test fail
+			}
+			
+			//Verify State once click on Resolve UI action
+			Thread.sleep(2000);
+			Select state1 = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
+			String stateValue1 = state1.getFirstSelectedOption().getText();
 
-		// Verify State is Closed
-		Select stateClosed = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
-		String stateTxt = stateClosed.getFirstSelectedOption().getText();
-		if(stateTxt.equals("Closed"))
-		{
-			System.out.println("State is Closed");
-		}else
-		{
-			System.out.println("State is not Closed");
-		}
+			if (stateValue1.equals(Excel[23][0])) {                                //-----------------------add excel state value "Resolve"
+				test.log(Status.INFO, "State is - "+stateValue1);
+			logger.info("State is - "+stateValue1);
+				AssertJUnit.assertTrue(true); //test pass
+			} 
+			else {
+				logger.info("State is not Resolved");
+				AssertJUnit.assertTrue(false);//test fail
+			}
+			// Verify Resolution code
+			Select resolutionCode = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.resolution_code']")));
+			String selectedCode = resolutionCode.getFirstSelectedOption().getText();
 
-		// Verify Resolution code is Fixed Applied
-		Select resolutionCode2 = new Select(
-				driver.findElement(By.xpath("//*[@id='sys_readonly.problem.resolution_code']")));
-		String selectedCode1 = resolutionCode2.getFirstSelectedOption().getText();
-		if(selectedCode1.equals("Fix Applied"))
-		{
-			System.out.println("Resolution code is Fix Applied");
-		}else
-		{
-			System.out.println("Resolution code is not Fix Applied");
+			if (selectedCode.equals(Excel[19][1])) {                                //-----------------------add excel state value "Fix Applied"
+				test.log(Status.INFO, "Resolution code is - "+selectedCode);
+			logger.info("Resolution code is - "+selectedCode);
+				AssertJUnit.assertTrue(true); //test pass
+			} 
+			else {
+				logger.info("Resolution code is not Fix Applied");
+				AssertJUnit.assertTrue(false);//test fail
+			}
+			
+	//Click on Complete UI action
+			WebElement completeUI = driver.findElement(By.xpath("//*[@id='move_to_closed']"));
+//			String uiAction = completeUI.getText();
+			boolean uiActionDisplyed2 = completeUI.isDisplayed();
+			if (uiActionDisplyed2) {
+				completeUI.click();
+				test.log(Status.INFO, "Complete UI action is visible");
+				logger.info("Complete UI action is visible");
+				AssertJUnit.assertTrue(true); //test pass
+			} 
+			else {
+				logger.info("Complete UI action is not visible");
+				AssertJUnit.assertTrue(false);//test fail
+			}
+			
+			//Verify State once click on Resolve UI action
+			Thread.sleep(2000);
+			Select closedState = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
+			String closedStateValue = closedState.getFirstSelectedOption().getText();
 
-		}
+			if (closedStateValue.equals(Excel[18][0])) {                                //-----------------------add excel state value "Closed"
+				test.log(Status.INFO, "State is - "+closedStateValue);
+			logger.info("State is - "+closedStateValue);
+				AssertJUnit.assertTrue(true); //test pass
+			} 
+			else {
+				logger.info("State is not Closed");
+				AssertJUnit.assertTrue(false);//test fail
+			}
+			// Verify Resolution code -->Fix Applied
+			Select resolutionCode1 = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.resolution_code']")));
+			String selectedCode1 = resolutionCode1.getFirstSelectedOption().getText();
+
+			if (selectedCode1.equals(Excel[19][1])) {                                //-----------------------add excel state value "Fix Applied"
+				test.log(Status.INFO, "Resolution code is - "+selectedCode1);
+			logger.info("Resolution code is - "+selectedCode1);
+				AssertJUnit.assertTrue(true); //test pass
+			} 
+			else {
+				logger.info("Resolution code is not Fix Applied");
+				AssertJUnit.assertTrue(false);//test fail
+			}
+		}	
 
 	}
-
-	}
-
-}

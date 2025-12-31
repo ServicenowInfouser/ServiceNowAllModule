@@ -32,7 +32,7 @@ public class NormalChange extends BaseTest {
 	//Object[][] changedata = DataImport.getData("Change");
 	
 	private Navigator navigator = new Navigator(driver);
-	private Impersonation impersonation = new Impersonation(driver);;
+	private Impersonation impersonation = new Impersonation(driver);
     
     @Test(description = "Verification of Navigate to Change list")
     public void navigateToChangeList() throws InterruptedException {

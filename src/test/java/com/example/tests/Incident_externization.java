@@ -26,6 +26,21 @@ public class Incident_externization extends BaseTest {
 	
 	private WebDriver driver = DriverManager.getDriver();
 	private JavascriptExecutor jse;
+	
+	public void screenshot() {
+		// full page screenshots  
+        TakesScreenshot ts = (TakesScreenshot)driver;    
+        File sourcefile = ts.getScreenshotAs(OutputType.FILE);
+
+        // Generate timestamp
+        String timestamp2 = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+
+        //  Target file to store 
+        File targetfile = new File(System.getProperty("user.dir")+"\\screenshots\\fullpage" + timestamp2 +".png");
+
+        // copy sourcefile to targate file
+        sourcefile.renameTo(targetfile);
+	}
 
     @Test
     public void create_Incident () throws InterruptedException {

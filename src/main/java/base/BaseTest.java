@@ -31,7 +31,9 @@ public class BaseTest {
 		extent = ExtentReportManager.getReportInstance();
 		
 		driver = DriverManager.getDriver(); 
+		
 		loginPage = new LoginPage(driver); 
+		driver.get(baseUrl);
 		
 		loginPage.login(Config.username(), Config.password());
 		
