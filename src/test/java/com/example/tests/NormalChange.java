@@ -20,6 +20,7 @@ import base.Config;
 import base.DriverManager;
 import base.Impersonation;
 import base.Navigator;
+import junit.framework.Assert;
 import utils.DataImport;
 import utils.ExtentReportManager;
 
@@ -28,11 +29,21 @@ public class NormalChange extends BaseTest {
 	private WebDriver driver = DriverManager.getDriver(); 
 	String changeNo;
 	private JavascriptExecutor jse;
+	String firstAprovalUser=null; 
 		
-	//Object[][] changedata = DataImport.getData("Change");
+	Object[][] changedata = DataImport.getData("Normal_Change");
 	
 	private Navigator navigator = new Navigator(driver);
-	private Impersonation impersonation = new Impersonation(driver);
+	private Impersonation impersonation = new Impersonation(driver);;
+	
+	/*
+	 * @expected:User provided value
+	 * @actual: UI value
+	 */
+	public static void compareTwoStringsEquals(String expected,String actual) {
+		Assert.assertEquals(expected, actual);
+		
+	}
     
     @Test(description = "Verification of Navigate to Change list")
     public void navigateToChangeList() throws InterruptedException {
@@ -51,42 +62,43 @@ public class NormalChange extends BaseTest {
         
         Thread.sleep(4000);
         //Click on Models tab
-        WebElement models=driver.findElement(By.xpath("//*[@id=\"change_models\"]"));
+        WebElement models=driver.findElement(By.xpath("//*[@id='change_models']"));
         models.click();
         
         test.info("Clicking on the Normal change widget");
         Thread.sleep(5000);
+        
         //Click on Normal widget
-        WebElement NormalChange=driver.findElement(By.xpath("//*[@id=\"007c4001c343101035ae3f52c1d3aeb2\"]/div[1]/div[1]/span"));
+        WebElement NormalChange=driver.findElement(By.xpath("//*[@id='007c4001c343101035ae3f52c1d3aeb2']/div[1]/div[1]/span"));
         NormalChange.click();
         test.pass("Navigated to the New change page");
     }
     
     @Test(description = "Verification of Creation of change", dependsOnMethods = "navigateToChangeList")
-    public void createChange() throws InterruptedException {
+    public void createChange() throws InterruptedException 
+    {
+    	String short_description = changedata[0][0].toString();
+    	
     	test = ExtentReportManager.createTest("Verification of Navigating to Change list view");
+    	
+    	test.info("Verification of State");
+    	Thread.sleep(2000);
+    	String state1=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='New']")).getText();
+    	System.out.println("State is:"+state1);
+    	compareTwoStringsEquals("New", state1);
+    	
     	// Copy Change record number
         WebElement inputElement = driver.findElement(By.xpath("//input[@id='change_request.number']"));
         changeNo = inputElement.getAttribute("value");
         System.out.println("Change Number is:"+changeNo);
         
-        test.info("Verification on fields on change record");
-        // Set Group to Assignment group field
-        WebElement Assignmentgroup = driver.findElement(By.xpath("//*[@id=\"sys_display.change_request.assignment_group\"]"));
-        Assignmentgroup.sendKeys("Application Development" + Keys.ENTER);
-        
-        Thread.sleep(2000);
-        // Set user to Assign to field
-        WebElement Assignto = driver.findElement(By.xpath("//*[@id=\"sys_display.change_request.assigned_to\"]"));
-        Assignto.sendKeys("Arya Hajarha" + Keys.ENTER);
-        
         Thread.sleep(2000);
         // Enter short description
-        driver.findElement(By.xpath("//*[@id=\"change_request.short_description\"]")).sendKeys("Create NormalChannge");
-
+        driver.findElement(By.xpath("//*[@id='change_request.short_description']")).sendKeys(short_description);
+    
         test.info("verification of Submit UI Action");
         // Click on submit
-        driver.findElement(By.xpath("//*[@id=\"sysverb_insert\"]")).click();
+        driver.findElement(By.xpath("//*[@id='sysverb_insert']")).click();
         
         test.pass("Change record created : "+changeNo);
         Reporter.getCurrentTestResult().setAttribute("TestData", changeNo);
@@ -119,49 +131,90 @@ public class NormalChange extends BaseTest {
     }
     
     @Test(description = "Verification of Approval Generation", dependsOnMethods = "openChange")
-    public void requestingApproval() throws InterruptedException {
+    public void requestingApproval() throws InterruptedException 
+    {
+    	String Assignmentgroup = changedata[0][1].toString();
+    	String Assignto = changedata[0][2].toString();
     	Thread.sleep(10000);
     	
     	test = ExtentReportManager.createTest("Verification of Request Approval UI action");
-    	//Click on RequestApproval UI action 
-    	test.info("Click on the Request Approval UI action");
+    	//Click on RequestApproval UI action without fill Assignment group and Assign to fields
+    	test.info("Click on the Request Approval UI action without fill Assignment group and Assign to fields");
         WebElement RequestApproval=driver.findElement(By.xpath("//*[@id='state_model_request_assess_approval']"));
         RequestApproval.click();
+        
+       //Verification of Error massage
+        test.info("Verification of Error massage");
+        Thread.sleep(2000);
+        String errorMassage1=driver.findElement(By.xpath("//*[@id=\"output_messages\"]/div/div/span[2]")).getText();
+        System.out.println("Error massage is :"+errorMassage1);
+
+        // Set Group to Assignment group field
+        test.info("Verification on fields on change record");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id='sys_display.change_request.assignment_group']")).sendKeys(Assignmentgroup);
+        
+       // Set user to Assign to field
+        test.info("Set user to Assign to field");
+        Thread.sleep(2000);
+        driver.findElement(By.xpath("//*[@id='sys_display.change_request.assigned_to']")).sendKeys(Assignto);
+        
+      //Click on RequestApproval UI action after fill Assignment group and Assign to fields
+    	test.info("Click on the Request Approval UI action after fill Assignment group and Assign to fields");
+    	Thread.sleep(2000);
+        WebElement RequestApproval2=driver.findElement(By.xpath("//*[@id='state_model_request_assess_approval']"));
+        RequestApproval2.click();
 
         //Click on the Approvers tab
         test.info("Go to the Approval Related list");
-    	WebElement ApproversTab=driver.findElement(By.xpath("//*[@id=\"tabs2_list\"]/span[3]/span/span[2]"));
+    	WebElement ApproversTab=driver.findElement(By.xpath("//*[@id='tabs2_list']/span[3]/span/span[2]"));
         ApproversTab.click();
         
+        test.info("Verification of State after Click on the Approvers tab");
+        String state2=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='Assess']")).getText();
+    	System.out.println("State is:"+state2);
+    	compareTwoStringsEquals("Assess", state2);
+        
         //Approval user
-        List<WebElement> Approvers=driver.findElements(By.xpath("//*[@id=\"change_request.sysapproval_approver.sysapproval_table\"]/tbody/tr/td[4]"));
+        List<WebElement> Approvers=driver.findElements(By.xpath("//*[@id='change_request.sysapproval_approver.sysapproval_table']/tbody/tr/td[4]"));
         Thread.sleep(2000);
-        System.out.println(Approvers.size());
-        for (WebElement Users : Approvers) {
-        	test.info("Approver users list" + Users.getText());
-        	System.out.println(Users.getText());
-        	Reporter.getCurrentTestResult().setAttribute("TestData", Users.getText());
-       }
-       test.pass("Approvals generated successfully");
+        
+    
+        if(Approvers.isEmpty()) {
+        	System.out.println("No user found on the page.");
+        }
+        System.out.println("Total user found: "+Approvers.size());	
+        	
+        for(int i=0;i<Approvers.size();i++) {
+        	String userName=Approvers.get(i).getText().trim();
+        	test.info("Approver users list" + Approvers.get(i).getText().trim());
+        	System.out.println("User "+ (i+1)+ ":"+userName);
+        	//store first userName
+        	if(i==0) {
+        		firstAprovalUser=userName;
+        	}
+        }
+        System.out.println("First User Name is: "+firstAprovalUser);
+        test.pass("Approvals generated successfully");
     }
     
     
     @Test(description = "Verification of User Impersonation", dependsOnMethods = "requestingApproval")
     public void impersonateUser() throws InterruptedException {
-    	
+    	Thread.sleep(5000);
     	jse = (JavascriptExecutor) driver;
     	
     	test = ExtentReportManager.createTest("Verification of Approving the approval by Impersonating user");
     	test.info("Impersonation for first Approval");
     	//impersonation = new Impersonation(driver);
-    	impersonation.startImpersonation("Manifah Masood", jse);
+    	impersonation.startImpersonation(firstAprovalUser, jse);
 
     	Thread.sleep(2000);
         driver.get(baseUrl + "/sysapproval_approver_list");
         Thread.sleep(2000);
         
         test.info(" Search Change record in Approval table");
-        WebElement Approvals=driver.findElement(By.xpath("//select[@class=\"form-control default-focus-outline\"]"));
+        WebElement Approvals=driver.findElement(By.xpath("//select[@class='form-control default-focus-outline']"));
         Approvals.click();
         Thread.sleep(3000);
         
@@ -174,8 +227,8 @@ public class NormalChange extends BaseTest {
         Thread.sleep(2000);
         globalSearchBox2.sendKeys(Keys.ENTER);
         
-        WebElement approversearch=driver.findElement(By.xpath("//*[@id=\"sysapproval_approver_table\"]/thead/tr[2]/td[4]/div/div/div/input"));
-        approversearch.sendKeys("Manifah Masood");
+        WebElement approversearch=driver.findElement(By.xpath("//*[@id='sysapproval_approver_table']/thead/tr[2]/td[4]/div/div/div/input"));
+        approversearch.sendKeys(firstAprovalUser);
         approversearch.sendKeys(Keys.ENTER);
        
         test.info("Opening Approval Change record");
@@ -183,7 +236,7 @@ public class NormalChange extends BaseTest {
         requestedbutton.click();
     
         test.info("Appriving the Approval");
-        driver.findElement(By.xpath("//*[@id=\"approve\"]")).click();
+        driver.findElement(By.xpath("//*[@id='approve']")).click(); 
         Thread.sleep(2000);
     	
     	test.info("End Impersonation");
@@ -199,6 +252,7 @@ public class NormalChange extends BaseTest {
         //Opening Change record After 1st Approval
     	driver.get(Config.baseUrl() + "/change_request_list");
     	Thread.sleep(2000);
+    	
     	// Search Change record on table
         WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
         globalSearchBox.sendKeys(changeNo);
@@ -214,13 +268,12 @@ public class NormalChange extends BaseTest {
                 break;
             }
         }
-        
+    	
         System.out.println("Opening the Change record after 1St Approval");
-       
         //Verification of 2nd Approval users
         test.info("2nd Approval users are");
         Thread.sleep(2000);
-        List<WebElement> Approvers2=driver.findElements(By.xpath("//*[@id=\"change_request.sysapproval_approver.sysapproval_table\"]/tbody/tr/td[4]"));
+        List<WebElement> Approvers2=driver.findElements(By.xpath("//*[@id='change_request.sysapproval_approver.sysapproval_table']/tbody/tr/td[4]"));
         Thread.sleep(2000);
         System.out.println("Count of Approvers users are:"+Approvers2.size());
         for (WebElement Users2 : Approvers2) 
@@ -230,10 +283,10 @@ public class NormalChange extends BaseTest {
         }
         
         //Verification of State after 1st Approval Approve
-        WebElement State1stApp=driver.findElement(By.xpath("//*[@id=\"change_request.state\"]"));
-        String stateafield3=State1stApp.getAttribute("value");
-        System.out.println(State1stApp.getTagName());
-        
+        test.info("Verification of State after 1st Approval Approve");
+    	String state3=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='Authorize']")).getText();
+    	System.out.println("State is:"+state3);
+        compareTwoStringsEquals("Authorize", state3);
         test.pass("Second Approval is generated");
     }
     
@@ -252,7 +305,7 @@ public class NormalChange extends BaseTest {
         Thread.sleep(2000);
         
         test.info(" Search Change record in Approval table");
-        WebElement Approvals=driver.findElement(By.xpath("//select[@class=\"form-control default-focus-outline\"]"));
+        WebElement Approvals=driver.findElement(By.xpath("//select[@class='form-control default-focus-outline']"));
         Approvals.click();
         Thread.sleep(3000);
         
@@ -265,7 +318,7 @@ public class NormalChange extends BaseTest {
         Thread.sleep(2000);
         globalSearchBox2.sendKeys(Keys.ENTER);
         
-        WebElement approversearch=driver.findElement(By.xpath("//*[@id=\"sysapproval_approver_table\"]/thead/tr[2]/td[4]/div/div/div/input"));
+        WebElement approversearch=driver.findElement(By.xpath("//*[@id='sysapproval_approver_table']/thead/tr[2]/td[4]/div/div/div/input"));
        	approversearch.sendKeys("Ron Kettering");
        	approversearch.sendKeys(Keys.ENTER);
        
@@ -273,7 +326,7 @@ public class NormalChange extends BaseTest {
        	WebElement requestedbutton=driver.findElement(By.xpath("//*[@class='linked formlink']"));
        	requestedbutton.click();
     
-       	driver.findElement(By.xpath("//*[@id=\"approve\"]")).click();
+       	driver.findElement(By.xpath("//*[@id='approve']")).click();
        	Thread.sleep(2000);
     	
     	test.info("End Impersonation");
@@ -311,20 +364,22 @@ public class NormalChange extends BaseTest {
         }
         System.err.println("Opening the Change record after 2nd Approval");
         //Verification of State after 2nd Approval
-        WebElement verificationOfState=driver.findElement(By.xpath("//*[@id=\"change_request.state\"]"));
-        String stateafter2ndApprovalApprove=verificationOfState.getAttribute("value");
-        System.out.println(stateafter2ndApprovalApprove);
-
+        test.info("Verification of State after 2nd Approval");
+    	String state4=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='Scheduled']")).getText();
+    	System.out.println("State is:"+state4);
+        compareTwoStringsEquals("Scheduled", state4);
         test.info("Impliment UI Action");
+        
         //Click on Impliment UI Action
         Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"state_model_move_to_implement\"]")).click();    
+        driver.findElement(By.xpath("//*[@id='state_model_move_to_implement']")).click();    
         
         test.info("State verification after Click on Impliment UI Action");
         //Verification of State after Click on Impliment UI Action
-        WebElement StateAfterImplimentButton=driver.findElement(By.xpath("//*[@id=\"change_request.state\"]"));
-        String stateafterclickonONImplimentUIAction=StateAfterImplimentButton.getAttribute("value");
-        System.out.println(stateafterclickonONImplimentUIAction);
+        test.info("Verification of State after Click on Impliment UI Action");
+    	String state5=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='Implement']")).getText();
+    	System.out.println("State is:"+state5);
+    	compareTwoStringsEquals("Implement", state5);
     }
     
     @Test(description = "Verification of 1st Change Task", dependsOnMethods = "implimentUIAction")
@@ -332,25 +387,23 @@ public class NormalChange extends BaseTest {
     {
     	test = ExtentReportManager.createTest("Verification of Change Task records ");
     	test.info("Opening 1st Change Task record");
-    	
     	Thread.sleep(2000);
-        driver.findElement(By.xpath("//*[@id=\"tabs2_list\"]/span[4]/span")).click();  
+        driver.findElement(By.xpath("//*[@id='tabs2_list']/span[4]/span")).click();  
         System.out.println("Opening 1st Change Task record"); 
-        
         Actions action= new Actions(driver);
-        
         WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(20));
-
+        //Opening 1st Change Task record
         By changeTaskLocator = By.xpath("(//*[contains(@id,'row_change_request.change_task.change_request')]/td[3]/a)[1]");
-
         driver.findElement(changeTaskLocator).click();
         
         test.info("State verification");
         //Verification of State
-        WebElement veriStaCT=driver.findElement(By.xpath("//select[@id=\"change_task.state\"]"));
-        System.out.println("State is :"+veriStaCT.getText());
+        String scTState1=driver.findElement(By.xpath("//*[@id='change_task.state']/option[text()='Open']")).getText();
+        System.out.println("State is :"+scTState1);
+        compareTwoStringsEquals("Open", scTState1);
         
      // Copy Change Task record number
+        test.info("Copy Change Task record number");
         WebElement number = driver.findElement(By.xpath("//input[@id='change_task.number']"));
           String copyNumber = number.getAttribute("value");
           System.out.println("Change Task number:"+ copyNumber);
@@ -358,33 +411,36 @@ public class NormalChange extends BaseTest {
         
         Thread.sleep(5000);
       //Click on Close Task UI Action
+        test.info("Verification of Close Task UI Action");
         WebElement closeTAsk=driver.findElement(By.xpath("//*[@id='change_task_to_closed']"));
         closeTAsk.click();
         
+      //Error massage validation and print
         test.info("Error massage becouse mandatory fields are empty");
-        WebElement errorMassage2=driver.findElement(By.xpath("//*[@class='outputmsg_text']"));
+        String errorMassage2=driver.findElement(By.xpath("//*[@class='outputmsg_text']")).getText();
         System.out.println("Error Massage is:"+errorMassage2);
+        compareTwoStringsEquals("The following mandatory fields are not filled in: Close code, Close notes", errorMassage2);
 
-        test.info("Verification of assignment_group and assigned to fields");
+        test.info("Verification of Assignment group field");
         //Verification of assignment_group field
         WebElement assiGroup=driver.findElement(By.xpath("//*[@id='sys_display.change_task.assignment_group']"));
         System.out.println("element is present :"+assiGroup.isDisplayed());
-       
         action.moveToElement(assiGroup).click().build().perform();
         assiGroup.sendKeys("CAB Approval" + Keys.ENTER);
         
         //Verification of assigned to field
+        test.info("Verification of Assigned to field");
         WebElement assignedto=driver.findElement(By.xpath("//*[contains(@id,'sys_display.change_task.assigned_to')]"));
-        
         action.moveToElement(assignedto).click().build().perform();
         assignedto.sendKeys("Bernard Laboy" + Keys.ENTER);
         
         test.info("Closure Information Tab");
        //Click on Closure Information Tab
        Thread.sleep(5000);
-       WebElement ClosureInformation2=driver.findElement(By.xpath("//*[@id=\"tabs2_section\"]/span[2]/span[1]/span[2]"));
+       WebElement ClosureInformation2=driver.findElement(By.xpath("//*[@id='tabs2_section']/span[2]/span[1]/span[2]"));
        ClosureInformation2.click();
        
+       //Verification of Closed Code field
        test.info("Verification of Closed Code field");
        Thread.sleep(3000);
        System.out.println("Select option to Closed Code field");
@@ -395,6 +451,7 @@ public class NormalChange extends BaseTest {
        Thread.sleep(3000);
        closeCodefield.selectByVisibleText("Successful");
        
+       //Verification of Closed Note field
        test.info("Verification of Closed Note field");
        Thread.sleep(3000);
        System.out.println("Select Value to Closed Note field");
@@ -405,8 +462,7 @@ public class NormalChange extends BaseTest {
      //Click on Close Task UI Action
        Thread.sleep(3000);
        closeTAsk.click();
-       
-       Thread.sleep(5000);
+       Thread.sleep(3000);
     }
     
     
@@ -418,19 +474,18 @@ public class NormalChange extends BaseTest {
         test = ExtentReportManager.createTest("Verification of Change Task records ");
     	test.info("Opening 2nd Change Task record");
         System.out.println("Opening 2nd Change Task record"); 
-        
+      //Opening 2nd Change Task record
         Actions action2= new Actions(driver);
-        
         WebDriverWait wait3 = new WebDriverWait(driver, Duration.ofSeconds(20));
-
         By changeTaskLocator2 = By.xpath("(//*[contains(@id,'row_change_request.change_task.change_request')]/td[3]/a)[2]");
-
+        Thread.sleep(2000);
         driver.findElement(changeTaskLocator2).click();
 
-        //Verification of State
-        test.info("Verification of State");
-        WebElement veriStaCT2=driver.findElement(By.xpath("//select[@id=\"change_task.state\"]"));
-        System.out.println("State is :"+veriStaCT2.getText());
+      //Verification of State
+        test.info("State verification");
+        String scTState3=driver.findElement(By.xpath("//*[@id='change_task.state']/option[text()='Open']")).getText();
+        System.out.println("State is :"+scTState3);
+        compareTwoStringsEquals("Open", scTState3);
         
         // Copy Change record number
         test.pass("Change Task Number");
@@ -439,50 +494,55 @@ public class NormalChange extends BaseTest {
           System.out.println("Change Task number:"+ copyNumber2);
           Thread.sleep(5000);
           
+        //Click on Close Task UI Action
           Thread.sleep(5000);
           test.info("Verification of Close Task UI Action");
-          //Click on Close Task UI Action
             WebElement closeTAsk2=driver.findElement(By.xpath("//*[@id='change_task_to_closed']"));
             closeTAsk2.click();
             Thread.sleep(5000);
             
+          //Error massage validation and print
             test.info("Verification of Error massage when mandatory fields are Empty");
-            WebElement errorMassage3=driver.findElement(By.xpath("//*[@class='outputmsg_text']"));
+            String errorMassage3=driver.findElement(By.xpath("//*[@class='outputmsg_text']")).getText();
             System.out.println("Error Massage is:"+errorMassage3);
+            compareTwoStringsEquals("The following mandatory fields are not filled in: Close code, Close notes", errorMassage3);
             
           //Verification of assignment_group field
-            test.info("Verification of fields");
+            test.info("Verification of Assignment group field");
             Thread.sleep(5000);
             WebElement assiGroup2=driver.findElement(By.xpath("//*[@id='sys_display.change_task.assignment_group']"));
             System.out.println("element is present :"+assiGroup2.isDisplayed());
-           
             Thread.sleep(3000);
             action2.moveToElement(assiGroup2).click().build().perform();
             assiGroup2.sendKeys("CAB Approval" + Keys.ENTER);
             
             //Verification of assigned to field
+            test.info("Verification of assigned to field");
             WebElement assignedto2=driver.findElement(By.xpath("//*[contains(@id,'sys_display.change_task.assigned_to')]"));
-            
             action2.moveToElement(assignedto2).click().build().perform();
             assignedto2.sendKeys("Bernard Laboy" + Keys.ENTER);
             
               //Click on Closure Information tab
             test.info("Verification of fields under Information tab");
-              WebElement ClosureInformation3=driver.findElement(By.xpath("//*[@id=\"tabs2_section\"]/span[2]/span[1]/span[2]"));
+              WebElement ClosureInformation3=driver.findElement(By.xpath("//*[@id='tabs2_section']/span[2]/span[1]/span[2]"));
               ClosureInformation3.click();
             
-              Thread.sleep(5000);
+              Thread.sleep(3000);
+              test.info("Verification of Closed Code field");
               System.out.println("Select option to Closed Code field");
               WebElement closeCode3=driver.findElement(By.xpath("//select[@id='change_task.close_code']"));
               Thread.sleep(3000);
               closeCode3.isDisplayed();
-              closeCode3.click();
-              
+              Thread.sleep(3000);
+              closeCode3.click();  
               Select closeCodefield3=new Select(closeCode3);
-              Thread.sleep(5000);
+              Thread.sleep(3000);
               closeCodefield3.selectByVisibleText("Successful");
+              Thread.sleep(3000);
               
-              Thread.sleep(5000);
+              
+              //Verification of Close Note field
+              test.info("Verification of Close Note field");
               System.out.println("Select Value to Closed Note field");
               WebElement closeNotes3=driver.findElement(By.xpath("//*[@id='change_task.close_notes']"));
               Thread.sleep(5000);
@@ -493,56 +553,70 @@ public class NormalChange extends BaseTest {
               Thread.sleep(5000);
               WebElement closeTAsk1=driver.findElement(By.xpath("//*[@id='change_task_to_closed']"));
               closeTAsk1.click();
-    
+              Thread.sleep(3000);
     }
     
-    @Test(description = "Verification of 2nd Change Task", dependsOnMethods = "implimentUIAction")
+    @Test(description = "Verification of Change Record", dependsOnMethods = "secondchangeTask")
     public void Closechangerecord() throws InterruptedException 
     {
     	Thread.sleep(2000);
     	test = ExtentReportManager.createTest("Verification of Change records after Tasks are closed");
+    	
+    	test.info("State verification");
+        //Verification of State
+        Thread.sleep(2000);
+        String chnState5=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='Review']")).getText();
+        System.out.println("State is :"+chnState5);
+        compareTwoStringsEquals("Review", chnState5);
+        Thread.sleep(3000);
+    	
+        //Click on Closed Button without fill mandatory fields 
     	test.info("Verification of Error massage on Change record when mandatory fields are Empty");
+    	Thread.sleep(5000);
         WebElement closebutton = driver.findElement(By.xpath("//*[@id='state_model_move_to_closed']"));
+        Thread.sleep(2000);
         closebutton.isDisplayed();
+        Thread.sleep(2000);
         closebutton.click();
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         
         //Error massage validation and print
-        WebElement errorMasPri= driver.findElement(By.xpath("//*[@id=\"output_messages\"]"));
+        String errorMasPri= driver.findElement(By.xpath("//*[@id='output_messages']")).getText();
         System.out.println("Error massage is:"+errorMasPri);
         Thread.sleep(2000); 
          
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         System.out.println("Select option to Closed Code field");
         //Verification of Closed Code field
         WebElement closeCode4=driver.findElement(By.xpath("//select[@id='change_request.close_code']"));
         Thread.sleep(3000);
         closeCode4.isDisplayed();
         closeCode4.click();
-        
         Select closeCodefield4=new Select(closeCode4);
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         closeCodefield4.selectByVisibleText("Successful");
         
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         System.out.println("Select Value to Closed Note field");
       //Verification of Closed Note field
         WebElement closeNotes4=driver.findElement(By.xpath("//*[@id='change_request.close_notes']"));
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         closeNotes4.sendKeys("Value for change Task record");
         
         //Click on Close Task UI Action
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         test.pass("Change record flow is completed");
         WebElement closeTAsk4=driver.findElement(By.xpath("//*[@id='state_model_move_to_closed']"));
         closeTAsk4.click();
         
-        WebElement stateofChange=driver.findElement(By.xpath("//*[@id='change_request.state']"));
-        String printstate=stateofChange.getAttribute("option");
-        System.out.println("State is:"+printstate);
+        test.info("State verification");
+        //Verification of State
+        Thread.sleep(3000);
+        String chnState6=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='Closed']")).getText();
+        System.out.println("State is :"+chnState6);
+        compareTwoStringsEquals("Closed", chnState6);
+        Thread.sleep(5000);
         
-        
-     
      Thread.sleep(5000);
     }
 }

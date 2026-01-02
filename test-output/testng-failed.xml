@@ -3,18 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.tests.RequestClosedComplete">
+      <class name="com.example.tests.NormalChangeRejection">
         <methods>
           <include name="teardownReport"/>
-          <include name="approvals"/>
+          <include name="navigateToChangeList"/>
           <include name="tearDown"/>
-          <include name="verifyCatalogTask"/>
           <include name="setupReport"/>
-          <include name="checkingRequest"/>
+          <include name="createChange"/>
           <include name="impersonateUser"/>
-          <include name="verifyCloseCompleteCatalogTask"/>
+          <include name="OPNCHNAFTREJ"/>
+          <include name="openChange"/>
+          <include name="requestingApproval"/>
         </methods>
-      </class> <!-- com.example.tests.RequestClosedComplete -->
+      </class> <!-- com.example.tests.NormalChangeRejection -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

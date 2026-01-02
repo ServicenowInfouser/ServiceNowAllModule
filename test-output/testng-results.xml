@@ -1,96 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="6" passed="4" failed="1" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-31T12:42:13 IST" name="Default suite" finished-at="2025-12-31T12:44:00 IST" duration-ms="106376">
+  <suite started-at="2026-01-02T01:10:41 IST" name="Default suite" finished-at="2026-01-02T01:12:49 IST" duration-ms="128268">
     <groups>
     </groups>
-    <test started-at="2025-12-31T12:42:13 IST" name="Default test" finished-at="2025-12-31T12:44:00 IST" duration-ms="106376">
-      <class name="com.example.tests.RequestClosedComplete">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:41:50 IST" name="setupReport" finished-at="2025-12-31T12:42:13 IST" duration-ms="22875" status="PASS">
+    <test started-at="2026-01-02T01:10:41 IST" name="Default test" finished-at="2026-01-02T01:12:49 IST" duration-ms="128268">
+      <class name="com.example.tests.NormalChangeRejection">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:10:13 IST" name="setupReport" finished-at="2026-01-02T01:10:41 IST" duration-ms="27856" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method signature="checkingRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:42:13 IST" name="checkingRequest" description="Verification of Request and RITM" finished-at="2025-12-31T12:42:32 IST" duration-ms="18785" status="PASS">
+        <test-method signature="navigateToChangeList()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:10:41 IST" name="navigateToChangeList" description="Verification of Navigate to Change list" finished-at="2026-01-02T01:11:07 IST" duration-ms="26010" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkingRequest -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:42:32 IST" name="tearDown" finished-at="2025-12-31T12:42:32 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- navigateToChangeList -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:07 IST" name="tearDown" finished-at="2026-01-02T01:11:07 IST" duration-ms="7" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkingRequest status=SUCCESS method=RequestClosedComplete.checkingRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@733037] output={null}]]]>
+                <![CDATA[[TestResult name=navigateToChangeList status=SUCCESS method=NormalChangeRejection.navigateToChangeList()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="approvals()[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:42:32 IST" name="approvals" description="Verification of Generated Approvals" finished-at="2025-12-31T12:42:34 IST" depends-on-methods="com.example.tests.RequestClosedComplete.checkingRequest" duration-ms="2313" status="PASS">
+        <test-method signature="createChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:07 IST" name="createChange" description="Verification of Creation of change" finished-at="2026-01-02T01:11:14 IST" depends-on-methods="com.example.tests.NormalChangeRejection.navigateToChangeList" duration-ms="6164" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- approvals -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:42:34 IST" name="tearDown" finished-at="2025-12-31T12:42:34 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- createChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:14 IST" name="tearDown" finished-at="2026-01-02T01:11:14 IST" duration-ms="1" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=approvals status=SUCCESS method=RequestClosedComplete.approvals()[pri:0, instance:com.example.tests.RequestClosedComplete@733037] output={null}]]]>
+                <![CDATA[[TestResult name=createChange status=SUCCESS method=NormalChangeRejection.createChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:42:34 IST" name="impersonateUser" description="Verification of Approving the approval by Impersonating user" finished-at="2025-12-31T12:43:22 IST" depends-on-methods="com.example.tests.RequestClosedComplete.approvals" duration-ms="47485" status="PASS">
+        <test-method signature="openChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:14 IST" name="openChange" description="Verification of opening Created change record from list" finished-at="2026-01-02T01:11:26 IST" depends-on-methods="com.example.tests.NormalChangeRejection.createChange" duration-ms="12230" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:26 IST" name="tearDown" finished-at="2026-01-02T01:11:26 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=openChange status=SUCCESS method=NormalChangeRejection.openChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="requestingApproval()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:26 IST" name="requestingApproval" description="Verification of Approval Generation" finished-at="2026-01-02T01:11:55 IST" depends-on-methods="com.example.tests.NormalChangeRejection.openChange" duration-ms="28787" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestingApproval -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:55 IST" name="impersonateUser" description="Verification of User Impersonation" finished-at="2026-01-02T01:12:49 IST" depends-on-methods="com.example.tests.NormalChangeRejection.requestingApproval" duration-ms="54602" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <span class="now-avatar-content">...</span> is not clickable at point (1706, 25). Other element would receive the click: <sn-help now-id="us5ndaydizj6-2671" component-id="us5ndaydizj6-2671"></sn-help>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [51918bf6f912ea3a02bd9881546b1738, clickElement {id=f.F72E37A9E1C422F917E3DA1EFEBFE489.d.B8F76DCD01083ED734090A42D46C7F60.e.1951}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61633}, goog:processID: 38816, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61633/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [org.openqa.selenium.remote.RemoteWebElement@296714f0 -> unknown locator]
+Session ID: 51918bf6f912ea3a02bd9881546b1738]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="now-avatar-content">...</span> is not clickable at point (1706, 25). Other element would receive the click: <sn-help now-id="us5ndaydizj6-2671" component-id="us5ndaydizj6-2671"></sn-help>
+  (Session info: chrome=143.0.7499.170)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [51918bf6f912ea3a02bd9881546b1738, clickElement {id=f.F72E37A9E1C422F917E3DA1EFEBFE489.d.B8F76DCD01083ED734090A42D46C7F60.e.1951}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61633}, goog:processID: 38816, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61633/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [org.openqa.selenium.remote.RemoteWebElement@296714f0 -> unknown locator]
+Session ID: 51918bf6f912ea3a02bd9881546b1738
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at base.Impersonation.endImpersonation(Impersonation.java:59)
+at com.example.tests.NormalChangeRejection.impersonateUser(NormalChangeRejection.java:273)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- impersonateUser -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:43:22 IST" name="tearDown" finished-at="2025-12-31T12:43:22 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:55 IST" name="tearDown" finished-at="2026-01-02T01:11:55 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=RequestClosedComplete.impersonateUser()[pri:0, instance:com.example.tests.RequestClosedComplete@733037] output={null}]]]>
+                <![CDATA[[TestResult name=requestingApproval status=SUCCESS method=NormalChangeRejection.requestingApproval()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:43:22 IST" name="verifyCatalogTask" description="Verification of Catalog task after Approving the approval" finished-at="2025-12-31T12:43:35 IST" depends-on-methods="com.example.tests.RequestClosedComplete.impersonateUser" duration-ms="13127" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCatalogTask -->
-        <test-method signature="verifyCloseCompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:43:35 IST" name="verifyCloseCompleteCatalogTask" description="Verification of Close Compleating the Catalog task" finished-at="2025-12-31T12:44:00 IST" depends-on-methods="com.example.tests.RequestClosedComplete.verifyCatalogTask" duration-ms="24550" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCloseCompleteCatalogTask -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:43:35 IST" name="tearDown" finished-at="2025-12-31T12:43:35 IST" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:12:49 IST" name="tearDown" finished-at="2026-01-02T01:12:49 IST" duration-ms="259" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=verifyCatalogTask status=SUCCESS method=RequestClosedComplete.verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@733037] output={null}]]]>
+                <![CDATA[[TestResult name=impersonateUser status=FAILURE method=NormalChangeRejection.impersonateUser()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:44:00 IST" name="tearDown" finished-at="2025-12-31T12:44:00 IST" duration-ms="0" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=verifyCloseCompleteCatalogTask status=SUCCESS method=RequestClosedComplete.verifyCloseCompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@733037] output={null}]]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="OPNCHNAFTREJ()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:12:49 IST" name="OPNCHNAFTREJ" description="Opening CHN record after first Approval Rejection" finished-at="2026-01-02T01:12:49 IST" depends-on-methods="com.example.tests.NormalChangeRejection.impersonateUser" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.NormalChangeRejection.OPNCHNAFTREJ() on instance com.example.tests.NormalChangeRejection@3dd31157 depends on not successfully finished methods 
+[com.example.tests.NormalChangeRejection.impersonateUser() on instance com.example.tests.NormalChangeRejection@3dd31157]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChangeRejection.OPNCHNAFTREJ() on instance com.example.tests.NormalChangeRejection@3dd31157 depends on not successfully finished methods 
+[com.example.tests.NormalChangeRejection.impersonateUser() on instance com.example.tests.NormalChangeRejection@3dd31157]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="teardownReport()[pri:0, instance:com.example.tests.RequestClosedComplete@733037]" started-at="2025-12-31T12:44:00 IST" name="teardownReport" finished-at="2025-12-31T12:44:01 IST" duration-ms="874" status="PASS">
+        </test-method> <!-- OPNCHNAFTREJ -->
+        <test-method is-config="true" signature="teardownReport()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:12:50 IST" name="teardownReport" finished-at="2026-01-02T01:12:51 IST" duration-ms="1538" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownReport -->
-      </class> <!-- com.example.tests.RequestClosedComplete -->
+      </class> <!-- com.example.tests.NormalChangeRejection -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -14,6 +14,7 @@ import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 
+import base.ApprovalHandling;
 import base.BaseTest;
 import base.DriverManager;
 import base.Impersonation;
@@ -29,10 +30,10 @@ public class RequestClosedIncomplete extends BaseTest {
 	//Object of Utils
 	private Navigator navigator = new Navigator(driver);
 	private Impersonation impersonation = new Impersonation(driver);
+	private ApprovalHandling approvalHandling = new ApprovalHandling(driver);
 	
 	//Variable Declaration
-	private String requestno = "REQ0010022";
-	private String ritm;
+	private String requestno = "REQ0010063", ritm, catlogTask;
 	private String approver = null;
 	private int TotalTask1, TotalTask2;
 
@@ -94,14 +95,17 @@ public class RequestClosedIncomplete extends BaseTest {
         
         test.pass("Request and RITM opened Successfully");
         
+      //Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", requestno+" "+ritm);
+        
     }
 	
 	@Test(description = "Verification of Generated Approvals", dependsOnMethods = "checkingRequest")
-    public void approvals() throws InterruptedException {
+	public void approvals() throws InterruptedException {
 		//Scroll down to related list
 		test = ExtentReportManager.createTest("Verification of Generated Approvals");
-		
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
+        
         driver.findElement(By.xpath("//*[@id=\"tabs2_list\"]/span[2]/span/span[2]")).click();
         
         List<WebElement> fetchapprovers = driver.findElements(By.xpath("//table[@id='sc_req_item.sysapproval_approver.sysapproval_table']/tbody/tr/td[4]"));
@@ -113,10 +117,13 @@ public class RequestClosedIncomplete extends BaseTest {
             approver = fetchapprovers.get(0).getText();
         }
         System.out.println("Approver is : " +approver);
+        test.info("Approver is : " +approver);
         
-        test.pass("Approver is generated on RITM");
         String screenshotPath2 = ExtentReportManager.captureScreenshot(driver, "RITM");
-        test.info("Approvers generated", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+        test.pass("Generated approvals", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+        
+      //Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", approver);
 	}
 	
 	
@@ -130,38 +137,7 @@ public class RequestClosedIncomplete extends BaseTest {
         
     	
     	// Approving the approval 
-        Thread.sleep(2000);
-        driver.get(BaseTest.baseUrl +"/sysapproval_approver_list.do");
-        Thread.sleep(2000);
-        // Search record on table
-        WebElement Approvals3=driver.findElement(By.xpath("//select[@class=\"form-control default-focus-outline\"]"));
-        Approvals3.click();
-        Thread.sleep(3000);
-              
-        Select selectValu3=new Select(Approvals3);
-        selectValu3.selectByVisibleText("Approval for");
-        
-        Thread.sleep(2000);
-        WebElement globalSearchBox23 = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
-        System.out.println("Request approval for :"+ritm);
-        globalSearchBox23.sendKeys(ritm);
-        Thread.sleep(2000);
-        globalSearchBox23.sendKeys(Keys.ENTER);
-        
-			
-		Thread.sleep(2000); 
-		WebElement approversearch3=driver.findElement(By.xpath("//*[@id=\"sysapproval_approver_table\"]/thead/tr[2]/td[4]/div/div/div/input"));
-        approversearch3.sendKeys(approver);
-        approversearch3.sendKeys(Keys.ENTER);
-		      
-        WebElement requestedbutton3=driver.findElement(By.xpath("//*[@class='linked formlink']"));
-        requestedbutton3.click();
-     
-        driver.findElement(By.xpath("//*[@id=\"approve\"]")).click();
-        Thread.sleep(2000);
-        
-        String screenshotPath2 = ExtentReportManager.captureScreenshot(driver, "Approval");
-        test.info("Approval Approved", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+        approvalHandling.approveApproval(ritm, approver, test);
  
         //End impersonation
         test.info("End Impersonation");
@@ -213,19 +189,24 @@ public class RequestClosedIncomplete extends BaseTest {
         TotalTask1 = catTask.size();
         for (WebElement cat1 : catTask) {
         	//String ApproverUser = Users.getText();
+        	catlogTask = cat1.getText();
         	System.out.println(cat1.getText());
         	cat1.click();
         }
         
-        test.pass("Catalog Task is generated");
         String screenshotPath2 = ExtentReportManager.captureScreenshot(driver, "Task");
-        test.info("Navigate to Task", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+        test.info("Task Details", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+        
+        test.pass("Catalog Task is generated");
+        
+      //Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", catlogTask);
 	}
 	
-	@Test(description = "Verification of Close Compleating the Catalog task" , dependsOnMethods = "verifyCatalogTask")
+	@Test(description = "Verification of Close Incompleating the Catalog task" , dependsOnMethods = "verifyCatalogTask")
     public void verifyCloseIncompleteCatalogTask() throws InterruptedException {
 		// Closed Incomplete SCTask
-		test = ExtentReportManager.createTest("Verification of Close Compleating the Catalog task");
+		test = ExtentReportManager.createTest("Verification of Close Incompleating the Catalog task");
 		WebElement taskState = driver.findElement(By.id("sc_task.state"));
 		Select changeState = new Select(taskState);
 		changeState.selectByVisibleText("Closed Incomplete");
@@ -248,7 +229,10 @@ public class RequestClosedIncomplete extends BaseTest {
 		WebElement ritmState = driver.findElement(By.id("sc_req_item.state"));
 		Select selectRitmState = new Select(ritmState);
 		WebElement selectedRitmState = selectRitmState.getFirstSelectedOption();
+		
+		test.info("RITM State is "+selectedRitmState.getText());
 		System.out.println("RITM State is : "+selectedRitmState.getText());
+		
 		String screenshotPath2 = ExtentReportManager.captureScreenshot(driver, "ritmstate");
 		test.info("RITM State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
 		Assert.assertEquals(selectedRitmState.getText().trim(), "Closed Incomplete", "Test failed for " + ritm);
@@ -263,12 +247,14 @@ public class RequestClosedIncomplete extends BaseTest {
 		WebElement requestState = driver.findElement(By.id("sc_request.state"));
 		Select selectReqState = new Select(requestState);
 		WebElement selectedReqState = selectReqState.getFirstSelectedOption();
+		
+		test.info("Request State is "+selectedReqState.getText());
 		System.out.println("REQUEST State is : "+selectedReqState.getText());
+		
 		String screenshotPath3 = ExtentReportManager.captureScreenshot(driver, "reqstate");
 		test.info("Request State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
 		Assert.assertEquals(selectedReqState.getText().trim(), "Closed Incomplete", "Test failed for " + ritm);
 		
 		test.pass("Request, RITM States are Closed Incomplete");
-
 	}
 }
