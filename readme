@@ -1,0 +1,9 @@
+How to run the whole project 
+1. Right-click on the testng.xml file 
+2. Click on the Run 
+3. Click on the TestNG Suite
+
+How to run the individual test 
+1. Right-click on the test file that you want to execute
+2. Click on the Run 
+3. Click on the TestNG test
