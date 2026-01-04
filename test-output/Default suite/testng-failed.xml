@@ -3,18 +3,26 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.tests.NormalChange">
+      <class name="com.example.tests.Problem">
         <methods>
-          <include name="teardownReport"/>
-          <include name="tearDown"/>
-          <include name="implimentUIAction"/>
-          <include name="impersonateUserSec"/>
-          <include name="OPNCHNAFTAPPL"/>
+          <include name="submitProblemFormWODetail"/>
+          <include name="stateOnceAssignSave"/>
           <include name="setupReport"/>
-          <include name="endImpAdmin"/>
-          <include name="impAdmin"/>
+          <include name="resolveState"/>
+          <include name="submitForm"/>
+          <include name="fixStateWODetails"/>
+          <include name="reAnalyze"/>
+          <include name="reAnalyzeOnceAgain"/>
+          <include name="teardownReport"/>
+          <include name="RCAState"/>
+          <include name="reOpenForm"/>
+          <include name="tearDown"/>
+          <include name="fixState"/>
+          <include name="validateProblemForm"/>
+          <include name="cancelPRB"/>
+          <include name="cloasedState"/>
         </methods>
-      </class> <!-- com.example.tests.NormalChange -->
+      </class> <!-- com.example.tests.Problem -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

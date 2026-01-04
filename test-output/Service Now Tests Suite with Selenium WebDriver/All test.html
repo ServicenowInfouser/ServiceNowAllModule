@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>All test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>12/1/3</td>
+<td>Tests passed/Failed/Skipped:</td><td>52/1/4</td>
 </tr><tr>
-<td>Started on:</td><td>Sun Jan 04 16:44:56 IST 2026</td>
+<td>Started on:</td><td>Mon Jan 05 00:08:09 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>461 seconds (461001 ms)</td>
+<tr><td>Total time:</td><td>1321 seconds (1321205 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -76,16 +76,17 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.example.tests.RequestClosedIncomplete.approvals()'><b>approvals</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Request and RITM</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;tabs2_list&quot;]/span[2]/span/span[2]&quot;}
+<td title='com.example.tests.NormalChange.impersonateUserSec()'><b>impersonateUserSec</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of 2nd Approval</td>
+<td><div><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
   (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e29702df5f6a0086eb3ac4430fcdc405, findElement {using=xpath, value=//*[@id=&quot;tabs2_list&quot;]/span[2]/span/span[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57613}, goog:processID: 30764, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57613/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e29702df5f6a0086eb3ac4430fcdc405
+Command: [02760abd264a1c5e5e83f45285555806, clickElement {id=f.806CDFC6DC6AD0026A7E8CD294DC5851.d.5E236D4CA8D80DDCCCD215034BEC251F.e.33328}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62768}, goog:processID: 27116, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62768/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (02760abd264a1c5e5e83f45285555806)] -&gt; xpath: //*[@class=&apos;linked formlink&apos;]]
+Session ID: 02760abd264a1c5e5e83f45285555806
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -93,22 +94,21 @@ Session ID: e29702df5f6a0086eb3ac4430fcdc405
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at com.example.tests.RequestClosedIncomplete.approvals(RequestClosedIncomplete.java:124)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.example.tests.NormalChange.impersonateUserSec(NormalChange.java:411)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2044002136", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2044002136'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;tabs2_list&quot;]/span[2]/span/span[2]&quot;}
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1469084143", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1469084143'><pre>org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
   (Session info: chrome=143.0.7499.170)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e29702df5f6a0086eb3ac4430fcdc405, findElement {using=xpath, value=//*[@id=&quot;tabs2_list&quot;]/span[2]/span/span[2]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57613}, goog:processID: 30764, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57613/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e29702df5f6a0086eb3ac4430fcdc405
+Command: [02760abd264a1c5e5e83f45285555806, clickElement {id=f.806CDFC6DC6AD0026A7E8CD294DC5851.d.5E236D4CA8D80DDCCCD215034BEC251F.e.33328}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62768}, goog:processID: 27116, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62768/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (02760abd264a1c5e5e83f45285555806)] -&gt; xpath: //*[@class=&apos;linked formlink&apos;]]
+Session ID: 02760abd264a1c5e5e83f45285555806
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -119,11 +119,9 @@ Session ID: e29702df5f6a0086eb3ac4430fcdc405
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at com.example.tests.RequestClosedIncomplete.approvals(RequestClosedIncomplete.java:124)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+	at com.example.tests.NormalChange.impersonateUserSec(NormalChange.java:411)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -151,8 +149,8 @@ Session ID: e29702df5f6a0086eb3ac4430fcdc405
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>5</td>
-<td>com.example.tests.RequestClosedIncomplete@25673087</td></tr>
+<td>53</td>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -163,65 +161,265 @@ Session ID: e29702df5f6a0086eb3ac4430fcdc405
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.example.tests.RequestApprovalRejection.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: Verification of Submitting the Big Data Analysis catalog item</td>
+<td title='com.example.tests.NormalChange.requestingApproval()'><b>requestingApproval</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Approval Generation</td>
 <td></td>
-<td>39</td>
-<td>com.example.tests.RequestApprovalRejection@5ad5be4a</td></tr>
+<td>25</td>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
+<tr>
+<td title='com.example.tests.RequestApprovalRejection.checkingRequest()'><b>checkingRequest</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: Verification of Request and RITM</td>
+<td></td>
+<td>17</td>
+<td>com.example.tests.RequestApprovalRejection@1fdca564</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.create_Incident()'><b>create_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification of Creation of Incident</td>
+<td></td>
+<td>26</td>
+<td>com.example.tests.Incident_All_Flow@f5b6e78</td></tr>
+<tr>
+<td title='com.example.tests.Problem.submitForm()'><b>submitForm</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>1</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.Problem.RCAState()'><b>RCAState</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>13</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.NormalChangeRejection.openChange()'><b>openChange</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of opening Created change record from list</td>
+<td></td>
+<td>11</td>
+<td>com.example.tests.NormalChangeRejection@3662bdff</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.validate_ErrorMessage_On_Incident()'><b>validate_ErrorMessage_On_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification of Error Message on Incident</td>
+<td></td>
+<td>8</td>
+<td>com.example.tests.Incident_All_Flow@f5b6e78</td></tr>
+<tr>
+<td title='com.example.tests.Problem.reAnalyze()'><b>reAnalyze</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>6</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.Problem.validateProblemForm()'><b>validateProblemForm</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>27</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of User Impersonation</td>
+<td></td>
+<td>76</td>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.navigateToChangeList()'><b>navigateToChangeList</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Navigate to Change list</td>
+<td></td>
+<td>18</td>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.update_Incident()'><b>update_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification that User is able to update the Incident record</td>
+<td></td>
+<td>11</td>
+<td>com.example.tests.Incident_All_Flow@f5b6e78</td></tr>
+<tr>
+<td title='com.example.tests.Problem.fixStateWODetails()'><b>fixStateWODetails</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>7</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.close_Incident()'><b>close_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification of Incident flow till On Closed state</td>
+<td></td>
+<td>55</td>
+<td>com.example.tests.Incident_All_Flow@f5b6e78</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.on_Hold_Incident()'><b>on_Hold_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification of Incident flow till On Hold state</td>
+<td></td>
+<td>32</td>
+<td>com.example.tests.Incident_All_Flow@f5b6e78</td></tr>
+<tr>
+<td title='com.example.tests.Problem.reAnalyzeOnceAgain()'><b>reAnalyzeOnceAgain</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>7</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.Problem.stateOnceAssignSave()'><b>stateOnceAssignSave</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>0</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedIncomplete.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Approving the approval by Impersonating user</td>
+<td></td>
+<td>73</td>
+<td>com.example.tests.RequestClosedIncomplete@fe34b86</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedIncomplete.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Submitting the Big Data Analysis catalog item</td>
+<td></td>
+<td>38</td>
+<td>com.example.tests.RequestClosedIncomplete@fe34b86</td></tr>
+<tr>
+<td title='com.example.tests.Problem.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>26</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.Problem.endimpersonation()'><b>endimpersonation</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>28</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.openChange()'><b>openChange</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of opening Created change record from list</td>
+<td></td>
+<td>10</td>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
+<tr>
+<td title='com.example.tests.Problem.cancelPRB()'><b>cancelPRB</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>10</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
 <tr>
 <td title='com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask()'><b>verifyCloseCompleteCatalogTask</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: Verification of Close Compleating the Catalog task</td>
 <td></td>
-<td>26</td>
-<td>com.example.tests.RequestClosedComplete@14a049f9</td></tr>
+<td>24</td>
+<td>com.example.tests.RequestClosedComplete@3050ac2f</td></tr>
 <tr>
-<td title='com.example.tests.RequestApprovalRejection.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: Verification of Rejecting the approval by Impersonating user</td>
+<td title='com.example.tests.NormalChangeRejection.createChange()'><b>createChange</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of Creation of change</td>
 <td></td>
-<td>77</td>
-<td>com.example.tests.RequestApprovalRejection@5ad5be4a</td></tr>
+<td>6</td>
+<td>com.example.tests.NormalChangeRejection@3662bdff</td></tr>
 <tr>
-<td title='com.example.tests.RequestClosedComplete.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: Verification of Catalog task after Approving the approval</td>
+<td title='com.example.tests.RequestClosedIncomplete.approvals()'><b>approvals</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Request and RITM</td>
 <td></td>
-<td>12</td>
-<td>com.example.tests.RequestClosedComplete@14a049f9</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedComplete.checkingRequest()'><b>checkingRequest</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: Verification of Request and RITM</td>
-<td></td>
-<td>19</td>
-<td>com.example.tests.RequestClosedComplete@14a049f9</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedComplete.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: Verification of Approving the approval by Impersonating user</td>
-<td></td>
-<td>83</td>
-<td>com.example.tests.RequestClosedComplete@14a049f9</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedComplete.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: Verification of Submitting the Big Data Analysis catalog item</td>
-<td></td>
-<td>43</td>
-<td>com.example.tests.RequestClosedComplete@14a049f9</td></tr>
-<tr>
-<td title='com.example.tests.RequestApprovalRejection.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: Verification of SCTask, Request & RITM after Rejecting the approval</td>
-<td></td>
-<td>25</td>
-<td>com.example.tests.RequestApprovalRejection@5ad5be4a</td></tr>
+<td>2</td>
+<td>com.example.tests.RequestClosedIncomplete@fe34b86</td></tr>
 <tr>
 <td title='com.example.tests.RequestApprovalRejection.approvals()'><b>approvals</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: Verification of Generated Approvals</td>
 <td></td>
 <td>2</td>
-<td>com.example.tests.RequestApprovalRejection@5ad5be4a</td></tr>
+<td>com.example.tests.RequestApprovalRejection@1fdca564</td></tr>
 <tr>
-<td title='com.example.tests.RequestApprovalRejection.checkingRequest()'><b>checkingRequest</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: Verification of Request and RITM</td>
+<td title='com.example.tests.RequestClosedComplete.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: Verification of Catalog task after Approving the approval</td>
+<td></td>
+<td>14</td>
+<td>com.example.tests.RequestClosedComplete@3050ac2f</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedIncomplete.verifyCloseIncompleteCatalogTask()'><b>verifyCloseIncompleteCatalogTask</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Close Incompleating the Catalog task</td>
+<td></td>
+<td>25</td>
+<td>com.example.tests.RequestClosedIncomplete@fe34b86</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.Cancel_Incident()'><b>Cancel_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification of Incident flow till Canceled state</td>
+<td></td>
+<td>22</td>
+<td>com.example.tests.Incident_All_Flow@f5b6e78</td></tr>
+<tr>
+<td title='com.example.tests.Problem.cloasedState()'><b>cloasedState</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>17</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedComplete.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: Verification of Submitting the Big Data Analysis catalog item</td>
+<td></td>
+<td>42</td>
+<td>com.example.tests.RequestClosedComplete@3050ac2f</td></tr>
+<tr>
+<td title='com.example.tests.NormalChangeRejection.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of User Impersonation</td>
+<td></td>
+<td>78</td>
+<td>com.example.tests.NormalChangeRejection@3662bdff</td></tr>
+<tr>
+<td title='com.example.tests.Problem.submitProblemFormWODetail()'><b>submitProblemFormWODetail</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>9</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.createChange()'><b>createChange</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Creation of change</td>
+<td></td>
+<td>5</td>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
+<tr>
+<td title='com.example.tests.Problem.reOpenForm()'><b>reOpenForm</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>6</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.RequestApprovalRejection.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: Verification of Rejecting the approval by Impersonating user</td>
+<td></td>
+<td>75</td>
+<td>com.example.tests.RequestApprovalRejection@1fdca564</td></tr>
+<tr>
+<td title='com.example.tests.NormalChangeRejection.OPNCHNAFTREJ()'><b>OPNCHNAFTREJ</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of Change record after Rejection of 1st Approval</td>
 <td></td>
 <td>16</td>
-<td>com.example.tests.RequestApprovalRejection@5ad5be4a</td></tr>
+<td>com.example.tests.NormalChangeRejection@3662bdff</td></tr>
+<tr>
+<td title='com.example.tests.NormalChangeRejection.requestingApproval()'><b>requestingApproval</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of Approval Generation</td>
+<td></td>
+<td>27</td>
+<td>com.example.tests.NormalChangeRejection@3662bdff</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedIncomplete.checkingRequest()'><b>checkingRequest</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Request and RITM</td>
+<td></td>
+<td>14</td>
+<td>com.example.tests.RequestClosedIncomplete@fe34b86</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.create_Incident_for_Multiple_Users()'><b>create_Incident_for_Multiple_Users</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification of Creation of Incident for multiple users</td>
+<td></td>
+<td>67</td>
+<td>com.example.tests.Incident_All_Flow@f5b6e78</td></tr>
+<tr>
+<td title='com.example.tests.NormalChangeRejection.navigateToChangeList()'><b>navigateToChangeList</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of Navigate to Change list</td>
+<td></td>
+<td>18</td>
+<td>com.example.tests.NormalChangeRejection@3662bdff</td></tr>
+<tr>
+<td title='com.example.tests.RequestApprovalRejection.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: Verification of SCTask, Request & RITM after Rejecting the approval</td>
+<td></td>
+<td>24</td>
+<td>com.example.tests.RequestApprovalRejection@1fdca564</td></tr>
 <tr>
 <td title='com.example.tests.RequestClosedComplete.approvals()'><b>approvals</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: Verification of Generated Approvals</td>
 <td></td>
 <td>2</td>
-<td>com.example.tests.RequestClosedComplete@14a049f9</td></tr>
+<td>com.example.tests.RequestClosedComplete@3050ac2f</td></tr>
 <tr>
-<td title='com.example.tests.RequestClosedIncomplete.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Submitting the Big Data Analysis catalog item</td>
+<td title='com.example.tests.Incident_All_Flow.resolved_Incident()'><b>resolved_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification of Incident flow till On Resolved state</td>
+<td></td>
+<td>43</td>
+<td>com.example.tests.Incident_All_Flow@f5b6e78</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedComplete.checkingRequest()'><b>checkingRequest</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: Verification of Request and RITM</td>
+<td></td>
+<td>18</td>
+<td>com.example.tests.RequestClosedComplete@3050ac2f</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedComplete.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: Verification of Approving the approval by Impersonating user</td>
+<td></td>
+<td>74</td>
+<td>com.example.tests.RequestClosedComplete@3050ac2f</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.OPNCHNAFTAPPL()'><b>OPNCHNAFTAPPL</b><br>Test class: com.example.tests.NormalChange<br>Test method: Opening CHN record after first Approval Approve</td>
+<td></td>
+<td>15</td>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
+<tr>
+<td title='com.example.tests.RequestApprovalRejection.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: Verification of Submitting the Big Data Analysis catalog item</td>
 <td></td>
 <td>40</td>
-<td>com.example.tests.RequestClosedIncomplete@25673087</td></tr>
+<td>com.example.tests.RequestApprovalRejection@1fdca564</td></tr>
+<tr>
+<td title='com.example.tests.Problem.resolveState()'><b>resolveState</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>7</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.Problem.fixState()'><b>fixState</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>8</td>
+<td>com.example.tests.Problem@7847ef2c</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedIncomplete.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Catalog task after Approving the approval</td>
+<td></td>
+<td>14</td>
+<td>com.example.tests.RequestClosedIncomplete@fe34b86</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -232,13 +430,13 @@ Session ID: e29702df5f6a0086eb3ac4430fcdc405
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.example.tests.RequestClosedIncomplete.verifyCloseIncompleteCatalogTask()'><b>verifyCloseIncompleteCatalogTask</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Close Incompleating the Catalog task</td>
-<td><div><pre>java.lang.Throwable: Method com.example.tests.RequestClosedIncomplete.verifyCloseIncompleteCatalogTask() on instance com.example.tests.RequestClosedIncomplete@25673087 depends on not successfully finished methods 
-[com.example.tests.RequestClosedIncomplete.verifyCatalogTask() on instance com.example.tests.RequestClosedIncomplete@25673087]
+<td title='com.example.tests.NormalChange.implimentUIAction()'><b>implimentUIAction</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of State and Impliment UI Action after 2nd Approval Approved</td>
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@557a84fe]
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace182698304", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace182698304'><pre>java.lang.Throwable: Method com.example.tests.RequestClosedIncomplete.verifyCloseIncompleteCatalogTask() on instance com.example.tests.RequestClosedIncomplete@25673087 depends on not successfully finished methods 
-[com.example.tests.RequestClosedIncomplete.verifyCatalogTask() on instance com.example.tests.RequestClosedIncomplete@25673087]
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1977263464", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1977263464'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@557a84fe]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -260,15 +458,15 @@ Session ID: e29702df5f6a0086eb3ac4430fcdc405
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>com.example.tests.RequestClosedIncomplete@25673087</td></tr>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
 <tr>
-<td title='com.example.tests.RequestClosedIncomplete.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Catalog task after Approving the approval</td>
-<td><div><pre>java.lang.Throwable: Method com.example.tests.RequestClosedIncomplete.verifyCatalogTask() on instance com.example.tests.RequestClosedIncomplete@25673087 depends on not successfully finished methods 
-[com.example.tests.RequestClosedIncomplete.impersonateUser() on instance com.example.tests.RequestClosedIncomplete@25673087]
+<td title='com.example.tests.NormalChange.firstchangeTask()'><b>firstchangeTask</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of 1st Change Task</td>
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.firstchangeTask() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe]
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2016200186", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace2016200186'><pre>java.lang.Throwable: Method com.example.tests.RequestClosedIncomplete.verifyCatalogTask() on instance com.example.tests.RequestClosedIncomplete@25673087 depends on not successfully finished methods 
-[com.example.tests.RequestClosedIncomplete.impersonateUser() on instance com.example.tests.RequestClosedIncomplete@25673087]
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2030408467", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2030408467'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.firstchangeTask() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -290,15 +488,15 @@ Session ID: e29702df5f6a0086eb3ac4430fcdc405
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>com.example.tests.RequestClosedIncomplete@25673087</td></tr>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
 <tr>
-<td title='com.example.tests.RequestClosedIncomplete.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: Verification of Approving the approval by Impersonating user</td>
-<td><div><pre>java.lang.Throwable: Method com.example.tests.RequestClosedIncomplete.impersonateUser() on instance com.example.tests.RequestClosedIncomplete@25673087 depends on not successfully finished methods 
-[com.example.tests.RequestClosedIncomplete.approvals() on instance com.example.tests.RequestClosedIncomplete@25673087]
+<td title='com.example.tests.NormalChange.secondchangeTask()'><b>secondchangeTask</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of 2nd Change Task</td>
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe]
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace651176183", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace651176183'><pre>java.lang.Throwable: Method com.example.tests.RequestClosedIncomplete.impersonateUser() on instance com.example.tests.RequestClosedIncomplete@25673087 depends on not successfully finished methods 
-[com.example.tests.RequestClosedIncomplete.approvals() on instance com.example.tests.RequestClosedIncomplete@25673087]
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace50305542", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace50305542'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -320,7 +518,37 @@ Session ID: e29702df5f6a0086eb3ac4430fcdc405
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>com.example.tests.RequestClosedIncomplete@25673087</td></tr>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.Closechangerecord()'><b>Closechangerecord</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Change Record</td>
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.Closechangerecord() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@557a84fe]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1269848654", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1269848654'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.Closechangerecord() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@557a84fe]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.example.tests.NormalChange@557a84fe</td></tr>
 </table><p>
 </body>
 </html>

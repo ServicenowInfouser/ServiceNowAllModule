@@ -15,7 +15,7 @@ public class Impersonation extends BaseTest {
     }
 	
 	public void startImpersonation(String user, JavascriptExecutor jse) throws InterruptedException {
-		//Profile Icon click        
+		//Profile Icon click  
         driver.get(Config.baseUrl());               
         WebElement profile=(WebElement)jse.executeScript(profileIcon);
         profile.click();    
@@ -51,7 +51,7 @@ public class Impersonation extends BaseTest {
     }
 	
 	public void endImpersonation(JavascriptExecutor jse) throws InterruptedException {
-		 
+
         //End Impersonation
         driver.get(Config.baseUrl()); 
         Thread.sleep(5000);

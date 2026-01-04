@@ -42,16 +42,16 @@ public class BaseTest {
 		loginPage.login(Config.username(), Config.password());
 		
 		//User Impersonation
-//		String user = users[0][0].toString();
-//		impersonation = new Impersonation(driver);
-//	    impersonation.startImpersonation(user, jse);
+		String user = users[0][0].toString();
+		impersonation = new Impersonation(driver);
+	    impersonation.startImpersonation(user, jse);
 	}
 	
 	@AfterSuite
 	public void teardownReport() throws InterruptedException {
-//		JavascriptExecutor jse = (JavascriptExecutor) driver;
-//		impersonation = new Impersonation(driver);
-//    	impersonation.endImpersonation(jse);
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		impersonation = new Impersonation(driver);
+    	impersonation.endImpersonation(jse);
     	
     	//Closing the driver
     	DriverManager.quitDriver();
@@ -62,14 +62,14 @@ public class BaseTest {
 		//EmailUtils.sendTestReport(reportPath);
 	}
 	
-	@BeforeClass
+	//@BeforeClass
 	public void impAdmin() throws InterruptedException {
 		String user = users[0][0].toString();
 		impersonation = new Impersonation(driver);
     	impersonation.startImpersonation(user, jse);
 	}
 	
-	@AfterClass
+	//@AfterClass
 	public void endImpAdmin() throws InterruptedException {
 		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		impersonation = new Impersonation(driver);

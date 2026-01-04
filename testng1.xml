@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Service Now Tests Suite with Selenium WebDriver" parallel="false">
+	<listeners>
+		<listener class-name="utils.CustomReport" />
+
+	</listeners>
+
+	<test name="All test">
+		<classes>
+			<!-- <class name="com.example.tests.ESCTest"/> <class name="com.example.tests.Incident"/> 
+				<class name="com.example.tests.ESCtest1"/> <class name="com.example.tests.NormalChange"/> 
+				<class name="com.example.tests.PasswordReset"/> -->
+
+			<!-- Request RITM Task -->
+			<class name="com.example.tests.RequestClosedComplete" />
+			<class name="com.example.tests.RequestClosedIncomplete" />
+			<class name="com.example.tests.RequestApprovalRejection" />
+			
+			 <!-- Incident -->
+			<class name="com.example.tests.Incident_All_Flow"/>
+			
+			<!-- Problem -->
+			<class name="com.example.tests.Problem"/> 
+			
+			<!-- Change  -->
+			<class name="com.example.tests.NormalChangeRejection"/> 
+			<class name="com.example.tests.NormalChange"/>
+			
+			
+			
+
+			
+			
+			
+		</classes>
+	</test> <!-- Test -->
+
+</suite> <!-- Suite -->

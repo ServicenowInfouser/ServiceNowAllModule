@@ -1,44 +1,454 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="11" passed="1" failed="1" skipped="1">
+<testng-results ignored="0" total="57" passed="52" failed="1" skipped="4">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-04T18:30:56 IST" name="Default suite" finished-at="2026-01-04T18:32:02 IST" duration-ms="65711">
+  <suite started-at="2026-01-05T00:08:09 IST" name="Service Now Tests Suite with Selenium WebDriver" finished-at="2026-01-05T00:30:10 IST" duration-ms="1321205">
     <groups>
     </groups>
-    <test started-at="2026-01-04T18:30:56 IST" name="Default test" finished-at="2026-01-04T18:32:02 IST" duration-ms="65711">
-      <class name="com.example.tests.NormalChange">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.example.tests.NormalChange@60e9c3a5]" started-at="2026-01-04T18:30:25 IST" name="setupReport" finished-at="2026-01-04T18:30:56 IST" duration-ms="31542" status="PASS">
+    <test started-at="2026-01-05T00:08:09 IST" name="All test" finished-at="2026-01-05T00:30:10 IST" duration-ms="1321205">
+      <class name="com.example.tests.RequestClosedIncomplete">
+        <test-method signature="createRequest()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:11:06 IST" name="createRequest" description="Verification of Submitting the Big Data Analysis catalog item" finished-at="2026-01-05T00:11:45 IST" duration-ms="38870" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupReport -->
-        <test-method is-config="true" signature="impAdmin()[pri:0, instance:com.example.tests.NormalChange@60e9c3a5]" started-at="2026-01-04T18:30:57 IST" name="impAdmin" finished-at="2026-01-04T18:31:09 IST" duration-ms="12455" status="PASS">
+        </test-method> <!-- createRequest -->
+        <test-method signature="checkingRequest()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:11:45 IST" name="checkingRequest" description="Verification of Request and RITM" finished-at="2026-01-05T00:12:00 IST" depends-on-methods="com.example.tests.RequestClosedIncomplete.createRequest" duration-ms="14986" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- impAdmin -->
-        <test-method signature="OPNCHNAFTAPPL()[pri:0, instance:com.example.tests.NormalChange@60e9c3a5]" started-at="2026-01-04T18:31:09 IST" name="OPNCHNAFTAPPL" description="Opening CHN record after first Approval Approve" finished-at="2026-01-04T18:31:29 IST" duration-ms="19743" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- OPNCHNAFTAPPL -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@60e9c3a5]" started-at="2026-01-04T18:31:29 IST" name="tearDown" finished-at="2026-01-04T18:31:29 IST" duration-ms="5" status="PASS">
+        </test-method> <!-- checkingRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:11:45 IST" name="tearDown" finished-at="2026-01-05T00:11:45 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=OPNCHNAFTAPPL status=SUCCESS method=NormalChange.OPNCHNAFTAPPL()[pri:0, instance:com.example.tests.NormalChange@60e9c3a5] output={null}]]]>
+                <![CDATA[[TestResult name=createRequest status=SUCCESS method=RequestClosedIncomplete.createRequest()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="impersonateUserSec()[pri:0, instance:com.example.tests.NormalChange@60e9c3a5]" started-at="2026-01-04T18:31:29 IST" name="impersonateUserSec" description="Verification of 2nd Approval" finished-at="2026-01-04T18:31:52 IST" depends-on-methods="com.example.tests.NormalChange.OPNCHNAFTAPPL" duration-ms="23625" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:12:00 IST" name="tearDown" finished-at="2026-01-05T00:12:00 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=checkingRequest status=SUCCESS method=RequestClosedIncomplete.checkingRequest()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="approvals()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:12:00 IST" name="approvals" description="Verification of Request and RITM" finished-at="2026-01-05T00:12:02 IST" depends-on-methods="com.example.tests.RequestClosedIncomplete.checkingRequest" duration-ms="2422" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- approvals -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:12:02 IST" name="impersonateUser" description="Verification of Approving the approval by Impersonating user" finished-at="2026-01-05T00:13:16 IST" depends-on-methods="com.example.tests.RequestClosedIncomplete.approvals" duration-ms="73713" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:12:02 IST" name="tearDown" finished-at="2026-01-05T00:12:02 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=approvals status=SUCCESS method=RequestClosedIncomplete.approvals()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:13:16 IST" name="tearDown" finished-at="2026-01-05T00:13:16 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=RequestClosedIncomplete.impersonateUser()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:13:16 IST" name="verifyCatalogTask" description="Verification of Catalog task after Approving the approval" finished-at="2026-01-05T00:13:30 IST" depends-on-methods="com.example.tests.RequestClosedIncomplete.impersonateUser" duration-ms="14039" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCatalogTask -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:13:30 IST" name="tearDown" finished-at="2026-01-05T00:13:30 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCatalogTask status=SUCCESS method=RequestClosedIncomplete.verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyCloseIncompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:13:30 IST" name="verifyCloseIncompleteCatalogTask" description="Verification of Close Incompleating the Catalog task" finished-at="2026-01-05T00:13:56 IST" depends-on-methods="com.example.tests.RequestClosedIncomplete.verifyCatalogTask" duration-ms="25806" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCloseIncompleteCatalogTask -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86]" started-at="2026-01-05T00:13:56 IST" name="tearDown" finished-at="2026-01-05T00:13:56 IST" duration-ms="6" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCloseIncompleteCatalogTask status=SUCCESS method=RequestClosedIncomplete.verifyCloseIncompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedIncomplete@fe34b86] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.RequestClosedIncomplete -->
+      <class name="com.example.tests.Incident_All_Flow">
+        <test-method signature="create_Incident()[pri:1, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:16:36 IST" name="create_Incident" description="Verification of Creation of Incident" finished-at="2026-01-05T00:17:03 IST" duration-ms="26952" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:17:03 IST" name="tearDown" finished-at="2026-01-05T00:17:03 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=create_Incident status=SUCCESS method=Incident_All_Flow.create_Incident()[pri:1, instance:com.example.tests.Incident_All_Flow@f5b6e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="update_Incident()[pri:0, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:17:03 IST" name="update_Incident" description="Verification that User is able to update the Incident record" finished-at="2026-01-05T00:17:15 IST" depends-on-methods="com.example.tests.Incident_All_Flow.create_Incident" duration-ms="11555" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- update_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:17:15 IST" name="tearDown" finished-at="2026-01-05T00:17:15 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=update_Incident status=SUCCESS method=Incident_All_Flow.update_Incident()[pri:0, instance:com.example.tests.Incident_All_Flow@f5b6e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="create_Incident_for_Multiple_Users()[pri:2, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:17:15 IST" name="create_Incident_for_Multiple_Users" description="Verification of Creation of Incident for multiple users" finished-at="2026-01-05T00:18:23 IST" duration-ms="67851" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_Incident_for_Multiple_Users -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:18:23 IST" name="tearDown" finished-at="2026-01-05T00:18:23 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=create_Incident_for_Multiple_Users status=SUCCESS method=Incident_All_Flow.create_Incident_for_Multiple_Users()[pri:2, instance:com.example.tests.Incident_All_Flow@f5b6e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="validate_ErrorMessage_On_Incident()[pri:3, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:18:23 IST" name="validate_ErrorMessage_On_Incident" description="Verification of Error Message on Incident" finished-at="2026-01-05T00:18:31 IST" duration-ms="8452" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_ErrorMessage_On_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:18:31 IST" name="tearDown" finished-at="2026-01-05T00:18:31 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validate_ErrorMessage_On_Incident status=SUCCESS method=Incident_All_Flow.validate_ErrorMessage_On_Incident()[pri:3, instance:com.example.tests.Incident_All_Flow@f5b6e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="on_Hold_Incident()[pri:4, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:18:31 IST" name="on_Hold_Incident" description="Verification of Incident flow till On Hold state" finished-at="2026-01-05T00:19:04 IST" duration-ms="32810" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- on_Hold_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:19:04 IST" name="tearDown" finished-at="2026-01-05T00:19:04 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=on_Hold_Incident status=SUCCESS method=Incident_All_Flow.on_Hold_Incident()[pri:4, instance:com.example.tests.Incident_All_Flow@f5b6e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="resolved_Incident()[pri:5, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:19:04 IST" name="resolved_Incident" description="Verification of Incident flow till On Resolved state" finished-at="2026-01-05T00:19:48 IST" duration-ms="43970" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resolved_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:19:48 IST" name="tearDown" finished-at="2026-01-05T00:19:48 IST" duration-ms="5" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=resolved_Incident status=SUCCESS method=Incident_All_Flow.resolved_Incident()[pri:5, instance:com.example.tests.Incident_All_Flow@f5b6e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="close_Incident()[pri:6, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:19:48 IST" name="close_Incident" description="Verification of Incident flow till On Closed state" finished-at="2026-01-05T00:20:43 IST" duration-ms="55061" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close_Incident -->
+        <test-method signature="Cancel_Incident()[pri:7, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:20:43 IST" name="Cancel_Incident" description="Verification of Incident flow till Canceled state" finished-at="2026-01-05T00:21:06 IST" duration-ms="22701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Cancel_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:20:43 IST" name="tearDown" finished-at="2026-01-05T00:20:43 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=close_Incident status=SUCCESS method=Incident_All_Flow.close_Incident()[pri:6, instance:com.example.tests.Incident_All_Flow@f5b6e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@f5b6e78]" started-at="2026-01-05T00:21:06 IST" name="tearDown" finished-at="2026-01-05T00:21:06 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Cancel_Incident status=SUCCESS method=Incident_All_Flow.Cancel_Incident()[pri:7, instance:com.example.tests.Incident_All_Flow@f5b6e78] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.Incident_All_Flow -->
+      <class name="com.example.tests.RequestClosedComplete">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:07:37 IST" name="setupReport" finished-at="2026-01-05T00:08:09 IST" duration-ms="31761" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupReport -->
+        <test-method signature="createRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:08:09 IST" name="createRequest" description="Verification of Submitting the Big Data Analysis catalog item" finished-at="2026-01-05T00:08:52 IST" duration-ms="42885" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:08:52 IST" name="tearDown" finished-at="2026-01-05T00:08:52 IST" duration-ms="17" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createRequest status=SUCCESS method=RequestClosedComplete.createRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="checkingRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:08:52 IST" name="checkingRequest" description="Verification of Request and RITM" finished-at="2026-01-05T00:09:11 IST" depends-on-methods="com.example.tests.RequestClosedComplete.createRequest" duration-ms="18367" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkingRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:09:11 IST" name="tearDown" finished-at="2026-01-05T00:09:11 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=checkingRequest status=SUCCESS method=RequestClosedComplete.checkingRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="approvals()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:09:11 IST" name="approvals" description="Verification of Generated Approvals" finished-at="2026-01-05T00:09:13 IST" depends-on-methods="com.example.tests.RequestClosedComplete.checkingRequest" duration-ms="2461" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- approvals -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:09:13 IST" name="impersonateUser" description="Verification of Approving the approval by Impersonating user" finished-at="2026-01-05T00:10:27 IST" depends-on-methods="com.example.tests.RequestClosedComplete.approvals" duration-ms="74098" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:09:13 IST" name="tearDown" finished-at="2026-01-05T00:09:13 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=approvals status=SUCCESS method=RequestClosedComplete.approvals()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:10:27 IST" name="tearDown" finished-at="2026-01-05T00:10:27 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=RequestClosedComplete.impersonateUser()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:10:27 IST" name="verifyCatalogTask" description="Verification of Catalog task after Approving the approval" finished-at="2026-01-05T00:10:41 IST" depends-on-methods="com.example.tests.RequestClosedComplete.impersonateUser" duration-ms="14109" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCatalogTask -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:10:41 IST" name="tearDown" finished-at="2026-01-05T00:10:41 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCatalogTask status=SUCCESS method=RequestClosedComplete.verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyCloseCompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:10:41 IST" name="verifyCloseCompleteCatalogTask" description="Verification of Close Compleating the Catalog task" finished-at="2026-01-05T00:11:06 IST" depends-on-methods="com.example.tests.RequestClosedComplete.verifyCatalogTask" duration-ms="24527" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCloseCompleteCatalogTask -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:11:06 IST" name="tearDown" finished-at="2026-01-05T00:11:06 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCloseCompleteCatalogTask status=SUCCESS method=RequestClosedComplete.verifyCloseCompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="teardownReport()[pri:0, instance:com.example.tests.RequestClosedComplete@3050ac2f]" started-at="2026-01-05T00:30:10 IST" name="teardownReport" finished-at="2026-01-05T00:30:20 IST" duration-ms="10062" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- teardownReport -->
+      </class> <!-- com.example.tests.RequestClosedComplete -->
+      <class name="com.example.tests.NormalChange">
+        <test-method signature="navigateToChangeList()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:26:45 IST" name="navigateToChangeList" description="Verification of Navigate to Change list" finished-at="2026-01-05T00:27:03 IST" duration-ms="18425" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToChangeList -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:27:03 IST" name="tearDown" finished-at="2026-01-05T00:27:03 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=navigateToChangeList status=SUCCESS method=NormalChange.navigateToChangeList()[pri:0, instance:com.example.tests.NormalChange@557a84fe] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="createChange()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:27:03 IST" name="createChange" description="Verification of Creation of change" finished-at="2026-01-05T00:27:09 IST" depends-on-methods="com.example.tests.NormalChange.navigateToChangeList" duration-ms="5380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:27:09 IST" name="tearDown" finished-at="2026-01-05T00:27:09 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createChange status=SUCCESS method=NormalChange.createChange()[pri:0, instance:com.example.tests.NormalChange@557a84fe] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="openChange()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:27:09 IST" name="openChange" description="Verification of opening Created change record from list" finished-at="2026-01-05T00:27:19 IST" depends-on-methods="com.example.tests.NormalChange.createChange" duration-ms="10562" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:27:19 IST" name="tearDown" finished-at="2026-01-05T00:27:19 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=openChange status=SUCCESS method=NormalChange.openChange()[pri:0, instance:com.example.tests.NormalChange@557a84fe] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="requestingApproval()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:27:19 IST" name="requestingApproval" description="Verification of Approval Generation" finished-at="2026-01-05T00:27:45 IST" depends-on-methods="com.example.tests.NormalChange.openChange" duration-ms="25708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestingApproval -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:27:45 IST" name="tearDown" finished-at="2026-01-05T00:27:45 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=requestingApproval status=SUCCESS method=NormalChange.requestingApproval()[pri:0, instance:com.example.tests.NormalChange@557a84fe] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:27:45 IST" name="impersonateUser" description="Verification of User Impersonation" finished-at="2026-01-05T00:29:01 IST" depends-on-methods="com.example.tests.NormalChange.requestingApproval" duration-ms="76434" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:29:01 IST" name="tearDown" finished-at="2026-01-05T00:29:01 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=NormalChange.impersonateUser()[pri:0, instance:com.example.tests.NormalChange@557a84fe] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="OPNCHNAFTAPPL()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:29:01 IST" name="OPNCHNAFTAPPL" description="Opening CHN record after first Approval Approve" finished-at="2026-01-05T00:29:17 IST" depends-on-methods="com.example.tests.NormalChange.impersonateUser" duration-ms="15712" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OPNCHNAFTAPPL -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:29:17 IST" name="tearDown" finished-at="2026-01-05T00:29:17 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=OPNCHNAFTAPPL status=SUCCESS method=NormalChange.OPNCHNAFTAPPL()[pri:0, instance:com.example.tests.NormalChange@557a84fe] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="impersonateUserSec()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:29:17 IST" name="impersonateUserSec" description="Verification of 2nd Approval" finished-at="2026-01-05T00:30:10 IST" depends-on-methods="com.example.tests.NormalChange.OPNCHNAFTAPPL" duration-ms="53006" status="FAIL">
+          <exception class="org.openqa.selenium.StaleElementReferenceException">
             <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because "clickUser1" is null]]>
+              <![CDATA[stale element reference: stale element not found
+  (Session info: chrome=143.0.7499.170)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [02760abd264a1c5e5e83f45285555806, clickElement {id=f.806CDFC6DC6AD0026A7E8CD294DC5851.d.5E236D4CA8D80DDCCCD215034BEC251F.e.33328}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62768}, goog:processID: 27116, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62768/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (02760abd264a1c5e5e83f45285555806)] -> xpath: //*[@class='linked formlink']]
+Session ID: 02760abd264a1c5e5e83f45285555806]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.click()" because "clickUser1" is null
-at base.Impersonation.startImpersonation(Impersonation.java:41)
-at com.example.tests.NormalChange.impersonateUserSec(NormalChange.java:363)
+              <![CDATA[org.openqa.selenium.StaleElementReferenceException: stale element reference: stale element not found
+  (Session info: chrome=143.0.7499.170)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#stale-element-reference-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [02760abd264a1c5e5e83f45285555806, clickElement {id=f.806CDFC6DC6AD0026A7E8CD294DC5851.d.5E236D4CA8D80DDCCCD215034BEC251F.e.33328}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62768}, goog:processID: 27116, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62768/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (02760abd264a1c5e5e83f45285555806)] -> xpath: //*[@class='linked formlink']]
+Session ID: 02760abd264a1c5e5e83f45285555806
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at com.example.tests.NormalChange.impersonateUserSec(NormalChange.java:411)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -67,30 +477,30 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- org.openqa.selenium.StaleElementReferenceException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- impersonateUserSec -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@60e9c3a5]" started-at="2026-01-04T18:31:52 IST" name="tearDown" finished-at="2026-01-04T18:31:53 IST" duration-ms="397" status="PASS">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:30:10 IST" name="tearDown" finished-at="2026-01-05T00:30:10 IST" duration-ms="257" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=impersonateUserSec status=FAILURE method=NormalChange.impersonateUserSec()[pri:0, instance:com.example.tests.NormalChange@60e9c3a5] output={null}]]]>
+                <![CDATA[[TestResult name=impersonateUserSec status=FAILURE method=NormalChange.impersonateUserSec()[pri:0, instance:com.example.tests.NormalChange@557a84fe] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="implimentUIAction()[pri:0, instance:com.example.tests.NormalChange@60e9c3a5]" started-at="2026-01-04T18:31:53 IST" name="implimentUIAction" description="Verification of State and Impliment UI Action after 2nd Approval Approved" finished-at="2026-01-04T18:31:53 IST" depends-on-methods="com.example.tests.NormalChange.impersonateUserSec" duration-ms="1" status="SKIP">
+        <test-method signature="implimentUIAction()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:30:10 IST" name="implimentUIAction" description="Verification of State and Impliment UI Action after 2nd Approval Approved" finished-at="2026-01-05T00:30:10 IST" depends-on-methods="com.example.tests.NormalChange.impersonateUserSec" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@60e9c3a5 depends on not successfully finished methods 
-[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@60e9c3a5]]]>
+              <![CDATA[Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@557a84fe]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@60e9c3a5 depends on not successfully finished methods 
-[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@60e9c3a5]
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@557a84fe]
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -116,24 +526,18 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- implimentUIAction -->
-        <test-method is-config="true" signature="endImpAdmin()[pri:0, instance:com.example.tests.NormalChange@60e9c3a5]" started-at="2026-01-04T18:31:53 IST" name="endImpAdmin" finished-at="2026-01-04T18:32:02 IST" duration-ms="9310" status="FAIL">
-          <exception class="java.lang.NullPointerException">
+        <test-method signature="firstchangeTask()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:30:10 IST" name="firstchangeTask" description="Verification of 1st Change Task" finished-at="2026-01-05T00:30:10 IST" depends-on-methods="com.example.tests.NormalChange.implimentUIAction" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.WebElement.click()" because "endimpersonation" is null]]>
+              <![CDATA[Method com.example.tests.NormalChange.firstchangeTask() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.WebElement.click()" because "endimpersonation" is null
-at base.Impersonation.endImpersonation(Impersonation.java:64)
-at base.BaseTest.endImpAdmin(BaseTest.java:76)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassConfigurations(TestMethodWorker.java:238)
-at org.testng.internal.invokers.TestMethodWorker.invokeAfterClassMethods(TestMethodWorker.java:223)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:137)
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.firstchangeTask() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
 at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
 at org.testng.TestRunner.privateRun(TestRunner.java:741)
 at org.testng.TestRunner.run(TestRunner.java:616)
@@ -152,15 +556,475 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- endImpAdmin -->
-        <test-method is-config="true" signature="teardownReport()[pri:0, instance:com.example.tests.NormalChange@60e9c3a5]" started-at="2026-01-04T18:32:02 IST" name="teardownReport" finished-at="2026-01-04T18:32:05 IST" duration-ms="2921" status="PASS">
+        </test-method> <!-- firstchangeTask -->
+        <test-method signature="secondchangeTask()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:30:10 IST" name="secondchangeTask" description="Verification of 2nd Change Task" finished-at="2026-01-05T00:30:10 IST" depends-on-methods="com.example.tests.NormalChange.implimentUIAction" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@557a84fe]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- teardownReport -->
+        </test-method> <!-- secondchangeTask -->
+        <test-method signature="Closechangerecord()[pri:0, instance:com.example.tests.NormalChange@557a84fe]" started-at="2026-01-05T00:30:10 IST" name="Closechangerecord" description="Verification of Change Record" finished-at="2026-01-05T00:30:10 IST" depends-on-methods="com.example.tests.NormalChange.secondchangeTask" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.NormalChange.Closechangerecord() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@557a84fe]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.Closechangerecord() on instance com.example.tests.NormalChange@557a84fe depends on not successfully finished methods 
+[com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@557a84fe]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Closechangerecord -->
       </class> <!-- com.example.tests.NormalChange -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      <class name="com.example.tests.RequestApprovalRejection">
+        <test-method signature="createRequest()[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564]" started-at="2026-01-05T00:13:56 IST" name="createRequest" description="Verification of Submitting the Big Data Analysis catalog item" finished-at="2026-01-05T00:14:36 IST" duration-ms="40720" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564]" started-at="2026-01-05T00:14:36 IST" name="tearDown" finished-at="2026-01-05T00:14:36 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createRequest status=SUCCESS method=RequestApprovalRejection.createRequest()[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="checkingRequest()[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564]" started-at="2026-01-05T00:14:36 IST" name="checkingRequest" description="Verification of Request and RITM" finished-at="2026-01-05T00:14:54 IST" depends-on-methods="com.example.tests.RequestApprovalRejection.createRequest" duration-ms="17132" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkingRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564]" started-at="2026-01-05T00:14:54 IST" name="tearDown" finished-at="2026-01-05T00:14:54 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=checkingRequest status=SUCCESS method=RequestApprovalRejection.checkingRequest()[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="approvals()[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564]" started-at="2026-01-05T00:14:54 IST" name="approvals" description="Verification of Generated Approvals" finished-at="2026-01-05T00:14:56 IST" depends-on-methods="com.example.tests.RequestApprovalRejection.checkingRequest" duration-ms="2678" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- approvals -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564]" started-at="2026-01-05T00:14:56 IST" name="tearDown" finished-at="2026-01-05T00:14:56 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=approvals status=SUCCESS method=RequestApprovalRejection.approvals()[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564]" started-at="2026-01-05T00:14:56 IST" name="impersonateUser" description="Verification of Rejecting the approval by Impersonating user" finished-at="2026-01-05T00:16:11 IST" depends-on-methods="com.example.tests.RequestApprovalRejection.approvals" duration-ms="75198" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564]" started-at="2026-01-05T00:16:11 IST" name="tearDown" finished-at="2026-01-05T00:16:11 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=RequestApprovalRejection.impersonateUser()[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyCatalogTask()[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564]" started-at="2026-01-05T00:16:11 IST" name="verifyCatalogTask" description="Verification of SCTask, Request &amp; RITM after Rejecting the approval" finished-at="2026-01-05T00:16:36 IST" depends-on-methods="com.example.tests.RequestApprovalRejection.impersonateUser" duration-ms="24756" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCatalogTask -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564]" started-at="2026-01-05T00:16:36 IST" name="tearDown" finished-at="2026-01-05T00:16:36 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCatalogTask status=SUCCESS method=RequestApprovalRejection.verifyCatalogTask()[pri:0, instance:com.example.tests.RequestApprovalRejection@1fdca564] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.RequestApprovalRejection -->
+      <class name="com.example.tests.Problem">
+        <test-method signature="impersonateUser()[pri:1, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:21:06 IST" name="impersonateUser" finished-at="2026-01-05T00:21:32 IST" duration-ms="26891" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:21:32 IST" name="tearDown" finished-at="2026-01-05T00:21:32 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=Problem.impersonateUser()[pri:1, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="submitProblemFormWODetail()[pri:2, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:21:32 IST" name="submitProblemFormWODetail" finished-at="2026-01-05T00:21:42 IST" duration-ms="9111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitProblemFormWODetail -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:21:42 IST" name="tearDown" finished-at="2026-01-05T00:21:42 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=submitProblemFormWODetail status=SUCCESS method=Problem.submitProblemFormWODetail()[pri:2, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="validateProblemForm()[pri:3, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:21:42 IST" name="validateProblemForm" finished-at="2026-01-05T00:22:09 IST" duration-ms="27475" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateProblemForm -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:09 IST" name="tearDown" finished-at="2026-01-05T00:22:09 IST" duration-ms="13" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validateProblemForm status=SUCCESS method=Problem.validateProblemForm()[pri:3, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="submitForm()[pri:4, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:09 IST" name="submitForm" finished-at="2026-01-05T00:22:11 IST" duration-ms="1823" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitForm -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:11 IST" name="tearDown" finished-at="2026-01-05T00:22:11 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=submitForm status=SUCCESS method=Problem.submitForm()[pri:4, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="reOpenForm()[pri:5, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:11 IST" name="reOpenForm" finished-at="2026-01-05T00:22:18 IST" duration-ms="6872" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reOpenForm -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:18 IST" name="tearDown" finished-at="2026-01-05T00:22:18 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=reOpenForm status=SUCCESS method=Problem.reOpenForm()[pri:5, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="stateOnceAssignSave()[pri:6, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:18 IST" name="stateOnceAssignSave" finished-at="2026-01-05T00:22:18 IST" duration-ms="157" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stateOnceAssignSave -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:18 IST" name="tearDown" finished-at="2026-01-05T00:22:18 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=stateOnceAssignSave status=SUCCESS method=Problem.stateOnceAssignSave()[pri:6, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="RCAState()[pri:7, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:18 IST" name="RCAState" finished-at="2026-01-05T00:22:31 IST" duration-ms="13418" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RCAState -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:31 IST" name="tearDown" finished-at="2026-01-05T00:22:31 IST" duration-ms="5" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=RCAState status=SUCCESS method=Problem.RCAState()[pri:7, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="fixStateWODetails()[pri:8, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:31 IST" name="fixStateWODetails" finished-at="2026-01-05T00:22:39 IST" duration-ms="7197" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fixStateWODetails -->
+        <test-method signature="fixState()[pri:9, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:39 IST" name="fixState" finished-at="2026-01-05T00:22:48 IST" duration-ms="8987" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fixState -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:39 IST" name="tearDown" finished-at="2026-01-05T00:22:39 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=fixStateWODetails status=SUCCESS method=Problem.fixStateWODetails()[pri:8, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:48 IST" name="tearDown" finished-at="2026-01-05T00:22:48 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=fixState status=SUCCESS method=Problem.fixState()[pri:9, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="resolveState()[pri:10, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:48 IST" name="resolveState" finished-at="2026-01-05T00:22:55 IST" duration-ms="7312" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resolveState -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:55 IST" name="tearDown" finished-at="2026-01-05T00:22:55 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=resolveState status=SUCCESS method=Problem.resolveState()[pri:10, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="reAnalyze()[pri:11, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:22:55 IST" name="reAnalyze" finished-at="2026-01-05T00:23:02 IST" duration-ms="6619" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reAnalyze -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:23:02 IST" name="tearDown" finished-at="2026-01-05T00:23:02 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=reAnalyze status=SUCCESS method=Problem.reAnalyze()[pri:11, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="cancelPRB()[pri:12, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:23:02 IST" name="cancelPRB" finished-at="2026-01-05T00:23:12 IST" duration-ms="10462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelPRB -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:23:12 IST" name="tearDown" finished-at="2026-01-05T00:23:12 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=cancelPRB status=SUCCESS method=Problem.cancelPRB()[pri:12, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="reAnalyzeOnceAgain()[pri:13, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:23:12 IST" name="reAnalyzeOnceAgain" finished-at="2026-01-05T00:23:19 IST" duration-ms="7304" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reAnalyzeOnceAgain -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:23:19 IST" name="tearDown" finished-at="2026-01-05T00:23:19 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=reAnalyzeOnceAgain status=SUCCESS method=Problem.reAnalyzeOnceAgain()[pri:13, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="cloasedState()[pri:14, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:23:19 IST" name="cloasedState" finished-at="2026-01-05T00:23:37 IST" duration-ms="17755" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cloasedState -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:23:37 IST" name="tearDown" finished-at="2026-01-05T00:23:37 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=cloasedState status=SUCCESS method=Problem.cloasedState()[pri:14, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="endimpersonation()[pri:15, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:23:37 IST" name="endimpersonation" finished-at="2026-01-05T00:24:05 IST" duration-ms="28298" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endimpersonation -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@7847ef2c]" started-at="2026-01-05T00:24:05 IST" name="tearDown" finished-at="2026-01-05T00:24:05 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=endimpersonation status=SUCCESS method=Problem.endimpersonation()[pri:15, instance:com.example.tests.Problem@7847ef2c] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.Problem -->
+      <class name="com.example.tests.NormalChangeRejection">
+        <test-method signature="navigateToChangeList()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:24:05 IST" name="navigateToChangeList" description="Verification of Navigate to Change list" finished-at="2026-01-05T00:24:24 IST" duration-ms="18158" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToChangeList -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:24:24 IST" name="tearDown" finished-at="2026-01-05T00:24:24 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=navigateToChangeList status=SUCCESS method=NormalChangeRejection.navigateToChangeList()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="createChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:24:24 IST" name="createChange" description="Verification of Creation of change" finished-at="2026-01-05T00:24:30 IST" depends-on-methods="com.example.tests.NormalChangeRejection.navigateToChangeList" duration-ms="6597" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:24:30 IST" name="tearDown" finished-at="2026-01-05T00:24:30 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createChange status=SUCCESS method=NormalChangeRejection.createChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="openChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:24:30 IST" name="openChange" description="Verification of opening Created change record from list" finished-at="2026-01-05T00:24:42 IST" depends-on-methods="com.example.tests.NormalChangeRejection.createChange" duration-ms="11360" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:24:42 IST" name="tearDown" finished-at="2026-01-05T00:24:42 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=openChange status=SUCCESS method=NormalChangeRejection.openChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="requestingApproval()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:24:42 IST" name="requestingApproval" description="Verification of Approval Generation" finished-at="2026-01-05T00:25:09 IST" depends-on-methods="com.example.tests.NormalChangeRejection.openChange" duration-ms="27983" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestingApproval -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:25:09 IST" name="impersonateUser" description="Verification of User Impersonation" finished-at="2026-01-05T00:26:28 IST" depends-on-methods="com.example.tests.NormalChangeRejection.requestingApproval" duration-ms="78535" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:25:09 IST" name="tearDown" finished-at="2026-01-05T00:25:09 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=requestingApproval status=SUCCESS method=NormalChangeRejection.requestingApproval()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:26:28 IST" name="tearDown" finished-at="2026-01-05T00:26:28 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=NormalChangeRejection.impersonateUser()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="OPNCHNAFTREJ()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:26:28 IST" name="OPNCHNAFTREJ" description="Verification of Change record after Rejection of 1st Approval" finished-at="2026-01-05T00:26:45 IST" depends-on-methods="com.example.tests.NormalChangeRejection.impersonateUser" duration-ms="16730" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OPNCHNAFTREJ -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff]" started-at="2026-01-05T00:26:45 IST" name="tearDown" finished-at="2026-01-05T00:26:45 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=OPNCHNAFTREJ status=SUCCESS method=NormalChangeRejection.OPNCHNAFTREJ()[pri:0, instance:com.example.tests.NormalChangeRejection@3662bdff] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.NormalChangeRejection -->
+    </test> <!-- All test -->
+  </suite> <!-- Service Now Tests Suite with Selenium WebDriver -->
 </testng-results>

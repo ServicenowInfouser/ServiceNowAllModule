@@ -6,7 +6,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -45,17 +44,27 @@ public class Incident_All_Flow extends BaseTest {
 
 		// Navigate to All > incident table
 		jse = (JavascriptExecutor) driver;   
-		navigator.allNavigation("incident.list", jse);
-		test.info("Navigate to All menu");
-		test.info("Open Incident table");	
+		//navigator.allNavigation("incident.list", jse);
+		//test.info("Navigate to All menu ");
+		
+		driver.get(BaseTest.baseUrl + "/incident_list");
+		test.info("Open Incident table ");	
+
+		//Capture screenshots
+		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident table : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		// Click on New button
 		incidentpage.click_On_New_Button(test);
 
+		//Capture screenshots
+		String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
+
 		// Copy Incident record number
 		WebElement inputElement = driver.findElement(By.xpath("//input[@id='incident.number']"));
 		createdInc = inputElement.getAttribute("value");
-		test.info("Incident number: "+createdInc);
+		test.info("Incident number : "+createdInc);
 
 		// Validate caller fields is mandatory			
 		incidentpage.verify_Field_Is_Mandatory("//div[@id='label.incident.caller_id']/label/span[1]", "Caller",test);
@@ -81,23 +90,31 @@ public class Incident_All_Flow extends BaseTest {
 		// Enter short description
 		incidentpage.enter_ShortDescription(short_description,test);
 
+		//Capture screenshots
+		String screenshotPath4 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath4).build());
+
 		// Click on submit
 		incidentpage.click_On_Submit_Incident_Button(test);
+		Thread.sleep(2000);
+		driver.get(Config.baseUrl() + "/incident_list");	
 
-		//Search and open Incident
-		driver.get(Config.baseUrl() + "/incident_list");
+		//Search Incident		
 		incidentpage.searchIncident(createdInc,test);
+
+		//Capture screenshots
+		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+
+		//Open Incident			
 		incidentpage.openIncident(createdInc,test);	
 
 		// Verify state of Incident is New
 		incidentpage.verify_Incident_State(new_state_Code,test);				
 
 		//Capture screenshots
-		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
-		test.pass("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());	
-		
-		//Custom report
-        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
+		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
+		test.pass("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());		
 	}
 
 
@@ -106,12 +123,12 @@ public class Incident_All_Flow extends BaseTest {
 		//Initialize report
 		test = ExtentReportManager.createTest("Verification that User is able to update the Incident record");
 
-		test.info("Incident number: "+createdInc);
+		test.info("Incident number : "+createdInc);
 		System.out.println("Upadte test started..");
 
 		//Capture screenshots
-		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
-		test.pass("Incident before update : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+		test.pass("Incident before update : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		//Select Sub category
 		incidentpage.Select_Sub_Category("CPU",test);
@@ -120,20 +137,26 @@ public class Incident_All_Flow extends BaseTest {
 		driver.findElement(By.xpath("//*[@id='incident.short_description']")).clear();
 		incidentpage.enter_ShortDescription("Test Updated Short Desctription ",test);
 
+		//Capture screenshots
+		String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
+
 		//Update the form
 		incidentpage.click_On_Update_Incident_Button(test);	
 
-		//Search and open Incident		
-		driver.get(Config.baseUrl() + "/incident_list");
+		//Search Incident		
 		incidentpage.searchIncident(createdInc,test);
+
+		//Capture screenshots
+		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+
+		//Open Incident			
 		incidentpage.openIncident(createdInc,test);	
 
 		//Capture screenshots
 		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Subcategory and Short Description Updated on Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
-		
-		//Custom report
-        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -156,13 +179,21 @@ public class Incident_All_Flow extends BaseTest {
 			driver.get(Config.baseUrl() + "/incident_list");	
 			test.info("Opening incident table");	
 
+			//Capture screenshots
+			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("Incident table : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+
 			// Click on New button
 			incidentpage.click_On_New_Button(test);
 
+			//Capture screenshots
+			String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
+
 			// Copy Incident record number
 			WebElement inputElement = driver.findElement(By.xpath("//input[@id='incident.number']"));
-			String createdInc = inputElement.getAttribute("value");
-			test.info("Incident number: "+createdInc);
+			createdInc = inputElement.getAttribute("value");
+			test.info("Incident number : "+createdInc);
 
 			// Validate caller fields is mandatory			
 			incidentpage.verify_Field_Is_Mandatory("//div[@id='label.incident.caller_id']/label/span[1]", "Caller",test);
@@ -188,22 +219,29 @@ public class Incident_All_Flow extends BaseTest {
 			// Enter short description
 			incidentpage.enter_ShortDescription(short_description,test);
 
+			//Capture screenshots
+			String screenshotPath4 = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath4).build());
+
 			// Click on submit
 			incidentpage.click_On_Submit_Incident_Button(test);
 
-			//Search and open Incident		
+			//Search Incident		
 			incidentpage.searchIncident(createdInc,test);
+
+			//Capture screenshots
+			String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+
+			//Open Incident			
 			incidentpage.openIncident(createdInc,test);	
 
 			// Verify state of Incident is New
 			incidentpage.verify_Incident_State(new_state_Code,test);				
 
 			//Capture screenshots
-			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
-			test.pass("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-			
-			//Custom report
-	        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
+			String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
 		}
 		System.out.println("Incidents are Created !!");
 		test.pass("Incidents are Created for All the Users. ");
@@ -219,8 +257,16 @@ public class Incident_All_Flow extends BaseTest {
 		driver.get(Config.baseUrl() + "/incident_list");	
 		test.info("Opening incident table");		
 
+		//Capture screenshots
+		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident table : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+
 		// Click on New button
 		incidentpage.click_On_New_Button(test);
+
+		//Capture screenshots
+		String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
 
 		// Click on submit
 		incidentpage.click_On_Submit_Incident_Button(test);
@@ -229,14 +275,12 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.verifyIncidentErrorMessage("The following mandatory fields are not filled in: Short description, Caller",test);
 
 		//Capture screenshots
-		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
-		test.pass("Error message validated on Incident: ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
+		test.pass("Error message validated on Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
 
 		System.out.println("Error message validated on Incident !!");
-		
-		
 	}
-	
+
 
 	@Test	(priority=4, description = "Verification of Incident flow till On Hold state")
 	public void on_Hold_Incident () throws InterruptedException {
@@ -255,15 +299,23 @@ public class Incident_All_Flow extends BaseTest {
 
 		// Open incident table
 		driver.get(Config.baseUrl() + "/incident_list");	
-		test.info("Opening incident table");			
+		test.info("Opening incident table");		
+
+		//Capture screenshots
+		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident table : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		// Click on New button
 		incidentpage.click_On_New_Button(test);
 
+		//Capture screenshots
+		String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
+
 		// Copy Incident record number
 		WebElement inputElement = driver.findElement(By.xpath("//input[@id='incident.number']"));
 		String createdInc = inputElement.getAttribute("value");
-		test.info("Incident number: "+createdInc);
+		test.info("Incident number : "+createdInc);
 
 		//Validate field is visible on form
 		incidentpage.verify_Field_Is_Visible("//label[@for='sys_display.incident.caller_id']",test);
@@ -284,18 +336,28 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.enter_ShortDescription(short_description,test);
 
 		//Capture screenshots
-		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
 
 		// Click on submit
 		incidentpage.click_On_Submit_Incident_Button(test);
 
-		//Search and open Incident		
+		//Search Incident		
 		incidentpage.searchIncident(createdInc,test);
-		incidentpage.openIncident(createdInc,test);	
+
+		//Capture screenshots
+		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+
+		//Open Incident			
+		incidentpage.openIncident(createdInc,test);		
 
 		// Verify state of Incident is New
 		incidentpage.verify_Incident_State(new_state_Code,test);
+
+		//Capture screenshots
+		String screenshotPath4 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath4).build());
 
 		// Change the State to In Progress
 		incidentpage.change_Incident_state("In Progress",test);
@@ -310,8 +372,8 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.verify_Incident_State(in_Progress_Code,test);		
 
 		//Capture screenshots
-		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Verify Incident record is in state : In Progress ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());			
+		String screenshotPath5 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Verify Incident record is in state : In Progress ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath5).build());			
 
 		// Change the State to On Hold
 		incidentpage.change_Incident_state("On Hold",test);
@@ -321,6 +383,11 @@ public class Incident_All_Flow extends BaseTest {
 
 		//Verify error message for mandatory fields for Incident		
 		incidentpage.verifyIncidentErrorMessage("The following mandatory fields are not filled in: On hold reason",test);
+		Thread.sleep(2000);
+
+		//Capture screenshots
+		String screenshotPath6 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath6).build());
 
 		// Verify On Hold Reason fields is mandatory
 		incidentpage.verify_Field_Is_Mandatory("//div[@id=\"label.incident.hold_reason\"]/label/span[1]", "On Hold reason", test );
@@ -329,11 +396,15 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.select_On_Hold_Reason_On_Incident("Awaiting Change",test);
 
 		//Capture screenshots
-		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Verify error message and mandatory fields on state On Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+		String screenshotPath7 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Verify error message and mandatory fields on state On Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath7).build());
 
 		//Update the form
 		incidentpage.click_On_Update_Incident_Button(test);
+
+		//Capture screenshots
+		String screenshotPath8 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath8).build());
 
 		// open incident
 		incidentpage.openIncident(createdInc,test);	
@@ -342,11 +413,8 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.verify_Incident_State(on_Hold_Code,test);	
 
 		//Capture screenshots
-		String screenshotPath4 = ExtentReportManager.captureScreenshot_new(driver);
-		test.pass("State of Incident is On-Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath4).build());
-		
-		//Custom report
-        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
+		String screenshotPath9 = ExtentReportManager.captureScreenshot_new(driver);
+		test.pass("State of Incident is On-Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath9).build());
 	}
 
 
@@ -370,13 +438,21 @@ public class Incident_All_Flow extends BaseTest {
 		driver.get(Config.baseUrl() + "/incident_list");	
 		test.info("Opening incident table");		
 
+		//Capture screenshots
+		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident table : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+
 		// Click on New button
 		incidentpage.click_On_New_Button(test);
+
+		//Capture screenshots
+		String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
 
 		// Copy Incident record number
 		WebElement inputElement = driver.findElement(By.xpath("//input[@id='incident.number']"));
 		String createdInc = inputElement.getAttribute("value");
-		test.info("Incident number: "+createdInc);
+		test.info("Incident number : "+createdInc);
 
 		//Validate field is visible on form
 		incidentpage.verify_Field_Is_Visible("//label[@for='sys_display.incident.caller_id']",test);
@@ -397,18 +473,28 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.enter_ShortDescription(short_description,test);
 
 		//Capture screenshots
-		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
 
 		// Click on submit
 		incidentpage.click_On_Submit_Incident_Button(test);
 
-		//Search and open Incident		
+		//Search Incident		
 		incidentpage.searchIncident(createdInc,test);
+
+		//Capture screenshots
+		String screenshotPath4 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath4).build());
+
+		//Open Incident			
 		incidentpage.openIncident(createdInc,test);	
 
 		// Verify state of Incident is New
 		incidentpage.verify_Incident_State(new_state_Code,test);
+
+		//Capture screenshots
+		String screenshotPath5 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath5).build());
 
 		// Change the State to In Progress
 		incidentpage.change_Incident_state("In Progress",test);
@@ -423,8 +509,8 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.verify_Incident_State(in_Progress_Code,test);		
 
 		//Capture screenshots
-		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Verify Incident record is in state : In Progress ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());			
+		String screenshotPath6 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Verify Incident record is in state : In Progress ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath6).build());			
 
 		// Change the State to On Hold
 		incidentpage.change_Incident_state("On Hold",test);
@@ -434,6 +520,11 @@ public class Incident_All_Flow extends BaseTest {
 
 		//Verify error message for mandatory fields for Incident		
 		incidentpage.verifyIncidentErrorMessage("The following mandatory fields are not filled in: On hold reason",test);
+		Thread.sleep(2000);
+
+		//Capture screenshots
+		String screenshotPath7 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath7).build());
 
 		// Verify On Hold Reason fields is mandatory
 		incidentpage.verify_Field_Is_Mandatory("//div[@id=\"label.incident.hold_reason\"]/label/span[1]", "On Hold reason",test );
@@ -442,11 +533,15 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.select_On_Hold_Reason_On_Incident("Awaiting Change",test);
 
 		//Capture screenshots
-		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Verify error message and mandatory fields on state On Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+		String screenshotPath8 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Verify error message and mandatory fields on state On Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath8).build());
 
 		//Update the form
 		incidentpage.click_On_Update_Incident_Button(test);
+
+		//Capture screenshots
+		String screenshotPath9 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath9).build());
 
 		// open incident
 		incidentpage.openIncident(createdInc,test);	
@@ -454,12 +549,20 @@ public class Incident_All_Flow extends BaseTest {
 		//Verify Incident state is On Hold
 		incidentpage.verify_Incident_State(on_Hold_Code,test);
 
+		//Capture screenshots
+		String screenshotPath10 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath10).build());
+
 		//Resolve the Incident
 		incidentpage.click_On_Resolved_Incident_Button(test);	
 
 		//Update the form
 		incidentpage.click_On_Update_Incident_Button(test);
+		Thread.sleep(6000);
 
+		//Capture screenshots
+		String screenshotPath11 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath11).build());
 
 		//Verify error message for mandatory fields for Incident on Resolved state
 		incidentpage.verifyIncidentErrorMessage("The following mandatory fields are not filled in: Resolution code, Resolution notes",test);		
@@ -489,11 +592,15 @@ public class Incident_All_Flow extends BaseTest {
 		test.info("Added Resoltuon note : Testing add resolution note");
 
 		//Capture screenshots
-		String screenshotPath4 = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Resolving Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath4).build());
+		String screenshotPath12 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Resolving Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath12).build());
 
 		//Update the form
 		incidentpage.click_On_Update_Incident_Button(test);
+
+		//Capture screenshots
+		String screenshotPath13 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath13).build());
 
 		//Open incident
 		incidentpage.openIncident(createdInc,test);			
@@ -502,11 +609,8 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.verify_Incident_State(resolved_Code,test);
 
 		//Capture screenshots
-		String screenshotPath5 = ExtentReportManager.captureScreenshot_new(driver);
-		test.pass("Resolved Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath5).build());
-		
-		//Custom report
-        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
+		String screenshotPath14 = ExtentReportManager.captureScreenshot_new(driver);
+		test.pass("Resolved Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath14).build());
 	}
 
 
@@ -525,19 +629,26 @@ public class Incident_All_Flow extends BaseTest {
 		String in_Progress_Code = excel_data[0][3].toString().replaceAll("\\.0+$", "");
 		String on_Hold_Code = excel_data[0][4].toString().replaceAll("\\.0+$", "");
 		String resolved_Code = excel_data[0][5].toString().replaceAll("\\.0+$", "");
-		String closed_Code = excel_data[0][6].toString().replaceAll("\\.0+$", "");
 
 		// Open incident table
 		driver.get(Config.baseUrl() + "/incident_list");	
-		test.info("Opening incident table");		
+		test.info("Opening incident table");	
+
+		//Capture screenshots
+		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident table : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		// Click on New button
 		incidentpage.click_On_New_Button(test);
 
+		//Capture screenshots
+		String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
+
 		// Copy Incident record number
 		WebElement inputElement = driver.findElement(By.xpath("//input[@id='incident.number']"));
 		String createdInc = inputElement.getAttribute("value");
-		test.info("Incident number: "+createdInc);
+		test.info("Incident number : "+createdInc);
 
 		//Validate field is visible on form
 		incidentpage.verify_Field_Is_Visible("//label[@for='sys_display.incident.caller_id']",test);
@@ -558,24 +669,38 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.enter_ShortDescription(short_description,test);
 
 		//Capture screenshots
-		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
 
 		// Click on submit
 		incidentpage.click_On_Submit_Incident_Button(test);
 
 		//Search and open Incident		
 		incidentpage.searchIncident(createdInc,test);
+
+		//Capture screenshots
+		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+
+		//Open Incident	
 		incidentpage.openIncident(createdInc,test);	
 
 		// Verify state of Incident is New
 		incidentpage.verify_Incident_State(new_state_Code,test);
+
+		//Capture screenshots
+		String screenshotPath4 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath4).build());
 
 		// Change the State to In Progress
 		incidentpage.change_Incident_state("In Progress",test);
 
 		//Update the form
 		incidentpage.click_On_Update_Incident_Button(test);
+
+		//Capture screenshots
+		String screenshotPath5 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath5).build());
 
 		// open incident
 		incidentpage.openIncident(createdInc,test);	
@@ -584,8 +709,8 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.verify_Incident_State(in_Progress_Code,test);		
 
 		//Capture screenshots
-		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Verify Incident record is in state : In Progress ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());			
+		String screenshotPath6 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Verify Incident record is in state : In Progress ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath6).build());			
 
 		// Change the State to On Hold
 		incidentpage.change_Incident_state("On Hold",test);
@@ -596,6 +721,10 @@ public class Incident_All_Flow extends BaseTest {
 		//Verify error message for mandatory fields for Incident		
 		incidentpage.verifyIncidentErrorMessage("The following mandatory fields are not filled in: On hold reason",test);
 
+		//Capture screenshots
+		String screenshotPath7 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath7).build());
+
 		// Verify On Hold Reason fields is mandatory
 		incidentpage.verify_Field_Is_Mandatory("//div[@id=\"label.incident.hold_reason\"]/label/span[1]", "On Hold reason",test );
 
@@ -603,17 +732,25 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.select_On_Hold_Reason_On_Incident("Awaiting Change",test);
 
 		//Capture screenshots
-		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Verify error message and mandatory fields on state On Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+		String screenshotPath8 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Verify error message and mandatory fields on state On Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath8).build());
 
 		//Update the form
 		incidentpage.click_On_Update_Incident_Button(test);
+
+		//Capture screenshots
+		String screenshotPath9 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath9).build());
 
 		// open incident
 		incidentpage.openIncident(createdInc,test);	
 
 		//Verify Incident state is On Hold
 		incidentpage.verify_Incident_State(on_Hold_Code,test);
+
+		//Capture screenshots
+		String screenshotPath10 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath10).build());
 
 		//Resolve the Incident
 		incidentpage.click_On_Resolved_Incident_Button(test);	
@@ -623,6 +760,10 @@ public class Incident_All_Flow extends BaseTest {
 
 		//Verify error message for mandatory fields for Incident on Resolved state
 		incidentpage.verifyIncidentErrorMessage("The following mandatory fields are not filled in: Resolution code, Resolution notes",test);		
+
+		//Capture screenshots
+		String screenshotPath11 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath11).build());
 
 		// CLick on Resolution info tab
 		driver.findElement(By.xpath("//span[@class='tabs2_tab default-focus-outline tabs2_active']")).click();
@@ -649,11 +790,15 @@ public class Incident_All_Flow extends BaseTest {
 		test.info("Added Resoltuon note : Testing add resolution note");
 
 		//Capture screenshots
-		String screenshotPath4 = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Resolving Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath4).build());
+		String screenshotPath12 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Resolving Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath12).build());
 
 		//Update the form
 		incidentpage.click_On_Update_Incident_Button(test);
+
+		//Capture screenshots
+		String screenshotPath13 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath13).build());
 
 		//Open incident
 		incidentpage.openIncident(createdInc,test);			
@@ -662,24 +807,12 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.verify_Incident_State(resolved_Code,test);
 
 		//Capture screenshots
-		String screenshotPath5 = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Resolved Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath5).build());
+		String screenshotPath14 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Resolved Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath14).build());
 
 		//Close incident
 		incidentpage.click_On_Closed_Incident_Button(test);
 
-		//Open incident
-		incidentpage.openIncident(createdInc,test);	
-
-		//Verify Incident is in CLosed state
-		incidentpage.verify_Incident_State(closed_Code,test);
-
-		//Capture screenshots
-		String screenshotPath6 = ExtentReportManager.captureScreenshot_new(driver);
-		test.pass("Closed Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath6).build());
-		
-		//Custom report
-        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -699,15 +832,23 @@ public class Incident_All_Flow extends BaseTest {
 
 		// Open incident table
 		driver.get(Config.baseUrl() + "/incident_list");	
-		test.info("Opening incident table");		
+		test.info("Opening incident table");	
+
+		//Capture screenshots
+		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident table : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		// Click on New button
 		incidentpage.click_On_New_Button(test);
 
+		//Capture screenshots
+		String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
+
 		// Copy Incident record number
 		WebElement inputElement = driver.findElement(By.xpath("//input[@id='incident.number']"));
 		String createdInc = inputElement.getAttribute("value");
-		test.info("Incident number: "+createdInc);
+		test.info("Incident number : "+createdInc);
 
 		//Validate field is visible on form
 		incidentpage.verify_Field_Is_Visible("//label[@for='sys_display.incident.caller_id']",test);
@@ -728,40 +869,51 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.enter_ShortDescription(short_description,test);
 
 		//Capture screenshots
-		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
 
 		// Click on submit
 		incidentpage.click_On_Submit_Incident_Button(test);
 
-		//Search and open Incident		
+		//Search Incident		
 		incidentpage.searchIncident(createdInc,test);
+
+		//Capture screenshots
+		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+
+		//Open Incident
 		incidentpage.openIncident(createdInc,test);	
 
 		// Verify state of Incident is New
 		incidentpage.verify_Incident_State(new_state_Code,test);
 
 		//Capture screenshots
-		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
-		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+		String screenshotPath4 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath4).build());
 
 		// Change the State to Cancel
 		incidentpage.change_Incident_state("Canceled",test);
 
+		//Capture screenshots
+		String screenshotPath5 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath5).build());
+
 		//Update the form
 		incidentpage.click_On_Update_Incident_Button(test);
+
+		//Capture screenshots
+		String screenshotPath6 = ExtentReportManager.captureScreenshot_new(driver);
+		test.info("Incident in list view : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath6).build());
 
 		// open incident
 		incidentpage.openIncident(createdInc,test);	
 
 		// Verify state of Incident is In Progress					
-		incidentpage.verify_Incident_State(canceled_Code,test);		
+		incidentpage.verify_Incident_State_Canceled(canceled_Code,test);		
 
 		//Capture screenshots
-		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
-		test.pass("Canceled Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
-		
-		//Custom report
-        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
+		String screenshotPath7 = ExtentReportManager.captureScreenshot_new(driver);
+		test.pass("Canceled Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath7).build());
 	}
 }

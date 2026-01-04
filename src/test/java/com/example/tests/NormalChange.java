@@ -1,5 +1,5 @@
-
 package com.example.tests;
+
 
 import java.time.Duration;
 import java.util.List;
@@ -34,7 +34,7 @@ public class NormalChange extends BaseTest {
 	Object[][] changedata = DataImport.getData("Normal_Change");
 	
 	private Navigator navigator = new Navigator(driver);
-	private Impersonation impersonation = new Impersonation(driver);;
+	private Impersonation impersonation = new Impersonation(driver);
 	
 	/*
 	 * @expected:User provided value	
@@ -55,11 +55,15 @@ public class NormalChange extends BaseTest {
     	//Navigation through all menu
     	test.info("Open Change list from All menu");
     	//navigator = new Navigator(driver);
-    	navigator.allNavigation("change_request.list", jse);
+    	//navigator.allNavigation("change_request.list", jse);
 
+    	driver.get(baseUrl+"/change_request_list");
     	test.info("Clicking on the New UI action");
     	//Click on the New UI action
-    	navigator.newUIAction(jse);
+    	//navigator.newUIAction(jse);
+    	String newbutton="return document.querySelector(\"#sysverb_new\")";
+		WebElement clicknewui =(WebElement) jse.executeScript(newbutton);
+		clicknewui.click();
         
         Thread.sleep(4000);
         //Click on Models tab
@@ -383,11 +387,12 @@ public class NormalChange extends BaseTest {
         globalSearchBox2.sendKeys(Keys.ENTER);
         
         //filter by approval state
-//        test.info(" Search Change record in Approval table");
-//        WebElement Approvals1=driver.findElement(By.xpath("//select[@class='form-control default-focus-outline']"));
-//        Approvals1.click();
-//        Thread.sleep(3000);
-//        
+        test.info(" Search Change record in Approval table");
+        WebElement Approvals1=driver.findElement(By.xpath("//*[@id='sysapproval_approver_table']/thead/tr[2]/td[3]/div/div/div/input"));
+        Approvals1.sendKeys("Requested");
+        Thread.sleep(3000);
+        Approvals1.sendKeys(Keys.ENTER);
+        
 //        Select selectValu1=new Select(Approvals1);
 //        selectValu1.selectByVisibleText("Approver");
 //        
@@ -449,6 +454,7 @@ public class NormalChange extends BaseTest {
         System.err.println("Opening the Change record after 2nd Approval");
         //Verification of State after 2nd Approval
         test.info("Verification of State after 2nd Approval");
+        Thread.sleep(2000); 
     	String state4=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='Scheduled']")).getText();
     	System.out.println("State is:"+state4);
         compareTwoStringsEquals("Scheduled", state4);
@@ -703,4 +709,5 @@ public class NormalChange extends BaseTest {
         
      Thread.sleep(5000);
     }
+
 }

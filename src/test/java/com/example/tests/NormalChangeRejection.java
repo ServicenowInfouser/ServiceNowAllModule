@@ -51,11 +51,16 @@ public class NormalChangeRejection extends BaseTest
     	//Navigation through all menu
     	test.info("Open Change list from All menu");
     	//navigator = new Navigator(driver);
-    	navigator.allNavigation("change_request.list", jse);
+    	//navigator.allNavigation("change_request.list", jse);
+    	
+    	driver.get(baseUrl+"/change_request_list");
 
     	test.info("Clicking on the New UI action");
     	//Click on the New UI action
-    	navigator.newUIAction(jse);
+    	//navigator.newUIAction(jse);
+    	String newbutton="return document.querySelector(\"#sysverb_new\")";
+		WebElement clicknewui =(WebElement) jse.executeScript(newbutton);
+		clicknewui.click();
         
         Thread.sleep(4000);
         //Click on Models tab
