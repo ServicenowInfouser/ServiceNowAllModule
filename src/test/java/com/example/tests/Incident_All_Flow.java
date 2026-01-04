@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -83,7 +84,8 @@ public class Incident_All_Flow extends BaseTest {
 		// Click on submit
 		incidentpage.click_On_Submit_Incident_Button(test);
 
-		//Search and open Incident		
+		//Search and open Incident
+		driver.get(Config.baseUrl() + "/incident_list");
 		incidentpage.searchIncident(createdInc,test);
 		incidentpage.openIncident(createdInc,test);	
 
@@ -92,7 +94,10 @@ public class Incident_All_Flow extends BaseTest {
 
 		//Capture screenshots
 		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
-		test.pass("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());		
+		test.pass("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());	
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -119,12 +124,16 @@ public class Incident_All_Flow extends BaseTest {
 		incidentpage.click_On_Update_Incident_Button(test);	
 
 		//Search and open Incident		
+		driver.get(Config.baseUrl() + "/incident_list");
 		incidentpage.searchIncident(createdInc,test);
 		incidentpage.openIncident(createdInc,test);	
 
 		//Capture screenshots
 		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Subcategory and Short Description Updated on Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -192,6 +201,9 @@ public class Incident_All_Flow extends BaseTest {
 			//Capture screenshots
 			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
 			test.pass("Incident form ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+			
+			//Custom report
+	        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 		}
 		System.out.println("Incidents are Created !!");
 		test.pass("Incidents are Created for All the Users. ");
@@ -221,6 +233,8 @@ public class Incident_All_Flow extends BaseTest {
 		test.pass("Error message validated on Incident: ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 		System.out.println("Error message validated on Incident !!");
+		
+		
 	}
 	
 
@@ -330,6 +344,9 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath4 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("State of Incident is On-Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath4).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -487,6 +504,9 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath5 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Resolved Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath5).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -657,6 +677,9 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath6 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Closed Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath6).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -737,7 +760,8 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Canceled Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
-
-
 }

@@ -130,6 +130,7 @@ public class NormalChangeRejection extends BaseTest
         
         String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
         test.pass("Change record opened from the list view", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+        
         Reporter.getCurrentTestResult().setAttribute("TestData", changeNo);
     }
     
@@ -202,7 +203,10 @@ public class NormalChangeRejection extends BaseTest
         	}
         }
         System.out.println("First User Name is: "+firstAprovalUser);
-       test.pass("Approvals generated successfully");
+        test.pass("Approvals generated successfully");
+        
+      //Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", firstAprovalUser);
     }
     
     
@@ -293,7 +297,7 @@ public class NormalChangeRejection extends BaseTest
     public void OPNCHNAFTREJ() throws InterruptedException {
     	test = ExtentReportManager.createTest("Verification of Change record after Rejection of 1st Approval");
     	
-        //Opening Change record After 1st Approval
+        //Opening Change record After rejection of 1st Approval
     	driver.get(Config.baseUrl() + "/change_request_list");
     	Thread.sleep(2000);
     	

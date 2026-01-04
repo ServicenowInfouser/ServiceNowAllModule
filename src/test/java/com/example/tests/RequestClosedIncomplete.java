@@ -109,10 +109,75 @@ public class RequestClosedIncomplete extends BaseTest {
 		System.out.println("Request No : " + requestno);
 		Thread.sleep(3000);
 		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
-	   	test.pass(requestno + " Request Created Successfully", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());        
+	   	test.pass(requestno + " Request Created Successfully", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());  
+	   	
+	  //Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", requestno);
 	}
-		
+	
 	@Test(description = "Verification of Request and RITM",dependsOnMethods = "createRequest")
+    public void checkingRequest() throws InterruptedException {
+        
+		test = ExtentReportManager.createTest("Verification of Submitted Request and RITM");
+
+		//Navigating to Request List
+		test.info("Navigating to Request List view");
+        driver.get(BaseTest.baseUrl + "/sc_request_list");
+        System.out.println(requestno);
+        Thread.sleep(2000);
+        
+        // Search Request
+        test.info("Searching for the created Request " + requestno);
+        //WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @typ='search']"));
+        WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
+        globalSearchBox.sendKeys(requestno + Keys.ENTER);
+        String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+    	test.info("Open Generated Request", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
+        
+        Thread.sleep(2000);
+    
+        // Open Request
+        test.info("Open Created request");
+        List<WebElement> openReq = driver.findElements(By.xpath("//table[@id='sc_request_table']/tbody/tr/td[3]/a"));
+        for (WebElement ele2 : openReq) {
+            String currentReq = ele2.getText();
+            if (currentReq.contains(requestno)) {
+                ele2.click();
+                break;
+            }
+        }
+        String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
+    	test.info("Request details", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
+        
+        // Attach custom test data to report
+        //Reporter.getCurrentTestResult().setAttribute("TestData", requestno);
+        System.out.println(driver.getTitle());
+        Thread.sleep(2000);
+        
+
+		//Open RITM
+		test.info("Open RITM from the Requested Item Related List");
+		ritm = driver.findElement(By.xpath("//table[@id='sc_request.sc_req_item.request_table']/tbody/tr/td[3]/a")).getText();
+        List<WebElement> openRITM = driver.findElements(By.xpath("//table[@id='sc_request.sc_req_item.request_table']/tbody/tr/td[3]/a"));
+        for (WebElement ele2 : openRITM) {
+            ele2.click();
+           
+        }
+        String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
+        test.info("RITM details", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+        System.out.println(driver.getTitle());
+        Thread.sleep(3000);
+        
+        test.info("RITM: "+ritm);
+        
+        test.pass("Request and RITM opened Successfully");
+        
+      //Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", requestno+" "+ritm);
+        
+    }
+		
+	@Test(description = "Verification of Request and RITM", dependsOnMethods = "checkingRequest")
 	public void approvals() throws InterruptedException {
 		//Scroll down to related list
 		test = ExtentReportManager.createTest("Verification of Generated Approvals");

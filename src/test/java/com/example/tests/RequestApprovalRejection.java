@@ -111,7 +111,10 @@ public class RequestApprovalRejection extends BaseTest {
 		System.out.println("Request No : " + requestno);
 		Thread.sleep(3000);
 		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
-    	test.pass(requestno + " Request Created Successfully", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());        
+    	test.pass(requestno + " Request Created Successfully", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());    
+    	
+    	//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", requestno);
     }
 	
 	@Test(description = "Verification of Request and RITM",dependsOnMethods = "createRequest")

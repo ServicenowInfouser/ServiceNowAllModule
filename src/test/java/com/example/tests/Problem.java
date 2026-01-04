@@ -71,7 +71,7 @@ public class Problem extends BaseTest {
 			
 			String originalTaskField = driver.findElement(By.xpath("//*[@id='label.problem.first_reported_by_task']/label/span[2]")).getAttribute("value");
 			System.out.println(originalTaskField);
-			if (originalTaskField.equals(problemdata[2][0])) {                                    //-----------------add problemdata field name path
+			if (originalTaskField.equals(problemdata[2][0].toString())) {                                    //-----------------add problemdata field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Original task' field name as expected");
 				logger.info("'Original task' field name as expected");
@@ -126,7 +126,7 @@ public class Problem extends BaseTest {
 	       test.log(Status.INFO, "Verifying Category field");
 			
 			String categoryField = driver.findElement(By.xpath("//*[@id='label.problem.category']/label/span[2]")).getAttribute("value"); 
-			if (categoryField.equals(problemdata[3][0])) {                                    //-----------------add problemdata field name path
+			if (categoryField.equals(problemdata[3][0].toString())) {                                    //-----------------add problemdata field name path
 				AssertJUnit.assertTrue(true); //test case pass
 				test.log(Status.INFO, "'Category' field name as expected");
 				logger.info("'Category' field name as expected");

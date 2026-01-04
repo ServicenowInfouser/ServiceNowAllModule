@@ -37,7 +37,7 @@ public class NormalChange extends BaseTest {
 	private Impersonation impersonation = new Impersonation(driver);;
 	
 	/*
-	 * @expected:User provided value
+	 * @expected:User provided value	
 	 * @actual: UI value
 	 */
 	public static void compareTwoStringsEquals(String expected,String actual) {
@@ -47,6 +47,7 @@ public class NormalChange extends BaseTest {
     
     @Test(description = "Verification of Navigate to Change list")
     public void navigateToChangeList() throws InterruptedException {
+    	Thread.sleep(5000);
     	jse = (JavascriptExecutor) driver;
     	test = ExtentReportManager.createTest("Verification of Navigate to Incident list");
     	
@@ -196,6 +197,9 @@ public class NormalChange extends BaseTest {
         }
         System.out.println("First User Name is: "+firstAprovalUser);
         test.pass("Approvals generated successfully");
+        
+      //Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", firstAprovalUser);
     }
     
     
@@ -254,8 +258,12 @@ public class NormalChange extends BaseTest {
     	Thread.sleep(2000);
     }
     
+    
+    //, dependsOnMethods = "impersonateUser"
     @Test(description = "Opening CHN record after first Approval Approve", dependsOnMethods = "impersonateUser")
     public void OPNCHNAFTAPPL() throws InterruptedException {
+    	//changeNo= "CHG0030147";
+    	
     	test = ExtentReportManager.createTest("Verification of Change record after 1st Approval Approved");
     	
     	System.out.println("1St Approval flow completed");
@@ -284,19 +292,28 @@ public class NormalChange extends BaseTest {
         test.info("2nd Approval users are");
         Thread.sleep(2000);
         
-        WebElement Approvals2=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[3]/span/div[2]/div[1]/div/span/div/div/span[1]/span/select"));
-        Approvals2.click();
-        Thread.sleep(3000);
-        
-        Select selectValu=new Select(Approvals2);
-        selectValu.selectByVisibleText("State");
-        
-        Thread.sleep(2000);
-        WebElement globalSearchBox2 = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
-        globalSearchBox2.sendKeys("Requested");
-        Thread.sleep(2000);
-        globalSearchBox2.sendKeys(Keys.ENTER);
-        
+//        test.info("Go to the Approval Related list");
+//    	WebElement ApproversTab=driver.findElement(By.xpath("//*[@id='tabs2_list']/span[3]/span/span[2]"));
+//        ApproversTab.click();
+//        System.out.println("t1");
+//        
+//        //WebElement Approvals2=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[3]/span/div[2]/div[1]/div/span/div/div/span[1]/span/select"));
+//        Thread.sleep(3000);
+//        WebElement Approvals2=driver.findElement(By.xpath("//select[@class='form-control default-focus-outline']"));
+//        Thread.sleep(3000);
+//        Approvals2.click();
+//        Thread.sleep(3000);
+//        System.out.println("t2");
+//        
+//        Select selectValu=new Select(Approvals2);
+//        selectValu.selectByVisibleText("State");
+//        
+//        Thread.sleep(2000);
+//        WebElement globalSearchBox2 = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
+//        globalSearchBox2.sendKeys("Requested");
+//        Thread.sleep(2000);
+//        globalSearchBox2.sendKeys(Keys.ENTER);
+//        
         
         List<WebElement> Approvers2=driver.findElements(By.xpath("//*[@id='change_request.sysapproval_approver.sysapproval_table']/tbody/tr/td[4]"));
         Thread.sleep(2000);
@@ -326,6 +343,9 @@ public class NormalChange extends BaseTest {
     	System.out.println("State is:"+state3);
         compareTwoStringsEquals("Authorize", state3);
         test.pass("Second Approval is generated");
+        
+      //Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", secondAprovalUser);
     }
     
     @Test(description = "Verification of 2nd Approval", dependsOnMethods = "OPNCHNAFTAPPL")
@@ -347,6 +367,7 @@ public class NormalChange extends BaseTest {
         driver.get(baseUrl + "/sysapproval_approver_list");
         Thread.sleep(2000);
         
+        //filter by change no
         test.info(" Search Change record in Approval table");
         WebElement Approvals=driver.findElement(By.xpath("//select[@class='form-control default-focus-outline']"));
         Approvals.click();
@@ -360,6 +381,21 @@ public class NormalChange extends BaseTest {
         globalSearchBox2.sendKeys(changeNo);
         Thread.sleep(2000);
         globalSearchBox2.sendKeys(Keys.ENTER);
+        
+        //filter by approval state
+//        test.info(" Search Change record in Approval table");
+//        WebElement Approvals1=driver.findElement(By.xpath("//select[@class='form-control default-focus-outline']"));
+//        Approvals1.click();
+//        Thread.sleep(3000);
+//        
+//        Select selectValu1=new Select(Approvals1);
+//        selectValu1.selectByVisibleText("Approver");
+//        
+//        Thread.sleep(2000);
+//        WebElement globalSearchBox3 = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
+//        globalSearchBox3.sendKeys(secondAprovalUser);
+//        Thread.sleep(2000);
+//        globalSearchBox3.sendKeys(Keys.ENTER);
         
         WebElement approversearch=driver.findElement(By.xpath("//*[@id='sysapproval_approver_table']/thead/tr[2]/td[4]/div/div/div/input"));
        	approversearch.sendKeys(secondAprovalUser);

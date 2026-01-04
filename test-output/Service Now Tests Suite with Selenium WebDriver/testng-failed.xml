@@ -6,109 +6,20 @@
   </listeners>
   <test thread-count="5" name="All test(failed)">
     <classes>
-      <class name="com.example.tests.NormalChange">
-        <methods>
-          <include name="impersonateUserSec"/>
-          <include name="implimentUIAction"/>
-          <include name="setupReport"/>
-          <include name="openChange"/>
-          <include name="requestingApproval"/>
-          <include name="Closechangerecord"/>
-          <include name="impersonateUser"/>
-          <include name="teardownReport"/>
-          <include name="createChange"/>
-          <include name="tearDown"/>
-          <include name="OPNCHNAFTAPPL"/>
-          <include name="firstchangeTask"/>
-          <include name="navigateToChangeList"/>
-          <include name="secondchangeTask"/>
-        </methods>
-      </class> <!-- com.example.tests.NormalChange -->
-      <class name="com.example.tests.RequestApprovalRejection">
-        <methods>
-          <include name="impersonateUser"/>
-          <include name="teardownReport"/>
-          <include name="tearDown"/>
-          <include name="verifyCatalogTask"/>
-          <include name="setupReport"/>
-          <include name="checkingRequest"/>
-          <include name="approvals"/>
-          <include name="createRequest"/>
-        </methods>
-      </class> <!-- com.example.tests.RequestApprovalRejection -->
-      <class name="com.example.tests.Problem">
-        <methods>
-          <include name="submitProblemFormWODetail"/>
-          <include name="stateOnceAssignSave"/>
-          <include name="setupReport"/>
-          <include name="resolveState"/>
-          <include name="reAnalyze"/>
-          <include name="submitForm"/>
-          <include name="fixStateWODetails"/>
-          <include name="reAnalyzeOnceAgain"/>
-          <include name="teardownReport"/>
-          <include name="tearDown"/>
-          <include name="reOpenForm"/>
-          <include name="RCAState"/>
-          <include name="fixState"/>
-          <include name="validateProblemForm"/>
-          <include name="cancelPRB"/>
-          <include name="cloasedState"/>
-        </methods>
-      </class> <!-- com.example.tests.Problem -->
-      <class name="com.example.tests.Incident_All_Flow">
-        <methods>
-          <include name="teardownReport"/>
-          <include name="tearDown"/>
-          <include name="create_Incident_for_Multiple_Users"/>
-          <include name="setupReport"/>
-          <include name="resolved_Incident"/>
-          <include name="validate_ErrorMessage_On_Incident"/>
-          <include name="Cancel_Incident"/>
-          <include name="close_Incident"/>
-          <include name="on_Hold_Incident"/>
-          <include name="update_Incident"/>
-          <include name="create_Incident"/>
-        </methods>
-      </class> <!-- com.example.tests.Incident_All_Flow -->
-      <class name="com.example.tests.NormalChangeRejection">
-        <methods>
-          <include name="teardownReport"/>
-          <include name="tearDown"/>
-          <include name="navigateToChangeList"/>
-          <include name="setupReport"/>
-          <include name="createChange"/>
-          <include name="impersonateUser"/>
-          <include name="openChange"/>
-          <include name="OPNCHNAFTREJ"/>
-          <include name="requestingApproval"/>
-        </methods>
-      </class> <!-- com.example.tests.NormalChangeRejection -->
       <class name="com.example.tests.RequestClosedIncomplete">
         <methods>
           <include name="teardownReport"/>
           <include name="tearDown"/>
-          <include name="verifyCatalogTask"/>
           <include name="setupReport"/>
+          <include name="verifyCatalogTask"/>
           <include name="approvals"/>
-          <include name="impersonateUser"/>
+          <include name="endImpAdmin"/>
           <include name="createRequest"/>
+          <include name="impersonateUser"/>
           <include name="verifyCloseIncompleteCatalogTask"/>
+          <include name="impAdmin"/>
         </methods>
       </class> <!-- com.example.tests.RequestClosedIncomplete -->
-      <class name="com.example.tests.RequestClosedComplete">
-        <methods>
-          <include name="teardownReport"/>
-          <include name="tearDown"/>
-          <include name="createRequest"/>
-          <include name="approvals"/>
-          <include name="verifyCatalogTask"/>
-          <include name="setupReport"/>
-          <include name="checkingRequest"/>
-          <include name="impersonateUser"/>
-          <include name="verifyCloseCompleteCatalogTask"/>
-        </methods>
-      </class> <!-- com.example.tests.RequestClosedComplete -->
     </classes>
   </test> <!-- All test(failed) -->
 </suite> <!-- Failed suite [Service Now Tests Suite with Selenium WebDriver] -->
