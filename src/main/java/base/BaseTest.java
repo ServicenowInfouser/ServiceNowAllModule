@@ -2,10 +2,11 @@ package base;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.ITestResult;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -15,16 +16,19 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 import pages.LoginPage;
 import utils.DataImport;
 import utils.ExtentReportManager;
-import utils.Log;
 
 public class BaseTest {
 	public static String baseUrl = Config.baseUrl();
-	public WebDriver driver ;
+	private WebDriver driver = DriverManager.getDriver(); 
 	protected static ExtentReports extent;
 	protected ExtentTest test;
+	private JavascriptExecutor jse = (JavascriptExecutor) driver;
 	
 	private LoginPage loginPage;
 	private Impersonation impersonation;
+	
+	// Create a object of getData method
+    Object[][] users = DataImport.getData("ImpersonateUser");
 	
 	@BeforeSuite
 	public void setupReport() throws InterruptedException {
@@ -37,33 +41,17 @@ public class BaseTest {
 		
 		loginPage.login(Config.username(), Config.password());
 		
-//		//User Impersonation
-//		JavascriptExecutor jse = (JavascriptExecutor) driver;
-//    	test = ExtentReportManager.createTest("Verification of user Impersonation");
-//    	
-//		// Create a object of getData method
-//        Object[][] users = DataImport.getData("ImpersonateUser");
-//
-//        //
-//        for (int i = 0; i < users.length; i++) {
-//
-//            String user = users[i][0].toString();
-//	    	test.info("Impersonate " +user);
-//	    	impersonation = new Impersonation(driver);
-//	    	impersonation.startImpersonation(user, jse);
-//	    	test.pass("success");
-//        }
+		//User Impersonation
+//		String user = users[0][0].toString();
+//		impersonation = new Impersonation(driver);
+//	    impersonation.startImpersonation(user, jse);
 	}
 	
 	@AfterSuite
 	public void teardownReport() throws InterruptedException {
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
-    	
-//		test = ExtentReportManager.createTest("Verification of End Impersonation");
-//    	test.info("End Impersonation");
-//    	impersonation = new Impersonation(driver);
+//		JavascriptExecutor jse = (JavascriptExecutor) driver;
+//		impersonation = new Impersonation(driver);
 //    	impersonation.endImpersonation(jse);
-//    	test.pass("success");
     	
     	//Closing the driver
     	DriverManager.quitDriver();
@@ -74,24 +62,30 @@ public class BaseTest {
 		//EmailUtils.sendTestReport(reportPath);
 	}
 	
-	//@BeforeMethod
-	public void setUp() {
-		
-		Log.info("Starting WebDriver...");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-		Log.info("Navigating to URL...");
-		driver.get("https://admin-demo.nopcommerce.com/login");
+	@BeforeClass
+	public void impAdmin() throws InterruptedException {
+		String user = users[0][0].toString();
+		impersonation = new Impersonation(driver);
+    	impersonation.startImpersonation(user, jse);
 	}
 	
+	@AfterClass
+	public void endImpAdmin() throws InterruptedException {
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		impersonation = new Impersonation(driver);
+    	impersonation.endImpersonation(jse);
+	}
+	
+	
 	@AfterMethod(alwaysRun = true)
-	public void tearDown(ITestResult result) {
+	public ExtentTest tearDown(ITestResult result) {
 		
 		if(result.getStatus() == ITestResult.FAILURE) {
 			
-			String screenshotPath = ExtentReportManager.captureScreenshot(driver, "fail");
+			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
 			test.fail("Test Failed.. Check Screenshot", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 		}
+		return test;
 		
 //		if (driver != null) {
 //			Log.info("Closing Browser...");

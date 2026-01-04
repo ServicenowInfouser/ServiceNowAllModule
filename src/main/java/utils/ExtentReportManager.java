@@ -59,6 +59,27 @@ public class ExtentReportManager {
 		}
 		
 	}
+	
+	//screenshot by snehal
+	public static String captureScreenshot_new(WebDriver driver ){
+        try {
+            
+            File src = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+            // Generate timestamp
+            String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            
+            String path= System.getProperty("user.dir")+ "\\screenshots\\screenshots_fullpage" + timestamp +".png";
+            System.out.println("Path for screenshot is : "+path);
+            FileUtils.copyFile(src, new File(path));
+            return path;
+            
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+        
+    }
 
 }
 

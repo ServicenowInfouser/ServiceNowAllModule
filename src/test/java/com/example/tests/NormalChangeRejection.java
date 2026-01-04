@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
+
 import base.BaseTest;
 import base.Config;
 import base.DriverManager;
@@ -78,11 +80,12 @@ public class NormalChangeRejection extends BaseTest
     	
     	test = ExtentReportManager.createTest("Verification of Navigating to Change list view");
     	
-    	test.info("Verification of State");
     	Thread.sleep(2000);
     	String state1=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='New']")).getText();
     	System.out.println("State is:"+state1);
     	compareTwoStringsEquals("New", state1);
+    	String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+    	test.info("Verify the State of record", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
     	
     	// Copy Change record number
         WebElement inputElement = driver.findElement(By.xpath("//input[@id='change_request.number']"));
@@ -124,7 +127,9 @@ public class NormalChangeRejection extends BaseTest
                  break;
              }
         }
-        test.pass("Change record opened from the list view");
+        
+        String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+        test.pass("Change record opened from the list view", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
         Reporter.getCurrentTestResult().setAttribute("TestData", changeNo);
     }
     
@@ -137,6 +142,7 @@ public class NormalChangeRejection extends BaseTest
     	Thread.sleep(10000);
     	
     	test = ExtentReportManager.createTest("Verification of Request Approval UI action");
+    	
     	//Click on RequestApproval UI action without fill Assignment group and Assign to fields
     	test.info("Click on the Request Approval UI action without fill Assignment group and Assign to fields");
         WebElement RequestApproval=driver.findElement(By.xpath("//*[@id='state_model_request_assess_approval']"));
@@ -188,7 +194,7 @@ public class NormalChangeRejection extends BaseTest
         	
         for(int i=0;i<Approvers.size();i++) {
         	String userName=Approvers.get(i).getText().trim();
-        	test.info("Approver users list" + Approvers.get(i).getText().trim());
+        	test.info("Approver user " + Approvers.get(i).getText().trim());
         	System.out.println("User "+ (i+1)+ ":"+userName);
         	//store first userName
         	if(i==0) {
@@ -208,7 +214,12 @@ public class NormalChangeRejection extends BaseTest
     	Thread.sleep(5000);
     	jse = (JavascriptExecutor) driver;
     	
-    	test = ExtentReportManager.createTest("Verification of Approving the approval by Impersonating user");
+    	//End Impersonation
+    	Thread.sleep(2000);
+    	impersonation.endImpersonation(jse);
+    	Thread.sleep(2000);
+    	
+    	test = ExtentReportManager.createTest("Verification of Rejecting the approval by Impersonating user");
     	test.info("Impersonation for first Approval");
     	impersonation.startImpersonation(firstAprovalUser, jse);
     	Thread.sleep(2000);
@@ -253,12 +264,11 @@ public class NormalChangeRejection extends BaseTest
         System.out.println("Error massage is :"+error);
         
         //Adding comment in comment secssion
-        test.info("//Adding comment in comment secssion");
+        test.info("Adding comment in comment secssion");
         driver.findElement(By.xpath("//*[@class='sn-string-textarea form-control ng-pristine ng-untouched ng-valid ng-isolate-scope ng-empty']")).sendKeys(comment);
         
-        
         //Click on Post button
-        test.info("//Click on Post button");
+        test.info("Click on Post button");
         WebElement post=driver.findElement(By.xpath("//button[@class='btn btn-default activity-submit']"));
         post.isDisplayed();
         post.click();
@@ -272,11 +282,16 @@ public class NormalChangeRejection extends BaseTest
     	test.info("End Impersonation");
     	impersonation.endImpersonation(jse);
     	test.pass("Successfully Reject the approval");
+    	
+    	//Impersonating adimn user
+    	Object[][] users = DataImport.getData("ImpersonateUser");
+    	impersonation.startImpersonation(users[0][0].toString(), jse);
+    	Thread.sleep(2000);
     }
     
-    @Test(description = "Opening CHN record after first Approval Rejection", dependsOnMethods = "impersonateUser")
+    @Test(description = "Verification of Change record after Rejection of 1st Approval", dependsOnMethods = "impersonateUser")
     public void OPNCHNAFTREJ() throws InterruptedException {
-    	test = ExtentReportManager.createTest("Verification of Change record after 1st Approval Rejected");
+    	test = ExtentReportManager.createTest("Verification of Change record after Rejection of 1st Approval");
     	
         //Opening Change record After 1st Approval
     	driver.get(Config.baseUrl() + "/change_request_list");
@@ -301,11 +316,11 @@ public class NormalChangeRejection extends BaseTest
         //Verification of State after 1st Approval Rejected
         System.out.println("Opening the Change record after 1St Approval Rejected");
         test.info("Verification of State after 1st Approval Rejected");
-    	String state3=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='New']")).getText();
+    	
+        String state3=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='New']")).getText();
     	System.out.println("State is:"+state3);
         compareTwoStringsEquals("New", state3);
         test.pass("Rejection flow is completed");
         Thread.sleep(5000);
     }
-
 }

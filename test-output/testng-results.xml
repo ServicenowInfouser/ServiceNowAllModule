@@ -1,88 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="4" failed="1" skipped="1">
+<testng-results ignored="0" total="8" passed="0" failed="1" skipped="7">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-02T01:10:41 IST" name="Default suite" finished-at="2026-01-02T01:12:49 IST" duration-ms="128268">
+  <suite started-at="2026-01-04T12:23:27 IST" name="Default suite" finished-at="2026-01-04T12:23:38 IST" duration-ms="10780">
     <groups>
     </groups>
-    <test started-at="2026-01-02T01:10:41 IST" name="Default test" finished-at="2026-01-02T01:12:49 IST" duration-ms="128268">
-      <class name="com.example.tests.NormalChangeRejection">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:10:13 IST" name="setupReport" finished-at="2026-01-02T01:10:41 IST" duration-ms="27856" status="PASS">
+    <test started-at="2026-01-04T12:23:27 IST" name="Default test" finished-at="2026-01-04T12:23:38 IST" duration-ms="10780">
+      <class name="com.example.tests.Incident_All_Flow">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:08 IST" name="setupReport" finished-at="2026-01-04T12:23:27 IST" duration-ms="19423" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method signature="navigateToChangeList()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:10:41 IST" name="navigateToChangeList" description="Verification of Navigate to Change list" finished-at="2026-01-02T01:11:07 IST" duration-ms="26010" status="PASS">
+        <test-method is-config="true" signature="impAdmin()[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:27 IST" name="impAdmin" finished-at="2026-01-04T12:23:37 IST" duration-ms="10064" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToChangeList -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:07 IST" name="tearDown" finished-at="2026-01-02T01:11:07 IST" duration-ms="7" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=navigateToChangeList status=SUCCESS method=NormalChangeRejection.navigateToChangeList()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="createChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:07 IST" name="createChange" description="Verification of Creation of change" finished-at="2026-01-02T01:11:14 IST" depends-on-methods="com.example.tests.NormalChangeRejection.navigateToChangeList" duration-ms="6164" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createChange -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:14 IST" name="tearDown" finished-at="2026-01-02T01:11:14 IST" duration-ms="1" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=createChange status=SUCCESS method=NormalChangeRejection.createChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="openChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:14 IST" name="openChange" description="Verification of opening Created change record from list" finished-at="2026-01-02T01:11:26 IST" depends-on-methods="com.example.tests.NormalChangeRejection.createChange" duration-ms="12230" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openChange -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:26 IST" name="tearDown" finished-at="2026-01-02T01:11:26 IST" duration-ms="4" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=openChange status=SUCCESS method=NormalChangeRejection.openChange()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="requestingApproval()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:26 IST" name="requestingApproval" description="Verification of Approval Generation" finished-at="2026-01-02T01:11:55 IST" depends-on-methods="com.example.tests.NormalChangeRejection.openChange" duration-ms="28787" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- requestingApproval -->
-        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:55 IST" name="impersonateUser" description="Verification of User Impersonation" finished-at="2026-01-02T01:12:49 IST" depends-on-methods="com.example.tests.NormalChangeRejection.requestingApproval" duration-ms="54602" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        </test-method> <!-- impAdmin -->
+        <test-method signature="create_Incident()[pri:1, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:37 IST" name="create_Incident" description="Verification of Creation of Incident" finished-at="2026-01-04T12:23:38 IST" duration-ms="363" status="FAIL">
+          <exception class="org.openqa.selenium.JavascriptException">
             <message>
-              <![CDATA[element click intercepted: Element <span class="now-avatar-content">...</span> is not clickable at point (1706, 25). Other element would receive the click: <sn-help now-id="us5ndaydizj6-2671" component-id="us5ndaydizj6-2671"></sn-help>
+              <![CDATA[javascript error: Cannot read properties of null (reading 'shadowRoot')
   (Session info: chrome=143.0.7499.170)
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [51918bf6f912ea3a02bd9881546b1738, clickElement {id=f.F72E37A9E1C422F917E3DA1EFEBFE489.d.B8F76DCD01083ED734090A42D46C7F60.e.1951}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61633}, goog:processID: 38816, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61633/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [org.openqa.selenium.remote.RemoteWebElement@296714f0 -> unknown locator]
-Session ID: 51918bf6f912ea3a02bd9881546b1738]]>
+Command: [8a5e0793eaade1846fbfb4f56aa948fb, executeScript {script=return document.querySelector("body > macroponent-f51912f4c700201072b211d4d8c26010").shadowRoot.querySelector("div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout").shadowRoot.querySelector("div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header").shadowRoot.querySelector("#d6e462a5c3533010cbd77096e940dd8c"), args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50065}, goog:processID: 25292, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50065/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8a5e0793eaade1846fbfb4f56aa948fb]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="now-avatar-content">...</span> is not clickable at point (1706, 25). Other element would receive the click: <sn-help now-id="us5ndaydizj6-2671" component-id="us5ndaydizj6-2671"></sn-help>
+              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading 'shadowRoot')
   (Session info: chrome=143.0.7499.170)
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [51918bf6f912ea3a02bd9881546b1738, clickElement {id=f.F72E37A9E1C422F917E3DA1EFEBFE489.d.B8F76DCD01083ED734090A42D46C7F60.e.1951}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:61633}, goog:processID: 38816, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:61633/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [org.openqa.selenium.remote.RemoteWebElement@296714f0 -> unknown locator]
-Session ID: 51918bf6f912ea3a02bd9881546b1738
+Command: [8a5e0793eaade1846fbfb4f56aa948fb, executeScript {script=return document.querySelector("body > macroponent-f51912f4c700201072b211d4d8c26010").shadowRoot.querySelector("div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout").shadowRoot.querySelector("div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header").shadowRoot.querySelector("#d6e462a5c3533010cbd77096e940dd8c"), args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 143.0.7499.170, chrome: {chromedriverVersion: 143.0.7499.169 (164b20aab62..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50065}, goog:processID: 25292, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50065/devtoo..., se:cdpVersion: 143.0.7499.170, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 8a5e0793eaade1846fbfb4f56aa948fb
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -93,10 +46,9 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
-at base.Impersonation.endImpersonation(Impersonation.java:59)
-at com.example.tests.NormalChangeRejection.impersonateUser(NormalChangeRejection.java:273)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:463)
+at base.Navigator.allNavigation(Navigator.java:20)
+at com.example.tests.Incident_All_Flow.create_Incident(Incident_All_Flow.java:47)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -125,41 +77,71 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.JavascriptException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- impersonateUser -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:11:55 IST" name="tearDown" finished-at="2026-01-02T01:11:55 IST" duration-ms="0" status="PASS">
+        </test-method> <!-- create_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="tearDown" finished-at="2026-01-04T12:23:38 IST" duration-ms="217" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=requestingApproval status=SUCCESS method=NormalChangeRejection.requestingApproval()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157] output={null}]]]>
+                <![CDATA[[TestResult name=create_Incident status=FAILURE method=Incident_All_Flow.create_Incident()[pri:1, instance:com.example.tests.Incident_All_Flow@3b27b497] output={null}]]]>
               </value>
             </param>
           </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:12:49 IST" name="tearDown" finished-at="2026-01-02T01:12:49 IST" duration-ms="259" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=impersonateUser status=FAILURE method=NormalChangeRejection.impersonateUser()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method signature="OPNCHNAFTREJ()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:12:49 IST" name="OPNCHNAFTREJ" description="Opening CHN record after first Approval Rejection" finished-at="2026-01-02T01:12:49 IST" depends-on-methods="com.example.tests.NormalChangeRejection.impersonateUser" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
+          <exception class="java.lang.NullPointerException">
             <message>
-              <![CDATA[Method com.example.tests.NormalChangeRejection.OPNCHNAFTREJ() on instance com.example.tests.NormalChangeRejection@3dd31157 depends on not successfully finished methods 
-[com.example.tests.NormalChangeRejection.impersonateUser() on instance com.example.tests.NormalChangeRejection@3dd31157]]]>
+              <![CDATA[Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChangeRejection.OPNCHNAFTREJ() on instance com.example.tests.NormalChangeRejection@3dd31157 depends on not successfully finished methods 
-[com.example.tests.NormalChangeRejection.impersonateUser() on instance com.example.tests.NormalChangeRejection@3dd31157]
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null
+at base.BaseTest.tearDown(BaseTest.java:86)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="update_Incident()[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="update_Incident" description="Verification that User is able to update the Incident record" finished-at="2026-01-04T12:23:38 IST" depends-on-methods="com.example.tests.Incident_All_Flow.create_Incident" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.Incident_All_Flow.update_Incident() on instance com.example.tests.Incident_All_Flow@3b27b497 depends on not successfully finished methods 
+[com.example.tests.Incident_All_Flow.create_Incident() on instance com.example.tests.Incident_All_Flow@3b27b497]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.Incident_All_Flow.update_Incident() on instance com.example.tests.Incident_All_Flow@3b27b497 depends on not successfully finished methods 
+[com.example.tests.Incident_All_Flow.create_Incident() on instance com.example.tests.Incident_All_Flow@3b27b497]
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -184,12 +166,352 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- OPNCHNAFTREJ -->
-        <test-method is-config="true" signature="teardownReport()[pri:0, instance:com.example.tests.NormalChangeRejection@3dd31157]" started-at="2026-01-02T01:12:50 IST" name="teardownReport" finished-at="2026-01-02T01:12:51 IST" duration-ms="1538" status="PASS">
+        </test-method> <!-- update_Incident -->
+        <test-method signature="create_Incident_for_Multiple_Users()[pri:2, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="create_Incident_for_Multiple_Users" description="Verification of Creation of Incident for multiple users" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null
+at base.BaseTest.tearDown(BaseTest.java:86)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_Incident_for_Multiple_Users -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="tearDown" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=create_Incident_for_Multiple_Users status=SKIP method=Incident_All_Flow.create_Incident_for_Multiple_Users()[pri:2, instance:com.example.tests.Incident_All_Flow@3b27b497] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="validate_ErrorMessage_On_Incident()[pri:3, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="validate_ErrorMessage_On_Incident" description="Verification of Error Message on Incident" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null
+at base.BaseTest.tearDown(BaseTest.java:86)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validate_ErrorMessage_On_Incident -->
+        <test-method signature="on_Hold_Incident()[pri:4, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="on_Hold_Incident" description="Verification of Incident flow till On Hold state" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null
+at base.BaseTest.tearDown(BaseTest.java:86)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- on_Hold_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="tearDown" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validate_ErrorMessage_On_Incident status=SKIP method=Incident_All_Flow.validate_ErrorMessage_On_Incident()[pri:3, instance:com.example.tests.Incident_All_Flow@3b27b497] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="tearDown" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=on_Hold_Incident status=SKIP method=Incident_All_Flow.on_Hold_Incident()[pri:4, instance:com.example.tests.Incident_All_Flow@3b27b497] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="resolved_Incident()[pri:5, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="resolved_Incident" description="Verification of Incident flow till On Resolved state" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null
+at base.BaseTest.tearDown(BaseTest.java:86)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resolved_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="tearDown" finished-at="2026-01-04T12:23:38 IST" duration-ms="4" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=resolved_Incident status=SKIP method=Incident_All_Flow.resolved_Incident()[pri:5, instance:com.example.tests.Incident_All_Flow@3b27b497] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="close_Incident()[pri:6, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="close_Incident" description="Verification of Incident flow till On Closed state" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null
+at base.BaseTest.tearDown(BaseTest.java:86)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="tearDown" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=close_Incident status=SKIP method=Incident_All_Flow.close_Incident()[pri:6, instance:com.example.tests.Incident_All_Flow@3b27b497] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="Cancel_Incident()[pri:7, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="Cancel_Incident" description="Verification of Incident flow till Canceled state" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="SKIP">
+          <exception class="java.lang.NullPointerException">
+            <message>
+              <![CDATA[Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.aventstack.extentreports.ExtentTest.fail(String, com.aventstack.extentreports.model.Media)" because "this.test" is null
+at base.BaseTest.tearDown(BaseTest.java:86)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.NullPointerException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Cancel_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="tearDown" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Cancel_Incident status=SKIP method=Incident_All_Flow.Cancel_Incident()[pri:7, instance:com.example.tests.Incident_All_Flow@3b27b497] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="endImpAdmin()[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="endImpAdmin" finished-at="2026-01-04T12:23:38 IST" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endImpAdmin -->
+        <test-method is-config="true" signature="teardownReport()[pri:0, instance:com.example.tests.Incident_All_Flow@3b27b497]" started-at="2026-01-04T12:23:38 IST" name="teardownReport" finished-at="2026-01-04T12:23:39 IST" duration-ms="831" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownReport -->
-      </class> <!-- com.example.tests.NormalChangeRejection -->
+      </class> <!-- com.example.tests.Incident_All_Flow -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

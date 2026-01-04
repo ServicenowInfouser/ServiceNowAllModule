@@ -12,10 +12,18 @@
             <class name="com.example.tests.Incident"/>
             <class name="com.example.tests.ESCtest1"/>  
             <class name="com.example.tests.NormalChange"/>
-            <class name="com.example.tests.PasswordReset"/>-->
+            <class name="com.example.tests.PasswordReset"/> -->
+            <!-- Request RITM Task -->
             <class name="com.example.tests.RequestClosedComplete"/>
             <class name="com.example.tests.RequestApprovalRejection"/>
-            <class name="com.example.tests.RequestClosedIncomplete"/>  
+            <class name="com.example.tests.RequestClosedIncomplete"/>
+             <!-- Incident -->
+            <class name="com.example.tests.Incident_All_Flow"/> 
+            <!-- Change -->
+            <class name="com.example.tests.NormalChange"/>
+            <class name="com.example.tests.NormalChangeRejection"/>
+            <!-- Problem -->
+            <class name="com.example.tests.Problem"/>
         </classes>
     </test> <!-- Test -->
     

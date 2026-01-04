@@ -3,19 +3,23 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.tests.NormalChangeRejection">
+      <class name="com.example.tests.Incident_All_Flow">
         <methods>
           <include name="teardownReport"/>
-          <include name="navigateToChangeList"/>
           <include name="tearDown"/>
           <include name="setupReport"/>
-          <include name="createChange"/>
-          <include name="impersonateUser"/>
-          <include name="OPNCHNAFTREJ"/>
-          <include name="openChange"/>
-          <include name="requestingApproval"/>
+          <include name="resolved_Incident"/>
+          <include name="create_Incident_for_Multiple_Users"/>
+          <include name="endImpAdmin"/>
+          <include name="validate_ErrorMessage_On_Incident"/>
+          <include name="Cancel_Incident"/>
+          <include name="close_Incident"/>
+          <include name="on_Hold_Incident"/>
+          <include name="impAdmin"/>
+          <include name="create_Incident"/>
+          <include name="update_Incident"/>
         </methods>
-      </class> <!-- com.example.tests.NormalChangeRejection -->
+      </class> <!-- com.example.tests.Incident_All_Flow -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

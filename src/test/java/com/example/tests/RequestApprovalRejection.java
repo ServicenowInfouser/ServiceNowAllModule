@@ -9,9 +9,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
 
@@ -20,8 +20,8 @@ import base.BaseTest;
 import base.DriverManager;
 import base.Impersonation;
 import base.Navigator;
+import utils.DataImport;
 import utils.ExtentReportManager;
-import utils.Log;
 
 
 public class RequestApprovalRejection extends BaseTest {
@@ -35,106 +35,86 @@ public class RequestApprovalRejection extends BaseTest {
 	private ApprovalHandling approvalHandling = new ApprovalHandling(driver);
 	
 	//Variable Declaration
-	private String requestno = "REQ0010062";
-	private String ritm;
+	private String requestno, ritm, catlogTask ;
 	private String approver = null;
+	private int TotalTask1, TotalTask2;
+
+	//fetching excel data
+	Object[][] requestData = DataImport.getData("Request");
 	
-	//@Test(description = "Verification of Big Data Analysis catalog item")
-    public void createRequest() throws InterruptedException {
-		test = ExtentReportManager.createTest("Verification of Big Data Analysis catalog item");
-
-    	driver.get(BaseTest.baseUrl + "/esc");
-    	driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(30));
-    	String screenshotPath = ExtentReportManager.captureScreenshot(driver, "esc");
-    	test.info("Navigating to ESC Portal", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-        System.out.println(driver.getTitle());
-        
-        //Opening the Big Data Analysis catalog item
-    	//driver.findElement(By.xpath("//*[@id=\"homepage-search\"]/div/div/form/div/input")).sendKeys("");
-    	
-    	String CatalogName = "Big Data Analysis";
-            
-        driver.findElement(By.xpath("//*[@id=\"homepage-search\"]/div/div/form/div/input")).sendKeys(CatalogName);
-        driver.findElement(By.xpath("//*[@id=\"homepage-search\"]/div/div/form/div/span/button")).click();
-        Thread.sleep(3000);
-            
-            
-          /*  if (actualTitle.contains(CatalogName)) {
-                System.out.println("Title verification passed!");
-            } else {
-                System.out.println("Title verification failed!");
-            } */
-            
-        driver.findElement(By.xpath("//mark[normalize-space()='Big Data Analysis']")).click();
-        Thread.sleep(3000);
-        String screenshotPath1 = ExtentReportManager.captureScreenshot(driver, "form");
-    	test.info("Opening Catalog item", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
-        
-        jse.executeScript("window.scrollBy(0,250)");
-            
-        Thread.sleep(3000);
-        
-        //Primary Contact
-        WebElement primaryContact = driver.findElement(By.xpath("//div[@id='s2id_sp_formfield_primary_contact']//b"));
-        primaryContact.click();
-        Thread.sleep(2000);
-
-        List<WebElement> options = driver.findElements(By.xpath("//ul[@class='select2-results-2']/li"));
-        for (WebElement ele : options) {
-            String currentOption = ele.getText();
-            if (currentOption.contains("Andrew Jackson")) {
-                ele.click();
-                break;
-            }
-        }
-        
-        //Cost Center
-        WebElement costCenter = driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_cost_center\"]/a/span[2]/b"));
-        costCenter.click();
-        Thread.sleep(2000);
-
-        List<WebElement> options1 = driver.findElements(By.xpath("//ul[@class='select2-results']/li"));
-        for (WebElement ele : options1) {
-            String currentOption = ele.getText();
-            if (currentOption.contains("Development")) {
-                ele.click();
-                break;
-            }
-        }
-        
-            driver.findElement(By.xpath("//div[@id='s2id_sp_formfield_primary_contact']//b")).click();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            driver.findElement(By.xpath("//*[@id=\"s2id_autogen2_search\"]")).sendKeys("Andrew Jackson");
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            driver.findElement(By.xpath("//*[@id=\"select2-result-label-612\"]/div[1]")).click();
-            Thread.sleep(2000);
-            
-            driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_cost_center\"]/a/span[2]/b")).click();
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            driver.findElement(By.xpath("//*[@id=\"s2id_autogen3_search\"]")).sendKeys("Development");
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-            driver.findElement(By.xpath("//*[@id=\"s2id_autogen3_search\"]")).click();
-            Thread.sleep(2000);
-          
-            driver.findElement(By.xpath("//span[normalize-space()='KTLO']")).click();
-            Thread.sleep(2000);
-            
-            driver.findElement(By.xpath("//*[@id=\"sp_formfield_needs\"]")).sendKeys("Testing");
-            Thread.sleep(2000);
-            
-            driver.findElement(By.xpath("//*[@id=\"submit-btn\"]")).click();
-            
-            driver.findElement(By.xpath("//*[@id=\"sc_cat_checkout\"]/div[3]/div/div/button[2]/span[1]")).click();
-            Thread.sleep(3000);
-            
-            String requestno = driver.findElement(By.xpath("//*[@id=\"x6fb0f4029f8332002528d4b4232e70f6\"]/div[2]/div[2]/div/div[2]/b")).getText();
-            System.out.println("Request No : " +requestno);
-    		
-        
-	}
-
+	SoftAssert softAssert = new SoftAssert();
 	
-	@Test(description = "Verification of Request and RITM")
+	@Test(description = "Verification of Submitting the Big Data Analysis catalog item")
+	public void createRequest() throws InterruptedException {
+		test = ExtentReportManager.createTest("Verification of Submitting the Big Data Analysis catalog item").assignCategory("Request Approval Rejection");
+		
+		driver.get(BaseTest.baseUrl + "/esc");
+		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+    	test.info("Navigating the Employee Center", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+		
+		Thread.sleep(3000);
+		String CatalogName = "Big Data Analysis";
+		driver.findElement(By.xpath("//*[@id=\"homepage-search\"]/div/div/form/div/input")).sendKeys(CatalogName);
+		driver.findElement(By.xpath("//*[@id=\"homepage-search\"]/div/div/form/div/span/button")).click();
+		Thread.sleep(5000);
+		String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+    	test.info("Opening catalog form", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
+		
+		test.info("Opening catalog form");
+		driver.findElement(By.xpath("//mark[normalize-space()='Big Data Analysis']")).click();
+		Thread.sleep(3000);
+		System.out.println(CatalogName + " Form is visible");
+		jse = (JavascriptExecutor) driver;
+		//jse.executeScript("window.scrollBy(0,1500)");
+		Thread.sleep(5000);
+		WebElement fields = driver.findElement(By.xpath("// *[contains(text(),'Indicates required')]"));
+		jse.executeScript("arguments[0].scrollIntoView();", fields);
+		Thread.sleep(2000);
+		
+		test.info("Enter Dynamic Data");
+		System.out.println("Select User");
+		driver.findElement(By.xpath("//div[@id='s2id_sp_formfield_primary_contact']//b")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		//String primarycontact = (String) requestData[0][0];
+		driver.findElement(By.xpath("//*[@id=\"s2id_autogen2_search\"]")).sendKeys((String) requestData[0][0]);
+		
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		//String primarycontact = "//div[normalize-space()='"+(String) requestData[0][0]+"']";
+		driver.findElement(By.xpath("//div[normalize-space()='"+(String) requestData[0][0]+"']")).click();
+		Thread.sleep(2000);
+		System.out.println("Select Cost Center");
+		driver.findElement(By.xpath("//*[@id=\"s2id_sp_formfield_cost_center\"]/a")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		driver.findElement(By.xpath("//input[@id='s2id_autogen3_search']")).sendKeys((String) requestData[0][1]);
+		
+		//Select selectValu=new Select(element);
+		//selectValu.selectByVisibleText("Development");
+		driver.findElement(By.xpath("//div[@id=\"select2-drop\"]/ul/li/div[contains(text(), 'Development')]")).click();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		Thread.sleep(2000);
+		System.out.println("Select Business Purpose");
+		String businessPurpose = "//span[normalize-space()='" + (String) requestData[0][2] + "']";
+		driver.findElement(By.xpath(businessPurpose)).click();
+		
+		Thread.sleep(2000);
+		System.out.println("Enter description");
+		driver.findElement(By.xpath("//*[@id=\"sp_formfield_needs\"]")).sendKeys((String) requestData[0][3]);
+		Thread.sleep(2000);
+		
+		System.out.println("Click on Submit");
+		driver.findElement(By.xpath("//*[@id=\"submit-btn\"]")).click();
+		System.out.println("Select Checkout");
+		driver.findElement(By.xpath("//*[@id=\"sc_cat_checkout\"]/div[3]/div/div/button[2]/span[1]")).click();
+		Thread.sleep(3000);
+		
+		requestno = driver.findElement(By.xpath("//*[@id=\"x6fb0f4029f8332002528d4b4232e70f6\"]/div[2]/div[2]/div/div[2]/b")).getText();
+		System.out.println("Request No : " + requestno);
+		Thread.sleep(3000);
+		String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
+    	test.pass(requestno + " Request Created Successfully", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());        
+    }
+	
+	@Test(description = "Verification of Request and RITM",dependsOnMethods = "createRequest")
     public void checkingRequest() throws InterruptedException {
         
 		test = ExtentReportManager.createTest("Verification of Submitted Request and RITM");
@@ -150,7 +130,7 @@ public class RequestApprovalRejection extends BaseTest {
         //WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @typ='search']"));
         WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
         globalSearchBox.sendKeys(requestno + Keys.ENTER);
-        String screenshotPath1 = ExtentReportManager.captureScreenshot(driver, "list");
+        String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
     	test.info("Open Generated Request", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
         
         Thread.sleep(2000);
@@ -165,7 +145,7 @@ public class RequestApprovalRejection extends BaseTest {
                 break;
             }
         }
-        String screenshotPath2 = ExtentReportManager.captureScreenshot(driver, "Req");
+        String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
     	test.info("Request details", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
         
         // Attach custom test data to report
@@ -182,7 +162,7 @@ public class RequestApprovalRejection extends BaseTest {
             ele2.click();
            
         }
-        String screenshotPath3 = ExtentReportManager.captureScreenshot(driver, "RITM");
+        String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
         test.info("RITM details", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
         System.out.println(driver.getTitle());
         Thread.sleep(3000);
@@ -215,7 +195,7 @@ public class RequestApprovalRejection extends BaseTest {
         System.out.println("Approver is : " +approver);
         test.info("Approver is : " +approver);
         
-        String screenshotPath2 = ExtentReportManager.captureScreenshot(driver, "RITM");
+        String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
         test.pass("Generated approvals", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
         
       //Custom report
@@ -227,6 +207,12 @@ public class RequestApprovalRejection extends BaseTest {
     public void impersonateUser() throws InterruptedException {
 		Thread.sleep(3000);
         jse = (JavascriptExecutor) driver;
+        
+        //End Impersonation
+    	Thread.sleep(2000);
+    	impersonation.endImpersonation(jse);
+    	Thread.sleep(2000);
+        
         test = ExtentReportManager.createTest("Verification of Rejecting the approval by Impersonating user");
     	test.info("Impersonation for first Approval");
     	impersonation.startImpersonation(approver, jse);
@@ -240,6 +226,11 @@ public class RequestApprovalRejection extends BaseTest {
     	impersonation.endImpersonation(jse);
     	test.pass("Successfully Rejected the approval by impersonating user");
         Thread.sleep(3000);  
+        
+      //Impersonating adimn user
+    	Object[][] users = DataImport.getData("ImpersonateUser");
+    	impersonation.startImpersonation(users[0][0].toString(), jse);
+    	Thread.sleep(2000);
 	}
 	
 	
@@ -279,9 +270,9 @@ public class RequestApprovalRejection extends BaseTest {
       	List<WebElement> catTask = driver.findElements(By.xpath("//table[@id='sc_req_item.sc_task.request_item_table']/tbody/tr/td[3]"));
         Thread.sleep(2000);
         
-        Assert.assertTrue(catTask.size() > 0,"SCTask is not generated");
+        softAssert.assertTrue(catTask.size() > 0,"SCTask is not generated");
         
-        String screenshotPath1 = ExtentReportManager.captureScreenshot(driver, "Approval");
+        String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
         test.info("Task is not generated", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
         
         WebElement ritmState = driver.findElement(By.id("sc_req_item.state"));
@@ -291,9 +282,9 @@ public class RequestApprovalRejection extends BaseTest {
         test.info("RITM State is "+selectedRitmState.getText());
         System.out.println("RITM State is : "+selectedRitmState.getText());
         
-        String screenshotPath2 = ExtentReportManager.captureScreenshot(driver, "ritmstate");
+        String screenshotPath2 = ExtentReportManager.captureScreenshot_new(driver);
         test.info("RITM State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());
-        Assert.assertEquals(selectedRitmState.getText().trim(), "Closed Incomplete",  "Test failed for " + ritm );
+        softAssert.assertEquals(selectedRitmState.getText().trim(), "Closed Incomplete",  "Test failed for " + ritm );
        
         Thread.sleep(3000);
         driver.navigate().back();
@@ -307,9 +298,9 @@ public class RequestApprovalRejection extends BaseTest {
         test.info("RITM State is "+selectedReqState.getText());
         System.out.println("REQUEST State is : "+selectedReqState.getText());
         
-        String screenshotPath3 = ExtentReportManager.captureScreenshot(driver, "reqstate");
+        String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
         test.info("Request State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
-        Assert.assertEquals(selectedReqState.getText().trim(),"Closed Incomplete", "Test failed for " + ritm);
+        softAssert.assertEquals(selectedReqState.getText().trim(),"Closed Incomplete", "Test failed for " + ritm);
         
         test.pass("Request, RITM States are Closed Incomplete");
 	}

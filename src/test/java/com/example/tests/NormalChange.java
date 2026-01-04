@@ -29,7 +29,7 @@ public class NormalChange extends BaseTest {
 	private WebDriver driver = DriverManager.getDriver(); 
 	String changeNo;
 	private JavascriptExecutor jse;
-	String firstAprovalUser=null; 
+	String firstAprovalUser=null, secondAprovalUser=null; 
 		
 	Object[][] changedata = DataImport.getData("Normal_Change");
 	
@@ -187,7 +187,7 @@ public class NormalChange extends BaseTest {
         	
         for(int i=0;i<Approvers.size();i++) {
         	String userName=Approvers.get(i).getText().trim();
-        	test.info("Approver users list" + Approvers.get(i).getText().trim());
+        	test.info("Approver user " + Approvers.get(i).getText().trim());
         	System.out.println("User "+ (i+1)+ ":"+userName);
         	//store first userName
         	if(i==0) {
@@ -204,9 +204,13 @@ public class NormalChange extends BaseTest {
     	Thread.sleep(5000);
     	jse = (JavascriptExecutor) driver;
     	
+    	//End Impersonation
+    	Thread.sleep(2000);
+    	impersonation.endImpersonation(jse);
+    	Thread.sleep(2000);
+    	
     	test = ExtentReportManager.createTest("Verification of Approving the approval by Impersonating user");
     	test.info("Impersonation for first Approval");
-    	//impersonation = new Impersonation(driver);
     	impersonation.startImpersonation(firstAprovalUser, jse);
 
     	Thread.sleep(2000);
@@ -239,9 +243,15 @@ public class NormalChange extends BaseTest {
         driver.findElement(By.xpath("//*[@id='approve']")).click(); 
         Thread.sleep(2000);
     	
+        //End impersonation
     	test.info("End Impersonation");
     	impersonation.endImpersonation(jse);
     	test.pass("Successfully approved the approval");
+    	
+    	//Impersonating adimn user
+    	Object[][] users = DataImport.getData("ImpersonateUser");
+    	impersonation.startImpersonation(users[0][0].toString(), jse);
+    	Thread.sleep(2000);
     }
     
     @Test(description = "Opening CHN record after first Approval Approve", dependsOnMethods = "impersonateUser")
@@ -273,14 +283,42 @@ public class NormalChange extends BaseTest {
         //Verification of 2nd Approval users
         test.info("2nd Approval users are");
         Thread.sleep(2000);
+        
+        WebElement Approvals2=driver.findElement(By.xpath("/html/body/div[2]/div[2]/div/div[3]/span/div[2]/div[1]/div/span/div/div/span[1]/span/select"));
+        Approvals2.click();
+        Thread.sleep(3000);
+        
+        Select selectValu=new Select(Approvals2);
+        selectValu.selectByVisibleText("State");
+        
+        Thread.sleep(2000);
+        WebElement globalSearchBox2 = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
+        globalSearchBox2.sendKeys("Requested");
+        Thread.sleep(2000);
+        globalSearchBox2.sendKeys(Keys.ENTER);
+        
+        
         List<WebElement> Approvers2=driver.findElements(By.xpath("//*[@id='change_request.sysapproval_approver.sysapproval_table']/tbody/tr/td[4]"));
         Thread.sleep(2000);
         System.out.println("Count of Approvers users are:"+Approvers2.size());
         for (WebElement Users2 : Approvers2) 
         {
-            String ApproverUser2 = Users2.getText();
+            //secondAprovalUser = Users2.getText();
             System.out.println("List of Approver users are:"+Users2.getText());
         }
+        
+        
+        for(int i=0;i<Approvers2.size();i++) {
+        	String userName=Approvers2.get(i).getText().trim();
+        	test.info("Approver user " + Approvers2.get(i).getText().trim());
+        	System.out.println("User "+ (i+1)+ ":"+userName);
+        	//store first userName
+        	if(i==0) {
+        		secondAprovalUser=userName;
+        	}
+        }
+        System.out.println("Second User Name is: "+secondAprovalUser);
+        
         
         //Verification of State after 1st Approval Approve
         test.info("Verification of State after 1st Approval Approve");
@@ -295,9 +333,14 @@ public class NormalChange extends BaseTest {
     	
     	jse = (JavascriptExecutor) driver;
     	
+    	//End Impersonation
+    	Thread.sleep(2000);
+    	impersonation.endImpersonation(jse);
+    	Thread.sleep(2000);
+    	
     	test = ExtentReportManager.createTest("Verification of Impersonation and End Impersonation");
     	test.info("Impersonation for 2nd Approval");
-    	impersonation.startImpersonation("Ron Kettering", jse);
+    	impersonation.startImpersonation(secondAprovalUser, jse);
     	Thread.sleep(10000);
     	
     	Thread.sleep(2000);
@@ -319,7 +362,7 @@ public class NormalChange extends BaseTest {
         globalSearchBox2.sendKeys(Keys.ENTER);
         
         WebElement approversearch=driver.findElement(By.xpath("//*[@id='sysapproval_approver_table']/thead/tr[2]/td[4]/div/div/div/input"));
-       	approversearch.sendKeys("Ron Kettering");
+       	approversearch.sendKeys(secondAprovalUser);
        	approversearch.sendKeys(Keys.ENTER);
        
        	test.info(" Opening Approval Change record");
@@ -332,6 +375,11 @@ public class NormalChange extends BaseTest {
     	test.info("End Impersonation");
     	impersonation.endImpersonation(jse);
     	test.pass("Successfully approved the approval");
+    	
+    	//Impersonating adimn user
+    	Object[][] users = DataImport.getData("ImpersonateUser");
+    	impersonation.startImpersonation(users[0][0].toString(), jse);
+    	Thread.sleep(2000);
     
     }
     @Test(description = "Verification of State and Impliment UI Action after 2nd Approval Approved", dependsOnMethods = "impersonateUserSec")

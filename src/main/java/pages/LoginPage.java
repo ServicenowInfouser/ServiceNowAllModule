@@ -19,6 +19,6 @@ public class LoginPage {
         driver.findElement(By.xpath("//button[@id='sysverb_login']")).click();
 
         Thread.sleep(5000); // wait for login to complete
-        System.out.println("Login successful");
+        System.out.println("Login successfull");
     }
 }
