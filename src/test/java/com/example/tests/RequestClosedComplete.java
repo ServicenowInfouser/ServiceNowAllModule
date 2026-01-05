@@ -118,9 +118,9 @@ public class RequestClosedComplete extends BaseTest {
 //    	test.pass(requestno + " Request Created Successfully", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath2).build());        
 //    }
 	
-	@Test(description = "Verification of Submitting the Big Data Analysis catalog item")
+	@Test(description = "SC_001- Verification of Submitting the Big Data Analysis catalog item")
 	public void createRequest() throws InterruptedException {
-		test = ExtentReportManager.createTest("Verification of Submitting the Big Data Analysis catalog item").assignCategory("Request Closed Complete");
+		test = ExtentReportManager.createTest("SC_001- Verification of Submitting the Big Data Analysis catalog item").assignCategory("Request Closed Complete");
 		
 		driver.get(BaseTest.baseUrl + "/esc");
 		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
@@ -191,7 +191,7 @@ public class RequestClosedComplete extends BaseTest {
         Reporter.getCurrentTestResult().setAttribute("TestData", requestno);
     }
 	
-	@Test(description = "Verification of Request and RITM",dependsOnMethods = "createRequest")
+	@Test(description = "SC_002- Verification of Request and RITM",dependsOnMethods = "createRequest")
     public void checkingRequest() throws InterruptedException {
 		
 		ritm = requestritmtask.CheckReqRITM(test, requestno);
@@ -254,7 +254,7 @@ public class RequestClosedComplete extends BaseTest {
 //        Reporter.getCurrentTestResult().setAttribute("TestData", requestno+" "+ritm);
     }
 	
-	@Test(description = "Verification of Generated Approvals", dependsOnMethods = "checkingRequest")
+	@Test(description = "SC_003- Verification of Generated Approvals", dependsOnMethods = "checkingRequest")
 	public void approvals() throws InterruptedException {
 		
 		approver = requestritmtask.checkApprovals(test);
@@ -283,7 +283,7 @@ public class RequestClosedComplete extends BaseTest {
 	}
 	
 	
-	@Test(description = "Verification of Approving the approval by Impersonating user", dependsOnMethods = "approvals")
+	@Test(description = "SC_004- Verification of Approving the approval by Impersonating user", dependsOnMethods = "approvals")
     public void impersonateUser() throws InterruptedException {
 		Thread.sleep(3000);
         jse = (JavascriptExecutor) driver;
@@ -314,10 +314,10 @@ public class RequestClosedComplete extends BaseTest {
 	}
 	
 	
-	@Test(description = "Verification of Catalog task after Approving the approval" , dependsOnMethods = "impersonateUser")
+	@Test(description = "SC_005- Verification of Catalog task after Approving the approval" , dependsOnMethods = "impersonateUser")
     public void verifyCatalogTask() throws InterruptedException {
 		// Open Request & RITM after approval
-		test = ExtentReportManager.createTest("Verification of Catalog task after Approving the approval").assignCategory("Request Closed Complete");
+		test = ExtentReportManager.createTest("SC_005- Verification of Catalog task after Approving the approval").assignCategory("Request Closed Complete");
 		
         driver.get(BaseTest.baseUrl + "/sc_request_list");
         System.out.println(requestno);
@@ -370,10 +370,10 @@ public class RequestClosedComplete extends BaseTest {
         Reporter.getCurrentTestResult().setAttribute("TestData", catlogTask);
 	}
 	
-	@Test(description = "Verification of Close Compleating the Catalog task" , dependsOnMethods = "verifyCatalogTask")
+	@Test(description = "SC_006- Verification of Close Compleating the Catalog task" , dependsOnMethods = "verifyCatalogTask")
     public void verifyCloseCompleteCatalogTask() throws InterruptedException {
 		// Closed Complete SCTask
-		test = ExtentReportManager.createTest("Verification of Close Compleating the Catalog task").assignCategory("Request Closed Complete");
+		test = ExtentReportManager.createTest("SC_006- Verification of Close Compleating the Catalog task").assignCategory("Request Closed Complete");
 		WebElement taskState = driver.findElement(By.id("sc_task.state"));
 		Select changeState = new Select(taskState);
 		changeState.selectByVisibleText("Closed Complete");

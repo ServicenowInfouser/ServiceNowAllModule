@@ -140,9 +140,11 @@ public class RequestRITMTask extends BaseTest {
 				ritm = driver.findElement(By.xpath("//table[@id='sc_request.sc_req_item.request_table']/tbody/tr/td[3]/a")).getText();
 		        List<WebElement> openRITM = driver.findElements(By.xpath("//table[@id='sc_request.sc_req_item.request_table']/tbody/tr/td[3]/a"));
 		        for (WebElement ele2 : openRITM) {
-		            ele2.click();
-		           
+		            ele2.click();  
 		        }
+		        //System.out.print("Primary Contact "+driver.findElement(By.xpath("//*[@id=\"element.ni.VEe894cf7c839ef250f4aac629feaad335\"]/td/div/div/div/div[2]/div")).getText());
+		        
+		        
 		        String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
 		        test.info("Navigating to RITM", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
 		        System.out.println(driver.getTitle());

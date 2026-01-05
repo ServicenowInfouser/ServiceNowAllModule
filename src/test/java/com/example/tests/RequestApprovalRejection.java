@@ -44,9 +44,9 @@ public class RequestApprovalRejection extends BaseTest {
 	
 	SoftAssert softAssert = new SoftAssert();
 	
-	@Test(description = "Verification of Submitting the Big Data Analysis catalog item")
+	@Test(description = "SC_013- Verification of Submitting the Big Data Analysis catalog item")
 	public void createRequest() throws InterruptedException {
-		test = ExtentReportManager.createTest("Verification of Submitting the Big Data Analysis catalog item").assignCategory("Request Approval Rejection");
+		test = ExtentReportManager.createTest("SC_013- Verification of Submitting the Big Data Analysis catalog item").assignCategory("Request Approval Rejection");
 		
 		driver.get(BaseTest.baseUrl + "/esc");
 		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
@@ -117,10 +117,10 @@ public class RequestApprovalRejection extends BaseTest {
         Reporter.getCurrentTestResult().setAttribute("TestData", requestno);
     }
 	
-	@Test(description = "Verification of Request and RITM",dependsOnMethods = "createRequest")
+	@Test(description = "SC_014- Verification of Request and RITM",dependsOnMethods = "createRequest")
     public void checkingRequest() throws InterruptedException {
         
-		test = ExtentReportManager.createTest("Verification of Submitted Request and RITM");
+		test = ExtentReportManager.createTest("SC_014- Verification of Submitted Request and RITM");
 
 		//Navigating to Request List
 		test.info("Navigating to Request List view");
@@ -179,10 +179,10 @@ public class RequestApprovalRejection extends BaseTest {
         
     }
 	
-	@Test(description = "Verification of Generated Approvals", dependsOnMethods = "checkingRequest")
+	@Test(description = "SC_015- Verification of Generated Approvals", dependsOnMethods = "checkingRequest")
     public void approvals() throws InterruptedException {
 		//Scroll down to related list
-		test = ExtentReportManager.createTest("Verification of Generated Approvals");
+		test = ExtentReportManager.createTest("SC_015- Verification of Generated Approvals");
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
         
         driver.findElement(By.xpath("//*[@id=\"tabs2_list\"]/span[2]/span/span[2]")).click();
@@ -206,7 +206,7 @@ public class RequestApprovalRejection extends BaseTest {
 	}
 	
 	
-	@Test(description = "Verification of Rejecting the approval by Impersonating user", dependsOnMethods = "approvals")
+	@Test(description = "SC_016- Verification of Rejecting the approval by Impersonating user", dependsOnMethods = "approvals")
     public void impersonateUser() throws InterruptedException {
 		Thread.sleep(3000);
         jse = (JavascriptExecutor) driver;
@@ -216,7 +216,7 @@ public class RequestApprovalRejection extends BaseTest {
     	impersonation.endImpersonation(jse);
     	Thread.sleep(2000);
         
-        test = ExtentReportManager.createTest("Verification of Rejecting the approval by Impersonating user");
+        test = ExtentReportManager.createTest("SC_016- Verification of Rejecting the approval by Impersonating user");
     	test.info("Impersonation for first Approval");
     	impersonation.startImpersonation(approver, jse);
         
@@ -237,10 +237,10 @@ public class RequestApprovalRejection extends BaseTest {
 	}
 	
 	
-	@Test(description = "Verification of SCTask, Request & RITM after Rejecting the approval" , dependsOnMethods = "impersonateUser")
+	@Test(description = "SC_017- Verification of SCTask, Request & RITM after Rejecting the approval" , dependsOnMethods = "impersonateUser")
     public void verifyCatalogTask() throws InterruptedException {
 		// Open Request & RITM after approval
-		test = ExtentReportManager.createTest("Verification of SCTask, Request & RITM after Rejecting the approval");
+		test = ExtentReportManager.createTest("SC_017- Verification of SCTask, Request & RITM after Rejecting the approval");
 		driver.get(BaseTest.baseUrl + "/sc_request_list");
         System.out.println(requestno);
         Thread.sleep(2000);

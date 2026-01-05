@@ -42,10 +42,10 @@ public class NormalChangeRejection extends BaseTest
 		Assert.assertEquals(expected, actual);
 	}
     
-    @Test(description = "Verification of Navigate to Change list")
+    @Test(description = "SC_012- Verification of Navigate to Change list")
     public void navigateToChangeList() throws InterruptedException {
     	jse = (JavascriptExecutor) driver;
-    	test = ExtentReportManager.createTest("Verification of Navigate to Incident list");
+    	test = ExtentReportManager.createTest("SC_012- Verification of Navigate to Incident list");
     	
     	jse = (JavascriptExecutor) driver;    
     	//Navigation through all menu
@@ -62,13 +62,13 @@ public class NormalChangeRejection extends BaseTest
 		WebElement clicknewui =(WebElement) jse.executeScript(newbutton);
 		clicknewui.click();
         
-        Thread.sleep(4000);
+        Thread.sleep(3000);
         //Click on Models tab
         WebElement models=driver.findElement(By.xpath("//*[@id='change_models']"));
         models.click();
         
         test.info("Clicking on the Normal change widget");
-        Thread.sleep(5000);
+        Thread.sleep(3000);
         
         //Click on Normal widget
         WebElement NormalChange=driver.findElement(By.xpath("//*[@id='007c4001c343101035ae3f52c1d3aeb2']/div[1]/div[1]/span"));
@@ -76,14 +76,14 @@ public class NormalChangeRejection extends BaseTest
         test.pass("Navigated to the New change page");
     }
     
-    @Test(description = "Verification of Creation of change", dependsOnMethods = "navigateToChangeList")
+    @Test(description = "SC_013- Verification of Creation of change", dependsOnMethods = "navigateToChangeList")
     public void createChange() throws InterruptedException 
     {
     	// Create a object of getData method
     	System.out.println(changedata);
     	String short_description = changedata[0][0].toString();
     	
-    	test = ExtentReportManager.createTest("Verification of Navigating to Change list view");
+    	test = ExtentReportManager.createTest("SC_013- Verification of Navigating to Change list view");
     	
     	Thread.sleep(2000);
     	String state1=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='New']")).getText();
@@ -109,10 +109,10 @@ public class NormalChangeRejection extends BaseTest
         Reporter.getCurrentTestResult().setAttribute("TestData", changeNo);
         }
     
-    @Test(description = "Verification of opening Created change record from list", dependsOnMethods = "createChange")
+    @Test(description = "SC_014- Verification of opening Created change record from list", dependsOnMethods = "createChange")
     public void openChange() throws InterruptedException 
     {
-    	test = ExtentReportManager.createTest("Opening Change record after Submition"); 
+    	test = ExtentReportManager.createTest("SC_014- Verification of opening Created change record from list"); 
     	driver.get(Config.baseUrl() + "/change_request_list");
         Thread.sleep(2000);
         // Search Change record on table
@@ -139,15 +139,15 @@ public class NormalChangeRejection extends BaseTest
         Reporter.getCurrentTestResult().setAttribute("TestData", changeNo);
     }
     
-    @Test(description = "Verification of Approval Generation", dependsOnMethods = "openChange")
+    @Test(description = "SC_015- Verification of Approval Generation", dependsOnMethods = "openChange")
     public void requestingApproval() throws InterruptedException 
     {
     	String Assignmentgroup = changedata[0][1].toString();
     	String Assignto = changedata[0][2].toString();
     	
-    	Thread.sleep(10000);
+    	Thread.sleep(5000);
     	
-    	test = ExtentReportManager.createTest("Verification of Request Approval UI action");
+    	test = ExtentReportManager.createTest("SC_015- Verification of Request Approval UI action");
     	
     	//Click on RequestApproval UI action without fill Assignment group and Assign to fields
     	test.info("Click on the Request Approval UI action without fill Assignment group and Assign to fields");
@@ -215,12 +215,12 @@ public class NormalChangeRejection extends BaseTest
     }
     
     
-    @Test(description = "Verification of User Impersonation", dependsOnMethods = "requestingApproval")
+    @Test(description = "SC_016- Verification of User Impersonation", dependsOnMethods = "requestingApproval")
     public void impersonateUser() throws InterruptedException 
     {
     	String comment = changedata[0][3].toString();
     	
-    	Thread.sleep(5000);
+    	Thread.sleep(3000);
     	jse = (JavascriptExecutor) driver;
     	
     	//End Impersonation
@@ -228,7 +228,7 @@ public class NormalChangeRejection extends BaseTest
     	impersonation.endImpersonation(jse);
     	Thread.sleep(2000);
     	
-    	test = ExtentReportManager.createTest("Verification of Rejecting the approval by Impersonating user");
+    	test = ExtentReportManager.createTest("SC_016- Verification of Rejecting the approval by Impersonating user");
     	test.info("Impersonation for first Approval");
     	impersonation.startImpersonation(firstAprovalUser, jse);
     	Thread.sleep(2000);
@@ -298,9 +298,9 @@ public class NormalChangeRejection extends BaseTest
     	Thread.sleep(2000);
     }
     
-    @Test(description = "Verification of Change record after Rejection of 1st Approval", dependsOnMethods = "impersonateUser")
+    @Test(description = "SC_017- Verification of Change record after Rejection of 1st Approval", dependsOnMethods = "impersonateUser")
     public void OPNCHNAFTREJ() throws InterruptedException {
-    	test = ExtentReportManager.createTest("Verification of Change record after Rejection of 1st Approval");
+    	test = ExtentReportManager.createTest("SC_017- Verification of Change record after Rejection of 1st Approval");
     	
         //Opening Change record After rejection of 1st Approval
     	driver.get(Config.baseUrl() + "/change_request_list");

@@ -42,9 +42,9 @@ public class RequestClosedIncomplete extends BaseTest {
 	//fetching excel data
 	Object[][] requestData = DataImport.getData("Request");
 		
-	@Test(description = "Verification of Submitting the Big Data Analysis catalog item")
+	@Test(description = "SC_007- Verification of Submitting the Big Data Analysis catalog item")
 	public void createRequest() throws InterruptedException {
-		test = ExtentReportManager.createTest("Verification of Submitting the Big Data Analysis catalog item").assignCategory("Request Closed Incomplete");
+		test = ExtentReportManager.createTest("SC_007- Verification of Submitting the Big Data Analysis catalog item").assignCategory("Request Closed Incomplete");
 			
 		driver.get(BaseTest.baseUrl + "/esc");
 		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
@@ -115,10 +115,10 @@ public class RequestClosedIncomplete extends BaseTest {
         Reporter.getCurrentTestResult().setAttribute("TestData", requestno);
 	}
 	
-	@Test(description = "Verification of Request and RITM",dependsOnMethods = "createRequest")
+	@Test(description = "SC_008- Verification of Request and RITM",dependsOnMethods = "createRequest")
     public void checkingRequest() throws InterruptedException {
         
-		test = ExtentReportManager.createTest("Verification of Submitted Request and RITM");
+		test = ExtentReportManager.createTest("SC_008- Verification of Submitted Request and RITM");
 
 		//Navigating to Request List
 		test.info("Navigating to Request List view");
@@ -177,10 +177,10 @@ public class RequestClosedIncomplete extends BaseTest {
         
     }
 		
-	@Test(description = "Verification of Request and RITM", dependsOnMethods = "checkingRequest")
+	@Test(description = "SC_009- Verification of Request and RITM", dependsOnMethods = "checkingRequest")
 	public void approvals() throws InterruptedException {
 		//Scroll down to related list
-		test = ExtentReportManager.createTest("Verification of Generated Approvals");
+		test = ExtentReportManager.createTest("SC_009- Verification of Generated Approvals");
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
         
         driver.findElement(By.xpath("//*[@id=\"tabs2_list\"]/span[2]/span/span[2]")).click();
@@ -204,7 +204,7 @@ public class RequestClosedIncomplete extends BaseTest {
 	}
 	
 	
-	@Test(description = "Verification of Approving the approval by Impersonating user", dependsOnMethods = "approvals")
+	@Test(description = "SC_010- Verification of Approving the approval by Impersonating user", dependsOnMethods = "approvals")
     public void impersonateUser() throws InterruptedException {
 		Thread.sleep(3000);
         jse = (JavascriptExecutor) driver;
@@ -214,14 +214,14 @@ public class RequestClosedIncomplete extends BaseTest {
     	impersonation.endImpersonation(jse);
     	Thread.sleep(2000);
     	
-        test = ExtentReportManager.createTest("Verification of Approving the approval by Impersonating user");
+        test = ExtentReportManager.createTest("SC_010- Verification of Approving the approval by Impersonating user");
     	test.info("Impersonation for first Approval");
     	impersonation.startImpersonation(approver, jse);
         
-    	
+    	Thread.sleep(2000); 
     	// Approving the approval 
         approvalHandling.approveApproval(ritm, approver, test);
- 
+        Thread.sleep(2000); 
         //End impersonation
         test.info("End Impersonation");
     	impersonation.endImpersonation(jse);
@@ -234,10 +234,10 @@ public class RequestClosedIncomplete extends BaseTest {
     	Thread.sleep(2000);
 	}
 	
-	@Test(description = "Verification of Catalog task after Approving the approval" , dependsOnMethods = "impersonateUser")
+	@Test(description = "SC_011- Verification of Catalog task after Approving the approval" , dependsOnMethods = "impersonateUser")
     public void verifyCatalogTask() throws InterruptedException {
 		// Open Request & RITM after approval
-		test = ExtentReportManager.createTest("Verification of Catalog task after Approving the approval");
+		test = ExtentReportManager.createTest("SC_011- Verification of Catalog task after Approving the approval");
 		
         driver.get(BaseTest.baseUrl + "/sc_request_list");
         System.out.println(requestno);
@@ -290,10 +290,10 @@ public class RequestClosedIncomplete extends BaseTest {
         Reporter.getCurrentTestResult().setAttribute("TestData", catlogTask);
 	}
 	
-	@Test(description = "Verification of Close Incompleating the Catalog task" , dependsOnMethods = "verifyCatalogTask")
+	@Test(description = "SC_012- Verification of Close Incompleating the Catalog task" , dependsOnMethods = "verifyCatalogTask")
     public void verifyCloseIncompleteCatalogTask() throws InterruptedException {
 		// Closed Incomplete SCTask
-		test = ExtentReportManager.createTest("Verification of Close Incompleating the Catalog task");
+		test = ExtentReportManager.createTest("SC_012- Verification of Close Incompleating the Catalog task");
 		WebElement taskState = driver.findElement(By.id("sc_task.state"));
 		Select changeState = new Select(taskState);
 		changeState.selectByVisibleText("Closed Incomplete");

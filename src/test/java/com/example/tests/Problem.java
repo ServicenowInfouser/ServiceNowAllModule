@@ -15,12 +15,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.AssertJUnit;
 import org.testng.annotations.Test;
 
+import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 
 import base.BaseTest;
 import base.DriverManager;
 import base.Impersonation;
-import base.Navigator;
 import utils.DataImport;
 import utils.ExtentReportManager;
 
@@ -30,11 +30,11 @@ public class Problem extends BaseTest {
 	private JavascriptExecutor jse;
 	private Logger logger = LogManager.getLogger("Problem");
 	Object[][] problemdata = DataImport.getData("Problem");
-	private Navigator navigator = new Navigator(driver);
 	private Impersonation impersonation = new Impersonation(driver);
 
 	@Test (priority = 1)
 	public void impersonateUser() throws InterruptedException {
+		test = ExtentReportManager.createTest("------- Problem Flow Started -------");
 		//End Impersonation
 		jse = (JavascriptExecutor) driver;
     	Thread.sleep(2000);
@@ -45,49 +45,9 @@ public class Problem extends BaseTest {
     	impersonation.startImpersonation(problemdata[0][1].toString(), jse);
     	Thread.sleep(2000);
     	
-    	
-//		
-//		logger.info("Impersonating to User"); 
-//		test = ExtentReportManager.createTest("Impersonate to User");
-//	  
-//		driver.get(baseUrl);
-//	  
-//	  // Click on profile logo test.log(Status.INFO, "Click on Profile Logo");
-//	  WebElement clickProfile = (WebElement) jse.executeScript(
-//	  "return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\").shadowRoot.querySelector(\"nav > div > div.ending-header-zone > div.polaris-header-controls > div.utility-menu-container > div > div > now-avatar\").shadowRoot.querySelector(\"span > span > img\")"
-//	  ); ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-//	  clickProfile);
-//	  
-//	  test.log(Status.INFO, "Click on Impersonate User"); // Click on Impersonate
-//	  WebElement impersonateUser = (WebElement) jse.executeScript("return document.querySelector('body > macroponent-f51912f4c700201072b211d4d8c26010').shadowRoot.querySelector('div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout').shadowRoot.querySelector('div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header').shadowRoot.querySelector('#userMenu > span > span:nth-child(2) > div > div.user-menu-controls > button.user-menu-button.impersonateUser.keyboard-navigatable.polaris-enabled > div')"
-//	  ); 
-//	  ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-//	  impersonateUser);
-//	  
-//	  Thread.sleep(2000);
-//	  
-//	  // Enter user name test.log(Status.INFO, "Enter User Name"); 
-//	  WebElement searchUser = (WebElement) jse.executeScript(
-//	  "return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.content-area.can-animate > sn-impersonation\").shadowRoot.querySelector(\"now-modal > div > now-typeahead\").shadowRoot.querySelector(\"div > now-popover > div\")"
-//	  ); 
-//	  Thread.sleep(2000); 
-//	  WebElement textBox = searchUser.findElement(By.cssSelector(".now-typeahead-native-input"));
-//	  textBox.sendKeys(problemdata[0][1].toString()); //---------------Data input
-//	  Thread.sleep(2000); 
-//	  textBox.sendKeys(Keys.ENTER);
-//	  
-//	 // Click on Impersonate button 
-//	  test.log(Status.INFO,"Click on Impersonate button"); WebElement impersonateBtn = (WebElement)
-//	  jse.executeScript(
-//	  "return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.content-area.can-animate > sn-impersonation\").shadowRoot.querySelector(\"now-modal\").shadowRoot.querySelector(\"div > div > div > div.now-modal-footer > now-button:nth-child(2)\").shadowRoot.querySelector(\"button\")"
-//	  ); 
-//	  ((JavascriptExecutor) driver).executeScript("arguments[0].click();",
-//	  impersonateBtn);
-	  
-	  // Verify user is Impersonated or not 
 	 }
 
-	@Test(priority = 2)
+	@Test(description = "SC_001- Verification of Open and Submit Problem form without fill details in mandatory fields", priority = 2)
 	public void submitProblemFormWODetail() {
 		try {
 
@@ -122,6 +82,9 @@ public class Problem extends BaseTest {
 
 			String errorMesg = driver.findElement(By.xpath("//*[@id='output_messages']/div/div/span[2]")).getText();
 			test.log(Status.INFO, "Error Pop-up shown as - " + errorMesg);
+			
+			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("Error Pop-up", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
 			// Verify mandatory fields
 			// Assigned to field is mandatory
@@ -135,7 +98,7 @@ public class Problem extends BaseTest {
 
 	}
 
-	@Test(priority = 3)
+	@Test(description ="SC_002- Validate and fill madatory field details" ,priority = 3)
 	public void validateProblemForm() throws InterruptedException {
 		try {
 
@@ -521,19 +484,24 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "State is - " + stateValue);
 				logger.info("State is - " + stateValue);
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			} else {
 				test.log(Status.FAIL, "State is not New");
 				logger.info("State is not New");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
-
+			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("Filled form", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 		} catch (Exception e) {
 			e.printStackTrace();
 			AssertJUnit.assertTrue(false);
 		}
 	}
 
-	@Test(priority = 4)
+	@Test(description ="SC_003- Verification of Save form once fill all required details" ,priority = 4)
 	public void submitForm() {
 		try {
 
@@ -554,13 +522,15 @@ public class Problem extends BaseTest {
 			System.out.println("Copied value is problem number " +problemNo);
 
 			test.log(Status.PASS, "Problem form is submitted Successfully");
+			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("After form submitted", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 		} catch (Exception e) {
 			e.printStackTrace();
 			AssertJUnit.assertTrue(false);
 		}
 	}
 
-	@Test(priority = 5)
+	@Test(description ="SC_004- Verification of reopen submitted record from Problem table", priority = 5)
 	public void reOpenForm() throws InterruptedException {
 		try {
 			logger.info("SC_004- Verification of reopen submitted record from Problem table");
@@ -596,6 +566,9 @@ public class Problem extends BaseTest {
 			test.log(Status.PASS, "Created Problem record is- " + openedPRB + "opened");
 			logger.info("Created Problem record is- " + openedPRB + "opened");
 //			Assert.assertEquals(openedPRB, value, "Created Problem is opened");
+			
+			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("Reopened problem record", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 		}
 
 		catch (Exception e) {
@@ -604,7 +577,7 @@ public class Problem extends BaseTest {
 		}
 	}
 
-	@Test(priority = 6)
+	@Test(description ="SC_005- Verification of State once Problem is Assigned", priority = 6)
 	public void stateOnceAssignSave() {
 
 		try {
@@ -624,9 +597,13 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "State is - " + stateValue);
 				logger.info("State is - " + stateValue);
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			} else {
 				logger.info("State is not Assess");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 		}
 
@@ -636,7 +613,7 @@ public class Problem extends BaseTest {
 		}
 	}
 
-	@Test(priority = 7)
+	@Test(description ="SC_006- Verification of State once Problem is Confirmed", priority = 7)
 	public void RCAState() {
 
 		try {
@@ -650,6 +627,9 @@ public class Problem extends BaseTest {
 			if (uiAction1) {
 				test.log(Status.PASS, "Confirm UI action is visible");
 				logger.info("Confirm UI action is visible");
+				
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Confirm UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 				confirmUI.click();
 				test.log(Status.INFO, "Click on 'Confirm' UI action");
 				logger.info("Click on 'Confirm' UI action");
@@ -658,6 +638,7 @@ public class Problem extends BaseTest {
 				logger.info("Confirm UI action is not visible");
 				test.log(Status.FAIL, "Confirm UI action is not visible");
 				//AssertJUnit.assertTrue(false);// test fail
+				
 			}
 
 			// Verify State once click on Confirm UI action
@@ -669,9 +650,13 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "State is - " + stateValue + "once problem is confirmed");
 				logger.info("State is - " + stateValue);
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			} else {
 				logger.info("State is not Root Cause Analysis");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 		}
 
@@ -681,7 +666,7 @@ public class Problem extends BaseTest {
 		}
 	}
 
-	@Test(priority = 8)
+	@Test(description ="SC_007- Verification of Fixing Problem without fill required details", priority = 8)
 	public void fixStateWODetails() throws InterruptedException { // Negative scenario
 
 		try {
@@ -695,7 +680,7 @@ public class Problem extends BaseTest {
 			WebElement fixUI = driver.findElement(By.xpath("//*[@id='move_to_fix_in_progress']"));
 //			String fixUIAction = fixUI.getText();
 			fixUI.click();
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 
 			test.log(Status.PASS,
 					"When click on Fix UI action without fill required details pop up dialogue opened for required fields");
@@ -703,6 +688,8 @@ public class Problem extends BaseTest {
 //			WebElement element = driver.findElement(By.xpath("//*[@id='start_fix_dialog_form_view']/div/div/header/button"));
 //			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;jsExecutor.executeScript("arguments[0].click();",element);
 
+			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("Pop up window", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			// Close open dialog box- Refresh the current page
 			driver.navigate().refresh();
 			Thread.sleep(2000);
@@ -717,6 +704,8 @@ public class Problem extends BaseTest {
 						"State is - " + stateValue + ", Problem is not fixed without filled mandatory field");
 				logger.info("State is - " + stateValue + ", Problem is not fixed without filled mandatory field");
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
 			} else {
 				test.log(Status.FAIL, "State is Fixed");
 				logger.info("State is Fixed");
@@ -730,7 +719,7 @@ public class Problem extends BaseTest {
 		}
 	}
 
-	@Test(priority = 9)
+	@Test(description ="SC_008- Verification of State once Problem is Fixed with filled mandtory field", priority = 9)
 	public void fixState() throws InterruptedException {
 
 		try {
@@ -760,17 +749,23 @@ public class Problem extends BaseTest {
 			driver.switchTo().parentFrame();
 
 			// Click on Fix UI action
-			test.log(Status.INFO, "Click on Fix UI action");
 			WebElement fixUI = driver.findElement(By.xpath("//*[@id='move_to_fix_in_progress']"));
 //			String uiAction = fixUI.getText();
 			boolean uiActionDisply = fixUI.isDisplayed();
 			if (uiActionDisply) {
-				fixUI.click();
+				
 				logger.info("Fix UI action is visible");
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Fix UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+				
+				test.log(Status.INFO, "Click on Fix UI action");
+				fixUI.click();
 			} else {
 				logger.info("Fix UI action is not visible");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Fix UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 
 			// Verify State once click on Fix UI action
@@ -782,10 +777,14 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "State is - " + stateValue);
 				logger.info("State is - " + stateValue);
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			} else {
 				test.log(Status.FAIL, "State is not Fix in Progress");
 				logger.info("State is not Fix in Progress");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 		}
 
@@ -795,7 +794,7 @@ public class Problem extends BaseTest {
 		}
 	}
 
-	@Test(priority = 10)
+	@Test(description ="SC_009- Verification of State and Resolution code once Problem is Resolved", priority = 10)
 	public void resolveState() throws InterruptedException {
 
 		try {
@@ -808,7 +807,8 @@ public class Problem extends BaseTest {
 			boolean uiActionDisply = resolveUI.isDisplayed();
 			if (uiActionDisply) {
 				test.log(Status.PASS, "Resolve UI action is visible");
-
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Resolve UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 				test.log(Status.INFO, "Click on Resolve UI action");
 				resolveUI.click();
 
@@ -817,6 +817,8 @@ public class Problem extends BaseTest {
 			} else {
 				logger.info("Resolve UI action is not visible");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Resolve UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 
 			// Verify State once click on Resolve UI action
@@ -842,6 +844,8 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "Resolution code is - " + selectedCode + "once Resolve problem");
 				logger.info("Resolution code is - " + selectedCode + "once Resolve problem");
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State and Resolution code", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			} else {
 				test.log(Status.FAIL, "Resolution code is not Fix Applied");
 				logger.info("Resolution code is not Fix Applied");
@@ -855,7 +859,7 @@ public class Problem extends BaseTest {
 		}
 	}
 
-	@Test(priority = 11)
+	@Test(description ="SC_010- Verification of State when Problem is Re-Analyzed", priority = 11)
 	public void reAnalyze() throws InterruptedException {
 
 		try {
@@ -867,14 +871,20 @@ public class Problem extends BaseTest {
 			boolean uiActionDisply = reAnalyzeUI.isDisplayed();
 			if (uiActionDisply) {
 				test.log(Status.PASS, "Re-Analyze UI action is visible");
-				reAnalyzeUI.click();
+				
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Re-Analyze UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+				
 				test.log(Status.INFO, "Click on Re-Analyze UI action");
 				logger.info("Click on Re-Analyze UI action");
+				reAnalyzeUI.click();
 				AssertJUnit.assertTrue(true); // test pass
 			} else {
 				test.log(Status.FAIL, "Re-Analyze UI action is not visible");
 				logger.info("Re-Analyze UI action is not visible");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Re-Analyze UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 
 			// Verify State of problem if click on Re-Analyze UI action -->Root Case
@@ -888,10 +898,14 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "State is - " + stateValue + " when click on Re-Analyze UI action");
 				logger.info("State is - " + stateValue + " when click on Re-Analyze UI action");
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			} else {
 				test.log(Status.FAIL, "State is not Root Case Analysis");
 				logger.info("State is not Root Case Analysis");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 		}
 
@@ -901,7 +915,7 @@ public class Problem extends BaseTest {
 		}
 	}
 
-	@Test(priority = 12)
+	@Test(description ="SC_011- Verification of State when Problem is Cancelled", priority = 12)
 	public void cancelPRB() throws InterruptedException {
 
 		try {
@@ -913,24 +927,34 @@ public class Problem extends BaseTest {
 //			String uiAction = cancelUI.getText();
 			boolean uiActionDisply = cancelUI.isDisplayed();
 			if (uiActionDisply) {
-				cancelUI.click();
+				
 				test.log(Status.PASS, "Cancel UI action is visible");
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Cancel UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 				logger.info("Cancel UI action is visible");
 				AssertJUnit.assertTrue(true); // test pass
+				
+				test.log(Status.INFO, "Click on Cancel UI action without fill mandatory fields details");
+				cancelUI.click();
+
 			} else {
 				test.log(Status.FAIL, "Cancel UI action is not visible");
 				logger.info("Cancel UI action is not visible");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Cancel UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
-			Thread.sleep(2000);
+			Thread.sleep(3000);
 
 			// Click on close opened mandatory field window
-			test.log(Status.INFO, "Click on Cancel UI action without fill mandatory fields details");
-			WebElement element = driver.findElement(By.xpath("//*[@id='tabs2_section']/span[4]/span[1]")); // Check
-																											// xpath
+			WebElement element = driver.findElement(By.xpath("//*[@id='tabs2_section']/span[4]/span[1]")); 
+			test.log(Status.PASS, "For mandatory fields pop up window opend");
+			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+			test.info("Pop up window", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+			
 			JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 			jsExecutor.executeScript("arguments[0].click();", element);
-			test.log(Status.PASS, "For mandatory fields pop up window opend");
+			
 			/*
 			 * //Close open dialog box- Refresh the current page
 			 * driver.navigate().refresh(); //Check refresh page alternate to close opened
@@ -985,10 +1009,14 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "Resolution code is - " + selectedCode + " when click on Cancel UI action");
 				logger.info("Resolution code is - " + selectedCode + " when click on Cancel UI action");
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State and Resolution code", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
 			} else {
 				test.log(Status.FAIL, "Resolution code is not Canceled");
 				logger.info("Resolution code is not Canceled");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State and Resolution code", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
 			}
 		}
 
@@ -998,7 +1026,7 @@ public class Problem extends BaseTest {
 		}
 	}
 
-	@Test(priority = 13)
+	@Test(description ="SC_012- Verification of State when Cancelled Problem is Re-Analyzed", priority = 13)
 	public void reAnalyzeOnceAgain() throws InterruptedException {
 
 		try {
@@ -1010,20 +1038,27 @@ public class Problem extends BaseTest {
 //			String uiAction = reAnalyzeUI.getText();
 			boolean uiActionDisply = reAnalyzeUI.isDisplayed();
 			if (uiActionDisply) {
-				reAnalyzeUI.click();
+				
 				test.log(Status.PASS, "Re-Analyze UI action is visible");
 				logger.info("Re-Analyze UI action is visible");
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Re-Analyze UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
+				
+				test.log(Status.INFO, "Click on Re-Analyze UI action");
+				reAnalyzeUI.click();
 			} else {
 				test.log(Status.FAIL, "Re-Analyze UI action is not visible");
 				logger.info("Re-Analyze UI action is not visible");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Re-Analyze UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
 			}
 
 			// Verify State of problem if click on Re-Analyze UI action -->Root Case
 			// Analysis
 			Thread.sleep(2000);
-			test.log(Status.INFO, "Click on Re-Analyze UI action");
+			
 			Select state = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
 			String stateValue = state.getFirstSelectedOption().getText();
 
@@ -1033,10 +1068,14 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "State is changed to - " + stateValue + " when click on Re-Analyze UI action");
 				logger.info("State is changed to - " + stateValue + " when click on Re-Analyze UI action");
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
 			} else {
 				test.log(Status.FAIL, "State is not changed to Root Case Analysis");
 				logger.info("State is not changed to Root Case Analysis");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath1 = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath1).build());
 			}
 		}
 
@@ -1046,7 +1085,7 @@ public class Problem extends BaseTest {
 		}
 	}
 
-	@Test(priority = 14)
+	@Test(description ="SC_013- Verification of State once Problem is Closed", priority = 14)
 	public void cloasedState() throws InterruptedException {
 
 		try {
@@ -1058,13 +1097,19 @@ public class Problem extends BaseTest {
 //			String uiAction = fixUI.getText();
 			boolean uiActionDisply = fixUI.isDisplayed();
 			if (uiActionDisply) {
-				fixUI.click();
+				
 				test.log(Status.PASS, "Fix UI action is visible");
 				logger.info("Fix UI action is visible");
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Fix UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+				fixUI.click();
 			} else {
 				logger.info("Fix UI action is not visible");
+				test.log(Status.FAIL, "Fix UI action is not visible");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Fix UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 
 			// Verify State once click on Fix UI action
@@ -1078,10 +1123,14 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "State is - " + stateValue + " when click on Fix UI action");
 				logger.info("State is - " + stateValue + " when click on Fix UI action");
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			} else {
 				test.log(Status.FAIL, "State is not Fix in Progress");
 				logger.info("State is not Fix in Progress");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 
 			// Click on Resolved UI action
@@ -1089,19 +1138,25 @@ public class Problem extends BaseTest {
 //			String uiAction = resolveUI.getText();
 			boolean uiActionDisply1 = resolveUI.isDisplayed();
 			if (uiActionDisply1) {
-				resolveUI.click();
+				
 				test.log(Status.PASS, "Resolve UI action is visible");
 				logger.info("Resolve UI action is visible");
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Resolve UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 				AssertJUnit.assertTrue(true); // test pass
+				test.log(Status.INFO, "Click on Resolve UI action");
+				resolveUI.click();
 			} else {
 				test.log(Status.FAIL, "Resolve UI action is not visible");
 				logger.info("Resolve UI action is not visible");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Resolve UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 
 			// Verify State once click on Resolve UI action
 			Thread.sleep(2000);
-			test.log(Status.INFO, "Click on Resolve UI action");
+			
 			Select state1 = new Select(driver.findElement(By.xpath("//*[@id='sys_readonly.problem.state']")));
 			String stateValue1 = state1.getFirstSelectedOption().getText();
 //
@@ -1114,6 +1169,7 @@ public class Problem extends BaseTest {
 				test.log(Status.FAIL, "State is not Resolved");
 				logger.info("State is not Resolved");
 				AssertJUnit.assertTrue(false);// test fail
+				
 			}
 			// Verify Resolution code
 			Select resolutionCode = new Select(
@@ -1125,10 +1181,14 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "Resolution code is - " + selectedCode + " when click on Resolve UI action");
 				logger.info("Resolution code is - " + selectedCode);
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State and Resolution code", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			} else {
 				test.log(Status.FAIL, "Resolution code is not Fix Applied");
 				logger.info("Resolution code is not Fix Applied");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State and Resolution code", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 
 			// Click on Complete UI action
@@ -1137,14 +1197,20 @@ public class Problem extends BaseTest {
 			boolean uiActionDisplyed2 = completeUI.isDisplayed();
 			if (uiActionDisplyed2) {
 				test.log(Status.PASS, "Complete UI action is visible");
-				completeUI.click();
-				test.log(Status.INFO, "Click on Complete UI action");
+				
 				logger.info("Complete UI action is visible");
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Complete UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 				AssertJUnit.assertTrue(true); // test pass
+				
+				test.log(Status.INFO, "Click on Complete UI action");
+				completeUI.click();
 			} else {
 				test.log(Status.FAIL, "Complete UI action is not visible");
 				logger.info("Complete UI action is not visible");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Complete UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 
 			// Verify State once click on Complete UI action
@@ -1158,6 +1224,7 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "State is - " + closedStateValue + " when click on Complete UI action");
 				logger.info("State is - " + closedStateValue);
 				AssertJUnit.assertTrue(true); // test pass
+				
 			} else {
 				test.log(Status.FAIL, "State is not Closed");
 				logger.info("State is not Closed");
@@ -1173,10 +1240,14 @@ public class Problem extends BaseTest {
 				test.log(Status.PASS, "Resolution code is - " + selectedCode1 + " when click on Complete UI action");
 				logger.info("Resolution code is - " + selectedCode1 + " when click on Complete UI action");
 				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State and Resolution code", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			} else {
 				test.log(Status.FAIL, "Resolution code is not Fix Applied");
 				logger.info("Resolution code is not Fix Applied");
 				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("State and Resolution code", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 			}
 		}
 

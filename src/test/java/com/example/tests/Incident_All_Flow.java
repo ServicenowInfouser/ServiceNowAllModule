@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -115,6 +116,9 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());		
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -157,6 +161,9 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Subcategory and Short Description Updated on Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -242,9 +249,13 @@ public class Incident_All_Flow extends BaseTest {
 			//Capture screenshots
 			String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
 			test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+			
+			//Custom report
+	        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 		}
 		System.out.println("Incidents are Created !!");
 		test.pass("Incidents are Created for All the Users. ");
+		
 	}
 
 
@@ -314,7 +325,7 @@ public class Incident_All_Flow extends BaseTest {
 
 		// Copy Incident record number
 		WebElement inputElement = driver.findElement(By.xpath("//input[@id='incident.number']"));
-		String createdInc = inputElement.getAttribute("value");
+		createdInc = inputElement.getAttribute("value");
 		test.info("Incident number : "+createdInc);
 
 		//Validate field is visible on form
@@ -415,6 +426,9 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath9 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("State of Incident is On-Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath9).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -451,7 +465,7 @@ public class Incident_All_Flow extends BaseTest {
 
 		// Copy Incident record number
 		WebElement inputElement = driver.findElement(By.xpath("//input[@id='incident.number']"));
-		String createdInc = inputElement.getAttribute("value");
+		createdInc = inputElement.getAttribute("value");
 		test.info("Incident number : "+createdInc);
 
 		//Validate field is visible on form
@@ -611,6 +625,9 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath14 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Resolved Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath14).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
@@ -647,7 +664,7 @@ public class Incident_All_Flow extends BaseTest {
 
 		// Copy Incident record number
 		WebElement inputElement = driver.findElement(By.xpath("//input[@id='incident.number']"));
-		String createdInc = inputElement.getAttribute("value");
+		createdInc = inputElement.getAttribute("value");
 		test.info("Incident number : "+createdInc);
 
 		//Validate field is visible on form
@@ -812,6 +829,9 @@ public class Incident_All_Flow extends BaseTest {
 
 		//Close incident
 		incidentpage.click_On_Closed_Incident_Button(test);
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 
 	}
 
@@ -847,7 +867,7 @@ public class Incident_All_Flow extends BaseTest {
 
 		// Copy Incident record number
 		WebElement inputElement = driver.findElement(By.xpath("//input[@id='incident.number']"));
-		String createdInc = inputElement.getAttribute("value");
+		createdInc = inputElement.getAttribute("value");
 		test.info("Incident number : "+createdInc);
 
 		//Validate field is visible on form
@@ -915,5 +935,8 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath7 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Canceled Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath7).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 }

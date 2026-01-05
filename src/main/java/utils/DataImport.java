@@ -1,19 +1,31 @@
 package utils;
 
 import java.io.FileInputStream;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class DataImport {
-	public static String filePath = "C:\\Users\\Sandesh Velhal\\eclipse-workspace\\Servicenow-AllModule\\src\\test\\resources\\testdata.xlsx";
+	
+	//Dynamic file path
+	static String projectRoot = System.getProperty("user.dir");
+    static Path excelPath = Paths.get(projectRoot, "src", "test", "resources", "testdata.xlsx");
+    static String excelPathStr = excelPath.toString();
+    
+    //Static file path
+	//public static String filePath = "C:\\Users\\Sandesh Velhal\\eclipse-workspace\\Servicenow-AllModule\\src\\test\\resources\\testdata.xlsx";
 	
 	
 	public static Object[][] getData(String sheetName) {
         Object[][] data = null;
+        
+        //System.out.println("excelPath : "+ excelPath);
+        //System.out.println("excelPathstr : "+ excelPathStr);
 
         try {
-            FileInputStream fis = new FileInputStream(filePath);
+            FileInputStream fis = new FileInputStream(excelPathStr);
             XSSFWorkbook workbook = new XSSFWorkbook(fis);
             XSSFSheet sheet = workbook.getSheet(sheetName);
 
