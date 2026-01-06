@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -31,12 +32,12 @@ public class Incident_All_Flow extends BaseTest {
 	private Navigator navigator = new Navigator(driver);
 
 
-	@Test(priority=1, description = "Verification of Creation of Incident")
+	@Test(priority=1, description = "SCR_01- Verification of Creation of Incident")
 	public void create_Incident() throws InterruptedException {
 		test1 = ExtentReportManager.createTest("------- Incident Flow Started -------");
 		
 		//Initialize report
-		test = ExtentReportManager.createTest("SCR_01_Verification of Creation of Incident");
+		test = ExtentReportManager.createTest("SCR_01- Verification of Creation of Incident");
 
 		// Create a object of getExcelData method
 		Object[][] excel_data = DataImport.getData("Incident_Flow");
@@ -128,13 +129,16 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());		
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
-	@Test(priority=2, dependsOnMethods = "create_Incident", description = "Verification that User is able to update the Incident record")
+	@Test(priority=2, dependsOnMethods = "create_Incident", description = "SCR_02- Verification that User is able to update the Incident record")
 	public void update_Incident() throws InterruptedException {
 		//Initialize report
-		test = ExtentReportManager.createTest("SCR_02_Verification that User is able to update the Incident record");
+		test = ExtentReportManager.createTest("SCR_02- Verification that User is able to update the Incident record");
 
 		test.info("Incident number : "+createdInc);
 		System.out.println("Upadte test started..");
@@ -170,13 +174,16 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Subcategory and Short Description Updated on Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 	
-	@Test(priority=3, dependsOnMethods = "update_Incident", description = "Verification of Incident is able to change to State In-Progress")
+	@Test(priority=3, dependsOnMethods = "update_Incident", description = "SCR_3- Verification of Incident is able to change to State In-Progress")
 	public void inProgress_Incident () throws InterruptedException {
 		//Initialize report
-		test = ExtentReportManager.createTest("SCR_3_Verification of Incident is able to change to State In-Progress");
+		test = ExtentReportManager.createTest("SCR_3- Verification of Incident is able to change to State In-Progress");
 
 		// Create a object of getExcelData method
 		Object[][] excel_data = DataImport.getData("Incident_Flow");
@@ -215,10 +222,10 @@ public class Incident_All_Flow extends BaseTest {
 	}
 
 
-	@Test(priority=4, dependsOnMethods = "inProgress_Incident", description = "Verification of Incident is able to change to On Hold state")
+	@Test(priority=4, dependsOnMethods = "inProgress_Incident", description = "SCR_4- Verification of Incident is able to change to On Hold state")
 	public void onHold_Incident () throws InterruptedException {
 		//Initialize report
-		test = ExtentReportManager.createTest("SCR_4_Verification of Incident is able to change to On Hold state");
+		test = ExtentReportManager.createTest("SCR_4- Verification of Incident is able to change to On Hold state");
 
 		// Create a object of getExcelData method
 		Object[][] excel_data = DataImport.getData("Incident_Flow");
@@ -276,14 +283,17 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath10 = ExtentReportManager.captureScreenshot_new(driver);
 		test.info("Verify Incident record is in state : On Hold : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath10).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 
 	}
 
 
-	@Test(priority=5, dependsOnMethods = "onHold_Incident", description = "Verification of Incident is able to change to Resolved state")
+	@Test(priority=5, dependsOnMethods = "onHold_Incident", description = "SCR_5- Verification of Incident is able to change to Resolved state")
 	public void resolved_Incident () throws InterruptedException {
 		//Initialize report
-		test = ExtentReportManager.createTest("SCR_5_Verification of Incident is able to change to Resolved state");
+		test = ExtentReportManager.createTest("SCR_5- Verification of Incident is able to change to Resolved state");
 
 		// Create a object of getExcelData method
 		Object[][] excel_data = DataImport.getData("Incident_Flow");
@@ -373,13 +383,16 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath14 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Resolved Incident : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath14).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 	
 
-	@Test(priority=6, dependsOnMethods = "resolved_Incident", description = "Verification of Incident is able to change to Canceled state")
+	@Test(priority=6, dependsOnMethods = "resolved_Incident", description = "SCR_6- Verification of Incident is able to change to Canceled state")
 	public void cancel_Incident () throws InterruptedException {
 
-		test = ExtentReportManager.createTest("SCR_6_Verification of Incident is able to change to Canceled state");
+		test = ExtentReportManager.createTest("SCR_6- Verification of Incident is able to change to Canceled state");
 		//Initialize report
 		Object[][] excel_data = DataImport.getData("Incident_Flow");
 
@@ -421,10 +434,10 @@ public class Incident_All_Flow extends BaseTest {
 	}
 
 
-	@Test(priority=7, description = "Verification that user who do not have appropriate role is not able to CLose the Incidnet")
+	@Test(priority=7, description = "SCR_7- Verification that user who do not have appropriate role is not able to Close the Incident")
 	public void close_Incident () throws InterruptedException {
 		//Initialize report
-		test = ExtentReportManager.createTest("SCR_7_Verification that user who do not have appropriate role is not able to Close the Incident");
+		test = ExtentReportManager.createTest("SCR_7- Verification that user who do not have appropriate role is not able to Close the Incident");
 
 		// Create a object of getExcelData method
 		Object[][] excel_data = DataImport.getData("Incident_Flow");
@@ -502,13 +515,16 @@ public class Incident_All_Flow extends BaseTest {
 		//Capture screenshots
 		String screenshotPath5 = ExtentReportManager.captureScreenshot_new(driver);
 		test.pass("Close button is not visible  : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath5).build());
+		
+		//Custom report
+        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 	}
 
 
-	@Test(priority=8, description = "Verification of Creation of Incident for multiple users") 
+	@Test(priority=8, description = "SCR_8- Verification of Creation of Incident for multiple users") 
 	public void create_Incident_for_Multiple_Users () throws InterruptedException {
 		//Initialize report
-		test = ExtentReportManager.createTest("SCR_8_Verification of Creation of Incident for multiple users");
+		test = ExtentReportManager.createTest("SCR_8- Verification of Creation of Incident for multiple users");
 
 		// Create a object of getExcelData method
 		Object[][] excel_data = DataImport.getData("Create_Inc");
@@ -587,6 +603,9 @@ public class Incident_All_Flow extends BaseTest {
 			//Capture screenshots
 			String screenshotPath3 = ExtentReportManager.captureScreenshot_new(driver);
 			test.info("Incident form : ", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath3).build());
+			
+			//Custom report
+	        Reporter.getCurrentTestResult().setAttribute("TestData", createdInc);
 		}
 		System.out.println("Incidents are Created !!");
 		test.pass("Incidents are Created for All the Users. ");
