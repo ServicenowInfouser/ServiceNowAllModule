@@ -21,7 +21,7 @@ public class BaseTest {
 	public static String baseUrl = Config.baseUrl();
 	private WebDriver driver = DriverManager.getDriver(); 
 	protected static ExtentReports extent;
-	protected ExtentTest test;
+	protected ExtentTest test,test1;
 	private JavascriptExecutor jse = (JavascriptExecutor) driver;
 	
 	private LoginPage loginPage;

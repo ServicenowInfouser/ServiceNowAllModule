@@ -99,7 +99,7 @@ public class RequestRITMTask extends BaseTest {
 	
 	public String CheckReqRITM(ExtentTest test, String requestno) throws InterruptedException {
 		
-		test = ExtentReportManager.createTest("Verification of Submitted Request and RITM");
+		test = ExtentReportManager.createTest("SC_002- Verification of Submitted Request and RITM");
 		
 		//Navigating to Request List
 		test.info("Navigating to Request List view");
@@ -162,7 +162,7 @@ public class RequestRITMTask extends BaseTest {
 	
 	public String checkApprovals(ExtentTest test) throws InterruptedException {
 		//Scroll down to related list
-		test = ExtentReportManager.createTest("Verification of Generated Approvals");
+		test = ExtentReportManager.createTest("SC_003- Verification of Generated Approvals");
         driver.findElement(By.cssSelector("body")).sendKeys(Keys.CONTROL, Keys.END);
         
         driver.findElement(By.xpath("//*[@id=\"tabs2_list\"]/span[2]/span/span[2]")).click();

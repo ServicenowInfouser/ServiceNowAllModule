@@ -120,7 +120,9 @@ public class RequestClosedComplete extends BaseTest {
 	
 	@Test(description = "SC_001- Verification of Submitting the Big Data Analysis catalog item")
 	public void createRequest() throws InterruptedException {
-		test = ExtentReportManager.createTest("SC_001- Verification of Submitting the Big Data Analysis catalog item").assignCategory("Request Closed Complete");
+		test1 = ExtentReportManager.createTest("------- Request Flow Started -------");
+		
+		test = ExtentReportManager.createTest("SC_001- Verification of Submitting the Big Data Analysis catalog item");
 		
 		driver.get(BaseTest.baseUrl + "/esc");
 		String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
@@ -293,7 +295,7 @@ public class RequestClosedComplete extends BaseTest {
     	impersonation.endImpersonation(jse);
     	Thread.sleep(2000);
     	
-        test = ExtentReportManager.createTest("Verification of Approving the approval by Impersonating user").assignCategory("Request Closed Complete");
+        test = ExtentReportManager.createTest("SC_004- Verification of Approving the approval by Impersonating user");
     	test.info("Impersonation for first Approval");
     	impersonation.startImpersonation(approver, jse);
         
@@ -317,7 +319,7 @@ public class RequestClosedComplete extends BaseTest {
 	@Test(description = "SC_005- Verification of Catalog task after Approving the approval" , dependsOnMethods = "impersonateUser")
     public void verifyCatalogTask() throws InterruptedException {
 		// Open Request & RITM after approval
-		test = ExtentReportManager.createTest("SC_005- Verification of Catalog task after Approving the approval").assignCategory("Request Closed Complete");
+		test = ExtentReportManager.createTest("SC_005- Verification of Catalog task after Approving the approval");
 		
         driver.get(BaseTest.baseUrl + "/sc_request_list");
         System.out.println(requestno);
@@ -373,7 +375,7 @@ public class RequestClosedComplete extends BaseTest {
 	@Test(description = "SC_006- Verification of Close Compleating the Catalog task" , dependsOnMethods = "verifyCatalogTask")
     public void verifyCloseCompleteCatalogTask() throws InterruptedException {
 		// Closed Complete SCTask
-		test = ExtentReportManager.createTest("SC_006- Verification of Close Compleating the Catalog task").assignCategory("Request Closed Complete");
+		test = ExtentReportManager.createTest("SC_006- Verification of Close Compleating the Catalog task");
 		WebElement taskState = driver.findElement(By.id("sc_task.state"));
 		Select changeState = new Select(taskState);
 		changeState.selectByVisibleText("Closed Complete");

@@ -558,6 +558,9 @@ public class NormalChange extends BaseTest {
        Thread.sleep(3000);
        closeTAsk.click();
        Thread.sleep(3000);
+       
+       
+       Reporter.getCurrentTestResult().setAttribute("TestData", copyNumber);
     }
     
     
@@ -649,6 +652,8 @@ public class NormalChange extends BaseTest {
               WebElement closeTAsk1=driver.findElement(By.xpath("//*[@id='change_task_to_closed']"));
               closeTAsk1.click();
               Thread.sleep(3000);
+              
+              Reporter.getCurrentTestResult().setAttribute("TestData", copyNumber2);
     }
     
     @Test(description = "SC_011- Verification of Change Record", dependsOnMethods = "secondchangeTask")

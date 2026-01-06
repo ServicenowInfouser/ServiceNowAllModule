@@ -13,6 +13,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.AssertJUnit;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -524,6 +525,8 @@ public class Problem extends BaseTest {
 			test.log(Status.PASS, "Problem form is submitted Successfully");
 			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
 			test.info("After form submitted", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+			
+			Reporter.getCurrentTestResult().setAttribute("TestData", problemNo);
 		} catch (Exception e) {
 			e.printStackTrace();
 			AssertJUnit.assertTrue(false);
@@ -569,6 +572,8 @@ public class Problem extends BaseTest {
 			
 			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
 			test.info("Reopened problem record", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+			
+			Reporter.getCurrentTestResult().setAttribute("TestData", problemNo);
 		}
 
 		catch (Exception e) {

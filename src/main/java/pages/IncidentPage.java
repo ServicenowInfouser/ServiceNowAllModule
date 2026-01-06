@@ -7,6 +7,7 @@ import java.time.Duration;
 import java.util.Date;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.concurrent.TimeoutException;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -32,10 +33,10 @@ public class IncidentPage {
 	protected static ExtentTest test ;
 
 	private static WebDriver driver;
-	
+
 	public IncidentPage(WebDriver driver) {
-        this.driver = driver;
-    }
+		this.driver = driver;
+	}
 
 	// Method to take full page screenshots
 	public static void takeFullScreenshots () {
@@ -103,10 +104,10 @@ public class IncidentPage {
 		globalSearchBox.sendKeys(Keys.ENTER);
 
 		Thread.sleep(2000);
-		test.info("Search the Incident");
+		test.pass("Verified able to Search the Incident");
 	}
 
-	
+
 	// Method to open Incident
 	public void openIncident(String incNum,ExtentTest test) {
 
@@ -120,7 +121,7 @@ public class IncidentPage {
 			}
 		}
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		test.info("Open Incident.");
+		test.pass("Verified able to open Incident.");
 	}
 
 	// Validate that expected value is same as actual value
@@ -153,7 +154,7 @@ public class IncidentPage {
 		System.out.println("Caller :"+caller_Name);
 	}
 
-	
+
 	//Method to enter short description on forn
 	public void enter_ShortDescription(String short_Description,ExtentTest test) {
 
@@ -169,7 +170,7 @@ public class IncidentPage {
 		test.info("Short Description :"+short_Description);		
 	}
 
-	
+
 	//method to select impact
 	public void select_Impact(String impact,ExtentTest test) {
 
@@ -177,6 +178,8 @@ public class IncidentPage {
 		WebElement fieldText =driver.findElement(By.xpath("//select[@id='incident.impact']")); 
 		Boolean fieldDisplayed = fieldText.isDisplayed(); 
 		Assert.assertTrue(fieldDisplayed !=false, "Impact field is not displayed. ");
+		test.pass("Impact field is Visible");
+		
 
 		//Select impact
 		driver.findElement(By.xpath("//select[@id='incident.impact']")).click();
@@ -184,6 +187,8 @@ public class IncidentPage {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 		System.out.println("Impact : "+impact);
 		test.info("Impact : "+impact);
+		
+		
 	}
 
 
@@ -194,6 +199,7 @@ public class IncidentPage {
 		WebElement fieldText =driver.findElement(By.xpath("//select[@id='incident.urgency']")); 
 		Boolean fieldDisplayed = fieldText.isDisplayed(); 
 		Assert.assertTrue(fieldDisplayed !=false, "Urgency field is not displayed. ");
+		test.pass("Urgency field is Visible");
 
 		//Select impact
 		driver.findElement(By.xpath("//select[@id='incident.urgency']")).click();
@@ -211,6 +217,7 @@ public class IncidentPage {
 		WebElement fieldText =driver.findElement(By.xpath("//select[@id='incident.category']")); 
 		Boolean fieldDisplayed = fieldText.isDisplayed(); 
 		Assert.assertTrue(fieldDisplayed !=false, "Category field is not displayed. ");
+		test.pass("Category field is Visible");
 
 		//Select category
 		driver.findElement(By.xpath("//select[@id='incident.category']")).click();
@@ -228,6 +235,7 @@ public class IncidentPage {
 		WebElement fieldText =driver.findElement(By.xpath("//select[@id='incident.subcategory']")); 
 		Boolean fieldDisplayed = fieldText.isDisplayed(); 
 		Assert.assertTrue(fieldDisplayed !=false, "Category field is not displayed. ");
+		test.pass("Subcategory field is Visible");
 
 		//Select category
 		driver.findElement(By.xpath("//select[@id='incident.subcategory']")).click();
@@ -258,7 +266,7 @@ public class IncidentPage {
 		// Important: This will throw all collected assertion errors
 		softAssert.assertAll();
 
-		test.info("Verified error messsge : "+ expectedErrorMsg+" is visible on Incident");
+		test.pass("Verified error messsge : "+ expectedErrorMsg+" is visible on Incident");
 	}
 
 
@@ -269,6 +277,7 @@ public class IncidentPage {
 		WebElement fieldText =driver.findElement(By.xpath("//select[@name='incident.state']")); 
 		Boolean fieldDisplayed = fieldText.isDisplayed(); 
 		Assert.assertTrue(fieldDisplayed !=false, "Incident state field is not displayed. ");
+		//test.info("State field is Visible");
 
 		// Verify state of Incident is Closed				
 		String act_incident_state = driver.findElement(By.xpath("//select[@id='incident.state']")).getAttribute("value");
@@ -279,63 +288,62 @@ public class IncidentPage {
 
 		if (act_incident_state.equals("1")) {
 			System.out.println("Incident state is New");
-			test.info("Verified Incident state is New.");
+			test.pass("Verified Incident state is New.");
 		} else if (act_incident_state.equals("2")) {
 			System.out.println("Incident state is In Progress");
-			test.info("Verified Incident state is In Progress.");
+			test.pass("Verified Incident state is In Progress.");
 		} else if (act_incident_state.equals("3")) {
 			System.out.println("Incident state is On Hold");
-			test.info("Verified Incident state is On Hold.");
+			test.pass("Verified Incident state is On Hold.");
 		} else if (act_incident_state.equals("6")) {
 			System.out.println("Incident state is Resolved");
-			test.info("Verified Incident state is Resolved.");
+			test.pass("Verified Incident state is Resolved.");
 		} else if (act_incident_state.equals("7")) {
 			System.out.println("Incident state is Closed");	
-			test.info("Verified Incident state is Closed.");
+			test.pass("Verified Incident state is Closed.");
 		} else if (act_incident_state.equals("8")) {
 			System.out.println("Incident state is Canceled");
-			test.info("Verified Incident state is Canceled.");
+			test.pass("Verified Incident state is Canceled.");
 		} 
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
 	}
 	
-	
 	// Method to verify state of Incident record
-    public void verify_Incident_State_Canceled(String exp_stateCode,ExtentTest test) {
+		public void verify_Incident_State_Canceled(String exp_stateCode,ExtentTest test) {
 
-        // Verify state field displayed
-        WebElement fieldText =driver.findElement(By.xpath("//select[@name='sys_readonly.incident.state']")); 
-        Boolean fieldDisplayed = fieldText.isDisplayed(); 
-        Assert.assertTrue(fieldDisplayed !=false, "Incident state field is not displayed. ");
+			// Verify state field displayed
+			WebElement fieldText =driver.findElement(By.xpath("//select[@name='sys_readonly.incident.state']")); 
+			Boolean fieldDisplayed = fieldText.isDisplayed(); 
+			Assert.assertTrue(fieldDisplayed !=false, "Incident state field is not displayed. ");
 
-        // Verify state of Incident is Closed                
-        String act_incident_state = driver.findElement(By.xpath("//select[@name='sys_readonly.incident.state']")).getAttribute("value");
+			// Verify state of Incident is Closed				
+			String act_incident_state = driver.findElement(By.xpath("//select[@name='sys_readonly.incident.state']")).getAttribute("value");
 
-        // Check if text matches 
-        Assert.assertEquals(act_incident_state, exp_stateCode, "State mismatch!");
+			// Check if text matches 
+			Assert.assertEquals(act_incident_state, exp_stateCode, "State mismatch!");
 
 
-        if (act_incident_state.equals("1")) {
-            System.out.println("Incident state is New");
-            test.info("Verified Incident state is New.");
-        } else if (act_incident_state.equals("2")) {
-            System.out.println("Incident state is In Progress");
-            test.info("Verified Incident state is In Progress.");
-        } else if (act_incident_state.equals("3")) {
-            System.out.println("Incident state is On Hold");
-            test.info("Verified Incident state is On Hold.");
-        } else if (act_incident_state.equals("6")) {
-            System.out.println("Incident state is Resolved");
-            test.info("Verified Incident state is Resolved.");
-        } else if (act_incident_state.equals("7")) {
-            System.out.println("Incident state is Closed");    
-            test.info("Verified Incident state is Closed.");
-        } else if (act_incident_state.equals("8")) {
-            System.out.println("Incident state is Canceled");
-            test.info("Verified Incident state is Canceled.");
-        } 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-    }
+			if (act_incident_state.equals("1")) {
+				System.out.println("Incident state is New");
+				test.pass("Verified Incident state is New.");
+			} else if (act_incident_state.equals("2")) {
+				System.out.println("Incident state is In Progress");
+				test.info("Verified Incident state is In Progress.");
+			} else if (act_incident_state.equals("3")) {
+				System.out.println("Incident state is On Hold");
+				test.info("Verified Incident state is On Hold.");
+			} else if (act_incident_state.equals("6")) {
+				System.out.println("Incident state is Resolved");
+				test.info("Verified Incident state is Resolved.");
+			} else if (act_incident_state.equals("7")) {
+				System.out.println("Incident state is Closed");	
+				test.info("Verified Incident state is Closed.");
+			} else if (act_incident_state.equals("8")) {
+				System.out.println("Incident state is Canceled");
+				test.pass("Verified Incident state is Canceled.");
+			} 
+			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		}
 
 
 	// Methhod to verify field is visible on Incident form 
@@ -346,10 +354,10 @@ public class IncidentPage {
 		Assert.assertTrue(fieldDisplayed != false, "Field is not displayed. ");
 		String text = fieldText.getText();;
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-		test.info(text+" Field is Displayed");
+		test.pass(text+" Field is Displayed");
 		System.out.println(text+" Field is Displayed");
 	}
-	
+
 
 	//Method to verify field on form is mandatory
 	public void verify_Field_Is_Mandatory(String xpath, String field_Name,ExtentTest test) {
@@ -357,11 +365,11 @@ public class IncidentPage {
 		String requiredAttr = field_state.getAttribute("mandatory");
 		//System.out.println("requiredAttr3 : "+requiredAttr);
 		Assert.assertTrue(requiredAttr != null, "Field is not marked as required");
-		test.info("Verified " + field_Name +" field is mandatory");
+		test.pass("Verified " + field_Name +" field is mandatory");
 		System.out.println("Verified " + field_Name +" field is mandatory");
 	}
 
-	
+
 	/*
 	 * //Method to chnage the state of incident > add state code in argument
 	 * 
@@ -413,7 +421,7 @@ public class IncidentPage {
 		test.info("Select Resolution code : "+ resolution_Code_Option);
 	}
 
-	
+
 	/*
 	 * public static void select_On_Hold_Reason_On_Incident(String on_Hold_Reason) {
 	 * 
@@ -513,59 +521,59 @@ public class IncidentPage {
 
 
 	//Method to click on Close button on Incident
-    public void click_On_Closed_Incident_Button(ExtentTest test) {
-        System.out.println("Close button method started");
+	public void click_On_Closed_Incident_Button(ExtentTest test) {
+		System.out.println("Close button method started");
 
-        //Verify Close button displayed
+		//Verify Close button displayed
 
-        /*
-         * WebElement fieldText =
-         * driver.findElement(By.xpath("//button[@id='close_incident']")); Boolean
-         * fieldDisplayed = fieldText.isDisplayed();
-         * System.out.println("Close button is Visible ? "+fieldDisplayed);
-         * 
-         * if (fieldDisplayed.equals(true)) { //Click on Close button
-         * System.out.println("Close button is Visible");
-         * driver.findElement(By.xpath("//button[@id='close_incident']")).click();
-         * driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-         * test.info("Close the Incident"); } else {
-         * System.out.println("Close button is not Visible");
-         * test.info("Closed button not visible on Incident"); SoftAssert softAssert =
-         * new SoftAssert(); softAssert.assertEquals(fieldDisplayed, "true",
-         * "Closed button not visible on Incident");
-         * 
-         * ; }
-         */
+		/*
+		 * WebElement fieldText =
+		 * driver.findElement(By.xpath("//button[@id='close_incident']")); Boolean
+		 * fieldDisplayed = fieldText.isDisplayed();
+		 * System.out.println("Close button is Visible ? "+fieldDisplayed);
+		 * 
+		 * if (fieldDisplayed.equals(true)) { //Click on Close button
+		 * System.out.println("Close button is Visible");
+		 * driver.findElement(By.xpath("//button[@id='close_incident']")).click();
+		 * driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		 * test.info("Close the Incident"); } else {
+		 * System.out.println("Close button is not Visible");
+		 * test.info("Closed button not visible on Incident"); SoftAssert softAssert =
+		 * new SoftAssert(); softAssert.assertEquals(fieldDisplayed, "true",
+		 * "Closed button not visible on Incident");
+		 * 
+		 * ; }
+		 */
 
-        By closeBtn = By.xpath("//button[@id='close_incident']");
+		By closeBtn = By.xpath("//button[@id='close_incident']");
 
-        try {
-            // 1) Check presence without throwing
-            if (driver.findElements(closeBtn).isEmpty()) {
-                System.out.println("Close button NOT present on the page.");
-                test.info("Close button not present on Incident page.");
-                // continue test flow without failing
-            } else {
-                // 2) Wait for visibility (if it becomes visible within timeout)
-                WebElement btn = (WebElement) closeBtn;
-                System.out.println("Close button is visible: " + btn.isDisplayed());
-                test.info("Close button is visible.");
+		try {
+			// 1) Check presence without throwing
+			if (driver.findElements(closeBtn).isEmpty()) {
+				System.out.println("Close button NOT present on the page.");
+				test.info("Close button not present on Incident page.");
+				// continue test flow without failing
+			} else {
+				// 2) Wait for visibility (if it becomes visible within timeout)
+				WebElement btn = (WebElement) closeBtn;
+				System.out.println("Close button is visible: " + btn.isDisplayed());
+				test.info("Close button is visible.");
 
-                // 3) Wait for clickability and click
-            //    wait.until(ExpectedConditions.elementToBeClickable(closeBtn)).click();
-                test.info("Clicked Close button to close the Incident.");
-            }
-        } catch (NoSuchElementException nse) {
-            // (Rare here because we used findElements, but included for completeness)
-            System.out.println("Close button not found (NoSuchElementException).");
-            test.info("Close button not found; skipping close action.");
-        } catch (StaleElementReferenceException sere) {
-            System.out.println("Close button became stale; skipping close action.");
-            test.info("Close button stale; skipping close action.");
-        }
-    }
+				// 3) Wait for clickability and click
+			//	wait.until(ExpectedConditions.elementToBeClickable(closeBtn)).click();
+				test.info("Clicked Close button to close the Incident.");
+			}
+		} catch (NoSuchElementException nse) {
+			// (Rare here because we used findElements, but included for completeness)
+			System.out.println("Close button not found (NoSuchElementException).");
+			test.info("Close button not found; skipping close action.");
+		} catch (StaleElementReferenceException sere) {
+			System.out.println("Close button became stale; skipping close action.");
+			test.info("Close button stale; skipping close action.");
+		}
 
 
+	}
 }
 
 
