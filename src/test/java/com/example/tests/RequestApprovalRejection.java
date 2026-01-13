@@ -222,7 +222,7 @@ public class RequestApprovalRejection extends BaseTest {
         
     	
     	// Rejecting the approval 
-    	approvalHandling.RejectApproval(ritm, approver, test);
+    	approvalHandling.rejectApproval(ritm, approver, test);
         
         //End impersonation
         test.info("End Impersonation");

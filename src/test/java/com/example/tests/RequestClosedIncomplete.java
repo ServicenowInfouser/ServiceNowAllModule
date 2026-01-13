@@ -222,6 +222,7 @@ public class RequestClosedIncomplete extends BaseTest {
     	// Approving the approval 
         approvalHandling.approveApproval(ritm, approver, test);
         Thread.sleep(2000); 
+        
         //End impersonation
         test.info("End Impersonation");
     	impersonation.endImpersonation(jse);

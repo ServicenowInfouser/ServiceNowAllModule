@@ -1,5 +1,7 @@
 package base;
 
+import java.time.Duration;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.testng.ITestResult;
@@ -27,7 +29,7 @@ public class BaseTest {
 	private LoginPage loginPage;
 	private Impersonation impersonation;
 	
-	// Create a object of getData method
+	// Test data
     Object[][] users = DataImport.getData("ImpersonateUser");
 	
 	@BeforeSuite
@@ -35,6 +37,9 @@ public class BaseTest {
 		extent = ExtentReportManager.getReportInstance();
 		
 		driver = DriverManager.getDriver(); 
+		
+		// ✅ Add implicit wait 
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		
 		loginPage = new LoginPage(driver); 
 		driver.get(baseUrl);
@@ -44,12 +49,12 @@ public class BaseTest {
 		//User Impersonation
 		String user = users[0][0].toString();
 		impersonation = new Impersonation(driver);
-	    impersonation.startImpersonation(user, jse);
+	    impersonation.startImpersonation("Fred Luddy", jse);
 	}
 	
 	@AfterSuite
 	public void teardownReport() throws InterruptedException {
-		JavascriptExecutor jse = (JavascriptExecutor) driver;
+		jse = (JavascriptExecutor) driver;
 		impersonation = new Impersonation(driver);
     	impersonation.endImpersonation(jse);
     	
@@ -76,21 +81,12 @@ public class BaseTest {
     	impersonation.endImpersonation(jse);
 	}
 	
-	
 	@AfterMethod(alwaysRun = true)
 	public ExtentTest tearDown(ITestResult result) {
-		
 		if(result.getStatus() == ITestResult.FAILURE) {
-			
 			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
 			test.fail("Test Failed.. Check Screenshot", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 		}
 		return test;
-		
-//		if (driver != null) {
-//			Log.info("Closing Browser...");
-//			driver.quit();
-//		}
 	}
-
 }

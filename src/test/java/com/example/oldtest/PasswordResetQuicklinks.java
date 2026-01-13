@@ -100,7 +100,7 @@ public class PasswordResetQuicklinks {
     	
     	//Navigation through all menu
     	navigator = new Navigator(driver);
-    	navigator.allNavigation("incident.list", jse);
+    	navigator.allNavigation("incident.list");
 
         // Search Incident
         WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
