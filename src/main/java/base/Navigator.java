@@ -115,17 +115,18 @@ public class Navigator extends BaseTest {
     
     
     //All Change related operation
-    public void createNewChange() {
+    public void createNewChange() throws InterruptedException {
+    	Thread.sleep(3000);
+    	searchMenu("Change");
     	
-    	searchMenu("Incident");
-    	
+    	Thread.sleep(3000);
     	//click on create new
-        String createnew = "return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\")"
+        String createnew = "document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\")"
         		+ ".shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\")"
         		+ ".shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\")"
         		+ ".shadowRoot.querySelector(\"nav > div > div.starting-header-zone > sn-polaris-menu:nth-child(2)\")"
-        		+ ".shadowRoot.querySelector(\"nav > div.sn-polaris-nav.d6e462a5c3533010cbd77096e940dd8c.can-animate > div.super-filter-container.all-results-open > div.all-results-section.section-open.results-section > div > div.sn-polaris-tab-content.-left.is-visible.can-animate > div > sn-collapsible-list:nth-child(3)\")"
-        		+ ".shadowRoot.querySelector(\"#\\\\31 4641d70c611228501114133b3cc88a1 > span > span\")";
+        		+ ".shadowRoot.querySelector(\"nav > div.sn-polaris-nav.d6e462a5c3533010cbd77096e940dd8c.can-animate > div.super-filter-container.all-results-open > div.all-results-section.section-open.results-section > div > div.sn-polaris-tab-content.-left.is-visible.can-animate > div > sn-collapsible-list:nth-child(1)\")"
+        		+ ".shadowRoot.querySelector(\"#\\\\33 23bb07bc611227a018aea9eb8f3b35e > span\")";
         WebElement clickcreatenew = getElementByJs(createnew);
         clickcreatenew.click();
     }
