@@ -1,5 +1,6 @@
 package com.example.tests;
 
+import java.time.Duration;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
@@ -11,9 +12,10 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.AssertJUnit;
-import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -28,6 +30,7 @@ import utils.ExtentReportManager;
 public class Problem extends BaseTest {
 	private WebDriver driver = DriverManager.getDriver();
 	public static String problemNo;
+	public static String noteEmailID;
 	private JavascriptExecutor jse;
 	private Logger logger = LogManager.getLogger("Problem");
 	Object[][] problemdata = DataImport.getData("Problem");
@@ -47,6 +50,25 @@ public class Problem extends BaseTest {
     	Thread.sleep(2000);
     	
 	 }
+//	@Test (priority = 1)
+//	public void impersonateUser() throws InterruptedException {
+//		test = ExtentReportManager.createTest("------- Problem Flow Started -------");
+//		System.out.println("Welcome execution started");
+//		// Open bowser
+//		WebDriver driver = new ChromeDriver();
+//		driver.manage().window().maximize();
+//		// Implicit Wait
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+//		JavascriptExecutor jse = (JavascriptExecutor) driver;
+//		// LogIn page
+//		String baseUrl = "https://dev231719.service-now.com";
+//		driver.get(baseUrl);
+//		driver.findElement(By.xpath("//input[@id='user_name']")).sendKeys("admin");
+//		driver.findElement(By.xpath("//input[@id='user_password']")).sendKeys("2t/p8ANG^aaG");
+//		driver.findElement(By.xpath("//button[@id='sysverb_login']")).click();
+//    	Thread.sleep(2000);
+//    	
+//	 }
 
 	@Test(description = "SC_001- Verification of Open and Submit Problem form without fill details in mandatory fields", priority = 2)
 	public void submitProblemFormWODetail() {
@@ -517,16 +539,27 @@ public class Problem extends BaseTest {
 			test.log(Status.INFO, "Problem number is - " + problemNo);
 			logger.info("Problem number is - " + problemNo);
 
+			//Note down Assigned user mail id
+			driver.findElement(By.xpath("//*[@id='viewr.problem.assigned_to']")).click();
+			Thread.sleep(1000);
+			
+//			String noteEmailID = (String) jse.executeScript("return document.querySelector('#sys_readonly\\.sys_user\\.email')").toString();
+//			String noteEmailID = driver.findElement(By.xpath("//*[@id='viewr.problem.assigned_to']")).getText();
+//			String inputValue = (String) jse.executeScript("return arguments[0].value;", clickProfile);
+			
+			noteEmailID = driver.findElement(By.xpath("//*[@id='sys_readonly.sys_user.email']")).getAttribute("value");
+			System.out.println("Email is "+noteEmailID); 
+//			String noteEmailID = driver.findElement(By.xpath("//*[@id='viewr.problem.assigned_to']")).getAttribute("value");
+//			System.out.println("Email is "+noteEmailID);                        //---------------------------Email ID not able to note down---------------------------Email ID not able to note down
+			
 			// Click on Submit UI action
 			test.log(Status.INFO, "Click on Submit UI action");
-			driver.findElement(By.xpath("//*[@id='sysverb_insert']")).click();
+			driver.findElement(By.xpath("//*[@id='sysverb_insert']")).click();                 
 			System.out.println("Copied value is problem number " +problemNo);
 
 			test.log(Status.PASS, "Problem form is submitted Successfully");
 			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
 			test.info("After form submitted", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-			
-			Reporter.getCurrentTestResult().setAttribute("TestData", problemNo);
 		} catch (Exception e) {
 			e.printStackTrace();
 			AssertJUnit.assertTrue(false);
@@ -572,8 +605,6 @@ public class Problem extends BaseTest {
 			
 			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
 			test.info("Reopened problem record", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
-			
-			Reporter.getCurrentTestResult().setAttribute("TestData", problemNo);
 		}
 
 		catch (Exception e) {
@@ -1261,6 +1292,110 @@ public class Problem extends BaseTest {
 			AssertJUnit.assertTrue(false);
 		}
 	}
+	
+	@Test(description = "SC_014- Verification of Email Notification", priority = 15)
+	public void emailNotification() throws InterruptedException {
+
+		try {
+			logger.info("SC_014- Verification of Email Notification");
+			test = ExtentReportManager.createTest("SC_014- Verification of Email Notification");
+			
+			driver.get(baseUrl + "/sys_email_list");
+			Thread.sleep(2000);
+			//Search email by subject
+			WebElement subjectSearch = driver.findElement(By.xpath("//*[@id=\"sys_email_table\"]/thead/tr[2]/td[5]/div/div/div/input"));
+//			subjectSearch.isDisplayed();
+			if(subjectSearch.isDisplayed()) {
+				
+			}
+			else {
+				driver.findElement(By.xpath("//*[@id='hdr_sys_email']/th[2]/div/button")).click();
+			}
+			Thread.sleep(2000);
+			WebElement searchNotification =driver.findElement(By.xpath("//*[@id='sys_email_table']/thead/tr[2]/td[5]/div/div/div/input"));	// Click on Fix UI action
+			searchNotification.sendKeys("Problem "+problemNo+" has been assigned to you");																																		
+			searchNotification.sendKeys(Keys.ENTER);
+			
+			/*	
+			//Check Recipients
+			WebElement openedRecord = driver.findElement(By.xpath("//*[@id='hdr_sys_email']/th"));
+			
+			String openedPRB = openedRecord.getAttribute("value");
+		*/	
+			List<WebElement> openEmail = driver.findElements(By.xpath("//table[@id='sys_email_table']/tbody/tr/td[5]"));
+			for (WebElement ele2 : openEmail) {
+				String subject = ele2.getText();
+				if (subject.contains(problemNo)) {
+					//Open Notification
+					driver.findElement(By.xpath("//table[@id='sys_email_table']/tbody/tr/td[3]/a")).click();
+					break;
+				}
+			}
+			
+			//Verify Subject
+			WebElement subject = driver.findElement(By.xpath("//*[@id='sys_email.subject']"));
+			String noteSubject = subject.getAttribute("value");
+			System.out.println("Subject is "+noteSubject);
+			
+			//Verify Recipients 
+			WebElement recipent = driver.findElement(By.xpath("//*[@id='sys_email.recipients']"));
+			String noteDownRecipent = recipent.getText();
+			System.out.println("Recipients is on Email "+noteDownRecipent);
+			System.out.println("Noteed down Recipients is from profile "+noteEmailID);
+			Assert.assertEquals(noteDownRecipent, noteEmailID, "Recipients is as per requirement" +noteDownRecipent);   
+			
+			
+			//Verify Email body
+			driver.findElement(By.xpath("//*[@id='3f018430c0a8006f003b8fe60ba935cf']")).click();
+			
+			driver.switchTo().frame("email_preview_iframe");
+			//Short description
+			WebElement shortDesc =driver.findElement(By.partialLinkText("Short description"));			
+			String shortDescription=shortDesc.getText();
+			System.out.println("Shrot description is "+shortDescription);
+			//Problem link
+			WebElement link =driver.findElement(By.linkText("Click here to view Problem:"));			
+			String prbLink=link.getText();
+			System.out.println("Shrot description is "+prbLink);
+			 
+			
+			/*	
+			// Verify Opened Notification
+			test.log(Status.INFO, "Verify Opened Notification");
+
+			WebElement openedRecord = driver.findElement(By.xpath("//*[@id='sys_readonly.problem.number']"));
+			String openedPRB = openedRecord.getAttribute("value");
+			test.log(Status.PASS, "Created Problem record is- " + openedPRB + "opened");
+			logger.info("Created Problem record is- " + openedPRB + "opened");
+//			Assert.assertEquals(openedPRB, value, "Created Problem is opened");
+			
+			
+	
+			WebElement fixUI = driver.findElement(By.xpath("//*[@id='move_to_fix_in_progress']"));
+			boolean uiActionDisply = fixUI.isDisplayed();
+			if (uiActionDisply) {
+
+				test.log(Status.PASS, "Fix UI action is visible");
+				logger.info("Fix UI action is visible");
+				AssertJUnit.assertTrue(true); // test pass
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Fix UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+				fixUI.click();
+			} else {
+				logger.info("Fix UI action is not visible");
+				test.log(Status.FAIL, "Fix UI action is not visible");
+				AssertJUnit.assertTrue(false);// test fail
+				String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
+				test.info("Fix UI action", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+			}
+*/
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+			AssertJUnit.assertTrue(false);
+		}
+		}
+	
 	
 	@Test(priority = 15)
 	public void endimpersonation() throws InterruptedException {
