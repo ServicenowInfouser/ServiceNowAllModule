@@ -109,11 +109,6 @@ public class Problem extends BaseTest {
 			String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
 			test.info("Error Pop-up", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
 
-			// Verify mandatory fields
-			// Assigned to field is mandatory
-			// *[@id="status.problem.assigned_to"]
-			// Problem statement is mandatory
-			// *[@id="status.problem.short_description"]
 		} catch (Exception e) {
 			e.printStackTrace();
 			AssertJUnit.assertTrue(false);
