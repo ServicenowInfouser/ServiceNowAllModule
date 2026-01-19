@@ -24,20 +24,6 @@ public class Impersonation extends BaseTest {
         this.waitUtils = new WaitUtils(driver); // Initialize the utility
     }
 
-    /**
-     * Reusable Fluent Wait helper for Shadow DOM elements via JavaScript
-     */
-//    private WebElement waitForElement(String jsScript) {
-//        Wait<WebDriver> wait = new FluentWait<>(driver)
-//                .withTimeout(Duration.ofSeconds(20))
-//                .pollingEvery(Duration.ofMillis(500))
-//                .ignoring(Exception.class);
-//
-//        return wait.until(d -> {
-//            WebElement element = (WebElement) ((JavascriptExecutor) d).executeScript(jsScript);
-//            return (element != null && element.isDisplayed()) ? element : null;
-//        });
-//    }
 
     public void startImpersonation(String user, JavascriptExecutor jse) {
         try {
