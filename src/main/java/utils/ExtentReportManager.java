@@ -77,7 +77,6 @@ public class ExtentReportManager {
             e.printStackTrace();
             return null;
         }
-        
     }
 
 }
