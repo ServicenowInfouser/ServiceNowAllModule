@@ -45,7 +45,7 @@ public class NormalChangeRejection extends BaseTest
     @Test(description = "SC_012- Verification of Navigate to Change list")
     public void navigateToChangeList() throws InterruptedException {
     	jse = (JavascriptExecutor) driver;
-    	test = ExtentReportManager.createTest("SC_012- Verification of Navigate to Incident list");
+    	test = ExtentReportManager.createTest("SC_012- Verification of Navigate to Change list");
     	
     	jse = (JavascriptExecutor) driver;    
     	//Navigation through all menu

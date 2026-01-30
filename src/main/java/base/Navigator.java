@@ -17,7 +17,7 @@ public class Navigator extends BaseTest {
 
     public Navigator(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(15)); // ✅ Explicit wait
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // ✅ Explicit wait
         this.jse = (JavascriptExecutor) driver;
     }
 
@@ -72,6 +72,7 @@ public class Navigator extends BaseTest {
     //Searching for the menu in all navigator
     public void searchMenu(String listName) {
         System.out.println("Navigating to All Menu...");
+        driver.get(Config.baseUrl());
 
         // Click All Menu
         String allMenuScript = "return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\")"
@@ -121,7 +122,7 @@ public class Navigator extends BaseTest {
     	
     	Thread.sleep(3000);
     	//click on create new
-        String createnew = "document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\")"
+        String createnew = "return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\")"
         		+ ".shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\")"
         		+ ".shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\")"
         		+ ".shadowRoot.querySelector(\"nav > div > div.starting-header-zone > sn-polaris-menu:nth-child(2)\")"
@@ -131,4 +132,21 @@ public class Navigator extends BaseTest {
         clickcreatenew.click();
     }
     
+    public void allChange() throws InterruptedException {
+    	Thread.sleep(3000);
+    	searchMenu("Change");
+    	
+    	Thread.sleep(3000);
+    	//click on create new
+    	String allChange = "return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\")"
+    			+ ".shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\")"
+    			+ ".shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\")"
+    			+ ".shadowRoot.querySelector(\"nav > div > div.starting-header-zone > sn-polaris-menu:nth-child(2)\")"
+    			+ ".shadowRoot.querySelector(\"nav > div.sn-polaris-nav.d6e462a5c3533010cbd77096e940dd8c.can-animate > div.super-filter-container.all-results-open > div.all-results-section.section-open.results-section > div > div.sn-polaris-tab-content.-left.is-visible.can-animate > div > sn-collapsible-list:nth-child(1)\")"
+    			+ ".shadowRoot.querySelector(\"#\\\\33 264ded3c611227a019523c8448d2d91 > span\")";
+        WebElement clickAllChange = getElementByJs(allChange);
+        wait.until(ExpectedConditions.elementToBeClickable(clickAllChange)).click();
+        
+        Thread.sleep(3000);
+    }
 }

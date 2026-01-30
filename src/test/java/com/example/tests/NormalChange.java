@@ -10,6 +10,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
@@ -24,7 +25,6 @@ import junit.framework.Assert;
 import utils.DataImport;
 import utils.ExtentReportManager;
 
-
 public class NormalChange extends BaseTest {
 	private WebDriver driver = DriverManager.getDriver(); 
 	String changeNo;
@@ -35,6 +35,7 @@ public class NormalChange extends BaseTest {
 	
 	private Navigator navigator = new Navigator(driver);
 	private Impersonation impersonation = new Impersonation(driver);
+	public WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // ✅ Explicit wait
 	
 	/*
 	 * @expected:User provided value	
@@ -44,38 +45,76 @@ public class NormalChange extends BaseTest {
 		Assert.assertEquals(expected, actual);
 		
 	}
-    @Test
-    public void emptyMethod() {
-    	test = ExtentReportManager.createTest("---- Normal change flow started ----");
-    }
     
-    @Test(description = "SC_001- Verification of Navigate to Change list")
+	@Test(description = "SC_001- Verification of Navigate to Create New change Form")
     public void navigateToChangeList() throws InterruptedException {
+    	test = ExtentReportManager.createTest("---- Normal change flow started ----");
+    	
     	Thread.sleep(5000);
     	jse = (JavascriptExecutor) driver;
-    	test = ExtentReportManager.createTest("SC_001-Verification of Navigate to Incident list");
+    	test = ExtentReportManager.createTest("SC_001- Verification of Navigate to Create New change Form");
     	
-    	jse = (JavascriptExecutor) driver;    
-    	//Navigation through all menu
-    	test.info("Open Change list from All menu");
-    	//navigator = new Navigator(driver);
-    	//navigator.allNavigation("change_request.list", jse);
+    	System.out.println("Navigating to All Menu...");
+        driver.get(Config.baseUrl());
 
-    	driver.get(baseUrl+"/change_request_list");
-    	test.info("Clicking on the New UI action");
-    	//Click on the New UI action
-    	//navigator.newUIAction(jse);
+        // Click All Menu
+        String allMenuScript = "return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\")"
+                + ".shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\")"
+                + ".shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\")"
+                + ".shadowRoot.querySelector(\"#d6e462a5c3533010cbd77096e940dd8c\")";
+
+        WebElement allClick = navigator.getElementByJs(allMenuScript);
+        wait.until(ExpectedConditions.elementToBeClickable(allClick)).click();
+
+        System.out.println("Searching for menu...");
+        Thread.sleep(3000);
+        // Type in filter box
+        String filterScript = "return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\")"
+                + ".shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\")"
+                + ".shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\")"
+                + ".shadowRoot.querySelector(\"nav > div > div.starting-header-zone > sn-polaris-menu:nth-child(2)\")"
+                + ".shadowRoot.querySelector(\"#filter\")";
+
+        WebElement filterBox = navigator.getElementByJs(filterScript);
+        wait.until(ExpectedConditions.visibilityOf(filterBox)).sendKeys("Change");
+    	
+        Thread.sleep(3000);
+    	//click on create new
+        String createnew = "return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\")"
+        		+ ".shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\")"
+        		+ ".shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\")"
+        		+ ".shadowRoot.querySelector(\"nav > div > div.starting-header-zone > sn-polaris-menu:nth-child(2)\")"
+        		+ ".shadowRoot.querySelector(\"nav > div.sn-polaris-nav.d6e462a5c3533010cbd77096e940dd8c.can-animate > div.super-filter-container.all-results-open > div.all-results-section.section-open.results-section > div > div.sn-polaris-tab-content.-left.is-visible.can-animate > div > sn-collapsible-list:nth-child(1)\")"
+        		+ ".shadowRoot.querySelector(\"#\\\\33 23bb07bc611227a018aea9eb8f3b35e > span\")";
+        WebElement clickcreatenew = navigator.getElementByJs(createnew);
+        wait.until(ExpectedConditions.elementToBeClickable(clickcreatenew)).click();
+    	
+        //navigator.createNewChange();
+    	
+    	
+//    	jse = (JavascriptExecutor) driver;    
+//    	//Navigation through all menu
+//    	test.info("Open Change list from All menu");
+//    	//navigator = new Navigator(driver);
+//    	//navigator.allNavigation("change_request.list", jse);
+//    	
+//    	driver.get(baseUrl+"/change_request_list");
+//
+//    	test.info("Clicking on the New UI action");
+//    	//Click on the New UI action
+//    	//navigator.newUIAction(jse);
     	String newbutton="return document.querySelector(\"#sysverb_new\")";
 		WebElement clicknewui =(WebElement) jse.executeScript(newbutton);
-		clicknewui.click();
+		wait.until(ExpectedConditions.elementToBeClickable(clicknewui)).click();
+		//clicknewui.click();
         
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         //Click on Models tab
         WebElement models=driver.findElement(By.xpath("//*[@id='change_models']"));
         models.click();
         
         test.info("Clicking on the Normal change widget");
-        Thread.sleep(2000);
+        Thread.sleep(3000);
         
         //Click on Normal widget
         WebElement NormalChange=driver.findElement(By.xpath("//*[@id='007c4001c343101035ae3f52c1d3aeb2']/div[1]/div[1]/span"));
@@ -116,14 +155,21 @@ public class NormalChange extends BaseTest {
     @Test(description = "SC_003- Verification of opening Created change record from list", dependsOnMethods = "createChange")
     public void openChange() throws InterruptedException {
     	test = ExtentReportManager.createTest("SC_003- Opening Change record after Submition"); 
-    	driver.get(Config.baseUrl() + "/change_request_list");
-        Thread.sleep(2000);
+    	
+    	navigator.allChange();
+    	driver.navigate().refresh();
+    	//driver.get(Config.baseUrl() + "/change_request_list");
+        Thread.sleep(10000);
         // Search Change record on table
         WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
-        globalSearchBox.sendKeys(changeNo);
-        Thread.sleep(1000);
-        globalSearchBox.sendKeys(Keys.ENTER);
-        Thread.sleep(2000);
+        
+        wait.until(ExpectedConditions.visibilityOf(globalSearchBox)).sendKeys(changeNo);
+        wait.until(ExpectedConditions.visibilityOf(globalSearchBox)).sendKeys(Keys.ENTER);
+        
+//        globalSearchBox.sendKeys(changeNo);
+//        Thread.sleep(1000);
+//        globalSearchBox.sendKeys(Keys.ENTER);
+//        Thread.sleep(2000);
 
         // Open Change
         List<WebElement> openCHN = driver.findElements(By.xpath("//table[@id='change_request_table']/tbody/tr/td[3]/a"));
@@ -210,7 +256,6 @@ public class NormalChange extends BaseTest {
         Reporter.getCurrentTestResult().setAttribute("TestData", firstAprovalUser);
     }
     
-    
     @Test(description = "SC_005- Verification of User Impersonation", dependsOnMethods = "requestingApproval")
     public void impersonateUser() throws InterruptedException {
     	Thread.sleep(5000);
@@ -276,7 +321,8 @@ public class NormalChange extends BaseTest {
     	
     	System.out.println("1St Approval flow completed");
         //Opening Change record After 1st Approval
-    	driver.get(Config.baseUrl() + "/change_request_list");
+    	navigator.allChange();
+    	//driver.get(Config.baseUrl() + "/change_request_list");
     	Thread.sleep(2000);
     	
     	// Search Change record on table
@@ -437,7 +483,8 @@ public class NormalChange extends BaseTest {
     	System.err.println("2nd Approval flow completed");
         Thread.sleep(2000);
         //Opening Change record After 2nd Approval Approve
-        driver.get(baseUrl + "/change_request_list");
+        navigator.allChange();
+        //driver.get(baseUrl + "/change_request_list");
         Thread.sleep(2000);
         WebElement globalSearchBox4 = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
         globalSearchBox4.sendKeys(changeNo);
