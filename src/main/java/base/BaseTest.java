@@ -48,15 +48,15 @@ public class BaseTest {
 		
 		//User Impersonation
 		String user = users[0][0].toString();
-		impersonation = new Impersonation(driver);
-	    impersonation.startImpersonation("Fred Luddy", jse);
+//		impersonation = new Impersonation(driver);
+//	    impersonation.startImpersonation(user, jse);
 	}
 	
 	@AfterSuite
 	public void teardownReport() throws InterruptedException {
 		jse = (JavascriptExecutor) driver;
-		impersonation = new Impersonation(driver);
-    	impersonation.endImpersonation(jse);
+//		impersonation = new Impersonation(driver);
+//    	impersonation.endImpersonation(jse);
     	
     	//Closing the driver
     	DriverManager.quitDriver();
