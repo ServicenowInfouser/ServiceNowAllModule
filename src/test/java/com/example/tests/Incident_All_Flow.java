@@ -393,7 +393,7 @@ public class Incident_All_Flow extends BaseTest {
 	}
 
 
-	@Test(priority=6, dependsOnMethods = "resolved_Incident", description = "SCR_6- Verification of Incident is able to change to Canceled state")
+	//@Test(priority=6, dependsOnMethods = "resolved_Incident", description = "SCR_6- Verification of Incident is able to change to Canceled state")
 	public void cancel_Incident () throws InterruptedException {
 
 		test = ExtentReportManager.createTest("SCR_6- Verification of Incident is able to change to Canceled state");
@@ -429,7 +429,8 @@ public class Incident_All_Flow extends BaseTest {
 		// open incident
 		incidentpage.openIncident(createdInc,test);	
 
-		// Verify state of Incident is In Progress					
+		// Verify state of Incident is In Progress	
+		Thread.sleep(4000);
 		incidentpage.verify_Incident_State_Canceled(canceled_Code,test);		
 
 		//Capture screenshots

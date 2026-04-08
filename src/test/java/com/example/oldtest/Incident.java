@@ -30,10 +30,30 @@ public class Incident extends BaseTest {
     	jse = (JavascriptExecutor) driver;
     	test = ExtentReportManager.createTest("Verification of Navigate to Incident list");
     	
+    	Thread.sleep(3000);
     	//Navigation through all menu and opening list
-    	test.info("Open Incident list from All menu");
-    	navigator = new Navigator(driver);
-    	navigator.allNavigation("incident.list", jse);
+    	System.out.println("test1");
+    	String all="return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\").shadowRoot.querySelector(\"#d6e462a5c3533010cbd77096e940dd8c\")";
+        WebElement allclick=(WebElement)jse.executeScript(all);
+        allclick.click();
+		
+		System.out.println("test2");
+		//test.info("Search and open list");
+		String filter="return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout\").shadowRoot.querySelector(\"div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header\").shadowRoot.querySelector(\"nav > div > div.starting-header-zone > sn-polaris-menu:nth-child(2)\").shadowRoot.querySelector(\"#filter\")";
+		WebElement filtertype=(WebElement)jse.executeScript(filter);
+		filtertype.sendKeys("incident.list");
+		filtertype.sendKeys(Keys.ENTER);
+		Thread.sleep(3000);
+		
+		System.out.println("test3");
+		String iframe="return document.querySelector(\"body > macroponent-f51912f4c700201072b211d4d8c26010\").shadowRoot.querySelector(\"#gsft_main\")";
+		WebElement frame=(WebElement) jse.executeScript(iframe);
+		driver.switchTo().frame(frame);
+		Thread.sleep(3000);
+    	
+//    	test.info("Open Incident list from All menu");
+//    	navigator = new Navigator(driver);
+//    	navigator.allNavigation("incident.list", jse);
     	
     	test.pass("Navigated to the Incident list");
     }
@@ -46,7 +66,7 @@ public class Incident extends BaseTest {
     	test = ExtentReportManager.createTest("Verification of Creation of Incident");
     	test.info("Clicking on the New UI action");
     	//Click on the New UI action
-    	navigator.newUIAction(jse);
+    	navigator.newUIAction();
     
         Thread.sleep(2000);
         // Copy Incident record number
