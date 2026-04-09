@@ -3,26 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.tests.Problem">
+      <class name="com.example.tests.Knowledge">
         <methods>
-          <include name="submitProblemFormWODetail"/>
-          <include name="stateOnceAssignSave"/>
-          <include name="setupReport"/>
-          <include name="resolveState"/>
-          <include name="submitForm"/>
-          <include name="fixStateWODetails"/>
-          <include name="reAnalyze"/>
-          <include name="reAnalyzeOnceAgain"/>
           <include name="teardownReport"/>
-          <include name="RCAState"/>
-          <include name="reOpenForm"/>
+          <include name="submitingKnowledge"/>
           <include name="tearDown"/>
-          <include name="fixState"/>
-          <include name="validateProblemForm"/>
-          <include name="cancelPRB"/>
-          <include name="cloasedState"/>
+          <include name="setupReport"/>
+          <include name="ViewArticle"/>
+          <include name="publishState"/>
+          <include name="navigateToKnowledgeList"/>
+          <include name="retiredarticle"/>
         </methods>
-      </class> <!-- com.example.tests.Problem -->
+      </class> <!-- com.example.tests.Knowledge -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

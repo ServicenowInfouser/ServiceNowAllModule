@@ -7,4 +7,5 @@
 		name="update_Incident" time="8.622" />
 	<testcase classname="com.example.tests.Incident_New"
 		name="create_Incident" time="36.765" />
-</testsuite> <!-- com.example.tests.Incident_New -->
+</testsuite> <!--
+com.example.tests.Incident_New -->

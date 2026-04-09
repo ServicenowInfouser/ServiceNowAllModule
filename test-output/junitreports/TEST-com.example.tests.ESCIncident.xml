@@ -9,4 +9,5 @@
 		name="navigateToIncidentList" time="6.507" />
 	<testcase classname="com.example.tests.ESCIncident"
 		name="checkingRequest" time="8.206" />
-</testsuite> <!-- com.example.tests.ESCIncident -->
+</testsuite> <!--
+com.example.tests.ESCIncident -->

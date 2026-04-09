@@ -6,4 +6,5 @@
 	<testcase
 		classname="com.example.tests.RequestStandingdeskQuickLink"
 		name="submitForm" time="11.809" />
-</testsuite> <!-- com.example.tests.RequestStandingdeskQuickLink -->
+</testsuite> <!--
+com.example.tests.RequestStandingdeskQuickLink -->

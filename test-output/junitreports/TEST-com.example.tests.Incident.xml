@@ -70,5 +70,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
 		</error>
-	</testcase> <!-- createIncident -->
-</testsuite> <!-- com.example.tests.Incident -->
+	</testcase> <!--
+	createIncident -->
+</testsuite> <!--
+com.example.tests.Incident -->
