@@ -248,7 +248,7 @@ public class NormalChange extends BaseTest {
         WebElement requestedbutton=driver.findElement(By.xpath("//*[@class='linked formlink']"));
         requestedbutton.click();
     
-        test.info("Appriving the Approval");
+        test.info("Approving the Approval");
         driver.findElement(By.xpath("//*[@id='approve']")).click(); 
         Thread.sleep(2000);
     	

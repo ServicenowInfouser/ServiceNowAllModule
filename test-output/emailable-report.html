@@ -9,19 +9,19 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="8">Default suite</th></tr>
-<tr><td><a href="#t0">Default test</a></td><td class="num">0</td><td class="num attn">5</td><td class="num">0</td><td class="num">0</td><td class="num">89</td><td></td><td></td></tr>
+<tr><td><a href="#t0">Default test</a></td><td class="num">1</td><td class="num attn">4</td><td class="num">0</td><td class="num attn">1</td><td class="num">71,741</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">com.example.tests.Knowledge</td><td><a href="#m0">setupReport</a></td><td rowspan="1">1775655662325</td><td rowspan="1">4501</td></tr><tr><th colspan="4">Default test &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="1">com.example.tests.Knowledge</td><td><a href="#m1">teardownReport</a></td><td rowspan="1">1775655666982</td><td rowspan="1">0</td></tr><tr><th colspan="4">Default test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="5">com.example.tests.Knowledge</td><td><a href="#m2">ViewArticle</a></td><td rowspan="1">1775655666917</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m3">navigateToKnowledgeList</a></td><td rowspan="1">1775655666892</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m4">publishState</a></td><td rowspan="1">1775655666912</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m5">retiredarticle</a></td><td rowspan="1">1775655666922</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m6">submitingKnowledge</a></td><td rowspan="1">1775655666907</td><td rowspan="1">0</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Default suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Default test &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.example.tests.RequestClosedComplete</td><td><a href="#m0">checkingRequest</a></td><td rowspan="1">1776085543907</td><td rowspan="1">31108</td></tr><tr><th colspan="4">Default test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="4">com.example.tests.RequestClosedComplete</td><td><a href="#m1">approvals</a></td><td rowspan="1">1776085575240</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m2">impersonateUser</a></td><td rowspan="1">1776085575247</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m3">verifyCatalogTask</a></td><td rowspan="1">1776085575255</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m4">verifyCloseCompleteCatalogTask</a></td><td rowspan="1">1776085575263</td><td rowspan="1">0</td></tr><tr><th colspan="4">Default test &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.example.tests.RequestClosedComplete</td><td><a href="#m5">createRequest</a></td><td rowspan="1">1776085503662</td><td rowspan="1">40224</td></tr></tbody>
 </table>
-<h2>Default test</h2><h3 id="m0">com.example.tests.Knowledge#setupReport</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
+<h2>Default test</h2><h3 id="m0">com.example.tests.RequestClosedComplete#checkingRequest</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&quot;sys_display.ni.VE9476f39083940f10f4aac629feaad3ac&quot;]&quot;}
   (Session info: chrome=146.0.7680.165)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c8c43459c9c625f819355aaab2a9689f, findElement {value=//input[@id=&apos;user_name&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, goog:processID: 17380, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c8c43459c9c625f819355aaab2a9689f
+Command: [29923f67f791e9274242eda4c779fd60, findElement {using=xpath, value=//*[@id=&quot;sys_display.ni.VE9476f39083940f10f4aac629feaad3ac&quot;]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63535}, goog:processID: 60436, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63535/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 29923f67f791e9274242eda4c779fd60
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -36,15 +36,24 @@ Session ID: c8c43459c9c625f819355aaab2a9689f
 	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at pages.LoginPage.login(LoginPage.java:17)
-	at base.BaseTest.setupReport(BaseTest.java:47)
+	at pages.RequestRITMTask.checkReqRITM(RequestRITMTask.java:183)
+	at com.example.tests.RequestClosedComplete.checkingRequest(RequestClosedComplete.java:47)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:358)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
 	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
 	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
@@ -56,9 +65,8 @@ Session ID: c8c43459c9c625f819355aaab2a9689f
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.example.tests.Knowledge#teardownReport</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.example.tests.Knowledge#ViewArticle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method com.example.tests.Knowledge.ViewArticle() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.publishState() on instance com.example.tests.Knowledge@7e5843db]
+<h3 id="m1">com.example.tests.RequestClosedComplete#approvals</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method com.example.tests.RequestClosedComplete.approvals() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.checkingRequest() on instance com.example.tests.RequestClosedComplete@37ad042b]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -79,51 +87,8 @@ Session ID: c8c43459c9c625f819355aaab2a9689f
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.example.tests.Knowledge#navigateToKnowledgeList</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=146.0.7680.165)
-Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c8c43459c9c625f819355aaab2a9689f, findElement {value=//input[@id=&apos;user_name&apos;], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, goog:processID: 17380, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c8c43459c9c625f819355aaab2a9689f
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at pages.LoginPage.login(LoginPage.java:17)
-	at base.BaseTest.setupReport(BaseTest.java:47)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:358)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.example.tests.Knowledge#publishState</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method com.example.tests.Knowledge.publishState() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.submitingKnowledge() on instance com.example.tests.Knowledge@7e5843db]
+<h3 id="m2">com.example.tests.RequestClosedComplete#impersonateUser</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method com.example.tests.RequestClosedComplete.impersonateUser() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.approvals() on instance com.example.tests.RequestClosedComplete@37ad042b]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -144,8 +109,8 @@ Session ID: c8c43459c9c625f819355aaab2a9689f
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.example.tests.Knowledge#retiredarticle</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method com.example.tests.Knowledge.retiredarticle() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.ViewArticle() on instance com.example.tests.Knowledge@7e5843db]
+<h3 id="m3">com.example.tests.RequestClosedComplete#verifyCatalogTask</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.impersonateUser() on instance com.example.tests.RequestClosedComplete@37ad042b]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -166,8 +131,8 @@ Session ID: c8c43459c9c625f819355aaab2a9689f
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m6">com.example.tests.Knowledge#submitingKnowledge</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method com.example.tests.Knowledge.submitingKnowledge() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.navigateToKnowledgeList() on instance com.example.tests.Knowledge@7e5843db]
+<h3 id="m4">com.example.tests.RequestClosedComplete#verifyCloseCompleteCatalogTask</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.Throwable: Method com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -188,5 +153,6 @@ Session ID: c8c43459c9c625f819355aaab2a9689f
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">com.example.tests.RequestClosedComplete#createRequest</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

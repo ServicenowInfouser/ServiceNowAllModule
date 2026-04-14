@@ -1,156 +1,122 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="0" failed="0" skipped="5">
+<testng-results ignored="0" total="6" passed="1" failed="1" skipped="4">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-08T19:11:06 IST" name="Default suite" finished-at="2026-04-08T19:11:06 IST" duration-ms="89">
+  <suite started-at="2026-04-13T18:35:03 IST" name="Default suite" finished-at="2026-04-13T18:36:15 IST" duration-ms="71741">
     <groups>
     </groups>
-    <test started-at="2026-04-08T19:11:06 IST" name="Default test" finished-at="2026-04-08T19:11:06 IST" duration-ms="89">
-      <class name="com.example.tests.Knowledge">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.example.tests.Knowledge@7e5843db]" started-at="2026-04-08T19:11:02 IST" name="setupReport" finished-at="2026-04-08T19:11:06 IST" duration-ms="4501" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
-            <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=146.0.7680.165)
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c8c43459c9c625f819355aaab2a9689f, findElement {value=//input[@id='user_name'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, goog:processID: 17380, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c8c43459c9c625f819355aaab2a9689f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=146.0.7680.165)
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c8c43459c9c625f819355aaab2a9689f, findElement {value=//input[@id='user_name'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, goog:processID: 17380, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c8c43459c9c625f819355aaab2a9689f
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at pages.LoginPage.login(LoginPage.java:17)
-at base.BaseTest.setupReport(BaseTest.java:47)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:358)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+    <test started-at="2026-04-13T18:35:03 IST" name="Default test" finished-at="2026-04-13T18:36:15 IST" duration-ms="71741">
+      <class name="com.example.tests.RequestClosedComplete">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:34:16 IST" name="setupReport" finished-at="2026-04-13T18:35:03 IST" duration-ms="47132" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setupReport -->
-        <test-method signature="navigateToKnowledgeList()[pri:0, instance:com.example.tests.Knowledge@7e5843db]" started-at="2026-04-08T19:11:06 IST" name="navigateToKnowledgeList" description="Verification of Navigate to Knowledge list" finished-at="2026-04-08T19:11:06 IST" duration-ms="0" status="SKIP">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
-            <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=146.0.7680.165)
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c8c43459c9c625f819355aaab2a9689f, findElement {value=//input[@id='user_name'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, goog:processID: 17380, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c8c43459c9c625f819355aaab2a9689f]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=146.0.7680.165)
-Build info: version: '4.21.0', revision: '79ed462ef4'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [c8c43459c9c625f819355aaab2a9689f, findElement {value=//input[@id='user_name'], using=xpath}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63418}, goog:processID: 17380, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63418/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: c8c43459c9c625f819355aaab2a9689f
-at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at pages.LoginPage.login(LoginPage.java:17)
-at base.BaseTest.setupReport(BaseTest.java:47)
-at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
-at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:358)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+        <test-method signature="createRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:35:03 IST" name="createRequest" description="SC_001- Verification of Submitting the Big Data Analysis catalog item" finished-at="2026-04-13T18:35:43 IST" duration-ms="40224" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- navigateToKnowledgeList -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Knowledge@7e5843db]" started-at="2026-04-08T19:11:06 IST" name="tearDown" finished-at="2026-04-08T19:11:06 IST" duration-ms="4" status="PASS">
+        </test-method> <!-- createRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:35:43 IST" name="tearDown" finished-at="2026-04-13T18:35:43 IST" duration-ms="8" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=navigateToKnowledgeList status=SKIP method=Knowledge.navigateToKnowledgeList()[pri:0, instance:com.example.tests.Knowledge@7e5843db] output={null}]]]>
+                <![CDATA[[TestResult name=createRequest status=SUCCESS method=RequestClosedComplete.createRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="submitingKnowledge()[pri:0, instance:com.example.tests.Knowledge@7e5843db]" started-at="2026-04-08T19:11:06 IST" name="submitingKnowledge" description="Verification of Fields on Knowledge Record" finished-at="2026-04-08T19:11:06 IST" depends-on-methods="com.example.tests.Knowledge.navigateToKnowledgeList" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
+        <test-method signature="checkingRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:35:43 IST" name="checkingRequest" description="SC_002- Verification of Request and RITM" finished-at="2026-04-13T18:36:15 IST" depends-on-methods="com.example.tests.RequestClosedComplete.createRequest" duration-ms="31108" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[Method com.example.tests.Knowledge.submitingKnowledge() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.navigateToKnowledgeList() on instance com.example.tests.Knowledge@7e5843db]]]>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="sys_display.ni.VE9476f39083940f10f4aac629feaad3ac"]"}
+  (Session info: chrome=146.0.7680.165)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [29923f67f791e9274242eda4c779fd60, findElement {using=xpath, value=//*[@id="sys_display.ni.VE9476f39083940f10f4aac629feaad3ac"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63535}, goog:processID: 60436, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63535/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 29923f67f791e9274242eda4c779fd60]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.example.tests.Knowledge.submitingKnowledge() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.navigateToKnowledgeList() on instance com.example.tests.Knowledge@7e5843db]
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="sys_display.ni.VE9476f39083940f10f4aac629feaad3ac"]"}
+  (Session info: chrome=146.0.7680.165)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [29923f67f791e9274242eda4c779fd60, findElement {using=xpath, value=//*[@id="sys_display.ni.VE9476f39083940f10f4aac629feaad3ac"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63535}, goog:processID: 60436, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63535/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 29923f67f791e9274242eda4c779fd60
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at pages.RequestRITMTask.checkReqRITM(RequestRITMTask.java:183)
+at com.example.tests.RequestClosedComplete.checkingRequest(RequestClosedComplete.java:47)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkingRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="tearDown" finished-at="2026-04-13T18:36:15 IST" duration-ms="209" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=checkingRequest status=FAILURE method=RequestClosedComplete.checkingRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="approvals()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="approvals" description="SC_003- Verification of Generated Approvals" finished-at="2026-04-13T18:36:15 IST" depends-on-methods="com.example.tests.RequestClosedComplete.checkingRequest" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.RequestClosedComplete.approvals() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.checkingRequest() on instance com.example.tests.RequestClosedComplete@37ad042b]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.RequestClosedComplete.approvals() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.checkingRequest() on instance com.example.tests.RequestClosedComplete@37ad042b]
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -175,16 +141,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- submitingKnowledge -->
-        <test-method signature="publishState()[pri:0, instance:com.example.tests.Knowledge@7e5843db]" started-at="2026-04-08T19:11:06 IST" name="publishState" description="Verification of opening Created Knowledge record from list" finished-at="2026-04-08T19:11:06 IST" depends-on-methods="com.example.tests.Knowledge.submitingKnowledge" duration-ms="0" status="SKIP">
+        </test-method> <!-- approvals -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="impersonateUser" description="SC_004- Verification of Approving the approval by Impersonating user" finished-at="2026-04-13T18:36:15 IST" depends-on-methods="com.example.tests.RequestClosedComplete.approvals" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method com.example.tests.Knowledge.publishState() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.submitingKnowledge() on instance com.example.tests.Knowledge@7e5843db]]]>
+              <![CDATA[Method com.example.tests.RequestClosedComplete.impersonateUser() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.approvals() on instance com.example.tests.RequestClosedComplete@37ad042b]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.example.tests.Knowledge.publishState() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.submitingKnowledge() on instance com.example.tests.Knowledge@7e5843db]
+              <![CDATA[java.lang.Throwable: Method com.example.tests.RequestClosedComplete.impersonateUser() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.approvals() on instance com.example.tests.RequestClosedComplete@37ad042b]
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -209,16 +175,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- publishState -->
-        <test-method signature="ViewArticle()[pri:0, instance:com.example.tests.Knowledge@7e5843db]" started-at="2026-04-08T19:11:06 IST" name="ViewArticle" description="Verification of opening Created Knowledge record from list after Published State" finished-at="2026-04-08T19:11:06 IST" depends-on-methods="com.example.tests.Knowledge.publishState" duration-ms="0" status="SKIP">
+        </test-method> <!-- impersonateUser -->
+        <test-method signature="verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="verifyCatalogTask" description="SC_005- Verification of Catalog task after Approving the approval" finished-at="2026-04-13T18:36:15 IST" depends-on-methods="com.example.tests.RequestClosedComplete.impersonateUser" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method com.example.tests.Knowledge.ViewArticle() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.publishState() on instance com.example.tests.Knowledge@7e5843db]]]>
+              <![CDATA[Method com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.impersonateUser() on instance com.example.tests.RequestClosedComplete@37ad042b]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.example.tests.Knowledge.ViewArticle() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.publishState() on instance com.example.tests.Knowledge@7e5843db]
+              <![CDATA[java.lang.Throwable: Method com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.impersonateUser() on instance com.example.tests.RequestClosedComplete@37ad042b]
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -243,16 +209,16 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- ViewArticle -->
-        <test-method signature="retiredarticle()[pri:0, instance:com.example.tests.Knowledge@7e5843db]" started-at="2026-04-08T19:11:06 IST" name="retiredarticle" description="Verification of opening Knowledge record from list after Retired State" finished-at="2026-04-08T19:11:06 IST" depends-on-methods="com.example.tests.Knowledge.ViewArticle" duration-ms="0" status="SKIP">
+        </test-method> <!-- verifyCatalogTask -->
+        <test-method signature="verifyCloseCompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="verifyCloseCompleteCatalogTask" description="SC_006- Verification of Close Compleating the Catalog task" finished-at="2026-04-13T18:36:15 IST" depends-on-methods="com.example.tests.RequestClosedComplete.verifyCatalogTask" duration-ms="0" status="SKIP">
           <exception class="java.lang.Throwable">
             <message>
-              <![CDATA[Method com.example.tests.Knowledge.retiredarticle() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.ViewArticle() on instance com.example.tests.Knowledge@7e5843db]]]>
+              <![CDATA[Method com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b]]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.example.tests.Knowledge.retiredarticle() on instance com.example.tests.Knowledge@7e5843db depends on not successfully finished methods 
-[com.example.tests.Knowledge.ViewArticle() on instance com.example.tests.Knowledge@7e5843db]
+              <![CDATA[java.lang.Throwable: Method com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b]
 at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -277,12 +243,12 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- java.lang.Throwable -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- retiredarticle -->
-        <test-method is-config="true" signature="teardownReport()[pri:0, instance:com.example.tests.Knowledge@7e5843db]" started-at="2026-04-08T19:11:06 IST" name="teardownReport" finished-at="2026-04-08T19:11:06 IST" duration-ms="0" status="SKIP">
+        </test-method> <!-- verifyCloseCompleteCatalogTask -->
+        <test-method is-config="true" signature="teardownReport()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="teardownReport" finished-at="2026-04-13T18:36:41 IST" duration-ms="26354" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownReport -->
-      </class> <!-- com.example.tests.Knowledge -->
+      </class> <!-- com.example.tests.RequestClosedComplete -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

@@ -88,7 +88,21 @@ public class RequestRITMTask extends BaseTest {
 
 		test.info("Opening catalog form", MediaEntityBuilder
 				.createScreenCaptureFromPath(ExtentReportManager.captureScreenshot_new(driver)).build());
+		
+		// Submit the form without filling mandatory fields
+        Thread.sleep(2000);      
+        System.out.println("Click on Submit");
+        driver.findElement(By.xpath("//*[@id=\"submit-btn\"]")).click();
+        test.info("Submit the form without filling mandatory fields", MediaEntityBuilder
+				.createScreenCaptureFromPath(ExtentReportManager.captureScreenshot_new(driver)).build());
+        Thread.sleep(5000);
 
+        // Verify validation messages
+        driver.navigate().refresh();
+        System.out.println("Big Data Analysis Form is reloaded");
+        jse = (JavascriptExecutor) driver;
+        Thread.sleep(2000);
+        
 		// Scroll to required fields
 		WebElement fields = wait.until(
 				ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(text(),'Indicates required')]")));
@@ -162,6 +176,18 @@ public class RequestRITMTask extends BaseTest {
 
 		test.info("RITM: " + ritm);
 		test.pass("Request and RITM opened Successfully");
+		
+		// fetch value from variables
+		Thread.sleep(2000);
+		WebElement contact = driver
+				.findElement(By.xpath("//*[@id=\"sys_display.ni.VE9476f39083940f10f4aac629feaad3ac\"]"));
+		String name = contact.getAttribute("value");
+		System.out.println(name);
+		if (name.equals("Andrew Jackson")) {
+			System.out.println("Test is passed for User name");
+		}
+
+		Thread.sleep(3000);
 
 		// Custom report
 		Reporter.getCurrentTestResult().setAttribute("TestData", requestno + " " + ritm);

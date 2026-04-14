@@ -3,18 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.example.tests.Knowledge">
+      <class name="com.example.tests.RequestClosedComplete">
         <methods>
           <include name="teardownReport"/>
-          <include name="submitingKnowledge"/>
+          <include name="createRequest"/>
           <include name="tearDown"/>
+          <include name="approvals"/>
+          <include name="verifyCatalogTask"/>
           <include name="setupReport"/>
-          <include name="ViewArticle"/>
-          <include name="publishState"/>
-          <include name="navigateToKnowledgeList"/>
-          <include name="retiredarticle"/>
+          <include name="checkingRequest"/>
+          <include name="impersonateUser"/>
+          <include name="verifyCloseCompleteCatalogTask"/>
         </methods>
-      </class> <!-- com.example.tests.Knowledge -->
+      </class> <!-- com.example.tests.RequestClosedComplete -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

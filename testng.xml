@@ -15,23 +15,28 @@
 			name="com.example.tests.NormalChange"/> 
 				<class name="com.example.tests.PasswordReset"/> -->
 
+			<!-- Knowledge -->
+			<class name="com.example.tests.Knowledge" />
+			
+			<!-- Order Guide -->
+			<class name="com.example.tests.OrderGuide" />
+
 			<!-- Request RITM Task -->
 			<class name="com.example.tests.RequestClosedComplete" />
 			<class name="com.example.tests.RequestClosedIncomplete" />
 			<class name="com.example.tests.RequestApprovalRejection" />
 
-			<!-- Incident 
+			<!-- Incident -->
 			<class name="com.example.tests.Incident_All_Flow" />
 			
-			<! Problem 
+			<!-- Problem -->
 			<class name="com.example.tests.Problem" />  
 				
-			<! Change 
+			<!-- Change -->
 			<class name="com.example.tests.NormalChangeRejection" />
 			<class name="com.example.tests.NormalChange" /> 
 			
-			<! Knowledge
-			<class name="com.example.tests.Knowledge" />-->
+			
 
 
 		</classes>

@@ -73,7 +73,8 @@ public class NormalChangeRejection extends BaseTest
         //Click on Normal widget
         WebElement NormalChange=driver.findElement(By.xpath("//*[@id='007c4001c343101035ae3f52c1d3aeb2']/div[1]/div[1]/span"));
         NormalChange.click();
-        test.pass("Navigated to the New change page");
+        test.pass("Navigated to the New change page", MediaEntityBuilder
+				.createScreenCaptureFromPath(ExtentReportManager.captureScreenshot_new(driver)).build());
     }
     
     @Test(description = "Verification of Creation of change", dependsOnMethods = "navigateToChangeList")
@@ -89,8 +90,8 @@ public class NormalChangeRejection extends BaseTest
     	String state1=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='New']")).getText();
     	System.out.println("State is:"+state1);
     	compareTwoStringsEquals("New", state1);
-    	String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
-    	test.info("Verify the State of record", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+    	test.info("Verify the State of record", MediaEntityBuilder
+				.createScreenCaptureFromPath(ExtentReportManager.captureScreenshot_new(driver)).build());
     	
     	// Copy Change record number
         WebElement inputElement = driver.findElement(By.xpath("//input[@id='change_request.number']"));
@@ -133,8 +134,8 @@ public class NormalChangeRejection extends BaseTest
              }
         }
         
-        String screenshotPath = ExtentReportManager.captureScreenshot_new(driver);
-        test.pass("Change record opened from the list view", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+        test.pass("Change record opened from the list view", MediaEntityBuilder
+				.createScreenCaptureFromPath(ExtentReportManager.captureScreenshot_new(driver)).build());
         
         Reporter.getCurrentTestResult().setAttribute("TestData", changeNo);
     }
@@ -208,7 +209,8 @@ public class NormalChangeRejection extends BaseTest
         	}
         }
         System.out.println("First User Name is: "+firstAprovalUser);
-        test.pass("Approvals generated successfully");
+        test.pass("Approvals generated successfully", MediaEntityBuilder
+				.createScreenCaptureFromPath(ExtentReportManager.captureScreenshot_new(driver)).build());
         
       //Custom report
         Reporter.getCurrentTestResult().setAttribute("TestData", firstAprovalUser);
@@ -258,7 +260,8 @@ public class NormalChangeRejection extends BaseTest
         approversearch.sendKeys(Keys.ENTER);
        
         //Opening Approval Change record
-        test.info("Opening Approval Change record");
+        test.info("Opening Approval Change record" , MediaEntityBuilder
+				.createScreenCaptureFromPath(ExtentReportManager.captureScreenshot_new(driver)).build());
         WebElement requestedbutton=driver.findElement(By.xpath("//*[@class='linked formlink']"));
         requestedbutton.click();
     
@@ -283,7 +286,8 @@ public class NormalChangeRejection extends BaseTest
         post.click();
         
         //click on Reject UI Action
-        test.info("click on Reject UI Action");
+        test.info("click on Reject UI Action", MediaEntityBuilder
+				.createScreenCaptureFromPath(ExtentReportManager.captureScreenshot_new(driver)).build());
         driver.findElement(By.xpath("//*[@id='reject']")).click();
         Thread.sleep(2000);
     	
@@ -324,7 +328,8 @@ public class NormalChangeRejection extends BaseTest
     	
         //Verification of State after 1st Approval Rejected
         System.out.println("Opening the Change record after 1St Approval Rejected");
-        test.info("Verification of State after 1st Approval Rejected");
+        test.info("Verification of State after 1st Approval Rejected", MediaEntityBuilder
+				.createScreenCaptureFromPath(ExtentReportManager.captureScreenshot_new(driver)).build());
     	
         String state3=driver.findElement(By.xpath("//*[@id='change_request.state']/option[text()='New']")).getText();
     	System.out.println("State is:"+state3);

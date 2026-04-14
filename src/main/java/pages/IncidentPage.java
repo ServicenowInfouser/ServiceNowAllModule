@@ -935,7 +935,7 @@ public class IncidentPage {
 
 	}
 
-	@SuppressWarnings("null")
+	
 	public HashMap<String, List<String>> Verify_sla_On_Incident2 (ExtentTest test) throws InterruptedException {
 		// scroll to resolution tab
 		WebElement element2 = driver

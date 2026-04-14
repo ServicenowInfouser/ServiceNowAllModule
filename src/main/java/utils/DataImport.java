@@ -4,50 +4,57 @@ import java.io.FileInputStream;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class DataImport {
-	
-	//Dynamic file path
-	static String projectRoot = System.getProperty("user.dir");
+    static String projectRoot = System.getProperty("user.dir");
     static Path excelPath = Paths.get(projectRoot, "src", "test", "resources", "testdata.xlsx");
     static String excelPathStr = excelPath.toString();
-    
-    //Static file path
-	//public static String filePath = "C:\\Users\\Sandesh Velhal\\eclipse-workspace\\Servicenow-AllModule\\src\\test\\resources\\testdata.xlsx";
-	
-	
-	public static Object[][] getData(String sheetName) {
+
+    public static Object[][] getData(String sheetName) {
         Object[][] data = null;
-        
-        //System.out.println("excelPath : "+ excelPath);
-        //System.out.println("excelPathstr : "+ excelPathStr);
+        try (FileInputStream fis = new FileInputStream(excelPathStr);
+             XSSFWorkbook workbook = new XSSFWorkbook(fis)) {
 
-        try {
-            FileInputStream fis = new FileInputStream(excelPathStr);
-            XSSFWorkbook workbook = new XSSFWorkbook(fis);
             XSSFSheet sheet = workbook.getSheet(sheetName);
-
-            int rows = sheet.getPhysicalNumberOfRows();
-            int cols = sheet.getRow(0).getLastCellNum();
-
-            //System.out.println("rows : "+rows);
-            //System.out.println("cols : "+cols);
-
-            data = new Object[rows - 1][cols];
-
-            for (int i = 1; i < rows; i++) {
-                for (int j = 0; j < cols; j++) {
-                    data[i - 1][j] = sheet.getRow(i).getCell(j).toString();
-                    //System.out.println("data "+ data[i - 1][j]);
-                }
+            if (sheet == null) {
+                System.out.println("DataImport: sheet not found: " + sheetName);
+                return new Object[0][0];
             }
 
-            workbook.close();
+            DataFormatter formatter = new DataFormatter();
+            int rows = sheet.getPhysicalNumberOfRows();
+            Row header = sheet.getRow(0);
+            int cols = (header != null) ? header.getLastCellNum() : 0;
+
+            if (cols <= 0) {
+                System.out.println("DataImport: no header cells for sheet: " + sheetName);
+                return new Object[0][0];
+            }
+
+            if (rows <= 1) {
+                return new Object[0][cols];
+            }
+
+            data = new Object[rows - 1][cols];
+            for (int r = 1; r < rows; r++) {
+                Row row = sheet.getRow(r);
+                for (int c = 0; c < cols; c++) {
+                    if (row == null) {
+                        data[r - 1][c] = "";
+                        continue;
+                    }
+                    Cell cell = row.getCell(c);
+                    data[r - 1][c] = (cell == null) ? "" : formatter.formatCellValue(cell);
+                }
+            }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return data;        
+        return data;
     }
 }
