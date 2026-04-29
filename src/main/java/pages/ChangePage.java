@@ -32,6 +32,9 @@ public class ChangePage {
 		driver.get(Config.baseUrl() + "/change_request_list");
         Thread.sleep(2000);
         // Search Change record on table
+        WebElement fieldselect = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']//*[@id=\"e4fc7ebc8320c710f4aac629feaad3cb_select\"]"));
+        fieldselect.sendKeys("Number");
+        
         WebElement globalSearchBox = driver.findElement(By.xpath("//input[@class='form-control' and @type='search']"));
         globalSearchBox.sendKeys(changeNo);
         Thread.sleep(1000);

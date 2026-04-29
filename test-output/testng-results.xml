@@ -1,54 +1,763 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="1" failed="1" skipped="4">
+<testng-results ignored="0" total="74" passed="60" failed="6" skipped="8">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-04-13T18:35:03 IST" name="Default suite" finished-at="2026-04-13T18:36:15 IST" duration-ms="71741">
+  <suite started-at="2026-04-27T18:46:20 IST" name="Service Now Tests Suite with Selenium WebDriver" finished-at="2026-04-27T19:12:46 IST" duration-ms="1586456">
     <groups>
     </groups>
-    <test started-at="2026-04-13T18:35:03 IST" name="Default test" finished-at="2026-04-13T18:36:15 IST" duration-ms="71741">
-      <class name="com.example.tests.RequestClosedComplete">
-        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:34:16 IST" name="setupReport" finished-at="2026-04-13T18:35:03 IST" duration-ms="47132" status="PASS">
+    <test started-at="2026-04-27T18:46:20 IST" name="All test" finished-at="2026-04-27T19:12:46 IST" duration-ms="1586456">
+      <class name="com.example.tests.Standard_Change">
+        <test-method signature="navigateToChangeList()[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:08:37 IST" name="navigateToChangeList" description="SC_001 - Verification of Navigate to Change list" finished-at="2026-04-27T19:08:59 IST" duration-ms="22517" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setupReport -->
-        <test-method signature="createRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:35:03 IST" name="createRequest" description="SC_001- Verification of Submitting the Big Data Analysis catalog item" finished-at="2026-04-13T18:35:43 IST" duration-ms="40224" status="PASS">
+        </test-method> <!-- navigateToChangeList -->
+        <test-method signature="createChange()[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:08:59 IST" name="createChange" description="SC_002 - Verification of Creation of change" finished-at="2026-04-27T19:09:15 IST" depends-on-methods="com.example.tests.Standard_Change.navigateToChangeList" duration-ms="15427" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createRequest -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:35:43 IST" name="tearDown" finished-at="2026-04-13T18:35:43 IST" duration-ms="8" status="PASS">
+        </test-method> <!-- createChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:08:59 IST" name="tearDown" finished-at="2026-04-27T19:08:59 IST" duration-ms="0" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=createRequest status=SUCCESS method=RequestClosedComplete.createRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b] output={null}]]]>
+                <![CDATA[[TestResult name=navigateToChangeList status=SUCCESS method=Standard_Change.navigateToChangeList()[pri:0, instance:com.example.tests.Standard_Change@221a2068] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="checkingRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:35:43 IST" name="checkingRequest" description="SC_002- Verification of Request and RITM" finished-at="2026-04-13T18:36:15 IST" depends-on-methods="com.example.tests.RequestClosedComplete.createRequest" duration-ms="31108" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:09:15 IST" name="tearDown" finished-at="2026-04-27T19:09:15 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createChange status=SUCCESS method=Standard_Change.createChange()[pri:0, instance:com.example.tests.Standard_Change@221a2068] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="openChange()[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:09:15 IST" name="openChange" description="SC_003 - Verification of opening Created change record from list" finished-at="2026-04-27T19:09:25 IST" depends-on-methods="com.example.tests.Standard_Change.createChange" duration-ms="10708" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:09:25 IST" name="tearDown" finished-at="2026-04-27T19:09:25 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=openChange status=SUCCESS method=Standard_Change.openChange()[pri:0, instance:com.example.tests.Standard_Change@221a2068] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="ScheduleUIAction()[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:09:25 IST" name="ScheduleUIAction" description="SC_004 - Verification of Schedule UI action" finished-at="2026-04-27T19:09:51 IST" depends-on-methods="com.example.tests.Standard_Change.openChange" duration-ms="25796" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ScheduleUIAction -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:09:51 IST" name="tearDown" finished-at="2026-04-27T19:09:51 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ScheduleUIAction status=SUCCESS method=Standard_Change.ScheduleUIAction()[pri:0, instance:com.example.tests.Standard_Change@221a2068] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="implimentUIAction()[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:09:51 IST" name="implimentUIAction" description="SC_005 - Verification of State and Impliment UI Action after 2nd Approval Approved" finished-at="2026-04-27T19:10:09 IST" depends-on-methods="com.example.tests.Standard_Change.ScheduleUIAction" duration-ms="18238" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- implimentUIAction -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:10:09 IST" name="tearDown" finished-at="2026-04-27T19:10:09 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=implimentUIAction status=SUCCESS method=Standard_Change.implimentUIAction()[pri:0, instance:com.example.tests.Standard_Change@221a2068] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="firstchangeTask()[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:10:09 IST" name="firstchangeTask" description="SC_006 - Verification of 1st Change Task" finished-at="2026-04-27T19:10:49 IST" depends-on-methods="com.example.tests.Standard_Change.implimentUIAction" duration-ms="39612" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firstchangeTask -->
+        <test-method signature="secondchangeTask()[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:10:49 IST" name="secondchangeTask" description="SC_007 - Verification of 2nd Change Task" finished-at="2026-04-27T19:11:51 IST" depends-on-methods="com.example.tests.Standard_Change.implimentUIAction" duration-ms="62157" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- secondchangeTask -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:10:49 IST" name="tearDown" finished-at="2026-04-27T19:10:49 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=firstchangeTask status=SUCCESS method=Standard_Change.firstchangeTask()[pri:0, instance:com.example.tests.Standard_Change@221a2068] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="Closechangerecord()[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:11:51 IST" name="Closechangerecord" description="SC_008 - Verification of Change Record" finished-at="2026-04-27T19:12:46 IST" depends-on-methods="com.example.tests.Standard_Change.secondchangeTask" duration-ms="55192" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Closechangerecord -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:11:51 IST" name="tearDown" finished-at="2026-04-27T19:11:51 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=secondchangeTask status=SUCCESS method=Standard_Change.secondchangeTask()[pri:0, instance:com.example.tests.Standard_Change@221a2068] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Standard_Change@221a2068]" started-at="2026-04-27T19:12:46 IST" name="tearDown" finished-at="2026-04-27T19:12:46 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Closechangerecord status=SUCCESS method=Standard_Change.Closechangerecord()[pri:0, instance:com.example.tests.Standard_Change@221a2068] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.Standard_Change -->
+      <class name="com.example.tests.RequestClosedIncomplete">
+        <test-method signature="createRequest()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:51:35 IST" name="createRequest" description="SC_007- Verification of Submitting the Big Data Analysis catalog item" finished-at="2026-04-27T18:51:59 IST" duration-ms="24500" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:51:59 IST" name="tearDown" finished-at="2026-04-27T18:51:59 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createRequest status=SUCCESS method=RequestClosedIncomplete.createRequest()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="checkingRequest()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:51:59 IST" name="checkingRequest" description="SC_008- Verification of Request and RITM" finished-at="2026-04-27T18:52:12 IST" depends-on-methods="com.example.tests.RequestClosedIncomplete.createRequest" duration-ms="12384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkingRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:52:12 IST" name="tearDown" finished-at="2026-04-27T18:52:12 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=checkingRequest status=SUCCESS method=RequestClosedIncomplete.checkingRequest()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="approvals()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:52:12 IST" name="approvals" description="SC_009- Verification of Request and RITM" finished-at="2026-04-27T18:52:12 IST" depends-on-methods="com.example.tests.RequestClosedIncomplete.checkingRequest" duration-ms="650" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- approvals -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:52:12 IST" name="tearDown" finished-at="2026-04-27T18:52:12 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=approvals status=SUCCESS method=RequestClosedIncomplete.approvals()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:52:12 IST" name="impersonateUser" description="SC_010- Verification of Approving the approval by Impersonating user" finished-at="2026-04-27T18:52:56 IST" depends-on-methods="com.example.tests.RequestClosedIncomplete.approvals" duration-ms="43763" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:52:56 IST" name="tearDown" finished-at="2026-04-27T18:52:56 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=RequestClosedIncomplete.impersonateUser()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:52:56 IST" name="verifyCatalogTask" description="SC_011- Verification of Catalog task after Approving the approval" finished-at="2026-04-27T18:53:07 IST" depends-on-methods="com.example.tests.RequestClosedIncomplete.impersonateUser" duration-ms="11190" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCatalogTask -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:53:07 IST" name="tearDown" finished-at="2026-04-27T18:53:07 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCatalogTask status=SUCCESS method=RequestClosedIncomplete.verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyCloseIncompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:53:07 IST" name="verifyCloseIncompleteCatalogTask" description="SC_012- Verification of Close Incompleating the Catalog task" finished-at="2026-04-27T18:53:35 IST" depends-on-methods="com.example.tests.RequestClosedIncomplete.verifyCatalogTask" duration-ms="27805" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCloseIncompleteCatalogTask -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a]" started-at="2026-04-27T18:53:35 IST" name="tearDown" finished-at="2026-04-27T18:53:35 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCloseIncompleteCatalogTask status=SUCCESS method=RequestClosedIncomplete.verifyCloseIncompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedIncomplete@67531e3a] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.RequestClosedIncomplete -->
+      <class name="com.example.tests.Incident_All_Flow">
+        <test-method signature="create_Incident()[pri:1, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:55:25 IST" name="create_Incident" description="SCR_01- Verification of Creation of Incident" finished-at="2026-04-27T18:56:03 IST" duration-ms="38552" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:56:03 IST" name="tearDown" finished-at="2026-04-27T18:56:03 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=create_Incident status=SUCCESS method=Incident_All_Flow.create_Incident()[pri:1, instance:com.example.tests.Incident_All_Flow@7c51782d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="update_Incident()[pri:2, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:56:03 IST" name="update_Incident" description="SCR_02- Verification that User is able to update the Incident record" finished-at="2026-04-27T18:56:14 IST" depends-on-methods="com.example.tests.Incident_All_Flow.create_Incident" duration-ms="10522" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- update_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:56:14 IST" name="tearDown" finished-at="2026-04-27T18:56:14 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=update_Incident status=SUCCESS method=Incident_All_Flow.update_Incident()[pri:2, instance:com.example.tests.Incident_All_Flow@7c51782d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="inProgress_Incident()[pri:3, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:56:14 IST" name="inProgress_Incident" description="SCR_3- Verification of Incident is able to change to State In-Progress" finished-at="2026-04-27T18:56:19 IST" depends-on-methods="com.example.tests.Incident_All_Flow.update_Incident" duration-ms="5145" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- inProgress_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:56:19 IST" name="tearDown" finished-at="2026-04-27T18:56:19 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=inProgress_Incident status=SUCCESS method=Incident_All_Flow.inProgress_Incident()[pri:3, instance:com.example.tests.Incident_All_Flow@7c51782d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="onHold_Incident()[pri:4, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:56:19 IST" name="onHold_Incident" description="SCR_4- Verification of Incident is able to change to On Hold state" finished-at="2026-04-27T18:56:29 IST" depends-on-methods="com.example.tests.Incident_All_Flow.inProgress_Incident" duration-ms="10199" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onHold_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:56:29 IST" name="tearDown" finished-at="2026-04-27T18:56:29 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=onHold_Incident status=SUCCESS method=Incident_All_Flow.onHold_Incident()[pri:4, instance:com.example.tests.Incident_All_Flow@7c51782d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="resolved_Incident()[pri:5, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:56:29 IST" name="resolved_Incident" description="SCR_5- Verification of Incident is able to change to Resolved state" finished-at="2026-04-27T18:56:57 IST" depends-on-methods="com.example.tests.Incident_All_Flow.onHold_Incident" duration-ms="27873" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resolved_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:56:57 IST" name="tearDown" finished-at="2026-04-27T18:56:57 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=resolved_Incident status=SUCCESS method=Incident_All_Flow.resolved_Incident()[pri:5, instance:com.example.tests.Incident_All_Flow@7c51782d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="close_Incident()[pri:7, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:56:57 IST" name="close_Incident" description="SCR_7- Verification that user who do not have appropriate role is not able to Close the Incident" finished-at="2026-04-27T18:57:41 IST" duration-ms="43848" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- close_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:57:41 IST" name="tearDown" finished-at="2026-04-27T18:57:41 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=close_Incident status=SUCCESS method=Incident_All_Flow.close_Incident()[pri:7, instance:com.example.tests.Incident_All_Flow@7c51782d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="create_Incident_for_Multiple_Users()[pri:8, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:57:41 IST" name="create_Incident_for_Multiple_Users" description="SCR_8- Verification of Creation of Incident for multiple users" finished-at="2026-04-27T18:59:12 IST" duration-ms="91302" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- create_Incident_for_Multiple_Users -->
+        <test-method signature="file_Upload_on_incident()[pri:9, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:59:12 IST" name="file_Upload_on_incident" description="Verification that file is able to upload in Incident" finished-at="2026-04-27T19:00:18 IST" duration-ms="66026" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- file_Upload_on_incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T18:59:12 IST" name="tearDown" finished-at="2026-04-27T18:59:12 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=create_Incident_for_Multiple_Users status=SUCCESS method=Incident_All_Flow.create_Incident_for_Multiple_Users()[pri:8, instance:com.example.tests.Incident_All_Flow@7c51782d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verify_SLA_on_Incident()[pri:10, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T19:00:18 IST" name="verify_SLA_on_Incident" description="Verification of SLA on Incident" finished-at="2026-04-27T19:01:35 IST" duration-ms="76536" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="sys_display.ni.VE9476f39083940f10f4aac629feaad3ac"]"}
-  (Session info: chrome=146.0.7680.165)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[element not interactable
+  (Session info: chrome=147.0.7727.102)
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [29923f67f791e9274242eda4c779fd60, findElement {using=xpath, value=//*[@id="sys_display.ni.VE9476f39083940f10f4aac629feaad3ac"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63535}, goog:processID: 60436, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63535/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 29923f67f791e9274242eda4c779fd60]]>
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, sendKeysToElement {id=f.91DE0858885A6B656CE9A69C5F3B130A.d.1657F7251F3982F519385BFC36EAC4E6.e.22018, value=[Ljava.lang.CharSequence;@18a349cb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (54d83516a8cdba7d346e91a2c5af0fa3)] -> xpath: //textarea[@id='activity-stream-work_notes-textarea']]
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id="sys_display.ni.VE9476f39083940f10f4aac629feaad3ac"]"}
-  (Session info: chrome=146.0.7680.165)
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=147.0.7727.102)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, sendKeysToElement {id=f.91DE0858885A6B656CE9A69C5F3B130A.d.1657F7251F3982F519385BFC36EAC4E6.e.22018, value=[Ljava.lang.CharSequence;@18a349cb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (54d83516a8cdba7d346e91a2c5af0fa3)] -> xpath: //textarea[@id='activity-stream-work_notes-textarea']]
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
+at pages.IncidentPage.add_WorkNote(IncidentPage.java:762)
+at com.example.tests.Incident_All_Flow.verify_SLA_on_Incident(Incident_All_Flow.java:786)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verify_SLA_on_Incident -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T19:00:18 IST" name="tearDown" finished-at="2026-04-27T19:00:18 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=file_Upload_on_incident status=SUCCESS method=Incident_All_Flow.file_Upload_on_incident()[pri:9, instance:com.example.tests.Incident_All_Flow@7c51782d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Incident_All_Flow@7c51782d]" started-at="2026-04-27T19:01:35 IST" name="tearDown" finished-at="2026-04-27T19:01:35 IST" duration-ms="0" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verify_SLA_on_Incident status=FAILURE method=Incident_All_Flow.verify_SLA_on_Incident()[pri:10, instance:com.example.tests.Incident_All_Flow@7c51782d] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[ScreenCapture path must not be null or empty]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+at base.BaseTest.tearDown(BaseTest.java:119)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.Incident_All_Flow -->
+      <class name="com.example.tests.RequestClosedComplete">
+        <test-method signature="createRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:49:41 IST" name="createRequest" description="SC_001- Verification of Submitting the Big Data Analysis catalog item" finished-at="2026-04-27T18:50:05 IST" duration-ms="24346" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:50:05 IST" name="tearDown" finished-at="2026-04-27T18:50:05 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createRequest status=SUCCESS method=RequestClosedComplete.createRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="checkingRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:50:05 IST" name="checkingRequest" description="SC_002- Verification of Request and RITM" finished-at="2026-04-27T18:50:23 IST" depends-on-methods="com.example.tests.RequestClosedComplete.createRequest" duration-ms="17326" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkingRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:50:23 IST" name="tearDown" finished-at="2026-04-27T18:50:23 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=checkingRequest status=SUCCESS method=RequestClosedComplete.checkingRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="approvals()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:50:23 IST" name="approvals" description="SC_003- Verification of Generated Approvals" finished-at="2026-04-27T18:50:23 IST" depends-on-methods="com.example.tests.RequestClosedComplete.checkingRequest" duration-ms="663" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- approvals -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:50:23 IST" name="tearDown" finished-at="2026-04-27T18:50:23 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=approvals status=SUCCESS method=RequestClosedComplete.approvals()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:50:23 IST" name="impersonateUser" description="SC_004- Verification of Approving the approval by Impersonating user" finished-at="2026-04-27T18:51:17 IST" depends-on-methods="com.example.tests.RequestClosedComplete.approvals" duration-ms="54062" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:51:17 IST" name="tearDown" finished-at="2026-04-27T18:51:17 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=RequestClosedComplete.impersonateUser()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:51:17 IST" name="verifyCatalogTask" description="SC_005- Verification of Catalog task after Approving the approval" finished-at="2026-04-27T18:51:35 IST" depends-on-methods="com.example.tests.RequestClosedComplete.impersonateUser" duration-ms="17438" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
+            <message>
+              <![CDATA[Expected condition failed: waiting for visibility of all elements located by By.xpath: //table[@id='sc_req_item.sc_task.request_item_table']/tbody/tr/td[3] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all elements located by By.xpath: //table[@id='sc_req_item.sc_task.request_item_table']/tbody/tr/td[3] (tried for 10 second(s) with 500 milliseconds interval)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+at pages.RequestRITMTask.checkCatalogTask(RequestRITMTask.java:256)
+at com.example.tests.RequestClosedComplete.verifyCatalogTask(RequestClosedComplete.java:92)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCatalogTask -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:51:35 IST" name="tearDown" finished-at="2026-04-27T18:51:35 IST" duration-ms="2" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCatalogTask status=FAILURE method=RequestClosedComplete.verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[ScreenCapture path must not be null or empty]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+at base.BaseTest.tearDown(BaseTest.java:119)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyCloseCompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa]" started-at="2026-04-27T18:51:35 IST" name="verifyCloseCompleteCatalogTask" description="SC_006- Verification of Close Compleating the Catalog task" finished-at="2026-04-27T18:51:35 IST" depends-on-methods="com.example.tests.RequestClosedComplete.verifyCatalogTask" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask() on instance com.example.tests.RequestClosedComplete@44be69aa depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@44be69aa]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask() on instance com.example.tests.RequestClosedComplete@44be69aa depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@44be69aa]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCloseCompleteCatalogTask -->
+      </class> <!-- com.example.tests.RequestClosedComplete -->
+      <class name="com.example.tests.Knowledge">
+        <test-method is-config="true" signature="setupReport()[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:45:41 IST" name="setupReport" finished-at="2026-04-27T18:46:20 IST" duration-ms="39081" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupReport -->
+        <test-method signature="navigateToKnowledgeList()[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:46:20 IST" name="navigateToKnowledgeList" description="Verification of Navigate to Knowledge list" finished-at="2026-04-27T18:47:07 IST" duration-ms="47276" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToKnowledgeList -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:47:07 IST" name="tearDown" finished-at="2026-04-27T18:47:07 IST" duration-ms="7" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=navigateToKnowledgeList status=SUCCESS method=Knowledge.navigateToKnowledgeList()[pri:0, instance:com.example.tests.Knowledge@7d32e714] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="submitingKnowledge()[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:47:07 IST" name="submitingKnowledge" description="Verification of Fields on Knowledge Record" finished-at="2026-04-27T18:47:15 IST" depends-on-methods="com.example.tests.Knowledge.navigateToKnowledgeList" duration-ms="7607" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitingKnowledge -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:47:15 IST" name="tearDown" finished-at="2026-04-27T18:47:15 IST" duration-ms="3" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=submitingKnowledge status=SUCCESS method=Knowledge.submitingKnowledge()[pri:0, instance:com.example.tests.Knowledge@7d32e714] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="publishState()[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:47:15 IST" name="publishState" description="Verification of opening Created Knowledge record from list" finished-at="2026-04-27T18:47:30 IST" depends-on-methods="com.example.tests.Knowledge.submitingKnowledge" duration-ms="14943" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- publishState -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:47:30 IST" name="tearDown" finished-at="2026-04-27T18:47:30 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=publishState status=SUCCESS method=Knowledge.publishState()[pri:0, instance:com.example.tests.Knowledge@7d32e714] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="ViewArticle()[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:47:30 IST" name="ViewArticle" description="Verification of opening Created Knowledge record from list after Published State" finished-at="2026-04-27T18:48:03 IST" depends-on-methods="com.example.tests.Knowledge.publishState" duration-ms="32724" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- ViewArticle -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:48:03 IST" name="tearDown" finished-at="2026-04-27T18:48:03 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=ViewArticle status=SUCCESS method=Knowledge.ViewArticle()[pri:0, instance:com.example.tests.Knowledge@7d32e714] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="retiredarticle()[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:48:03 IST" name="retiredarticle" description="Verification of opening Knowledge record from list after Retired State" finished-at="2026-04-27T18:48:16 IST" depends-on-methods="com.example.tests.Knowledge.ViewArticle" duration-ms="13610" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//select[@class='form-control default-focus-outline']"}
+  (Session info: chrome=147.0.7727.102)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.21.0', revision: '79ed462ef4'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [29923f67f791e9274242eda4c779fd60, findElement {using=xpath, value=//*[@id="sys_display.ni.VE9476f39083940f10f4aac629feaad3ac"]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:63535}, goog:processID: 60436, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:63535/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 29923f67f791e9274242eda4c779fd60
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//select[@class='form-control default-focus-outline'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//select[@class='form-control default-focus-outline']"}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//select[@class='form-control default-focus-outline'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
 at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -63,8 +772,7 @@ at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(Elemen
 at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-at pages.RequestRITMTask.checkReqRITM(RequestRITMTask.java:183)
-at com.example.tests.RequestClosedComplete.checkingRequest(RequestClosedComplete.java:47)
+at com.example.tests.Knowledge.retiredarticle(Knowledge.java:250)
 at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -96,159 +804,1091 @@ at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
           </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- checkingRequest -->
-        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="tearDown" finished-at="2026-04-13T18:36:15 IST" duration-ms="209" status="PASS">
+        </test-method> <!-- retiredarticle -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T18:48:16 IST" name="tearDown" finished-at="2026-04-27T18:48:16 IST" duration-ms="93" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=checkingRequest status=FAILURE method=RequestClosedComplete.checkingRequest()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b] output={null}]]]>
+                <![CDATA[[TestResult name=retiredarticle status=FAILURE method=Knowledge.retiredarticle()[pri:0, instance:com.example.tests.Knowledge@7d32e714] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method signature="approvals()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="approvals" description="SC_003- Verification of Generated Approvals" finished-at="2026-04-13T18:36:15 IST" depends-on-methods="com.example.tests.RequestClosedComplete.checkingRequest" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method com.example.tests.RequestClosedComplete.approvals() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
-[com.example.tests.RequestClosedComplete.checkingRequest() on instance com.example.tests.RequestClosedComplete@37ad042b]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.example.tests.RequestClosedComplete.approvals() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
-[com.example.tests.RequestClosedComplete.checkingRequest() on instance com.example.tests.RequestClosedComplete@37ad042b]
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- approvals -->
-        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="impersonateUser" description="SC_004- Verification of Approving the approval by Impersonating user" finished-at="2026-04-13T18:36:15 IST" depends-on-methods="com.example.tests.RequestClosedComplete.approvals" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method com.example.tests.RequestClosedComplete.impersonateUser() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
-[com.example.tests.RequestClosedComplete.approvals() on instance com.example.tests.RequestClosedComplete@37ad042b]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.example.tests.RequestClosedComplete.impersonateUser() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
-[com.example.tests.RequestClosedComplete.approvals() on instance com.example.tests.RequestClosedComplete@37ad042b]
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- impersonateUser -->
-        <test-method signature="verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="verifyCatalogTask" description="SC_005- Verification of Catalog task after Approving the approval" finished-at="2026-04-13T18:36:15 IST" depends-on-methods="com.example.tests.RequestClosedComplete.impersonateUser" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
-[com.example.tests.RequestClosedComplete.impersonateUser() on instance com.example.tests.RequestClosedComplete@37ad042b]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
-[com.example.tests.RequestClosedComplete.impersonateUser() on instance com.example.tests.RequestClosedComplete@37ad042b]
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCatalogTask -->
-        <test-method signature="verifyCloseCompleteCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="verifyCloseCompleteCatalogTask" description="SC_006- Verification of Close Compleating the Catalog task" finished-at="2026-04-13T18:36:15 IST" depends-on-methods="com.example.tests.RequestClosedComplete.verifyCatalogTask" duration-ms="0" status="SKIP">
-          <exception class="java.lang.Throwable">
-            <message>
-              <![CDATA[Method com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
-[com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.Throwable: Method com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b depends on not successfully finished methods 
-[com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@37ad042b]
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-at org.testng.TestRunner.privateRun(TestRunner.java:741)
-at org.testng.TestRunner.run(TestRunner.java:616)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-at org.testng.TestNG.runSuites(TestNG.java:1112)
-at org.testng.TestNG.run(TestNG.java:1079)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.Throwable -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCloseCompleteCatalogTask -->
-        <test-method is-config="true" signature="teardownReport()[pri:0, instance:com.example.tests.RequestClosedComplete@37ad042b]" started-at="2026-04-13T18:36:15 IST" name="teardownReport" finished-at="2026-04-13T18:36:41 IST" duration-ms="26354" status="PASS">
+        <test-method is-config="true" signature="teardownReport()[pri:0, instance:com.example.tests.Knowledge@7d32e714]" started-at="2026-04-27T19:12:46 IST" name="teardownReport" finished-at="2026-04-27T19:12:49 IST" duration-ms="2978" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- teardownReport -->
-      </class> <!-- com.example.tests.RequestClosedComplete -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- com.example.tests.Knowledge -->
+      <class name="com.example.tests.NormalChange">
+        <test-method signature="navigateToChangeList()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:06:43 IST" name="navigateToChangeList" description="Verification of Navigate to Change list" finished-at="2026-04-27T19:07:02 IST" duration-ms="18303" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToChangeList -->
+        <test-method signature="createChange()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:07:02 IST" name="createChange" description="Verification of Creation of change" finished-at="2026-04-27T19:07:07 IST" depends-on-methods="com.example.tests.NormalChange.navigateToChangeList" duration-ms="5584" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:07:02 IST" name="tearDown" finished-at="2026-04-27T19:07:02 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=navigateToChangeList status=SUCCESS method=NormalChange.navigateToChangeList()[pri:0, instance:com.example.tests.NormalChange@77f905e3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:07:07 IST" name="tearDown" finished-at="2026-04-27T19:07:07 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createChange status=SUCCESS method=NormalChange.createChange()[pri:0, instance:com.example.tests.NormalChange@77f905e3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="openChange()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:07:07 IST" name="openChange" description="Verification of opening Created change record from list" finished-at="2026-04-27T19:07:18 IST" depends-on-methods="com.example.tests.NormalChange.createChange" duration-ms="11108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openChange -->
+        <test-method signature="requestingApproval()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:07:18 IST" name="requestingApproval" description="Verification of Approval Generation" finished-at="2026-04-27T19:07:44 IST" depends-on-methods="com.example.tests.NormalChange.openChange" duration-ms="25581" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestingApproval -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:07:18 IST" name="tearDown" finished-at="2026-04-27T19:07:18 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=openChange status=SUCCESS method=NormalChange.openChange()[pri:0, instance:com.example.tests.NormalChange@77f905e3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:07:44 IST" name="impersonateUser" description="Verification of User Impersonation" finished-at="2026-04-27T19:08:37 IST" depends-on-methods="com.example.tests.NormalChange.requestingApproval" duration-ms="52718" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='approve']"}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//*[@id='approve'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='approve']"}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//*[@id='approve'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at com.example.tests.NormalChange.impersonateUser(NormalChange.java:254)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:07:44 IST" name="tearDown" finished-at="2026-04-27T19:07:44 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=requestingApproval status=SUCCESS method=NormalChange.requestingApproval()[pri:0, instance:com.example.tests.NormalChange@77f905e3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:08:37 IST" name="tearDown" finished-at="2026-04-27T19:08:37 IST" duration-ms="2" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=FAILURE method=NormalChange.impersonateUser()[pri:0, instance:com.example.tests.NormalChange@77f905e3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[ScreenCapture path must not be null or empty]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+at base.BaseTest.tearDown(BaseTest.java:119)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="OPNCHNAFTAPPL()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:08:37 IST" name="OPNCHNAFTAPPL" description="Opening CHN record after first Approval Approve" finished-at="2026-04-27T19:08:37 IST" depends-on-methods="com.example.tests.NormalChange.impersonateUser" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUser() on instance com.example.tests.NormalChange@77f905e3]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUser() on instance com.example.tests.NormalChange@77f905e3]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OPNCHNAFTAPPL -->
+        <test-method signature="impersonateUserSec()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:08:37 IST" name="impersonateUserSec" description="Verification of 2nd Approval" finished-at="2026-04-27T19:08:37 IST" depends-on-methods="com.example.tests.NormalChange.OPNCHNAFTAPPL" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@77f905e3]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@77f905e3]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUserSec -->
+        <test-method signature="implimentUIAction()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:08:37 IST" name="implimentUIAction" description="Verification of State and Impliment UI Action after 2nd Approval Approved" finished-at="2026-04-27T19:08:37 IST" depends-on-methods="com.example.tests.NormalChange.impersonateUserSec" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@77f905e3]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@77f905e3]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- implimentUIAction -->
+        <test-method signature="firstchangeTask()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:08:37 IST" name="firstchangeTask" description="Verification of 1st Change Task" finished-at="2026-04-27T19:08:37 IST" depends-on-methods="com.example.tests.NormalChange.implimentUIAction" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.NormalChange.firstchangeTask() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.firstchangeTask() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- firstchangeTask -->
+        <test-method signature="secondchangeTask()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:08:37 IST" name="secondchangeTask" description="Verification of 2nd Change Task" finished-at="2026-04-27T19:08:37 IST" depends-on-methods="com.example.tests.NormalChange.implimentUIAction" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- secondchangeTask -->
+        <test-method signature="Closechangerecord()[pri:0, instance:com.example.tests.NormalChange@77f905e3]" started-at="2026-04-27T19:08:37 IST" name="Closechangerecord" description="Verification of Change Record" finished-at="2026-04-27T19:08:37 IST" depends-on-methods="com.example.tests.NormalChange.secondchangeTask" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.NormalChange.Closechangerecord() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@77f905e3]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChange.Closechangerecord() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@77f905e3]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Closechangerecord -->
+      </class> <!-- com.example.tests.NormalChange -->
+      <class name="com.example.tests.OrderGuide">
+        <test-method signature="createOrderGuideRecord()[pri:0, instance:com.example.tests.OrderGuide@6a756082]" started-at="2026-04-27T18:48:16 IST" name="createOrderGuideRecord" description="SC_001- Verification of Submitting the Order Guide" finished-at="2026-04-27T18:49:39 IST" duration-ms="82539" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createOrderGuideRecord -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.OrderGuide@6a756082]" started-at="2026-04-27T18:49:39 IST" name="tearDown" finished-at="2026-04-27T18:49:39 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createOrderGuideRecord status=SUCCESS method=OrderGuide.createOrderGuideRecord()[pri:0, instance:com.example.tests.OrderGuide@6a756082] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="checkingOrderGuideRecord()[pri:0, instance:com.example.tests.OrderGuide@6a756082]" started-at="2026-04-27T18:49:39 IST" name="checkingOrderGuideRecord" description="SC_002- Verification of Request and RITM" finished-at="2026-04-27T18:49:41 IST" depends-on-methods="com.example.tests.OrderGuide.createOrderGuideRecord" duration-ms="2219" status="FAIL">
+          <exception class="org.openqa.selenium.JavascriptException">
+            <message>
+              <![CDATA[javascript error: Cannot read properties of null (reading 'shadowRoot')
+  (Session info: chrome=147.0.7727.102)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, executeScript {script=return document.querySelector("body > macroponent-f51912f4c700201072b211d4d8c26010").shadowRoot.querySelector("div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout").shadowRoot.querySelector("div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header").shadowRoot.querySelector("#d6e462a5c3533010cbd77096e940dd8c"), args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading 'shadowRoot')
+  (Session info: chrome=147.0.7727.102)
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, executeScript {script=return document.querySelector("body > macroponent-f51912f4c700201072b211d4d8c26010").shadowRoot.querySelector("div > sn-canvas-appshell-root > sn-canvas-appshell-layout > sn-polaris-layout").shadowRoot.querySelector("div.sn-polaris-layout.polaris-enabled > div.layout-main > div.header-bar > sn-polaris-header").shadowRoot.querySelector("#d6e462a5c3533010cbd77096e940dd8c"), args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:463)
+at com.example.tests.OrderGuide.checkingOrderGuideRecord(OrderGuide.java:107)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.JavascriptException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkingOrderGuideRecord -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.OrderGuide@6a756082]" started-at="2026-04-27T18:49:41 IST" name="tearDown" finished-at="2026-04-27T18:49:41 IST" duration-ms="1" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=checkingOrderGuideRecord status=FAILURE method=OrderGuide.checkingOrderGuideRecord()[pri:0, instance:com.example.tests.OrderGuide@6a756082] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[ScreenCapture path must not be null or empty]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+at base.BaseTest.tearDown(BaseTest.java:119)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.OrderGuide -->
+      <class name="com.example.tests.RequestApprovalRejection">
+        <test-method signature="createRequest()[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3]" started-at="2026-04-27T18:53:35 IST" name="createRequest" description="SC_013- Verification of Submitting the Big Data Analysis catalog item" finished-at="2026-04-27T18:53:59 IST" duration-ms="24080" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3]" started-at="2026-04-27T18:53:59 IST" name="tearDown" finished-at="2026-04-27T18:53:59 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createRequest status=SUCCESS method=RequestApprovalRejection.createRequest()[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="checkingRequest()[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3]" started-at="2026-04-27T18:53:59 IST" name="checkingRequest" description="SC_014- Verification of Request and RITM" finished-at="2026-04-27T18:54:12 IST" depends-on-methods="com.example.tests.RequestApprovalRejection.createRequest" duration-ms="12237" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- checkingRequest -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3]" started-at="2026-04-27T18:54:12 IST" name="tearDown" finished-at="2026-04-27T18:54:12 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=checkingRequest status=SUCCESS method=RequestApprovalRejection.checkingRequest()[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="approvals()[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3]" started-at="2026-04-27T18:54:12 IST" name="approvals" description="SC_015- Verification of Generated Approvals" finished-at="2026-04-27T18:54:12 IST" depends-on-methods="com.example.tests.RequestApprovalRejection.checkingRequest" duration-ms="654" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- approvals -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3]" started-at="2026-04-27T18:54:12 IST" name="tearDown" finished-at="2026-04-27T18:54:12 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=approvals status=SUCCESS method=RequestApprovalRejection.approvals()[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3]" started-at="2026-04-27T18:54:12 IST" name="impersonateUser" description="SC_016- Verification of Rejecting the approval by Impersonating user" finished-at="2026-04-27T18:54:53 IST" depends-on-methods="com.example.tests.RequestApprovalRejection.approvals" duration-ms="41248" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3]" started-at="2026-04-27T18:54:53 IST" name="tearDown" finished-at="2026-04-27T18:54:53 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=RequestApprovalRejection.impersonateUser()[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="verifyCatalogTask()[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3]" started-at="2026-04-27T18:54:53 IST" name="verifyCatalogTask" description="SC_017- Verification of SCTask, Request &amp; RITM after Rejecting the approval" finished-at="2026-04-27T18:55:25 IST" depends-on-methods="com.example.tests.RequestApprovalRejection.impersonateUser" duration-ms="31069" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCatalogTask -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3]" started-at="2026-04-27T18:55:25 IST" name="tearDown" finished-at="2026-04-27T18:55:25 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=verifyCatalogTask status=SUCCESS method=RequestApprovalRejection.verifyCatalogTask()[pri:0, instance:com.example.tests.RequestApprovalRejection@53ed80d3] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.RequestApprovalRejection -->
+      <class name="com.example.tests.Problem">
+        <test-method signature="impersonateUser()[pri:1, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:01:35 IST" name="impersonateUser" finished-at="2026-04-27T19:01:49 IST" duration-ms="14077" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:01:49 IST" name="tearDown" finished-at="2026-04-27T19:01:49 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=SUCCESS method=Problem.impersonateUser()[pri:1, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="submitProblemFormWODetail()[pri:2, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:01:49 IST" name="submitProblemFormWODetail" description="SC_001- Verification of Open and Submit Problem form without fill details in mandatory fields" finished-at="2026-04-27T19:02:01 IST" duration-ms="12353" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitProblemFormWODetail -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:01 IST" name="tearDown" finished-at="2026-04-27T19:02:01 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=submitProblemFormWODetail status=SUCCESS method=Problem.submitProblemFormWODetail()[pri:2, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="validateProblemForm()[pri:3, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:01 IST" name="validateProblemForm" description="SC_002- Validate and fill madatory field details" finished-at="2026-04-27T19:02:38 IST" duration-ms="36823" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- validateProblemForm -->
+        <test-method signature="submitForm()[pri:4, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:38 IST" name="submitForm" description="SC_003- Verification of Save form once fill all required details" finished-at="2026-04-27T19:02:41 IST" duration-ms="3539" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- submitForm -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:38 IST" name="tearDown" finished-at="2026-04-27T19:02:38 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=validateProblemForm status=SUCCESS method=Problem.validateProblemForm()[pri:3, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:41 IST" name="tearDown" finished-at="2026-04-27T19:02:41 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=submitForm status=SUCCESS method=Problem.submitForm()[pri:4, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="reOpenForm()[pri:5, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:41 IST" name="reOpenForm" description="SC_004- Verification of reopen submitted record from Problem table" finished-at="2026-04-27T19:02:52 IST" duration-ms="10604" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reOpenForm -->
+        <test-method signature="stateOnceAssignSave()[pri:6, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:52 IST" name="stateOnceAssignSave" description="SC_005- Verification of State once Problem is Assigned" finished-at="2026-04-27T19:02:52 IST" duration-ms="258" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- stateOnceAssignSave -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:52 IST" name="tearDown" finished-at="2026-04-27T19:02:52 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=reOpenForm status=SUCCESS method=Problem.reOpenForm()[pri:5, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="RCAState()[pri:7, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:52 IST" name="RCAState" description="SC_006- Verification of State once Problem is Confirmed" finished-at="2026-04-27T19:02:56 IST" duration-ms="3447" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- RCAState -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:52 IST" name="tearDown" finished-at="2026-04-27T19:02:52 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=stateOnceAssignSave status=SUCCESS method=Problem.stateOnceAssignSave()[pri:6, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="fixStateWODetails()[pri:8, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:56 IST" name="fixStateWODetails" description="SC_007- Verification of Fixing Problem without fill required details" finished-at="2026-04-27T19:03:04 IST" duration-ms="8521" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fixStateWODetails -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:02:56 IST" name="tearDown" finished-at="2026-04-27T19:02:56 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=RCAState status=SUCCESS method=Problem.RCAState()[pri:7, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="fixState()[pri:9, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:04 IST" name="fixState" description="SC_008- Verification of State once Problem is Fixed with filled mandtory field" finished-at="2026-04-27T19:03:12 IST" duration-ms="7769" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- fixState -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:04 IST" name="tearDown" finished-at="2026-04-27T19:03:04 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=fixStateWODetails status=SUCCESS method=Problem.fixStateWODetails()[pri:8, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:12 IST" name="tearDown" finished-at="2026-04-27T19:03:12 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=fixState status=SUCCESS method=Problem.fixState()[pri:9, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="resolveState()[pri:10, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:12 IST" name="resolveState" description="SC_009- Verification of State and Resolution code once Problem is Resolved" finished-at="2026-04-27T19:03:18 IST" duration-ms="6404" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- resolveState -->
+        <test-method signature="reAnalyze()[pri:11, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:18 IST" name="reAnalyze" description="SC_010- Verification of State when Problem is Re-Analyzed" finished-at="2026-04-27T19:03:24 IST" duration-ms="5671" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reAnalyze -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:18 IST" name="tearDown" finished-at="2026-04-27T19:03:18 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=resolveState status=SUCCESS method=Problem.resolveState()[pri:10, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="cancelPRB()[pri:12, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:24 IST" name="cancelPRB" description="SC_011- Verification of State when Problem is Cancelled" finished-at="2026-04-27T19:03:34 IST" duration-ms="9476" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cancelPRB -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:24 IST" name="tearDown" finished-at="2026-04-27T19:03:24 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=reAnalyze status=SUCCESS method=Problem.reAnalyze()[pri:11, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="reAnalyzeOnceAgain()[pri:13, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:34 IST" name="reAnalyzeOnceAgain" description="SC_012- Verification of State when Cancelled Problem is Re-Analyzed" finished-at="2026-04-27T19:03:39 IST" duration-ms="5571" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reAnalyzeOnceAgain -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:34 IST" name="tearDown" finished-at="2026-04-27T19:03:34 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=cancelPRB status=SUCCESS method=Problem.cancelPRB()[pri:12, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:39 IST" name="tearDown" finished-at="2026-04-27T19:03:39 IST" duration-ms="15" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=reAnalyzeOnceAgain status=SUCCESS method=Problem.reAnalyzeOnceAgain()[pri:13, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="cloasedState()[pri:14, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:39 IST" name="cloasedState" description="SC_013- Verification of State once Problem is Closed" finished-at="2026-04-27T19:03:56 IST" duration-ms="16517" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cloasedState -->
+        <test-method signature="emailNotification()[pri:15, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:56 IST" name="emailNotification" description="SC_014- Verification of Email Notification" finished-at="2026-04-27T19:04:32 IST" duration-ms="36488" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- emailNotification -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:03:56 IST" name="tearDown" finished-at="2026-04-27T19:03:56 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=cloasedState status=SUCCESS method=Problem.cloasedState()[pri:14, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="endimpersonation()[pri:15, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:04:32 IST" name="endimpersonation" finished-at="2026-04-27T19:04:46 IST" duration-ms="13803" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endimpersonation -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:04:32 IST" name="tearDown" finished-at="2026-04-27T19:04:32 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=emailNotification status=SUCCESS method=Problem.emailNotification()[pri:15, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.Problem@2a39aa2b]" started-at="2026-04-27T19:04:46 IST" name="tearDown" finished-at="2026-04-27T19:04:46 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=endimpersonation status=SUCCESS method=Problem.endimpersonation()[pri:15, instance:com.example.tests.Problem@2a39aa2b] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.Problem -->
+      <class name="com.example.tests.NormalChangeRejection">
+        <test-method signature="navigateToChangeList()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:04:46 IST" name="navigateToChangeList" description="SC_001 - Verification of Navigate to Change list" finished-at="2026-04-27T19:05:09 IST" duration-ms="22627" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- navigateToChangeList -->
+        <test-method signature="createChange()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:05:09 IST" name="createChange" description="SC_002 - Verification of Creation of change" finished-at="2026-04-27T19:05:14 IST" depends-on-methods="com.example.tests.NormalChangeRejection.navigateToChangeList" duration-ms="5703" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:05:09 IST" name="tearDown" finished-at="2026-04-27T19:05:09 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=navigateToChangeList status=SUCCESS method=NormalChangeRejection.navigateToChangeList()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:05:14 IST" name="tearDown" finished-at="2026-04-27T19:05:14 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createChange status=SUCCESS method=NormalChangeRejection.createChange()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="openChange()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:05:14 IST" name="openChange" description="SC_003 - Verification of opening Created change record from list" finished-at="2026-04-27T19:05:25 IST" depends-on-methods="com.example.tests.NormalChangeRejection.createChange" duration-ms="10780" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openChange -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:05:25 IST" name="tearDown" finished-at="2026-04-27T19:05:25 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=openChange status=SUCCESS method=NormalChangeRejection.openChange()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="requestingApproval()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:05:25 IST" name="requestingApproval" description="SC_004 - Verification of Approval Generation" finished-at="2026-04-27T19:05:53 IST" depends-on-methods="com.example.tests.NormalChangeRejection.openChange" duration-ms="27716" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- requestingApproval -->
+        <test-method signature="impersonateUser()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:05:53 IST" name="impersonateUser" description="SC_005 - Verification of User Impersonation" finished-at="2026-04-27T19:06:43 IST" depends-on-methods="com.example.tests.NormalChangeRejection.requestingApproval" duration-ms="50516" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='reject']"}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//*[@id='reject'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//*[@id='reject']"}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.21.0', revision: '79ed462ef4'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.9'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//*[@id='reject'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+at com.example.tests.NormalChangeRejection.impersonateUser(NormalChangeRejection.java:271)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- impersonateUser -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:05:53 IST" name="tearDown" finished-at="2026-04-27T19:05:53 IST" duration-ms="0" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=requestingApproval status=SUCCESS method=NormalChangeRejection.requestingApproval()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method signature="OPNCHNAFTREJ()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:06:43 IST" name="OPNCHNAFTREJ" description="SC_006 - Verification of Change record after Rejection of 1st Approval" finished-at="2026-04-27T19:06:43 IST" depends-on-methods="com.example.tests.NormalChangeRejection.impersonateUser" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method com.example.tests.NormalChangeRejection.OPNCHNAFTREJ() on instance com.example.tests.NormalChangeRejection@5d4e13e1 depends on not successfully finished methods 
+[com.example.tests.NormalChangeRejection.impersonateUser() on instance com.example.tests.NormalChangeRejection@5d4e13e1]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method com.example.tests.NormalChangeRejection.OPNCHNAFTREJ() on instance com.example.tests.NormalChangeRejection@5d4e13e1 depends on not successfully finished methods 
+[com.example.tests.NormalChangeRejection.impersonateUser() on instance com.example.tests.NormalChangeRejection@5d4e13e1]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- OPNCHNAFTREJ -->
+        <test-method is-config="true" signature="tearDown(org.testng.ITestResult)[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1]" started-at="2026-04-27T19:06:43 IST" name="tearDown" finished-at="2026-04-27T19:06:43 IST" duration-ms="0" status="FAIL">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=impersonateUser status=FAILURE method=NormalChangeRejection.impersonateUser()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <exception class="java.lang.IllegalArgumentException">
+            <message>
+              <![CDATA[ScreenCapture path must not be null or empty]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+at base.BaseTest.tearDown(BaseTest.java:119)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:741)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IllegalArgumentException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.example.tests.NormalChangeRejection -->
+    </test> <!-- All test -->
+  </suite> <!-- Service Now Tests Suite with Selenium WebDriver -->
 </testng-results>

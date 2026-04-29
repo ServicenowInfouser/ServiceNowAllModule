@@ -47,6 +47,8 @@ public class NormalChange extends BaseTest {
     
     @Test(description = "Verification of Navigate to Change list")
     public void navigateToChangeList() throws InterruptedException {
+    	test = ExtentReportManager.createTest("------- Normal Change Flow Started -------");
+    	
     	Thread.sleep(5000);
     	jse = (JavascriptExecutor) driver;
     	test = ExtentReportManager.createTest("Verification of Navigate to Incident list");
@@ -248,7 +250,7 @@ public class NormalChange extends BaseTest {
         WebElement requestedbutton=driver.findElement(By.xpath("//*[@class='linked formlink']"));
         requestedbutton.click();
     
-        test.info("Approving the Approval");
+        test.info("Appriving the Approval");
         driver.findElement(By.xpath("//*[@id='approve']")).click(); 
         Thread.sleep(2000);
     	
@@ -331,10 +333,12 @@ public class NormalChange extends BaseTest {
         stateFilter.sendKeys("Requested");
         stateFilter.sendKeys(Keys.ENTER);
       
+        Thread.sleep(5000);
         List<WebElement> ApproversList2=driver.findElements(By.xpath("//*[@id='change_request.sysapproval_approver.sysapproval_table']/tbody/tr/td[4]"));
         Thread.sleep(5000);
         ApproversList2.isEmpty();
         System.out.println("Count of Approvers users are:"+ApproversList2.size());
+        Thread.sleep(5000);
         for (WebElement Users2 : ApproversList2) 
         {
             //secondAprovalUser = Users2.getText();
@@ -458,7 +462,7 @@ public class NormalChange extends BaseTest {
         
         Thread.sleep(2000);          
                         
-        List<WebElement> openChange4 = driver.findElements(By.xpath("//table[@id='change_request_table']/tbody/tr/td[3]"));
+        List<WebElement> openChange4 = driver.findElements(By.xpath("//table[@id='change_request_table']/tbody/tr/td[3]/a"));
         for (WebElement chan4 : openChange4) 
         {
             String currentChan4 = chan4.getText();

@@ -55,11 +55,11 @@ function toggleAllBoxes() {
 <body>
 <h2 align='center'>All test</h2><table border='1' align="center">
 <tr>
-<td>Tests passed/Failed/Skipped:</td><td>47/13/6</td>
+<td>Tests passed/Failed/Skipped:</td><td>60/6/8</td>
 </tr><tr>
-<td>Started on:</td><td>Mon Apr 13 12:54:40 IST 2026</td>
+<td>Started on:</td><td>Mon Apr 27 18:46:20 IST 2026</td>
 </tr>
-<tr><td>Total time:</td><td>1311 seconds (1311473 ms)</td>
+<tr><td>Total time:</td><td>1586 seconds (1586456 ms)</td>
 </tr><tr>
 <td>Included groups:</td><td></td>
 </tr><tr>
@@ -67,6 +67,255 @@ function toggleAllBoxes() {
 </tr>
 </table><p/>
 <small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED CONFIGURATIONS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='com.example.tests.RequestClosedComplete.tearDown()'><b>tearDown</b><br>Test class: com.example.tests.RequestClosedComplete<br>Parameters: [TestResult name=verifyCatalogTask status=FAILURE method=RequestClosedComplete.verifyCatalogTask()[pri:0, instance:com.example.tests.RequestClosedComplete@44be69aa] output={null}]</td>
+<td><div><pre>java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+	at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+	at base.BaseTest.tearDown(BaseTest.java:119)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1598068850", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1598068850'><pre>java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+	at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+	at base.BaseTest.tearDown(BaseTest.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+	at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.example.tests.RequestClosedComplete@44be69aa</td></tr>
+<tr>
+<td title='com.example.tests.NormalChangeRejection.tearDown()'><b>tearDown</b><br>Test class: com.example.tests.NormalChangeRejection<br>Parameters: [TestResult name=impersonateUser status=FAILURE method=NormalChangeRejection.impersonateUser()[pri:0, instance:com.example.tests.NormalChangeRejection@5d4e13e1] output={null}]</td>
+<td><div><pre>java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+	at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+	at base.BaseTest.tearDown(BaseTest.java:119)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace871749639", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace871749639'><pre>java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+	at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+	at base.BaseTest.tearDown(BaseTest.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+	at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.example.tests.NormalChangeRejection@5d4e13e1</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.tearDown()'><b>tearDown</b><br>Test class: com.example.tests.Incident_All_Flow<br>Parameters: [TestResult name=verify_SLA_on_Incident status=FAILURE method=Incident_All_Flow.verify_SLA_on_Incident()[pri:10, instance:com.example.tests.Incident_All_Flow@7c51782d] output={null}]</td>
+<td><div><pre>java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+	at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+	at base.BaseTest.tearDown(BaseTest.java:119)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1622720604", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1622720604'><pre>java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+	at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+	at base.BaseTest.tearDown(BaseTest.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+	at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.example.tests.Incident_All_Flow@7c51782d</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.tearDown()'><b>tearDown</b><br>Test class: com.example.tests.NormalChange<br>Parameters: [TestResult name=impersonateUser status=FAILURE method=NormalChange.impersonateUser()[pri:0, instance:com.example.tests.NormalChange@77f905e3] output={null}]</td>
+<td><div><pre>java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+	at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+	at base.BaseTest.tearDown(BaseTest.java:119)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1755343124", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1755343124'><pre>java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+	at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+	at base.BaseTest.tearDown(BaseTest.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+	at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
+<tr>
+<td title='com.example.tests.OrderGuide.tearDown()'><b>tearDown</b><br>Test class: com.example.tests.OrderGuide<br>Parameters: [TestResult name=checkingOrderGuideRecord status=FAILURE method=OrderGuide.checkingOrderGuideRecord()[pri:0, instance:com.example.tests.OrderGuide@6a756082] output={null}]</td>
+<td><div><pre>java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+	at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+	at base.BaseTest.tearDown(BaseTest.java:119)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1753871727", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1753871727'><pre>java.lang.IllegalArgumentException: ScreenCapture path must not be null or empty
+	at com.aventstack.extentreports.util.Assert.notEmpty(Assert.java:12)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:34)
+	at com.aventstack.extentreports.MediaEntityBuilder.createScreenCaptureFromPath(MediaEntityBuilder.java:40)
+	at base.BaseTest.tearDown(BaseTest.java:119)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:71)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:400)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:333)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:836)
+	at org.testng.internal.invokers.TestInvoker.runAfterConfigurations(TestInvoker.java:805)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:781)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.example.tests.OrderGuide@6a756082</td></tr>
+</table><p>
 <table width='100%' border='1' class='invocation-failed'>
 <tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
 <tr><td><b>Test method</b></td>
@@ -76,214 +325,29 @@ function toggleAllBoxes() {
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.example.tests.Problem.cloasedState()'><b>cloasedState</b><br>Test class: com.example.tests.Problem<br>Test method: SC_013- Verification of State once Problem is Closed</td>
-<td><div><pre>java.lang.AssertionError: 
-	at com.example.tests.Problem.cloasedState(Problem.java:1393)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1501506879", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1501506879'><pre>java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at com.example.tests.Problem.cloasedState(Problem.java:1393)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>20</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.Problem.fixState()'><b>fixState</b><br>Test class: com.example.tests.Problem<br>Test method: SC_008- Verification of State once Problem is Fixed with filled mandtory field</td>
-<td><div><pre>java.lang.AssertionError: 
-	at com.example.tests.Problem.fixState(Problem.java:919)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace293338808", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace293338808'><pre>java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at com.example.tests.Problem.fixState(Problem.java:919)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>23</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.Problem.RCAState()'><b>RCAState</b><br>Test class: com.example.tests.Problem<br>Test method: SC_006- Verification of State once Problem is Confirmed</td>
-<td><div><pre>java.lang.AssertionError: 
-	at com.example.tests.Problem.RCAState(Problem.java:791)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace630605810", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace630605810'><pre>java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at com.example.tests.Problem.RCAState(Problem.java:791)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>20</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.Problem.resolveState()'><b>resolveState</b><br>Test class: com.example.tests.Problem<br>Test method: SC_009- Verification of State and Resolution code once Problem is Resolved</td>
-<td><div><pre>java.lang.AssertionError: 
-	at com.example.tests.Problem.resolveState(Problem.java:985)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1345844369", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1345844369'><pre>java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at com.example.tests.Problem.resolveState(Problem.java:985)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>20</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.NormalChange.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of User Impersonation</td>
-<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;approve&apos;]&quot;}
-  (Session info: chrome=146.0.7680.165)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+<td title='com.example.tests.RequestClosedComplete.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_005- Verification of Catalog task after Approving the approval</td>
+<td><div><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all elements located by By.xpath: //table[@id=&apos;sc_req_item.sc_task.request_item_table&apos;]/tbody/tr/td[3] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6dbc9948fac6435dbc8d3d87583fba9f, findElement {using=xpath, value=//*[@id=&apos;approve&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57467}, goog:processID: 47224, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57467/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at com.example.tests.NormalChange.impersonateUser(NormalChange.java:252)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.RequestRITMTask.checkCatalogTask(RequestRITMTask.java:256)
+	at com.example.tests.RequestClosedComplete.verifyCatalogTask(RequestClosedComplete.java:92)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1257449236", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1257449236'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;approve&apos;]&quot;}
-  (Session info: chrome=146.0.7680.165)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1124131392", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1124131392'><pre>org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of all elements located by By.xpath: //table[@id=&apos;sc_req_item.sc_task.request_item_table&apos;]/tbody/tr/td[3] (tried for 10 second(s) with 500 milliseconds interval)
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6dbc9948fac6435dbc8d3d87583fba9f, findElement {using=xpath, value=//*[@id=&apos;approve&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57467}, goog:processID: 47224, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57467/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
-	at com.example.tests.NormalChange.impersonateUser(NormalChange.java:252)
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:228)
+	at pages.RequestRITMTask.checkCatalogTask(RequestRITMTask.java:256)
+	at com.example.tests.RequestClosedComplete.verifyCatalogTask(RequestClosedComplete.java:92)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -311,258 +375,19 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
-<td>53</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
-<tr>
-<td title='com.example.tests.Problem.reAnalyzeOnceAgain()'><b>reAnalyzeOnceAgain</b><br>Test class: com.example.tests.Problem<br>Test method: SC_012- Verification of State when Cancelled Problem is Re-Analyzed</td>
-<td><div><pre>java.lang.AssertionError: 
-	at com.example.tests.Problem.reAnalyzeOnceAgain(Problem.java:1217)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1244424614", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1244424614'><pre>java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at com.example.tests.Problem.reAnalyzeOnceAgain(Problem.java:1217)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>20</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.OrderGuide.checkingOrderGuideRecord()'><b>checkingOrderGuideRecord</b><br>Test class: com.example.tests.OrderGuide<br>Test method: SC_002- Verification of Request and RITM</td>
-<td><div><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because &quot;allclick&quot; is null
-	at com.example.tests.OrderGuide.checkingOrderGuideRecord(OrderGuide.java:108)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 25 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace885339784", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace885339784'><pre>java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.WebElement.click()&quot; because &quot;allclick&quot; is null
-	at com.example.tests.OrderGuide.checkingOrderGuideRecord(OrderGuide.java:108)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>2</td>
-<td>com.example.tests.OrderGuide@5793b87</td></tr>
-<tr>
-<td title='com.example.tests.Problem.emailNotification()'><b>emailNotification</b><br>Test class: com.example.tests.Problem<br>Test method: SC_014- Verification of Email Notification</td>
-<td><div><pre>java.lang.AssertionError: Recipients is as per requirement expected [problem.manager@example.com] but found []
-	at com.example.tests.Problem.emailNotification(Problem.java:1452)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 30 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1648152878", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1648152878'><pre>java.lang.AssertionError: Recipients is as per requirement expected [problem.manager@example.com] but found []
-	at org.testng.Assert.fail(Assert.java:111)
-	at org.testng.Assert.failNotEquals(Assert.java:1590)
-	at org.testng.Assert.assertEqualsImpl(Assert.java:150)
-	at org.testng.Assert.assertEquals(Assert.java:132)
-	at org.testng.Assert.assertEquals(Assert.java:656)
-	at com.example.tests.Problem.emailNotification(Problem.java:1452)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>9</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.Problem.reAnalyze()'><b>reAnalyze</b><br>Test class: com.example.tests.Problem<br>Test method: SC_010- Verification of State when Problem is Re-Analyzed</td>
-<td><div><pre>java.lang.AssertionError: 
-	at com.example.tests.Problem.reAnalyze(Problem.java:1043)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace679504212", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace679504212'><pre>java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at com.example.tests.Problem.reAnalyze(Problem.java:1043)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>20</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.Problem.fixStateWODetails()'><b>fixStateWODetails</b><br>Test class: com.example.tests.Problem<br>Test method: SC_007- Verification of Fixing Problem without fill required details</td>
-<td><div><pre>java.lang.AssertionError: 
-	at com.example.tests.Problem.fixStateWODetails(Problem.java:844)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace427033987", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace427033987'><pre>java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at com.example.tests.Problem.fixStateWODetails(Problem.java:844)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>20</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.Problem.cancelPRB()'><b>cancelPRB</b><br>Test class: com.example.tests.Problem<br>Test method: SC_011- Verification of State when Problem is Cancelled</td>
-<td><div><pre>java.lang.AssertionError: 
-	at com.example.tests.Problem.cancelPRB(Problem.java:1156)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace138099139", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace138099139'><pre>java.lang.AssertionError: 
-	at org.testng.AssertJUnit.fail(AssertJUnit.java:65)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:23)
-	at org.testng.AssertJUnit.assertTrue(AssertJUnit.java:33)
-	at com.example.tests.Problem.cancelPRB(Problem.java:1156)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>20</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
+<td>17</td>
+<td>com.example.tests.RequestClosedComplete@44be69aa</td></tr>
 <tr>
 <td title='com.example.tests.Knowledge.retiredarticle()'><b>retiredarticle</b><br>Test class: com.example.tests.Knowledge<br>Test method: Verification of opening Knowledge record from list after Retired State</td>
 <td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//select[@class=&apos;form-control default-focus-outline&apos;]&quot;}
-  (Session info: chrome=146.0.7680.165)
+  (Session info: chrome=147.0.7727.102)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6dbc9948fac6435dbc8d3d87583fba9f, findElement {using=xpath, value=//select[@class=&apos;form-control default-focus-outline&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57467}, goog:processID: 47224, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57467/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//select[@class=&apos;form-control default-focus-outline&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -576,16 +401,16 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
 	at com.example.tests.Knowledge.retiredarticle(Knowledge.java:250)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1086276486", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1086276486'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//select[@class=&apos;form-control default-focus-outline&apos;]&quot;}
-  (Session info: chrome=146.0.7680.165)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1651205022", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1651205022'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//select[@class=&apos;form-control default-focus-outline&apos;]&quot;}
+  (Session info: chrome=147.0.7727.102)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6dbc9948fac6435dbc8d3d87583fba9f, findElement {using=xpath, value=//select[@class=&apos;form-control default-focus-outline&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57467}, goog:processID: 47224, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57467/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//select[@class=&apos;form-control default-focus-outline&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -629,18 +454,166 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>13</td>
-<td>com.example.tests.Knowledge@2bc426f0</td></tr>
+<td>com.example.tests.Knowledge@7d32e714</td></tr>
 <tr>
-<td title='com.example.tests.Incident_All_Flow.verify_SLA_on_Incident()'><b>verify_SLA_on_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification of SLA on Incident</td>
-<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=146.0.7680.165)
+<td title='com.example.tests.OrderGuide.checkingOrderGuideRecord()'><b>checkingOrderGuideRecord</b><br>Test class: com.example.tests.OrderGuide<br>Test method: SC_002- Verification of Request and RITM</td>
+<td><div><pre>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;shadowRoot&apos;)
+  (Session info: chrome=147.0.7727.102)
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6dbc9948fac6435dbc8d3d87583fba9f, sendKeysToElement {id=f.18F95A003128B3C93ACBEABD62E0221E.d.C0BD05169B6D4EEB0EAC6528DC36C3C3.e.19100, value=[Ljava.lang.CharSequence;@da2303c}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57467}, goog:processID: 47224, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57467/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (6dbc9948fac6435dbc8d3d87583fba9f)] -&gt; xpath: //textarea[@id=&apos;activity-stream-work_notes-textarea&apos;]]
-Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, executeScript {script=return document.querySelector(&quot;body &gt; macroponent-f51912f4c700201072b211d4d8c26010&quot;).shadowRoot.querySelector(&quot;div &gt; sn-canvas-appshell-root &gt; sn-canvas-appshell-layout &gt; sn-polaris-layout&quot;).shadowRoot.querySelector(&quot;div.sn-polaris-layout.polaris-enabled &gt; div.layout-main &gt; div.header-bar &gt; sn-polaris-header&quot;).shadowRoot.querySelector(&quot;#d6e462a5c3533010cbd77096e940dd8c&quot;), args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:463)
+	at com.example.tests.OrderGuide.checkingOrderGuideRecord(OrderGuide.java:107)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1414411897", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1414411897'><pre>org.openqa.selenium.JavascriptException: javascript error: Cannot read properties of null (reading &apos;shadowRoot&apos;)
+  (Session info: chrome=147.0.7727.102)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, executeScript {script=return document.querySelector(&quot;body &gt; macroponent-f51912f4c700201072b211d4d8c26010&quot;).shadowRoot.querySelector(&quot;div &gt; sn-canvas-appshell-root &gt; sn-canvas-appshell-layout &gt; sn-polaris-layout&quot;).shadowRoot.querySelector(&quot;div.sn-polaris-layout.polaris-enabled &gt; div.layout-main &gt; div.header-bar &gt; sn-polaris-header&quot;).shadowRoot.querySelector(&quot;#d6e462a5c3533010cbd77096e940dd8c&quot;), args=[]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.RemoteWebDriver.executeScript(RemoteWebDriver.java:463)
+	at com.example.tests.OrderGuide.checkingOrderGuideRecord(OrderGuide.java:107)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>2</td>
+<td>com.example.tests.OrderGuide@6a756082</td></tr>
+<tr>
+<td title='com.example.tests.NormalChangeRejection.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: SC_005 - Verification of User Impersonation</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;reject&apos;]&quot;}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//*[@id=&apos;reject&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.example.tests.NormalChangeRejection.impersonateUser(NormalChangeRejection.java:271)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2137734988", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2137734988'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;reject&apos;]&quot;}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//*[@id=&apos;reject&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.example.tests.NormalChangeRejection.impersonateUser(NormalChangeRejection.java:271)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>50</td>
+<td>com.example.tests.NormalChangeRejection@5d4e13e1</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.verify_SLA_on_Incident()'><b>verify_SLA_on_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification of SLA on Incident</td>
+<td><div><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=147.0.7727.102)
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, sendKeysToElement {id=f.91DE0858885A6B656CE9A69C5F3B130A.d.1657F7251F3982F519385BFC36EAC4E6.e.22018, value=[Ljava.lang.CharSequence;@18a349cb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (54d83516a8cdba7d346e91a2c5af0fa3)] -&gt; xpath: //textarea[@id=&apos;activity-stream-work_notes-textarea&apos;]]
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
 	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
 	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
@@ -651,18 +624,18 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
 	at pages.IncidentPage.add_WorkNote(IncidentPage.java:762)
-	at com.example.tests.Incident_All_Flow.verify_SLA_on_Incident(Incident_All_Flow.java:781)
+	at com.example.tests.Incident_All_Flow.verify_SLA_on_Incident(Incident_All_Flow.java:786)
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1864715641", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1864715641'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=146.0.7680.165)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1611841256", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1611841256'><pre>org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=147.0.7727.102)
 Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
 System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6dbc9948fac6435dbc8d3d87583fba9f, sendKeysToElement {id=f.18F95A003128B3C93ACBEABD62E0221E.d.C0BD05169B6D4EEB0EAC6528DC36C3C3.e.19100, value=[Ljava.lang.CharSequence;@da2303c}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 146.0.7680.165, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57467}, goog:processID: 47224, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57467/devtoo..., se:cdpVersion: 146.0.7680.165, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (6dbc9948fac6435dbc8d3d87583fba9f)] -&gt; xpath: //textarea[@id=&apos;activity-stream-work_notes-textarea&apos;]]
-Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, sendKeysToElement {id=f.91DE0858885A6B656CE9A69C5F3B130A.d.1657F7251F3982F519385BFC36EAC4E6.e.22018, value=[Ljava.lang.CharSequence;@18a349cb}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (54d83516a8cdba7d346e91a2c5af0fa3)] -&gt; xpath: //textarea[@id=&apos;activity-stream-work_notes-textarea&apos;]]
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
 	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
 	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
 	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
@@ -676,7 +649,7 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
 	at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:110)
 	at pages.IncidentPage.add_WorkNote(IncidentPage.java:762)
-	at com.example.tests.Incident_All_Flow.verify_SLA_on_Incident(Incident_All_Flow.java:781)
+	at com.example.tests.Incident_All_Flow.verify_SLA_on_Incident(Incident_All_Flow.java:786)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
 	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
@@ -705,7 +678,85 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>76</td>
-<td>com.example.tests.Incident_All_Flow@7fb48179</td></tr>
+<td>com.example.tests.Incident_All_Flow@7c51782d</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of User Impersonation</td>
+<td><div><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;approve&apos;]&quot;}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//*[@id=&apos;approve&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.example.tests.NormalChange.impersonateUser(NormalChange.java:254)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 28 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1467886481", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1467886481'><pre>org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;approve&apos;]&quot;}
+  (Session info: chrome=147.0.7727.102)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: &apos;4.21.0&apos;, revision: &apos;79ed462ef4&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;21.0.9&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [54d83516a8cdba7d346e91a2c5af0fa3, findElement {value=//*[@id=&apos;approve&apos;], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 147.0.7727.102, chrome: {chromedriverVersion: 147.0.7727.117 (474cc805edd..., userDataDir: C:\Users\SANDES~1\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64026}, goog:processID: 8484, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64026/devtoo..., se:cdpVersion: 147.0.7727.102, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 54d83516a8cdba7d346e91a2c5af0fa3
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:355)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:349)
+	at com.example.tests.NormalChange.impersonateUser(NormalChange.java:254)
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>52</td>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-passed'>
 <tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
@@ -716,240 +767,305 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.example.tests.RequestClosedComplete.checkingRequest()'><b>checkingRequest</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_002- Verification of Request and RITM</td>
-<td></td>
-<td>10</td>
-<td>com.example.tests.RequestClosedComplete@3c87fdf2</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedComplete.approvals()'><b>approvals</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_003- Verification of Generated Approvals</td>
-<td></td>
-<td>0</td>
-<td>com.example.tests.RequestClosedComplete@3c87fdf2</td></tr>
-<tr>
-<td title='com.example.tests.Problem.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.Problem</td>
-<td></td>
-<td>10</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.Problem.reOpenForm()'><b>reOpenForm</b><br>Test class: com.example.tests.Problem<br>Test method: SC_004- Verification of reopen submitted record from Problem table</td>
-<td></td>
-<td>7</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
 <td title='com.example.tests.Problem.validateProblemForm()'><b>validateProblemForm</b><br>Test class: com.example.tests.Problem<br>Test method: SC_002- Validate and fill madatory field details</td>
 <td></td>
-<td>38</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
+<td>36</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Problem.reAnalyzeOnceAgain()'><b>reAnalyzeOnceAgain</b><br>Test class: com.example.tests.Problem<br>Test method: SC_012- Verification of State when Cancelled Problem is Re-Analyzed</td>
+<td></td>
+<td>5</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Problem.cancelPRB()'><b>cancelPRB</b><br>Test class: com.example.tests.Problem<br>Test method: SC_011- Verification of State when Problem is Cancelled</td>
+<td></td>
+<td>9</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Standard_Change.secondchangeTask()'><b>secondchangeTask</b><br>Test class: com.example.tests.Standard_Change<br>Test method: SC_007 - Verification of 2nd Change Task</td>
+<td></td>
+<td>62</td>
+<td>com.example.tests.Standard_Change@221a2068</td></tr>
+<tr>
+<td title='com.example.tests.Standard_Change.navigateToChangeList()'><b>navigateToChangeList</b><br>Test class: com.example.tests.Standard_Change<br>Test method: SC_001 - Verification of Navigate to Change list</td>
+<td></td>
+<td>22</td>
+<td>com.example.tests.Standard_Change@221a2068</td></tr>
 <tr>
 <td title='com.example.tests.OrderGuide.createOrderGuideRecord()'><b>createOrderGuideRecord</b><br>Test class: com.example.tests.OrderGuide<br>Test method: SC_001- Verification of Submitting the Order Guide</td>
 <td></td>
-<td>83</td>
-<td>com.example.tests.OrderGuide@5793b87</td></tr>
-<tr>
-<td title='com.example.tests.RequestApprovalRejection.checkingRequest()'><b>checkingRequest</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: SC_014- Verification of Request and RITM</td>
-<td></td>
-<td>6</td>
-<td>com.example.tests.RequestApprovalRejection@3fba233d</td></tr>
-<tr>
-<td title='com.example.tests.Incident_All_Flow.create_Incident()'><b>create_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_01- Verification of Creation of Incident</td>
-<td></td>
-<td>31</td>
-<td>com.example.tests.Incident_All_Flow@7fb48179</td></tr>
-<tr>
-<td title='com.example.tests.Problem.submitProblemFormWODetail()'><b>submitProblemFormWODetail</b><br>Test class: com.example.tests.Problem<br>Test method: SC_001- Verification of Open and Submit Problem form without fill details in mandatory fields</td>
-<td></td>
-<td>10</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedIncomplete.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_010- Verification of Approving the approval by Impersonating user</td>
-<td></td>
-<td>40</td>
-<td>com.example.tests.RequestClosedIncomplete@7f1ef916</td></tr>
-<tr>
-<td title='com.example.tests.RequestApprovalRejection.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: SC_017- Verification of SCTask, Request & RITM after Rejecting the approval</td>
-<td></td>
-<td>28</td>
-<td>com.example.tests.RequestApprovalRejection@3fba233d</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedComplete.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_001- Verification of Submitting the Big Data Analysis catalog item</td>
-<td></td>
-<td>12</td>
-<td>com.example.tests.RequestClosedComplete@3c87fdf2</td></tr>
-<tr>
-<td title='com.example.tests.Knowledge.submitingKnowledge()'><b>submitingKnowledge</b><br>Test class: com.example.tests.Knowledge<br>Test method: Verification of Fields on Knowledge Record</td>
-<td></td>
-<td>6</td>
-<td>com.example.tests.Knowledge@2bc426f0</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedIncomplete.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_011- Verification of Catalog task after Approving the approval</td>
-<td></td>
-<td>10</td>
-<td>com.example.tests.RequestClosedIncomplete@7f1ef916</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedComplete.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_004- Verification of Approving the approval by Impersonating user</td>
-<td></td>
-<td>58</td>
-<td>com.example.tests.RequestClosedComplete@3c87fdf2</td></tr>
-<tr>
-<td title='com.example.tests.NormalChangeRejection.OPNCHNAFTREJ()'><b>OPNCHNAFTREJ</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of Change record after Rejection of 1st Approval</td>
-<td></td>
-<td>15</td>
-<td>com.example.tests.NormalChangeRejection@4fa822ad</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask()'><b>verifyCloseCompleteCatalogTask</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_006- Verification of Close Compleating the Catalog task</td>
-<td></td>
-<td>15</td>
-<td>com.example.tests.RequestClosedComplete@3c87fdf2</td></tr>
-<tr>
-<td title='com.example.tests.NormalChangeRejection.requestingApproval()'><b>requestingApproval</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of Approval Generation</td>
-<td></td>
-<td>27</td>
-<td>com.example.tests.NormalChangeRejection@4fa822ad</td></tr>
-<tr>
-<td title='com.example.tests.Incident_All_Flow.close_Incident()'><b>close_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_7- Verification that user who do not have appropriate role is not able to Close the Incident</td>
-<td></td>
-<td>39</td>
-<td>com.example.tests.Incident_All_Flow@7fb48179</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedComplete.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_005- Verification of Catalog task after Approving the approval</td>
-<td></td>
-<td>11</td>
-<td>com.example.tests.RequestClosedComplete@3c87fdf2</td></tr>
-<tr>
-<td title='com.example.tests.NormalChange.navigateToChangeList()'><b>navigateToChangeList</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Navigate to Change list</td>
-<td></td>
-<td>18</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedIncomplete.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_007- Verification of Submitting the Big Data Analysis catalog item</td>
-<td></td>
-<td>12</td>
-<td>com.example.tests.RequestClosedIncomplete@7f1ef916</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedIncomplete.verifyCloseIncompleteCatalogTask()'><b>verifyCloseIncompleteCatalogTask</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_012- Verification of Close Incompleating the Catalog task</td>
-<td></td>
-<td>25</td>
-<td>com.example.tests.RequestClosedIncomplete@7f1ef916</td></tr>
-<tr>
-<td title='com.example.tests.Incident_All_Flow.file_Upload_on_incident()'><b>file_Upload_on_incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification that file is able to upload in Incident</td>
-<td></td>
-<td>53</td>
-<td>com.example.tests.Incident_All_Flow@7fb48179</td></tr>
-<tr>
-<td title='com.example.tests.Incident_All_Flow.resolved_Incident()'><b>resolved_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_5- Verification of Incident is able to change to Resolved state</td>
-<td></td>
-<td>17</td>
-<td>com.example.tests.Incident_All_Flow@7fb48179</td></tr>
-<tr>
-<td title='com.example.tests.NormalChangeRejection.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of User Impersonation</td>
-<td></td>
-<td>58</td>
-<td>com.example.tests.NormalChangeRejection@4fa822ad</td></tr>
-<tr>
-<td title='com.example.tests.Knowledge.ViewArticle()'><b>ViewArticle</b><br>Test class: com.example.tests.Knowledge<br>Test method: Verification of opening Created Knowledge record from list after Published State</td>
-<td></td>
-<td>29</td>
-<td>com.example.tests.Knowledge@2bc426f0</td></tr>
-<tr>
-<td title='com.example.tests.NormalChangeRejection.navigateToChangeList()'><b>navigateToChangeList</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of Navigate to Change list</td>
-<td></td>
-<td>17</td>
-<td>com.example.tests.NormalChangeRejection@4fa822ad</td></tr>
-<tr>
-<td title='com.example.tests.Knowledge.publishState()'><b>publishState</b><br>Test class: com.example.tests.Knowledge<br>Test method: Verification of opening Created Knowledge record from list</td>
-<td></td>
-<td>16</td>
-<td>com.example.tests.Knowledge@2bc426f0</td></tr>
-<tr>
-<td title='com.example.tests.Knowledge.navigateToKnowledgeList()'><b>navigateToKnowledgeList</b><br>Test class: com.example.tests.Knowledge<br>Test method: Verification of Navigate to Knowledge list</td>
-<td></td>
-<td>23</td>
-<td>com.example.tests.Knowledge@2bc426f0</td></tr>
-<tr>
-<td title='com.example.tests.RequestClosedIncomplete.approvals()'><b>approvals</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_009- Verification of Request and RITM</td>
-<td></td>
-<td>0</td>
-<td>com.example.tests.RequestClosedIncomplete@7f1ef916</td></tr>
-<tr>
-<td title='com.example.tests.Incident_All_Flow.update_Incident()'><b>update_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_02- Verification that User is able to update the Incident record</td>
-<td></td>
-<td>9</td>
-<td>com.example.tests.Incident_All_Flow@7fb48179</td></tr>
-<tr>
-<td title='com.example.tests.NormalChange.createChange()'><b>createChange</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Creation of change</td>
-<td></td>
-<td>5</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
-<tr>
-<td title='com.example.tests.Incident_All_Flow.inProgress_Incident()'><b>inProgress_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_3- Verification of Incident is able to change to State In-Progress</td>
-<td></td>
-<td>4</td>
-<td>com.example.tests.Incident_All_Flow@7fb48179</td></tr>
-<tr>
-<td title='com.example.tests.Problem.endimpersonation()'><b>endimpersonation</b><br>Test class: com.example.tests.Problem</td>
-<td></td>
-<td>17</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.NormalChange.requestingApproval()'><b>requestingApproval</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Approval Generation</td>
-<td></td>
-<td>25</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
+<td>82</td>
+<td>com.example.tests.OrderGuide@6a756082</td></tr>
 <tr>
 <td title='com.example.tests.RequestApprovalRejection.approvals()'><b>approvals</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: SC_015- Verification of Generated Approvals</td>
 <td></td>
 <td>0</td>
-<td>com.example.tests.RequestApprovalRejection@3fba233d</td></tr>
+<td>com.example.tests.RequestApprovalRejection@53ed80d3</td></tr>
 <tr>
-<td title='com.example.tests.Incident_All_Flow.onHold_Incident()'><b>onHold_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_4- Verification of Incident is able to change to On Hold state</td>
+<td title='com.example.tests.NormalChangeRejection.createChange()'><b>createChange</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: SC_002 - Verification of Creation of change</td>
 <td></td>
-<td>9</td>
-<td>com.example.tests.Incident_All_Flow@7fb48179</td></tr>
+<td>5</td>
+<td>com.example.tests.NormalChangeRejection@5d4e13e1</td></tr>
 <tr>
-<td title='com.example.tests.Incident_All_Flow.create_Incident_for_Multiple_Users()'><b>create_Incident_for_Multiple_Users</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_8- Verification of Creation of Incident for multiple users</td>
+<td title='com.example.tests.Incident_All_Flow.close_Incident()'><b>close_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_7- Verification that user who do not have appropriate role is not able to Close the Incident</td>
 <td></td>
-<td>68</td>
-<td>com.example.tests.Incident_All_Flow@7fb48179</td></tr>
+<td>43</td>
+<td>com.example.tests.Incident_All_Flow@7c51782d</td></tr>
 <tr>
-<td title='com.example.tests.NormalChangeRejection.openChange()'><b>openChange</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of opening Created change record from list</td>
+<td title='com.example.tests.NormalChange.navigateToChangeList()'><b>navigateToChangeList</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Navigate to Change list</td>
 <td></td>
-<td>11</td>
-<td>com.example.tests.NormalChangeRejection@4fa822ad</td></tr>
+<td>18</td>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.requestingApproval()'><b>requestingApproval</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Approval Generation</td>
+<td></td>
+<td>25</td>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
 <tr>
 <td title='com.example.tests.RequestClosedIncomplete.checkingRequest()'><b>checkingRequest</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_008- Verification of Request and RITM</td>
 <td></td>
-<td>6</td>
-<td>com.example.tests.RequestClosedIncomplete@7f1ef916</td></tr>
-<tr>
-<td title='com.example.tests.RequestApprovalRejection.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: SC_016- Verification of Rejecting the approval by Impersonating user</td>
-<td></td>
-<td>54</td>
-<td>com.example.tests.RequestApprovalRejection@3fba233d</td></tr>
-<tr>
-<td title='com.example.tests.RequestApprovalRejection.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: SC_013- Verification of Submitting the Big Data Analysis catalog item</td>
-<td></td>
 <td>12</td>
-<td>com.example.tests.RequestApprovalRejection@3fba233d</td></tr>
+<td>com.example.tests.RequestClosedIncomplete@67531e3a</td></tr>
 <tr>
-<td title='com.example.tests.Problem.stateOnceAssignSave()'><b>stateOnceAssignSave</b><br>Test class: com.example.tests.Problem<br>Test method: SC_005- Verification of State once Problem is Assigned</td>
-<td></td>
-<td>0</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
-<tr>
-<td title='com.example.tests.NormalChangeRejection.createChange()'><b>createChange</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: Verification of Creation of change</td>
+<td title='com.example.tests.Incident_All_Flow.inProgress_Incident()'><b>inProgress_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_3- Verification of Incident is able to change to State In-Progress</td>
 <td></td>
 <td>5</td>
-<td>com.example.tests.NormalChangeRejection@4fa822ad</td></tr>
+<td>com.example.tests.Incident_All_Flow@7c51782d</td></tr>
+<tr>
+<td title='com.example.tests.Problem.cloasedState()'><b>cloasedState</b><br>Test class: com.example.tests.Problem<br>Test method: SC_013- Verification of State once Problem is Closed</td>
+<td></td>
+<td>16</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.NormalChangeRejection.openChange()'><b>openChange</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: SC_003 - Verification of opening Created change record from list</td>
+<td></td>
+<td>10</td>
+<td>com.example.tests.NormalChangeRejection@5d4e13e1</td></tr>
+<tr>
+<td title='com.example.tests.RequestApprovalRejection.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: SC_017- Verification of SCTask, Request & RITM after Rejecting the approval</td>
+<td></td>
+<td>31</td>
+<td>com.example.tests.RequestApprovalRejection@53ed80d3</td></tr>
+<tr>
+<td title='com.example.tests.Problem.endimpersonation()'><b>endimpersonation</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>13</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedComplete.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_004- Verification of Approving the approval by Impersonating user</td>
+<td></td>
+<td>54</td>
+<td>com.example.tests.RequestClosedComplete@44be69aa</td></tr>
+<tr>
+<td title='com.example.tests.NormalChangeRejection.requestingApproval()'><b>requestingApproval</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: SC_004 - Verification of Approval Generation</td>
+<td></td>
+<td>27</td>
+<td>com.example.tests.NormalChangeRejection@5d4e13e1</td></tr>
+<tr>
+<td title='com.example.tests.Problem.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.Problem</td>
+<td></td>
+<td>14</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Problem.submitProblemFormWODetail()'><b>submitProblemFormWODetail</b><br>Test class: com.example.tests.Problem<br>Test method: SC_001- Verification of Open and Submit Problem form without fill details in mandatory fields</td>
+<td></td>
+<td>12</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Standard_Change.implimentUIAction()'><b>implimentUIAction</b><br>Test class: com.example.tests.Standard_Change<br>Test method: SC_005 - Verification of State and Impliment UI Action after 2nd Approval Approved</td>
+<td></td>
+<td>18</td>
+<td>com.example.tests.Standard_Change@221a2068</td></tr>
+<tr>
+<td title='com.example.tests.Knowledge.submitingKnowledge()'><b>submitingKnowledge</b><br>Test class: com.example.tests.Knowledge<br>Test method: Verification of Fields on Knowledge Record</td>
+<td></td>
+<td>7</td>
+<td>com.example.tests.Knowledge@7d32e714</td></tr>
 <tr>
 <td title='com.example.tests.NormalChange.openChange()'><b>openChange</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of opening Created change record from list</td>
 <td></td>
-<td>10</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
+<td>11</td>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
 <tr>
 <td title='com.example.tests.Problem.submitForm()'><b>submitForm</b><br>Test class: com.example.tests.Problem<br>Test method: SC_003- Verification of Save form once fill all required details</td>
 <td></td>
 <td>3</td>
-<td>com.example.tests.Problem@39bbd9e0</td></tr>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Problem.fixState()'><b>fixState</b><br>Test class: com.example.tests.Problem<br>Test method: SC_008- Verification of State once Problem is Fixed with filled mandtory field</td>
+<td></td>
+<td>7</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Problem.RCAState()'><b>RCAState</b><br>Test class: com.example.tests.Problem<br>Test method: SC_006- Verification of State once Problem is Confirmed</td>
+<td></td>
+<td>3</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedIncomplete.approvals()'><b>approvals</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_009- Verification of Request and RITM</td>
+<td></td>
+<td>0</td>
+<td>com.example.tests.RequestClosedIncomplete@67531e3a</td></tr>
+<tr>
+<td title='com.example.tests.Standard_Change.ScheduleUIAction()'><b>ScheduleUIAction</b><br>Test class: com.example.tests.Standard_Change<br>Test method: SC_004 - Verification of Schedule UI action</td>
+<td></td>
+<td>25</td>
+<td>com.example.tests.Standard_Change@221a2068</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.resolved_Incident()'><b>resolved_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_5- Verification of Incident is able to change to Resolved state</td>
+<td></td>
+<td>27</td>
+<td>com.example.tests.Incident_All_Flow@7c51782d</td></tr>
+<tr>
+<td title='com.example.tests.Standard_Change.openChange()'><b>openChange</b><br>Test class: com.example.tests.Standard_Change<br>Test method: SC_003 - Verification of opening Created change record from list</td>
+<td></td>
+<td>10</td>
+<td>com.example.tests.Standard_Change@221a2068</td></tr>
+<tr>
+<td title='com.example.tests.Standard_Change.createChange()'><b>createChange</b><br>Test class: com.example.tests.Standard_Change<br>Test method: SC_002 - Verification of Creation of change</td>
+<td></td>
+<td>15</td>
+<td>com.example.tests.Standard_Change@221a2068</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedIncomplete.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_007- Verification of Submitting the Big Data Analysis catalog item</td>
+<td></td>
+<td>24</td>
+<td>com.example.tests.RequestClosedIncomplete@67531e3a</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedIncomplete.verifyCatalogTask()'><b>verifyCatalogTask</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_011- Verification of Catalog task after Approving the approval</td>
+<td></td>
+<td>11</td>
+<td>com.example.tests.RequestClosedIncomplete@67531e3a</td></tr>
+<tr>
+<td title='com.example.tests.RequestApprovalRejection.checkingRequest()'><b>checkingRequest</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: SC_014- Verification of Request and RITM</td>
+<td></td>
+<td>12</td>
+<td>com.example.tests.RequestApprovalRejection@53ed80d3</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedComplete.approvals()'><b>approvals</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_003- Verification of Generated Approvals</td>
+<td></td>
+<td>0</td>
+<td>com.example.tests.RequestClosedComplete@44be69aa</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.update_Incident()'><b>update_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_02- Verification that User is able to update the Incident record</td>
+<td></td>
+<td>10</td>
+<td>com.example.tests.Incident_All_Flow@7c51782d</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.onHold_Incident()'><b>onHold_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_4- Verification of Incident is able to change to On Hold state</td>
+<td></td>
+<td>10</td>
+<td>com.example.tests.Incident_All_Flow@7c51782d</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedComplete.checkingRequest()'><b>checkingRequest</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_002- Verification of Request and RITM</td>
+<td></td>
+<td>17</td>
+<td>com.example.tests.RequestClosedComplete@44be69aa</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedIncomplete.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_010- Verification of Approving the approval by Impersonating user</td>
+<td></td>
+<td>43</td>
+<td>com.example.tests.RequestClosedIncomplete@67531e3a</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedComplete.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_001- Verification of Submitting the Big Data Analysis catalog item</td>
+<td></td>
+<td>24</td>
+<td>com.example.tests.RequestClosedComplete@44be69aa</td></tr>
+<tr>
+<td title='com.example.tests.Problem.stateOnceAssignSave()'><b>stateOnceAssignSave</b><br>Test class: com.example.tests.Problem<br>Test method: SC_005- Verification of State once Problem is Assigned</td>
+<td></td>
+<td>0</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Standard_Change.firstchangeTask()'><b>firstchangeTask</b><br>Test class: com.example.tests.Standard_Change<br>Test method: SC_006 - Verification of 1st Change Task</td>
+<td></td>
+<td>39</td>
+<td>com.example.tests.Standard_Change@221a2068</td></tr>
+<tr>
+<td title='com.example.tests.Problem.emailNotification()'><b>emailNotification</b><br>Test class: com.example.tests.Problem<br>Test method: SC_014- Verification of Email Notification</td>
+<td></td>
+<td>36</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.RequestApprovalRejection.impersonateUser()'><b>impersonateUser</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: SC_016- Verification of Rejecting the approval by Impersonating user</td>
+<td></td>
+<td>41</td>
+<td>com.example.tests.RequestApprovalRejection@53ed80d3</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.createChange()'><b>createChange</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Creation of change</td>
+<td></td>
+<td>5</td>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
+<tr>
+<td title='com.example.tests.Standard_Change.Closechangerecord()'><b>Closechangerecord</b><br>Test class: com.example.tests.Standard_Change<br>Test method: SC_008 - Verification of Change Record</td>
+<td></td>
+<td>55</td>
+<td>com.example.tests.Standard_Change@221a2068</td></tr>
+<tr>
+<td title='com.example.tests.RequestApprovalRejection.createRequest()'><b>createRequest</b><br>Test class: com.example.tests.RequestApprovalRejection<br>Test method: SC_013- Verification of Submitting the Big Data Analysis catalog item</td>
+<td></td>
+<td>24</td>
+<td>com.example.tests.RequestApprovalRejection@53ed80d3</td></tr>
+<tr>
+<td title='com.example.tests.Knowledge.navigateToKnowledgeList()'><b>navigateToKnowledgeList</b><br>Test class: com.example.tests.Knowledge<br>Test method: Verification of Navigate to Knowledge list</td>
+<td></td>
+<td>47</td>
+<td>com.example.tests.Knowledge@7d32e714</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedIncomplete.verifyCloseIncompleteCatalogTask()'><b>verifyCloseIncompleteCatalogTask</b><br>Test class: com.example.tests.RequestClosedIncomplete<br>Test method: SC_012- Verification of Close Incompleating the Catalog task</td>
+<td></td>
+<td>27</td>
+<td>com.example.tests.RequestClosedIncomplete@67531e3a</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.create_Incident()'><b>create_Incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_01- Verification of Creation of Incident</td>
+<td></td>
+<td>38</td>
+<td>com.example.tests.Incident_All_Flow@7c51782d</td></tr>
+<tr>
+<td title='com.example.tests.Problem.reAnalyze()'><b>reAnalyze</b><br>Test class: com.example.tests.Problem<br>Test method: SC_010- Verification of State when Problem is Re-Analyzed</td>
+<td></td>
+<td>5</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Problem.fixStateWODetails()'><b>fixStateWODetails</b><br>Test class: com.example.tests.Problem<br>Test method: SC_007- Verification of Fixing Problem without fill required details</td>
+<td></td>
+<td>8</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Problem.resolveState()'><b>resolveState</b><br>Test class: com.example.tests.Problem<br>Test method: SC_009- Verification of State and Resolution code once Problem is Resolved</td>
+<td></td>
+<td>6</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Knowledge.publishState()'><b>publishState</b><br>Test class: com.example.tests.Knowledge<br>Test method: Verification of opening Created Knowledge record from list</td>
+<td></td>
+<td>14</td>
+<td>com.example.tests.Knowledge@7d32e714</td></tr>
+<tr>
+<td title='com.example.tests.Problem.reOpenForm()'><b>reOpenForm</b><br>Test class: com.example.tests.Problem<br>Test method: SC_004- Verification of reopen submitted record from Problem table</td>
+<td></td>
+<td>10</td>
+<td>com.example.tests.Problem@2a39aa2b</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.create_Incident_for_Multiple_Users()'><b>create_Incident_for_Multiple_Users</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: SCR_8- Verification of Creation of Incident for multiple users</td>
+<td></td>
+<td>91</td>
+<td>com.example.tests.Incident_All_Flow@7c51782d</td></tr>
+<tr>
+<td title='com.example.tests.NormalChangeRejection.navigateToChangeList()'><b>navigateToChangeList</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: SC_001 - Verification of Navigate to Change list</td>
+<td></td>
+<td>22</td>
+<td>com.example.tests.NormalChangeRejection@5d4e13e1</td></tr>
+<tr>
+<td title='com.example.tests.Incident_All_Flow.file_Upload_on_incident()'><b>file_Upload_on_incident</b><br>Test class: com.example.tests.Incident_All_Flow<br>Test method: Verification that file is able to upload in Incident</td>
+<td></td>
+<td>66</td>
+<td>com.example.tests.Incident_All_Flow@7c51782d</td></tr>
+<tr>
+<td title='com.example.tests.Knowledge.ViewArticle()'><b>ViewArticle</b><br>Test class: com.example.tests.Knowledge<br>Test method: Verification of opening Created Knowledge record from list after Published State</td>
+<td></td>
+<td>32</td>
+<td>com.example.tests.Knowledge@7d32e714</td></tr>
 </table><p>
 <table width='100%' border='1' class='invocation-skipped'>
 <tr><td colspan='4' align='center'><b>SKIPPED TESTS</b></td></tr>
@@ -960,43 +1076,13 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 <td><b>Instance</b></td>
 </tr>
 <tr>
-<td title='com.example.tests.NormalChange.implimentUIAction()'><b>implimentUIAction</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of State and Impliment UI Action after 2nd Approval Approved</td>
-<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@7b6c6e70]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace309281422", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace309281422'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@7b6c6e70]
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
-<tr>
 <td title='com.example.tests.NormalChange.OPNCHNAFTAPPL()'><b>OPNCHNAFTAPPL</b><br>Test class: com.example.tests.NormalChange<br>Test method: Opening CHN record after first Approval Approve</td>
-<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.impersonateUser() on instance com.example.tests.NormalChange@7b6c6e70]
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUser() on instance com.example.tests.NormalChange@77f905e3]
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace415413446", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace415413446'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.impersonateUser() on instance com.example.tests.NormalChange@7b6c6e70]
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1774457847", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1774457847'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUser() on instance com.example.tests.NormalChange@77f905e3]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -1018,45 +1104,15 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
-<tr>
-<td title='com.example.tests.NormalChange.firstchangeTask()'><b>firstchangeTask</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of 1st Change Task</td>
-<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.firstchangeTask() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@7b6c6e70]
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1095384189", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1095384189'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.firstchangeTask() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@7b6c6e70]
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</pre></div></td>
-<td>0</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
 <tr>
 <td title='com.example.tests.NormalChange.secondchangeTask()'><b>secondchangeTask</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of 2nd Change Task</td>
-<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@7b6c6e70]
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3]
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace261855196", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace261855196'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@7b6c6e70]
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1588389519", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1588389519'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -1078,15 +1134,15 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
 <tr>
-<td title='com.example.tests.NormalChange.Closechangerecord()'><b>Closechangerecord</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Change Record</td>
-<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.Closechangerecord() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@7b6c6e70]
+<td title='com.example.tests.NormalChangeRejection.OPNCHNAFTREJ()'><b>OPNCHNAFTREJ</b><br>Test class: com.example.tests.NormalChangeRejection<br>Test method: SC_006 - Verification of Change record after Rejection of 1st Approval</td>
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChangeRejection.OPNCHNAFTREJ() on instance com.example.tests.NormalChangeRejection@5d4e13e1 depends on not successfully finished methods 
+[com.example.tests.NormalChangeRejection.impersonateUser() on instance com.example.tests.NormalChangeRejection@5d4e13e1]
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1426317832", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1426317832'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.Closechangerecord() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@7b6c6e70]
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1641341040", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace1641341040'><pre>java.lang.Throwable: Method com.example.tests.NormalChangeRejection.OPNCHNAFTREJ() on instance com.example.tests.NormalChangeRejection@5d4e13e1 depends on not successfully finished methods 
+[com.example.tests.NormalChangeRejection.impersonateUser() on instance com.example.tests.NormalChangeRejection@5d4e13e1]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -1108,15 +1164,15 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
+<td>com.example.tests.NormalChangeRejection@5d4e13e1</td></tr>
 <tr>
 <td title='com.example.tests.NormalChange.impersonateUserSec()'><b>impersonateUserSec</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of 2nd Approval</td>
-<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@7b6c6e70]
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@77f905e3]
 	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
-... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace1176410929", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
-<div class='stack-trace' id='stack-trace1176410929'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@7b6c6e70 depends on not successfully finished methods 
-[com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@7b6c6e70]
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace619068319", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace619068319'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.OPNCHNAFTAPPL() on instance com.example.tests.NormalChange@77f905e3]
 	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
 	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
 	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
@@ -1138,7 +1194,127 @@ Session ID: 6dbc9948fac6435dbc8d3d87583fba9f
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 </pre></div></td>
 <td>0</td>
-<td>com.example.tests.NormalChange@7b6c6e70</td></tr>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
+<tr>
+<td title='com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask()'><b>verifyCloseCompleteCatalogTask</b><br>Test class: com.example.tests.RequestClosedComplete<br>Test method: SC_006- Verification of Close Compleating the Catalog task</td>
+<td><div><pre>java.lang.Throwable: Method com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask() on instance com.example.tests.RequestClosedComplete@44be69aa depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@44be69aa]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2063332000", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2063332000'><pre>java.lang.Throwable: Method com.example.tests.RequestClosedComplete.verifyCloseCompleteCatalogTask() on instance com.example.tests.RequestClosedComplete@44be69aa depends on not successfully finished methods 
+[com.example.tests.RequestClosedComplete.verifyCatalogTask() on instance com.example.tests.RequestClosedComplete@44be69aa]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.example.tests.RequestClosedComplete@44be69aa</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.implimentUIAction()'><b>implimentUIAction</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of State and Impliment UI Action after 2nd Approval Approved</td>
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@77f905e3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace238049084", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace238049084'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.impersonateUserSec() on instance com.example.tests.NormalChange@77f905e3]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.firstchangeTask()'><b>firstchangeTask</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of 1st Change Task</td>
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.firstchangeTask() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace970925650", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace970925650'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.firstchangeTask() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.implimentUIAction() on instance com.example.tests.NormalChange@77f905e3]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
+<tr>
+<td title='com.example.tests.NormalChange.Closechangerecord()'><b>Closechangerecord</b><br>Test class: com.example.tests.NormalChange<br>Test method: Verification of Change Record</td>
+<td><div><pre>java.lang.Throwable: Method com.example.tests.NormalChange.Closechangerecord() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@77f905e3]
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+... Removed 18 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace873453168", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace873453168'><pre>java.lang.Throwable: Method com.example.tests.NormalChange.Closechangerecord() on instance com.example.tests.NormalChange@77f905e3 depends on not successfully finished methods 
+[com.example.tests.NormalChange.secondchangeTask() on instance com.example.tests.NormalChange@77f905e3]
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at org.testng.TestRunner.privateRun(TestRunner.java:741)
+	at org.testng.TestRunner.run(TestRunner.java:616)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+	at org.testng.TestNG.runSuites(TestNG.java:1112)
+	at org.testng.TestNG.run(TestNG.java:1079)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>com.example.tests.NormalChange@77f905e3</td></tr>
 </table><p>
 </body>
 </html>

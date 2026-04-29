@@ -18,24 +18,23 @@ public class CustomReport implements IReporter {
         StringBuilder report = new StringBuilder();
 
         // HTML header with improved styling for class headers
-        report.append("""
-                <html>
-                <head>
-                  <title>Custom TestNG Report</title>
-                  <style>
-                    body { font-family: Arial, sans-serif; margin: 20px; }
-                    h3 { background-color: #444; color: white; padding: 10px; margin-top: 30px; }
-                    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }
-                    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }
-                    th { background: #f7f7f7; }
-                    .status-PASS { color: #167a25; font-weight: bold; }
-                    .status-FAIL { color: #b00020; font-weight: bold; }
-                    .status-SKIP { color: #9a6700; font-weight: bold; }
-                    .error { white-space: pre-wrap; color: #b00020; font-size: 11px; }
-                  </style>
-                </head>
-                <body>
-                <h2>Test Execution Summary</h2>""");
+        report.append("<html>");
+        report.append("<head>");
+        report.append("  <title>Custom TestNG Report</title>");
+        report.append("  <style>");
+        report.append("    body { font-family: Arial, sans-serif; margin: 20px; }");
+        report.append("    h3 { background-color: #444; color: white; padding: 10px; margin-top: 30px; }");
+        report.append("    table { border-collapse: collapse; width: 100%; margin-bottom: 20px; }");
+        report.append("    th, td { border: 1px solid #ccc; padding: 8px; text-align: left; }");
+        report.append("    th { background: #f7f7f7; }");
+        report.append("    .status-PASS { color: #167a25; font-weight: bold; }");
+        report.append("    .status-FAIL { color: #b00020; font-weight: bold; }");
+        report.append("    .status-SKIP { color: #9a6700; font-weight: bold; }");
+        report.append("    .error { white-space: pre-wrap; color: #b00020; font-size: 11px; }");
+        report.append("  </style>");
+        report.append("</head>");
+        report.append("<body>");
+        report.append("<h2>Test Execution Summary</h2>");
 
         for (ISuite suite : suites) {
             for (ISuiteResult suiteResult : suite.getResults().values()) {
@@ -43,12 +42,12 @@ public class CustomReport implements IReporter {
 
                 // Group results by Class Name
                 Map<String, List<ITestResult>> resultsByClass = new LinkedHashMap<>();
-                
+
                 List<ITestResult> allResults = new ArrayList<>();
                 addAll(allResults, context.getPassedTests());
                 addAll(allResults, context.getFailedTests());
                 addAll(allResults, context.getSkippedTests());
-                
+
                 // Sort chronologically before grouping
                 allResults.sort(Comparator.comparingLong(ITestResult::getStartMillis));
 
@@ -79,12 +78,20 @@ public class CustomReport implements IReporter {
                         long timeTaken = Math.max(0L, result.getEndMillis() - result.getStartMillis());
                         Object testData = result.getAttribute("TestData");
 
-                        String status = switch (result.getStatus()) {
-                            case ITestResult.SUCCESS -> "PASS";
-                            case ITestResult.FAILURE -> "FAIL";
-                            case ITestResult.SKIP -> "SKIP";
-                            default -> "UNKNOWN";
-                        };
+                        String status;
+                        switch (result.getStatus()) {
+                            case ITestResult.SUCCESS:
+                                status = "PASS";
+                                break;
+                            case ITestResult.FAILURE:
+                                status = "FAIL";
+                                break;
+                            case ITestResult.SKIP:
+                                status = "SKIP";
+                                break;
+                            default:
+                                status = "UNKNOWN";
+                        }
 
                         String failureReason = (result.getThrowable() != null) ? 
                                                stackTraceToString(result.getThrowable()) : "";

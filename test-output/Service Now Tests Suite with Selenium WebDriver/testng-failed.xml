@@ -6,12 +6,50 @@
   </listeners>
   <test thread-count="5" name="All test(failed)">
     <classes>
+      <class name="com.example.tests.Knowledge">
+        <methods>
+          <include name="submitingKnowledge"/>
+          <include name="teardownReport"/>
+          <include name="tearDown"/>
+          <include name="setupReport"/>
+          <include name="ViewArticle"/>
+          <include name="publishState"/>
+          <include name="navigateToKnowledgeList"/>
+          <include name="retiredarticle"/>
+        </methods>
+      </class> <!-- com.example.tests.Knowledge -->
+      <class name="com.example.tests.Incident_All_Flow">
+        <methods>
+          <include name="teardownReport"/>
+          <include name="tearDown"/>
+          <include name="setupReport"/>
+          <include name="verify_SLA_on_Incident"/>
+        </methods>
+      </class> <!-- com.example.tests.Incident_All_Flow -->
+      <class name="com.example.tests.NormalChange">
+        <methods>
+          <include name="impersonateUserSec"/>
+          <include name="implimentUIAction"/>
+          <include name="openChange"/>
+          <include name="setupReport"/>
+          <include name="requestingApproval"/>
+          <include name="Closechangerecord"/>
+          <include name="impersonateUser"/>
+          <include name="teardownReport"/>
+          <include name="tearDown"/>
+          <include name="createChange"/>
+          <include name="OPNCHNAFTAPPL"/>
+          <include name="firstchangeTask"/>
+          <include name="navigateToChangeList"/>
+          <include name="secondchangeTask"/>
+        </methods>
+      </class> <!-- com.example.tests.NormalChange -->
       <class name="com.example.tests.RequestClosedComplete">
         <methods>
           <include name="teardownReport"/>
-          <include name="approvals"/>
-          <include name="tearDown"/>
           <include name="createRequest"/>
+          <include name="tearDown"/>
+          <include name="approvals"/>
           <include name="verifyCatalogTask"/>
           <include name="setupReport"/>
           <include name="checkingRequest"/>
@@ -19,6 +57,28 @@
           <include name="verifyCloseCompleteCatalogTask"/>
         </methods>
       </class> <!-- com.example.tests.RequestClosedComplete -->
+      <class name="com.example.tests.NormalChangeRejection">
+        <methods>
+          <include name="teardownReport"/>
+          <include name="navigateToChangeList"/>
+          <include name="tearDown"/>
+          <include name="setupReport"/>
+          <include name="createChange"/>
+          <include name="impersonateUser"/>
+          <include name="OPNCHNAFTREJ"/>
+          <include name="openChange"/>
+          <include name="requestingApproval"/>
+        </methods>
+      </class> <!-- com.example.tests.NormalChangeRejection -->
+      <class name="com.example.tests.OrderGuide">
+        <methods>
+          <include name="teardownReport"/>
+          <include name="tearDown"/>
+          <include name="setupReport"/>
+          <include name="checkingOrderGuideRecord"/>
+          <include name="createOrderGuideRecord"/>
+        </methods>
+      </class> <!-- com.example.tests.OrderGuide -->
     </classes>
   </test> <!-- All test(failed) -->
 </suite> <!-- Failed suite [Service Now Tests Suite with Selenium WebDriver] -->

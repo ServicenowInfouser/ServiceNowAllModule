@@ -35,7 +35,7 @@
 			<!-- Change -->
 			<class name="com.example.tests.NormalChangeRejection" />
 			<class name="com.example.tests.NormalChange" /> 
-			
+			<class name="com.example.tests.Standard_Change" />			
 			
 
 

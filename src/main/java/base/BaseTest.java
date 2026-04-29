@@ -100,21 +100,16 @@ public class BaseTest {
 	
 	//@BeforeClass
 	public void impAdmin() throws InterruptedException {
-		if (users == null || users.length == 0) {
-			System.out.println("impAdmin: no impersonation users available.");
-			return;
-		}
 		String user = users[0][0].toString();
 		impersonation = new Impersonation(driver);
-	    impersonation.startImpersonation(user, jse);
+    	impersonation.startImpersonation(user, jse);
 	}
 	
 	//@AfterClass
 	public void endImpAdmin() throws InterruptedException {
-		if (impersonation == null) return;
-		JavascriptExecutor jseLocal = (JavascriptExecutor) driver;
+		JavascriptExecutor jse = (JavascriptExecutor) driver;
 		impersonation = new Impersonation(driver);
-	    impersonation.endImpersonation(jseLocal);
+    	impersonation.endImpersonation(jse);
 	}
 	
 	@AfterMethod(alwaysRun = true)
